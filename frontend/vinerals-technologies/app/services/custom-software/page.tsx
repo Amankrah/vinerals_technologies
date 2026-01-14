@@ -6,6 +6,7 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createServiceSchema } from '@/components/shared/StructuredData';
 import { Code2 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -52,29 +53,40 @@ export default function CustomSoftwarePage() {
 
   const processSteps = [
     {
-      number: '1',
+      number: 1,
       title: 'Discovery',
+      subtitle: 'Free',
       description: 'Deep dive into your business processes, pain points, and requirements. We map out the complete system architecture.',
     },
     {
-      number: '2',
+      number: 2,
       title: 'Design & Planning',
+      subtitle: 'Transparent',
       description: 'UI/UX wireframes, technical specification, and project timeline with clear milestones.',
     },
     {
-      number: '3',
+      number: 3,
       title: 'Development',
+      subtitle: 'Iterative',
       description: 'Agile sprints with weekly demos. You see working features, not just code.',
     },
     {
-      number: '4',
+      number: 4,
       title: 'Deployment',
+      subtitle: 'Ongoing',
       description: 'We handle hosting setup, deployment, team training, and documentation handoff.',
     },
   ];
 
+  const serviceSchema = createServiceSchema({
+    name: 'Custom Software Development',
+    description: 'Bespoke web applications and business software built for your exact needs. Full-stack development with full code ownership.',
+    price: '40.00',
+  });
+
   return (
     <>
+      <StructuredData data={serviceSchema} />
       <Header />
       <main className="pt-16">
         <ServiceHero

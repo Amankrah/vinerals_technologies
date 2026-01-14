@@ -6,6 +6,7 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createServiceSchema } from '@/components/shared/StructuredData';
 import { Brain, AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -52,29 +53,40 @@ export default function AIIntegrationPage() {
 
   const processSteps = [
     {
-      number: '1',
+      number: 1,
       title: 'Use Case Discovery',
+      subtitle: 'ROI-Focused',
       description: 'We identify where AI can actually save time or money - not where it is just trendy.',
     },
     {
-      number: '2',
+      number: 2,
       title: 'Proof of Concept',
+      subtitle: 'Validate First',
       description: 'Quick prototype to validate feasibility and ROI before full investment.',
     },
     {
-      number: '3',
+      number: 3,
       title: 'Implementation',
+      subtitle: 'Production-Ready',
       description: 'Production-ready AI integration with proper error handling and fallbacks.',
     },
     {
-      number: '4',
+      number: 4,
       title: 'Optimization',
+      subtitle: 'Continuous',
       description: 'Monitor performance, reduce costs, and iterate based on real usage data.',
     },
   ];
 
+  const serviceSchema = createServiceSchema({
+    name: 'AI & Machine Learning Integration',
+    description: 'Practical AI solutions for business automation, analytics, and intelligent workflows. ROI-focused implementations designed for SME budgets.',
+    price: '60.00',
+  });
+
   return (
     <>
+      <StructuredData data={serviceSchema} />
       <Header />
       <main className="pt-16">
         <ServiceHero

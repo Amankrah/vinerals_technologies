@@ -6,12 +6,19 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createServiceSchema } from '@/components/shared/StructuredData';
 import { Database } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Data Systems & Analytics | Business Intelligence | Vinerals Technologies',
   description: 'Turn your data into decisions. Database design, ETL pipelines, analytics dashboards, and business intelligence solutions for SMEs.',
 };
+
+const serviceSchema = createServiceSchema({
+  name: 'Data Systems & Analytics',
+  description: 'Database design, ETL pipelines, analytics dashboards, and business intelligence solutions. Turn your data into actionable insights.',
+  price: '55.00',
+});
 
 export default function DataSystemsPage() {
   const serviceDetails = {
@@ -52,29 +59,34 @@ export default function DataSystemsPage() {
 
   const processSteps = [
     {
-      number: '1',
+      number: 1,
       title: 'Data Audit',
+      subtitle: 'Assessment',
       description: 'We assess your current data sources, quality issues, and reporting needs.',
     },
     {
-      number: '2',
+      number: 2,
       title: 'Architecture Design',
+      subtitle: 'Planning',
       description: 'Design schema, ETL flows, and dashboard mockups aligned with your business questions.',
     },
     {
-      number: '3',
+      number: 3,
       title: 'Implementation',
+      subtitle: 'Build',
       description: 'Build pipelines, set up databases, and create dashboards with real data.',
     },
     {
-      number: '4',
+      number: 4,
       title: 'Optimization',
+      subtitle: 'Continuous',
       description: 'Monitor performance, add new metrics, and iterate based on usage.',
     },
   ];
 
   return (
     <>
+      <StructuredData data={serviceSchema} />
       <Header />
       <main className="pt-16">
         <ServiceHero

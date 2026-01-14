@@ -6,12 +6,19 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createServiceSchema } from '@/components/shared/StructuredData';
 import { Smartphone } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Mobile App Development Montreal | iOS & Android | Vinerals Technologies',
   description: 'Cross-platform mobile applications for iOS and Android. React Native, Progressive Web Apps, and native development. Montreal-based mobile app developers.',
 };
+
+const serviceSchema = createServiceSchema({
+  name: 'Mobile Application Development',
+  description: 'Cross-platform mobile applications for iOS and Android. React Native development and Progressive Web Apps for business needs.',
+  price: '50.00',
+});
 
 export default function MobileAppsPage() {
   const serviceDetails = {
@@ -52,29 +59,34 @@ export default function MobileAppsPage() {
 
   const processSteps = [
     {
-      number: '1',
+      number: 1,
       title: 'Platform Strategy',
+      subtitle: 'Strategic',
       description: 'We help you decide: cross-platform, native, or PWA based on your users and budget.',
     },
     {
-      number: '2',
+      number: 2,
       title: 'Design & Prototype',
+      subtitle: 'User-Focused',
       description: 'Mobile-specific UX/UI design with interactive prototypes for validation.',
     },
     {
-      number: '3',
+      number: 3,
       title: 'Development',
+      subtitle: 'Agile',
       description: 'Agile sprints with TestFlight/beta builds for early feedback.',
     },
     {
-      number: '4',
+      number: 4,
       title: 'Launch',
+      subtitle: 'Supported',
       description: 'App Store submission, approval support, and post-launch monitoring.',
     },
   ];
 
   return (
     <>
+      <StructuredData data={serviceSchema} />
       <Header />
       <main className="pt-16">
         <ServiceHero
