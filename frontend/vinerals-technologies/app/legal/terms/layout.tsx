@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function TermsLayout({
   children,
 }: {
-  children: React.NodeNode;
+  children: React.ReactNode;
 }) {
   return children;
 }
