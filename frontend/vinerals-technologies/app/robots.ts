@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/_next/', '/private/'],
       },
     ],
-    sitemap: 'https://vinerals.ca/sitemap.xml',
-    host: 'https://vinerals.ca',
+    sitemap: 'https://vineralstechnologies.com/sitemap.xml',
+    host: 'https://vineralstechnologies.com',
   };
 }

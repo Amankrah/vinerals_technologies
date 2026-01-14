@@ -51,11 +51,11 @@ const CTA = () => {
 
         <motion.div variants={fadeInUp}>
           <a
-            href="mailto:contact@vinerals.ca"
+            href="mailto:contact@vineralstechnologies.com"
             className="inline-flex items-center gap-2 text-white hover:text-accent-400 transition-colors"
           >
             <Mail className="w-4 h-4" />
-            Or email us at contact@vinerals.ca
+            Or email us at contact@vineralstechnologies.com
           </a>
         </motion.div>
       </motion.div>

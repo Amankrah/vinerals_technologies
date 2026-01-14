@@ -12,6 +12,9 @@ import { Smartphone } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Mobile App Development Montreal | iOS & Android | Vinerals Technologies',
   description: 'Cross-platform mobile applications for iOS and Android. React Native, Progressive Web Apps, and native development. Montreal-based mobile app developers.',
+  alternates: {
+    canonical: 'https://vineralstechnologies.com/services/mobile-apps',
+  },
 };
 
 const serviceSchema = createServiceSchema({

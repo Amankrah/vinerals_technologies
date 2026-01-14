@@ -12,6 +12,9 @@ import { Database } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Data Systems & Analytics | Business Intelligence | Vinerals Technologies',
   description: 'Turn your data into decisions. Database design, ETL pipelines, analytics dashboards, and business intelligence solutions for SMEs.',
+  alternates: {
+    canonical: 'https://vineralstechnologies.com/services/data-systems',
+  },
 };
 
 const serviceSchema = createServiceSchema({

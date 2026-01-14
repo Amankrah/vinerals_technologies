@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next';
+import { blogPosts } from '@/content/blog-posts';
+import { projects } from '@/content/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vinerals.ca';
+  const baseUrl = 'https://vineralstechnologies.com';
   const currentDate = new Date();
 
   // Static pages
@@ -166,15 +168,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // TODO: Add dynamic pages (blog posts, case studies) when CMS is integrated
-  // Example:
-  // const blogPosts = await getBlogPosts();
-  // const blogPages = blogPosts.map((post) => ({
-  //   url: `${baseUrl}/resources/${post.slug}`,
-  //   lastModified: post.updatedAt,
-  //   changeFrequency: 'monthly' as const,
-  //   priority: 0.6,
-  // }));
+  // Dynamic blog posts
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/resources/${post.slug}`,
+    lastModified: new Date(post.publishedDate),
+    changeFrequency: 'monthly' as const,
+    priority: post.featured ? 0.7 : 0.6,
+  }));
 
-  return staticPages;
+  // Dynamic project pages
+  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${baseUrl}/work/${project.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages, ...projectPages];
 }

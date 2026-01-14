@@ -255,7 +255,7 @@ export default function PartnersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:partnerships@vinerals.ca"
+                href="mailto:contact@vineralstechnologies.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
               >
                 Email Partnerships Team

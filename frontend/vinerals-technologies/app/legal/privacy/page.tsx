@@ -179,8 +179,8 @@ export default function PrivacyPage() {
               </ul>
               <p className="text-gray-700 leading-relaxed">
                 To exercise these rights, please contact us at{' '}
-                <a href="mailto:contact@vinerals.ca" className="text-primary-700 hover:underline font-semibold">
-                  contact@vinerals.ca
+                <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:underline font-semibold">
+                  contact@vineralstechnologies.com
                 </a>
               </p>
             </div>
@@ -244,14 +244,14 @@ export default function PrivacyPage() {
                 </p>
                 <p className="text-gray-700 mb-2">
                   Email:{' '}
-                  <a href="mailto:contact@vinerals.ca" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline">
-                    contact@vinerals.ca
+                  <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline">
+                    contact@vineralstechnologies.com
                   </a>
                 </p>
                 <p className="text-gray-700 mb-2">
                   General inquiries:{' '}
-                  <a href="mailto:contact@vinerals.ca" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline">
-                    contact@vinerals.ca
+                  <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline">
+                    contact@vineralstechnologies.com
                   </a>
                 </p>
                 <p className="text-gray-700">

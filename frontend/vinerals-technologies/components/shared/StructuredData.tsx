@@ -22,8 +22,8 @@ export const organizationSchema = {
   '@type': 'Organization',
   name: 'Vinerals Technologies',
   alternateName: 'Vinerals Tech',
-  url: 'https://vinerals.ca',
-  logo: 'https://vinerals.ca/logo.png',
+  url: 'https://vineralstechnologies.com',
+  logo: 'https://vineralstechnologies.com/logo.png',
   description:
     'Montreal-based solidarity cooperative building affordable software and AI solutions for SMEs.',
   foundingDate: '2025',
@@ -63,7 +63,7 @@ export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Vinerals Technologies',
-  image: 'https://vinerals.ca/office.jpg',
+  image: 'https://vineralstechnologies.com/office.jpg',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Montreal',
@@ -77,7 +77,7 @@ export const localBusinessSchema = {
     latitude: 45.5017,
     longitude: -73.5673,
   },
-  url: 'https://vinerals.ca',
+  url: 'https://vineralstechnologies.com',
   telephone: '+1 (514) 961-9754',
   priceRange: '$$',
   openingHoursSpecification: {
@@ -147,7 +147,7 @@ export function createArticleSchema(article: {
       name: 'Vinerals Technologies',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://vinerals.ca/logo.png',
+        url: 'https://vineralstechnologies.com/logo.png',
       },
     },
     datePublished: article.datePublished,

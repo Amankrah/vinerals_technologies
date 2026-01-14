@@ -6,8 +6,8 @@ export const SITE_CONFIG = {
   tagline: 'AI & Software for Growing Businesses',
   description:
     'Montreal-based social enterprise building custom software and AI solutions for small and medium businesses. Enterprise quality at accessible prices.',
-  url: 'https://vinerals.ca',
-  email: 'hello@vinerals.ca',
+  url: 'https://vineralstechnologies.com',
+  email: 'contact@vineralstechnologies.com',
   phone: '+1 (514) 961-9754',
   location: 'Montreal, Quebec, Canada',
   foundingYear: 2025,

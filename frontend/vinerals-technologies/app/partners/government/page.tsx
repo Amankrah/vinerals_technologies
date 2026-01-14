@@ -399,8 +399,8 @@ export default function GovernmentPage() {
               <div className="space-y-2 text-gray-700">
                 <p>
                   <strong>Email:</strong>{' '}
-                  <a href="mailto:contact@vinerals.ca" className="text-primary-700 hover:text-primary-800">
-                    contact@vinerals.ca
+                  <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:text-primary-800">
+                    contact@vineralstechnologies.com
                   </a>
                 </p>
                 <p className="text-sm text-gray-600 mt-2">
@@ -412,7 +412,7 @@ export default function GovernmentPage() {
               </div>
             </div>
             <a
-              href="mailto:contact@vinerals.ca"
+              href="mailto:contact@vineralstechnologies.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
             >
               Contact Government Relations

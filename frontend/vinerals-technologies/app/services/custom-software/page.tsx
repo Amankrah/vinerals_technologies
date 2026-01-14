@@ -6,12 +6,15 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
-import StructuredData, { createServiceSchema } from '@/components/shared/StructuredData';
+import StructuredData, { createServiceSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Code2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Custom Software Development Montreal | Vinerals Technologies',
   description: 'Bespoke web applications and business software built for your exact needs. Full-stack development from $40/hour. Montreal-based, serving all of Canada.',
+  alternates: {
+    canonical: 'https://vineralstechnologies.com/services/custom-software',
+  },
 };
 
 export default function CustomSoftwarePage() {
@@ -84,9 +87,16 @@ export default function CustomSoftwarePage() {
     price: '40.00',
   });
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Services', url: 'https://vineralstechnologies.com/services' },
+    { name: 'Custom Software Development', url: 'https://vineralstechnologies.com/services/custom-software' },
+  ]);
+
   return (
     <>
       <StructuredData data={serviceSchema} />
+      <StructuredData data={breadcrumbSchema} />
       <Header />
       <main className="pt-16">
         <ServiceHero

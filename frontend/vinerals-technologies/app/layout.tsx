@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vinerals.ca'),
+  metadataBase: new URL('https://vineralstechnologies.com'),
   title: {
     default: 'Vinerals Technologies | Affordable AI & Software for SMEs',
     template: '%s | Vinerals Technologies'
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_CA',
     alternateLocale: 'fr_CA',
-    url: 'https://vinerals.ca',
+    url: 'https://vineralstechnologies.com',
     siteName: 'Vinerals Technologies',
     title: 'Vinerals Technologies | Affordable AI & Software for SMEs',
     description: 'Montreal-based social enterprise building custom software and AI solutions for small and medium businesses.',

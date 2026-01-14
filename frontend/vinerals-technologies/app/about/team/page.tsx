@@ -30,7 +30,7 @@ export default function TeamPage() {
       funFact: 'Built a comprehensive pea protein analysis platform with technical optimization, economic feasibility modeling, and environmental impact assessment.',
       linkedin: 'https://www.linkedin.com/in/eakwofie/',
       github: 'https://github.com/Amankrah',
-      email: 'contact@vinerals.ca',
+      email: 'contact@vineralstechnologies.com',
     },
   ];
 
@@ -271,11 +271,11 @@ export default function TeamPage() {
                 </li>
               </ul>
               <a
-                href="mailto:contact@vinerals.ca"
+                href="mailto:contact@vineralstechnologies.com"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                contact@vinerals.ca
+                contact@vineralstechnologies.com
               </a>
             </motion.div>
           </motion.div>

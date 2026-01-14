@@ -363,7 +363,7 @@ export default function FundersPage() {
               </ul>
             </div>
             <a
-              href="mailto:contact@vinerals.ca"
+              href="mailto:contact@vineralstechnologies.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
             >
               Contact Funding Team

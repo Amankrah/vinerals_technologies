@@ -42,7 +42,7 @@ export default function ContactPage() {
               </h2>
 
               <a
-                href={`mailto:contact@vinerals.ca?subject=${encodeURIComponent('Project Inquiry - Vinerals Technologies')}&body=${encodeURIComponent(`Hello Vinerals Technologies Team,
+                href={`mailto:contact@vineralstechnologies.com?subject=${encodeURIComponent('Project Inquiry - Vinerals Technologies')}&body=${encodeURIComponent(`Hello Vinerals Technologies Team,
 
 I am reaching out to discuss a potential project opportunity.
 
@@ -65,14 +65,14 @@ PROJECT DESCRIPTION
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-This inquiry was submitted via https://vinerals.ca/contact
+This inquiry was submitted via https://vineralstechnologies.com/contact
 
 I look forward to hearing from you.
 
 Best regards`)}`}
                 className="text-2xl text-primary-700 hover:text-primary-800 hover:underline font-medium"
               >
-                contact@vinerals.ca
+                contact@vineralstechnologies.com
               </a>
             </div>
 

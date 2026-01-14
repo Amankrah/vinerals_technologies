@@ -134,7 +134,7 @@ Create a `.env.local` file in the root directory (see `.env.example`):
 
 ```bash
 # Required for production
-NEXT_PUBLIC_SITE_URL=https://vinerals.ca
+NEXT_PUBLIC_SITE_URL=https://vineralstechnologies.com
 
 # Contact form (optional - if using Resend or similar)
 RESEND_API_KEY=your_resend_api_key
@@ -242,8 +242,8 @@ None at the moment. Report issues internally to the development team.
 
 ## 📧 Contact
 
-- **Website:** [vinerals.ca](https://vinerals.ca) (coming soon)
-- **Email:** hello@vinerals.tech
+- **Website:** [vineralstechnologies.com](https://vineralstechnologies.com) (coming soon)
+- **Email:** contact@vineralstechnologies.com
 - **Phone:** +1 (514) 961-9754
 - **Location:** Montreal, Quebec, Canada
 

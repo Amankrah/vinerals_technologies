@@ -12,6 +12,9 @@ import { Brain, AlertCircle } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'AI Integration for Small Business | Practical AI Solutions | Vinerals Technologies',
   description: 'Implement AI in your business without the hype. Automation, analytics, LLM integration, and machine learning solutions designed for SME budgets and real ROI.',
+  alternates: {
+    canonical: 'https://vineralstechnologies.com/services/ai-integration',
+  },
 };
 
 export default function AIIntegrationPage() {
