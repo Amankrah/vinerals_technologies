@@ -1,18 +1,45 @@
-import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CTA from '@/components/sections/CTA';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Users, Network, Zap, Target, CheckCircle2 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Consortium Partnership | Collective Technology Solutions | Vinerals Technologies',
-  description: 'Your technology partner for collective impact. Collaborative development capacity for industry associations, networks, and social economy organizations.',
-};
+const CONSORTIUMS_FAQS = [
+  {
+    question: 'What types of consortiums and networks does Vinerals Technologies partner with?',
+    answer: 'We partner with technology consortiums, innovation clusters, industry associations (healthcare, food systems, cleantech), social economy networks, cooperative federations, research networks, and sector-specific alliances. Our cooperative structure makes us natural partners for collaborative, mission-aligned ecosystems.',
+  },
+  {
+    question: 'How can consortium members benefit from partnership with Vinerals Technologies?',
+    answer: 'Consortium members gain access to affordable technology development, shared cooperative expertise, collaborative learning opportunities, joint innovation projects, and strengthened ecosystem capacity. We offer consortium-wide services, member discounts, knowledge sharing, and collective technology infrastructure development.',
+  },
+  {
+    question: 'Can Vinerals Technologies contribute to consortium research and innovation projects?',
+    answer: 'Yes. We actively participate in collaborative research on technology adoption, cooperative business models, sector-specific innovation, and social enterprise development. We contribute technical expertise, real-world implementation experience, and our networks of clients and partners across healthcare, food, sustainability, and social sectors.',
+  },
+  {
+    question: 'What is your approach to knowledge sharing within consortium partnerships?',
+    answer: 'We believe in open knowledge sharing. Through consortiums, we share learnings on technology implementation, cooperative governance, impact measurement, sector-specific challenges, and successful approaches. We participate in working groups, present at events, contribute to shared resources, and mentor emerging organizations.',
+  },
+  {
+    question: 'How do consortium partnerships align with cooperative values?',
+    answer: 'Consortiums embody cooperative principles: collaboration over competition, shared resources, democratic participation, and collective benefit. As a solidarity cooperative, we prioritize ecosystem strengthening over individual gain. Consortium partnerships allow us to build collective capacity, support peer organizations, and advance shared mission objectives.',
+  },
+];
 
 export default function ConsortiumsPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Partners', url: 'https://vineralstechnologies.com/partners' },
+    { name: 'Consortiums', url: 'https://vineralstechnologies.com/partners/consortiums' },
+  ]);
+  const faqSchema = createFAQSchema(CONSORTIUMS_FAQS);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         {/* Hero Section */}

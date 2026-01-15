@@ -1,20 +1,46 @@
-import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import PartnersHero from '@/components/sections/PartnersHero';
 import CTA from '@/components/sections/CTA';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Handshake, Coins, Building, Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Partner With Us | For Funders, Government & Consortiums | Vinerals Technologies',
-  description: 'Partnership opportunities with Vinerals Technologies solidarity cooperative. Supporting Quebec\'s digital transformation and social economy through accessible technology services.',
-};
+const PARTNERS_FAQS = [
+  {
+    question: 'What types of partnerships does Vinerals Technologies offer?',
+    answer: 'We partner with funders and foundations (CIHR, ISED, SDTC, MAPAQ), government agencies (federal, provincial, municipal), and technology consortiums. Our cooperative model enables mission-aligned partnerships focused on accessible technology, social innovation, and measurable impact.',
+  },
+  {
+    question: 'How does partnering with a solidarity cooperative differ from traditional vendors?',
+    answer: 'As a solidarity cooperative, we prioritize social impact alongside financial sustainability. Partnerships support job creation, accessible technology development, and community benefit. We offer transparent governance, democratic decision-making, and alignment with social economy objectives.',
+  },
+  {
+    question: 'What reporting and impact measurement do you provide to partners?',
+    answer: 'We provide comprehensive impact reporting including jobs created, technology accessibility metrics, social enterprise outcomes, environmental impact (for cleantech), and program-specific KPIs. Reports align with funder requirements and social economy evaluation frameworks.',
+  },
+  {
+    question: 'Can government agencies procure services from your cooperative?',
+    answer: 'Yes. As a registered solidarity cooperative, we are eligible for cooperative procurement programs, social enterprise procurement policies, and standard government technology contracts. We support federal, provincial, and municipal digital service needs.',
+  },
+  {
+    question: 'How do I explore partnership opportunities with Vinerals Technologies?',
+    answer: 'Contact us to discuss partnership opportunities. We work with organizations aligned with our mission of accessible technology and social innovation. Whether you are a funder, government agency, or consortium, we welcome mission-aligned collaborations.',
+  },
+];
 
 export default function PartnersPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Partners', url: 'https://vineralstechnologies.com/partners' },
+  ]);
+  const faqSchema = createFAQSchema(PARTNERS_FAQS);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <PartnersHero

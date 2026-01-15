@@ -1,0 +1,65 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="2" fill="#14b8a6" opacity="0.3"/>
+      <circle cx="50" cy="30" r="2" fill="#14b8a6" opacity="0.3"/>
+      <circle cx="80" cy="60" r="2" fill="#14b8a6" opacity="0.3"/>
+      <line x1="10" y1="10" x2="50" y2="30" stroke="#14b8a6" stroke-width="0.5" opacity="0.2"/>
+      <line x1="50" y1="30" x2="80" y2="60" stroke="#14b8a6" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  <rect width="1200" height="630" fill="url(#circuit)"/>
+
+  <!-- Logo/V Shape -->
+  <g transform="translate(100, 180)">
+    <path
+      d="M0 0 L80 200 L160 0"
+      stroke="#ffffff"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <!-- Dollar/Coins icon -->
+    <circle cx="60" cy="120" r="15" fill="#14b8a6"/>
+    <circle cx="100" cy="120" r="15" fill="#14b8a6" opacity="0.7"/>
+  </g>
+
+  <!-- Main Title -->
+  <text x="350" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff">
+    For Funders &amp;
+  </text>
+  <text x="350" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff">
+    Foundations
+  </text>
+
+  <!-- Tagline -->
+  <text x="350" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#dbeafe">
+    Measurable Social Impact Technology
+  </text>
+
+  <!-- Key Features -->
+  <g transform="translate(350, 410)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ CIHR • ISED • SDTC • MAPAQ
+    </text>
+    <text x="0" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Accessible technology funding partner
+    </text>
+    <text x="0" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Comprehensive impact reporting
+    </text>
+  </g>
+
+  <!-- Bottom -->
+  <text x="350" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#bfdbfe">
+    Vinerals Technologies • Social Innovation Partner
+  </text>
+</svg>

@@ -18,6 +18,10 @@ const images = [
   'og-food-systems',
   'og-sustainability',
   'og-non-profits',
+  'og-partners',
+  'og-partners-funders',
+  'og-partners-government',
+  'og-partners-consortiums',
 ];
 
 async function convertSvgToJpg() {

@@ -1,18 +1,45 @@
-import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CTA from '@/components/sections/CTA';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Coins, TrendingUp, Target, DollarSign, CheckCircle2 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Investment Opportunity | Social Finance | Vinerals Technologies',
-  description: 'Patient capital opportunity in Quebec&apos;s social economy. Invest in accessible technology infrastructure with measurable social returns and sustainable business model.',
-};
+const FUNDERS_FAQS = [
+  {
+    question: 'Which funding programs does Vinerals Technologies participate in?',
+    answer: 'We work with CIHR (Canadian Institutes of Health Research) for digital health technology, ISED (Innovation, Science and Economic Development) for innovation programs, SDTC (Sustainable Development Technology Canada) for cleantech, MAPAQ for agtech initiatives, Community Futures for social enterprise, and various foundation grants focused on accessible technology and social innovation.',
+  },
+  {
+    question: 'How do you ensure accountability and impact measurement for funded projects?',
+    answer: 'We provide comprehensive reporting aligned with funder requirements: quantitative metrics (jobs created, clients served, revenue generated), qualitative outcomes (technology accessibility achieved, community impact), financial transparency, and program-specific KPIs. All projects include defined milestones, deliverables, and evaluation frameworks.',
+  },
+  {
+    question: 'What makes Vinerals Technologies a good funding partner for social innovation programs?',
+    answer: 'As a solidarity cooperative, social impact is embedded in our governance structure. We create quality jobs, prioritize accessible technology, serve mission-driven clients, and reinvest surpluses into capacity building. Our cooperative model ensures long-term sustainability and community benefit beyond individual projects.',
+  },
+  {
+    question: 'Can foundations and private funders support specific industry verticals?',
+    answer: 'Yes. Funders can direct support toward specific sectors: healthcare technology (patient portals, telehealth), food systems (traceability, farm management), sustainability (carbon tracking, ESG reporting), or non-profit technology (donor management, impact measurement). Sector-specific funding aligns with our industry expertise.',
+  },
+  {
+    question: 'What is the typical engagement model for funder partnerships?',
+    answer: 'Funder partnerships typically involve: project-based grants for specific technology development, capacity-building support for cooperative infrastructure, collaborative funding with other partners, or multi-year programmatic support. We work with funders to structure engagements that align with their impact goals and reporting requirements.',
+  },
+];
 
 export default function FundersPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Partners', url: 'https://vineralstechnologies.com/partners' },
+    { name: 'For Funders', url: 'https://vineralstechnologies.com/partners/funders' },
+  ]);
+  const faqSchema = createFAQSchema(FUNDERS_FAQS);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         {/* Hero Section */}

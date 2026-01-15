@@ -1,18 +1,45 @@
-import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CTA from '@/components/sections/CTA';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Building, Target, Briefcase, TrendingUp, Users, CheckCircle2 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Government Partnership | Digital Economy Alignment | Vinerals Technologies',
-  description: 'Supporting Quebec\'s digital transformation and SME ecosystem. Explore partnership opportunities with Vinerals Technologies solidarity cooperative.',
-};
+const GOVERNMENT_FAQS = [
+  {
+    question: 'How does Vinerals Technologies support government digital transformation objectives?',
+    answer: 'We accelerate digital transformation by making enterprise-quality technology accessible to SMEs. Through subsidized programs, we help small businesses adopt AI, cloud, and modern software - directly advancing government priorities for economic competitiveness, innovation adoption, and digital skills development.',
+  },
+  {
+    question: 'What makes a solidarity cooperative model beneficial for government partnerships?',
+    answer: 'Our cooperative structure ensures reinvestment in communities, democratic governance, quality job creation, and alignment with social economy priorities. This model provides accountability, transparency, and measurable social impact alongside technology delivery - perfect alignment with government social procurement and economic development goals.',
+  },
+  {
+    question: 'Can government agencies procure technology services from your cooperative?',
+    answer: 'Yes. As a registered solidarity cooperative, we are eligible for social procurement programs, cooperative vendor status, and standard government technology contracts. We serve federal, provincial, and municipal agencies for digital services, innovation pilots, and technology implementation across priority sectors.',
+  },
+  {
+    question: 'What reporting do you provide for government partnership accountability?',
+    answer: 'We provide comprehensive impact metrics: SMEs served by region/sector, jobs created (FTE, wages, benefits), cost savings vs market rates, technology adoption outcomes, revenue reinvested in social economy, and sector-specific results (healthcare, environment, food systems). Reports align with government evaluation frameworks.',
+  },
+  {
+    question: 'How can government programs refer SMEs to Vinerals Technologies?',
+    answer: 'Government programs can list us as approved technology implementation partners for grant recipients, refer SMEs needing affordable tech services, include us in vendor directories for social procurement, or collaborate on sector-specific innovation initiatives. We complement existing SME support programs with accessible technology delivery.',
+  },
+];
 
 export default function GovernmentPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Partners', url: 'https://vineralstechnologies.com/partners' },
+    { name: 'For Government', url: 'https://vineralstechnologies.com/partners/government' },
+  ]);
+  const faqSchema = createFAQSchema(GOVERNMENT_FAQS);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
