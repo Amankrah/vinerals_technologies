@@ -41,8 +41,8 @@ export default function AboutPage() {
       <main className="pt-16">
         <AboutHero
           badge="About Vinerals Technologies"
-          title="AI & Software for Growing Businesses"
-          highlightedWord="Growing Businesses"
+          title="A Mission-Driven Cooperative"
+          highlightedWord="Mission-Driven"
           description="We are a Montreal-based solidarity cooperative making enterprise-quality software accessible to small and medium businesses through the social economy model."
           icon={<Heart className="w-8 h-8" />}
           primaryCTA={{ label: 'Learn More', href: '#who-we-are' }}

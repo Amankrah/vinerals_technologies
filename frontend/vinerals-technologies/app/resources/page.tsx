@@ -3,7 +3,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
-import ServiceHero from '@/components/sections/ServiceHero';
+import ResourcesHero from '@/components/sections/ResourcesHero';
 import CTA from '@/components/sections/CTA';
 import { BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -14,11 +14,14 @@ export default function ResourcesPage() {
     <>
       <Header />
       <main className="pt-16">
-        <ServiceHero
+        <ResourcesHero
           badge="Resources & Learning"
           title="Knowledge for SMEs & Non-Profits"
+          highlightedWord="for SMEs"
           description="Practical guides, honest insights, and real-world advice on custom software development, AI integration, and digital transformation."
-          icon={<BookOpen className="w-16 h-16" />}
+          icon={<BookOpen className="w-8 h-8" />}
+          primaryCTA={{ label: 'Coming Soon', href: '#coming-soon' }}
+          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
         />
 
         {/* Coming Soon Section */}
