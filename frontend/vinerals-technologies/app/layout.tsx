@@ -17,11 +17,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://vineralstechnologies.com'),
   title: {
-    default: 'Vinerals Technologies | Affordable AI & Software for SMEs',
+    default: 'Vinerals Technologies | Enterprise AI & Software Made Accessible',
     template: '%s | Vinerals Technologies'
   },
-  description: 'Montreal-based social enterprise building custom software and AI solutions for small and medium businesses. Enterprise quality at accessible prices.',
-  keywords: ['software development montreal', 'ai integration sme', 'custom software quebec', 'affordable software development', 'social enterprise technology'],
+  description: 'Montreal-based solidarity cooperative building custom software and AI solutions for small and medium businesses. Mission-aligned funding makes quality development accessible.',
+  keywords: ['software development montreal', 'ai integration sme', 'custom software quebec', 'subsidized software development', 'social enterprise technology', 'solidarity cooperative'],
   authors: [{ name: 'Vinerals Technologies' }],
   creator: 'Vinerals Technologies',
   publisher: 'Vinerals Technologies',
@@ -42,21 +42,21 @@ export const metadata: Metadata = {
     alternateLocale: 'fr_CA',
     url: 'https://vineralstechnologies.com',
     siteName: 'Vinerals Technologies',
-    title: 'Vinerals Technologies | Affordable AI & Software for SMEs',
-    description: 'Montreal-based social enterprise building custom software and AI solutions for small and medium businesses.',
+    title: 'Vinerals Technologies | Enterprise AI & Software Made Accessible',
+    description: 'Montreal-based solidarity cooperative building custom software and AI solutions. Mission-aligned funding makes quality development accessible to growing businesses.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Vinerals Technologies - AI & Software for Growing Businesses',
+        alt: 'Vinerals Technologies - Enterprise AI & Software Made Accessible',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vinerals Technologies | Affordable AI & Software for SMEs',
-    description: 'Montreal-based social enterprise building custom software and AI solutions for small and medium businesses.',
+    title: 'Vinerals Technologies | Enterprise AI & Software Made Accessible',
+    description: 'Montreal-based solidarity cooperative building custom software and AI solutions. Mission-aligned funding makes quality development accessible.',
     images: ['/og-image.jpg'],
   },
   icons: {
