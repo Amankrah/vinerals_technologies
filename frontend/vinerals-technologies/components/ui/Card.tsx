@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -50,6 +51,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       <Link
         href={href}
         className="inline-flex items-center gap-2 text-primary-700 font-medium hover:gap-3 transition-all"
+        title={`Learn more about ${title}`}
       >
         Learn more <ArrowRight className="w-4 h-4" />
       </Link>
@@ -131,9 +133,11 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </blockquote>
       <div className="flex items-center gap-4">
         {author.avatar ? (
-          <img
+          <Image
             src={author.avatar}
             alt={author.name}
+            width={48}
+            height={48}
             className="w-12 h-12 rounded-full object-cover"
           />
         ) : (

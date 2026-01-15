@@ -218,7 +218,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
-            <div className="text-slate-500 text-sm order-2 md:order-1">
+            <div className="text-slate-300 text-sm order-2 md:order-1">
               © {currentYear} {SITE_CONFIG.name}. All rights reserved.
             </div>
 
@@ -257,13 +257,13 @@ const Footer = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-slate-500 hover:text-white transition-colors"
+                  className="text-slate-300 hover:text-white transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
-              <span className="text-slate-600">|</span>
-              <span className="text-slate-500 flex items-center gap-1">
+              <span className="text-slate-400">|</span>
+              <span className="text-slate-300 flex items-center gap-1">
                 Made with <Heart className="w-3 h-3 text-red-400 fill-red-400" /> in {SITE_CONFIG.location.split(',')[0]}
               </span>
             </div>
