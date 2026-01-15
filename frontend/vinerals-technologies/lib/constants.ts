@@ -166,8 +166,8 @@ export const INDUSTRIES = [
 
 export const TRUST_INDICATORS = [
   {
-    label: '50-70% below agency rates',
-    value: '50-70%',
+    label: 'Subsidized programs available',
+    value: 'Funded',
   },
   {
     label: '3-week average kickoff',
@@ -181,19 +181,19 @@ export const TRUST_INDICATORS = [
 
 export const STATS = [
   {
-    value: '$40-100/hr',
-    label: 'Our rates',
-    description: 'Transparent, accessible pricing',
+    value: '100%',
+    label: 'Code ownership',
+    description: 'You own everything we build—no vendor lock-in',
   },
   {
-    value: '50-70%',
-    label: 'Below market',
-    description: 'Compared to traditional agencies',
+    value: 'Funded',
+    label: 'Accessibility programs',
+    description: 'Mission-aligned funding for qualifying businesses',
   },
   {
-    value: '20+',
-    label: 'Projects delivered',
-    description: 'Across multiple industries',
+    value: 'Enterprise',
+    label: 'Quality engineering',
+    description: 'Same caliber as larger organizations receive',
   },
 ] as const;
 

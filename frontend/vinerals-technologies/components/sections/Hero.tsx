@@ -271,8 +271,9 @@ const Hero = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
           >
             <span className="text-gray-900">AI & Software for </span>
+            <br />
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 bg-clip-text text-transparent">
-              Growing Businesses
+            Canadian SMEs
             </span>
           </motion.h1>
 
@@ -281,7 +282,7 @@ const Hero = () => {
             variants={heroItemVariants}
             className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed"
           >
-            Custom software and AI for SMEs — enterprise quality, accessible prices.
+            Enterprise-quality software and AI solutions, made accessible through mission-aligned funding for growing Canadian businesses.
           </motion.p>
 
           {/* CTAs */}
