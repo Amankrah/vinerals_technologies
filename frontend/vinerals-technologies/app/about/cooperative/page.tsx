@@ -215,21 +215,22 @@ export default function CooperativePage() {
                 </div>
                 <p className="text-sm text-gray-700">
                   Traditional corporations are legally required to maximize shareholder value.
-                  As a cooperative, we can prioritize our mission - making technology accessible
-                  - over profit extraction.
+                  As a cooperative, we can prioritize our mission — making technology accessible
+                  — over profit extraction. This is not about being cheaper; it&apos;s about
+                  reinvesting in our purpose rather than external shareholders.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="flex gap-3 mb-3">
                   <Scale className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Fair Pricing</h3>
+                  <h3 className="font-bold text-gray-900">Funded Accessibility, Not Discount Rates</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  Without pressure to deliver 30-40% margins to investors, we can reinvest
-                  surpluses into our mission. Combined with government funding and impact
-                  investment, we can offer subsidized programs that make quality development
-                  accessible to growing businesses.
+                  We don&apos;t undercut professional rates. Quality software engineering costs what
+                  it costs ($100-200/hr CAD blended in Montreal). Instead, we&apos;ve secured government
+                  subsidies, grants, and impact funding to supplement project budgets for qualifying
+                  SMEs — bridging the accessibility gap without compromising quality or wages.
                 </p>
               </motion.div>
 
@@ -279,28 +280,36 @@ export default function CooperativePage() {
               <motion.ul variants={staggerContainer} className="space-y-3">
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Subsidized programs available:</strong> Without investor profit margins,
-                  we reinvest surpluses into accessibility programs backed by government and impact funding</span>
+                  <span><strong>Access to enterprise-quality work:</strong> Same senior developers and
+                  professional standards as Spiria, Stradigi AI, or Konverge — made accessible through
+                  mission-aligned funding, not by cutting corners</span>
+                </motion.li>
+                <motion.li variants={fadeInUp} className="flex items-start gap-3">
+                  <span className="text-secondary-600 mt-1">✓</span>
+                  <span><strong>Knowledge gap bridging:</strong> We start by helping you understand what&apos;s
+                  possible with AI and technology — before any code. This strategic guidance alone prevents
+                  costly mistakes</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
                   <span><strong>Aligned incentives:</strong> We succeed when you succeed, not when
-                  we maximize billable hours</span>
+                  we maximize billable hours or scope creep</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
                   <span><strong>Stable team:</strong> Worker ownership means low turnover. The
-                  developers who start your project finish it</span>
+                  developers who start your project finish it — no junior devs learning on your dime</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
                   <span><strong>Mission-aligned work:</strong> We choose clients whose missions we
-                  believe in, leading to better outcomes</span>
+                  believe in and turn down projects that don&apos;t align with our values, leading to
+                  better outcomes for everyone</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Transparent governance:</strong> You can see how decisions are made
-                  and trust there are no hidden agendas</span>
+                  <span><strong>True partnership:</strong> No vendor lock-in, no proprietary systems.
+                  You own 100% of the code and can take it anywhere</span>
                 </motion.li>
               </motion.ul>
             </motion.div>

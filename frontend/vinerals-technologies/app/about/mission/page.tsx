@@ -34,19 +34,31 @@ export default function MissionPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Our Mission
+              Our Mission: Unlocking Technological Transformation for Quebec SMEs
             </motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <p className="text-xl text-gray-900 font-medium leading-relaxed mb-6">
-                We build high-quality software and AI solutions for small and medium enterprises
-                who deserve the same technology as large corporations - at prices they can afford.
+                We exist to close Canada&apos;s digital divide by making enterprise-quality software and AI
+                solutions accessible to small and medium enterprises — especially in Quebec, where we&apos;re
+                uniquely positioned within the social economy ecosystem.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>Here&apos;s the truth:</strong> Quality software engineering costs what it costs. Professional
+                development in Montreal typically runs $100-200/hr CAD blended rates, with projects ranging from
+                $30,000 to $250,000+. That&apos;s not agencies overcharging — that&apos;s what skilled developers,
+                proper architecture, security, and testing require.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>We&apos;re not claiming to do it cheaper.</strong> Instead, we&apos;ve secured subsidies,
+                grants, and donor funding specifically to reduce barriers for SMEs. We&apos;re a bridge program —
+                making existing expertise accessible, not undercutting professionals.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                By operating as a solidarity cooperative rather than a traditional for-profit agency,
-                we can reinvest in our mission instead of maximizing shareholder returns. Combined with
-                mission-aligned funding from government programs and impact funders, we can offer
-                subsidized programs that make enterprise-quality development accessible while maintaining
-                fair wages and high standards.
+                The real value? <strong>We start by helping you understand what&apos;s even possible</strong> with
+                AI and technology — before a single line of code. This knowledge gap is often more critical than
+                the cost barrier. By operating as a solidarity cooperative with mission-aligned funding, we can
+                deliver the same caliber of work that larger organizations receive, while maintaining fair wages
+                and high standards.
               </p>
             </motion.div>
           </motion.div>
@@ -90,35 +102,40 @@ export default function MissionPage() {
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-6">
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">The Problem We Saw</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">The Three Barriers SMEs Face</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Quality custom software requires significant investment—often $50,000-150,000+ for
-                  basic applications. For most growing businesses, this level of investment is simply
-                  out of reach. This creates a two-tier economy where large corporations get efficiency
-                  and innovation, while SMEs are stuck with inadequate off-the-shelf solutions or manual
-                  processes.
+                  <strong>1. The Knowledge Gap:</strong> AI is transforming industries, but what does that actually
+                  mean for your business? Which solutions are real and which are hype? Without a technical partner,
+                  it&apos;s impossible to tell.<br /><br />
+                  <strong>2. The Cost Reality:</strong> Quality custom software costs $30,000-$250,000+ CAD. That&apos;s
+                  not agencies overcharging — that&apos;s what quality engineering requires. For most SMEs, this
+                  investment is simply out of reach.<br /><br />
+                  <strong>3. The Expertise Gap:</strong> Experienced developers work at funded startups or enterprise
+                  companies. SMEs often end up with junior freelancers or distant offshore teams who don&apos;t
+                  understand their context.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">The Gap in the Market</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">Why Existing Solutions Don&apos;t Work</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  We noticed that mission-driven organizations - healthcare clinics, sustainable food
-                  producers, environmental groups, social enterprises - needed custom technology the
-                  most but could afford it the least. Meanwhile, skilled developers wanted to work on
-                  meaningful projects but were stuck building vanity apps for startups or optimizing
-                  ad revenue for tech giants.
+                  Traditional Montreal agencies like Spiria, Stradigi AI, Konverge, and SDLC Corp deliver excellent
+                  work — but at market rates designed for mid-market and enterprise clients. Offshore options cut
+                  costs but sacrifice quality, communication, and understanding of Canadian business context.
+                  Off-the-shelf SaaS tools force compromises that rarely fit real business needs. Mission-driven
+                  organizations — healthcare clinics, sustainable food producers, social enterprises — need custom
+                  technology the most but can afford it the least.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">Our Solution</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">Our Solution: A Bridge Program</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  By structuring as a solidarity cooperative, we eliminate the pressure to maximize
-                  profits for external investors. We can charge what is fair rather than what the
-                  market will bear. We can work with clients who are mission-aligned rather than
-                  chasing the highest bidder. And we can build technology that genuinely solves
-                  problems rather than just checking feature boxes.
+                  We&apos;re not a discount agency — we&apos;re a publicly-supported technology adoption program.
+                  By structuring as a solidarity cooperative and securing government subsidies, grants, and impact
+                  funding, we can deliver the same enterprise-quality work at terms designed for growing businesses.
+                  We start with what you need to know, help you understand what&apos;s possible, and deliver solutions
+                  with the same senior talent — without the investor pressure to maximize extraction.
                 </p>
               </motion.div>
             </motion.div>

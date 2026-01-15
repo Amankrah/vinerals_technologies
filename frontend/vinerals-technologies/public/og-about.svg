@@ -1,0 +1,65 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <!-- Cooperative pattern -->
+    <pattern id="cooperative" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="40" cy="40" r="15" fill="#14b8a6" opacity="0.15"/>
+      <circle cx="20" cy="20" r="8" fill="#14b8a6" opacity="0.1"/>
+      <circle cx="60" cy="20" r="8" fill="#14b8a6" opacity="0.1"/>
+      <circle cx="20" cy="60" r="8" fill="#14b8a6" opacity="0.1"/>
+      <circle cx="60" cy="60" r="8" fill="#14b8a6" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  <rect width="1200" height="630" fill="url(#cooperative)"/>
+
+  <!-- Logo/V Shape -->
+  <g transform="translate(100, 180)">
+    <path
+      d="M0 0 L80 200 L160 0"
+      stroke="#ffffff"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <!-- Heart icon for mission-driven -->
+    <g transform="translate(65, 120)">
+      <path d="M15 8 C15 4 10 2 7.5 5 C5 2 0 4 0 8 C0 12 7.5 18 7.5 18 C7.5 18 15 12 15 8 Z"
+            fill="#14b8a6" transform="scale(2)"/>
+    </g>
+  </g>
+
+  <!-- Main Title -->
+  <text x="350" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff">
+    About Vinerals Technologies
+  </text>
+
+  <!-- Tagline -->
+  <text x="350" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="400" fill="#dbeafe">
+    Montreal Software Cooperative
+  </text>
+
+  <!-- Key Features -->
+  <g transform="translate(350, 350)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Solidarity Cooperative • Mission-Driven
+    </text>
+    <text x="0" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Enterprise Quality for Quebec SMEs
+    </text>
+    <text x="0" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Bridge Program with Mission-Aligned Funding
+    </text>
+  </g>
+
+  <!-- Bottom -->
+  <text x="350" y="530" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#bfdbfe">
+    Vinerals Technologies • Unlocking Technology for SMEs Across Canada
+  </text>
+</svg>

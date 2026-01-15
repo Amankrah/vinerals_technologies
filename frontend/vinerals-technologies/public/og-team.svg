@@ -1,0 +1,68 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <!-- Team/people pattern -->
+    <pattern id="team" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="10" fill="#14b8a6" opacity="0.15"/>
+      <circle cx="70" cy="30" r="10" fill="#14b8a6" opacity="0.15"/>
+      <circle cx="50" cy="60" r="10" fill="#14b8a6" opacity="0.15"/>
+      <rect x="20" y="45" width="20" height="25" rx="5" fill="#14b8a6" opacity="0.1"/>
+      <rect x="60" y="45" width="20" height="25" rx="5" fill="#14b8a6" opacity="0.1"/>
+      <rect x="40" y="75" width="20" height="25" rx="5" fill="#14b8a6" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  <rect width="1200" height="630" fill="url(#team)"/>
+
+  <!-- Logo/V Shape -->
+  <g transform="translate(100, 180)">
+    <path
+      d="M0 0 L80 200 L160 0"
+      stroke="#ffffff"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <!-- Team/users icon -->
+    <g transform="translate(55, 115)">
+      <circle cx="20" cy="10" r="8" fill="#14b8a6"/>
+      <circle cx="40" cy="10" r="8" fill="#14b8a6"/>
+      <rect x="10" y="22" width="20" height="20" rx="5" fill="#14b8a6"/>
+      <rect x="30" y="22" width="20" height="20" rx="5" fill="#14b8a6"/>
+    </g>
+  </g>
+
+  <!-- Main Title -->
+  <text x="350" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff">
+    Our Team
+  </text>
+
+  <!-- Tagline -->
+  <text x="350" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="400" fill="#dbeafe">
+    Senior Developers, Real Problems
+  </text>
+
+  <!-- Key Features -->
+  <g transform="translate(350, 350)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ 5+ Years Experience • No Junior Devs
+    </text>
+    <text x="0" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Same Quality as Spiria, Stradigi AI, Konverge
+    </text>
+    <text x="0" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
+      ✓ Direct Access • Domain Expertise Beyond Code
+    </text>
+  </g>
+
+  <!-- Bottom -->
+  <text x="350" y="530" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#bfdbfe">
+    Vinerals Technologies • Solving Real Problems for Quebec SMEs
+  </text>
+</svg>

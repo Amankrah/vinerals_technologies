@@ -22,6 +22,10 @@ const images = [
   'og-partners-funders',
   'og-partners-government',
   'og-partners-consortiums',
+  'og-about',
+  'og-mission',
+  'og-cooperative',
+  'og-team',
 ];
 
 async function convertSvgToJpg() {

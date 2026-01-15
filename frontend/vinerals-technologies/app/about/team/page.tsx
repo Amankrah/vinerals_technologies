@@ -26,8 +26,8 @@ export default function TeamPage() {
       name: 'Emmanuel Amankrah Kwofie',
       role: 'Lead Engineer & CTO',
       expertise: ['Full-Stack Development', 'Cloud Architecture', 'Machine Learning', 'DevOps'],
-      bio: 'Research-to-software engineer converting scientific concepts into functional systems. Currently at SASEL Lab McGill, Emmanuel specializes in building automation solutions, cloud-native applications, and high-performance systems for research and analytics platforms with a focus on sustainable food systems.',
-      funFact: 'Built a comprehensive pea protein analysis platform with technical optimization, economic feasibility modeling, and environmental impact assessment.',
+      bio: 'Research-to-software engineer converting scientific concepts into functional systems. With experience at SASEL Lab McGill and background in building automation solutions, cloud-native applications, and high-performance systems for research and analytics platforms. Specialized in sustainable food systems, AI integration, and translating complex technical concepts into practical business solutions. 5+ years professional experience delivering enterprise-quality software.',
+      funFact: 'Built a comprehensive pea protein analysis platform integrating technical optimization, economic feasibility modeling, and environmental impact assessment—exactly the kind of cross-disciplinary problem-solving that helps SMEs leverage technology strategically.',
       linkedin: 'https://www.linkedin.com/in/eakwofie/',
       github: 'https://github.com/Amankrah',
       email: 'contact@vineralstechnologies.com',
@@ -67,20 +67,24 @@ export default function TeamPage() {
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
               <motion.p variants={fadeInUp}>
                 We are not your typical agency. There are no account managers, no sales team,
-                no junior developers fresh out of bootcamp. Every person you work with is a
-                senior engineer with 5+ years of experience.
+                no junior developers fresh out of bootcamp. <strong>Every person you work with is a
+                senior engineer with 5+ years of experience</strong> — the same caliber of talent you&apos;d
+                find at Spiria, Stradigi AI, or Konverge.
               </motion.p>
               <motion.p variants={fadeInUp}>
                 We came together because we were frustrated with how the tech industry operates.
                 We saw talented developers building vanity apps for startups while community health
                 clinics struggled with paper records. We saw sustainable food producers unable to
                 afford basic traceability systems. We saw non-profits paying consulting fees that
-                could have funded their programs.
+                could have funded their programs. <strong>The knowledge gap and cost barrier were locking
+                Quebec SMEs out of technological transformation.</strong>
               </motion.p>
               <motion.p variants={fadeInUp}>
-                So we built Vinerals Technologies - a solidarity cooperative where we could work
-                on projects we believe in, charge what is fair rather than what the market will bear,
-                and prove that quality technology does not have to cost a fortune.
+                So we built Vinerals Technologies — a solidarity cooperative where we could work
+                on projects we believe in, secure mission-aligned funding to bridge accessibility gaps,
+                and prove that enterprise-quality technology doesn&apos;t have to be out of reach for
+                growing businesses. We&apos;re not competing on price; we&apos;re solving the real problem:
+                helping SMEs understand what&apos;s possible and making professional implementation accessible.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -218,18 +222,20 @@ export default function TeamPage() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Domain Expertise</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Domain Expertise Beyond Code</h3>
                 <p className="text-gray-700 text-sm">
                   We have real-world experience in healthcare, food systems, sustainability, and
-                  social enterprise - not just tech.
+                  social enterprise — not just tech. This means we understand your business context
+                  and can translate technology into strategic advantage.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Mission-Aligned</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Mission-Aligned, Quality-Focused</h3>
                 <p className="text-gray-700 text-sm">
-                  We care about the problems you are solving. We turn down projects that do not
-                  align with our values.
+                  We care about the problems you are solving and turn down projects that don&apos;t
+                  align with our values. But we never compromise on quality — you get the same
+                  professional standards as larger Montreal agencies.
                 </p>
               </motion.div>
             </motion.div>
