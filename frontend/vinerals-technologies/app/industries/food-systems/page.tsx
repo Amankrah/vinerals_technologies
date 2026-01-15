@@ -229,24 +229,21 @@ export default function FoodSystemsPage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Pricing</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$45-120/hour</div>
-                <div className="text-gray-600">AgTech and FoodTech projects</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding for food systems innovation</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Traceability System:</strong> $15,000 - $40,000 (batch tracking, QR codes, supplier portal)
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized food systems technology development for qualifying organizations.
                 </p>
                 <p>
-                  <strong>Farm Management Platform:</strong> $25,000 - $60,000 (crop planning, harvest tracking, multi-farm)
-                </p>
-                <p>
-                  <strong>Online Marketplace:</strong> $30,000 - $75,000 (ordering, payments, logistics, multi-vendor)
+                  <strong>Common food systems projects:</strong> Traceability systems, farm management platforms, online marketplaces, supply chain coordination tools—all built for the unique needs of food producers and distributors.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  We offer discounted rates for cooperatives, non-profits, and small family farms.
+                  Special eligibility for cooperatives, non-profits, and small family farms. Contact us to discuss your project and determine program eligibility.
                 </p>
               </div>
             </motion.div>

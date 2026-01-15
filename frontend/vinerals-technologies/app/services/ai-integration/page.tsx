@@ -84,7 +84,6 @@ export default function AIIntegrationPage() {
   const serviceSchema = createServiceSchema({
     name: 'AI & Machine Learning Integration',
     description: 'Practical AI solutions for business automation, analytics, and intelligent workflows. ROI-focused implementations designed for SME budgets.',
-    price: '60.00',
   });
 
   return (
@@ -166,21 +165,24 @@ export default function AIIntegrationPage() {
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Pricing</h2>
+            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$50-150/hour</div>
-                <div className="text-gray-600">Based on AI complexity and integration scope</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding makes AI accessible to more businesses</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Proof of Concept:</strong> $2,500 - $7,500 (1-2 weeks) to validate feasibility
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized AI implementations for qualifying businesses.
                 </p>
                 <p>
-                  <strong>Full Implementation:</strong> $10,000 - $50,000 depending on complexity
+                  <strong>Phased approach:</strong> Start with a proof of concept to validate ROI, then scale to full implementation—structured to fit your budget and timeline.
                 </p>
                 <p className="text-sm text-gray-600">
-                  <strong>Note:</strong> AI API costs (OpenAI, etc.) are separate and typically $100-500/month based on usage.
+                  <strong>Note:</strong> AI API costs (OpenAI, etc.) are separate and typically based on usage.
+                </p>
+                <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
+                  Contact us to discuss your AI project and determine program eligibility.
                 </p>
               </div>
             </div>

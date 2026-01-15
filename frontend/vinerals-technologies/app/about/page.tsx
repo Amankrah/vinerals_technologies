@@ -69,12 +69,12 @@ export default function AboutPage() {
               </motion.p>
               <motion.p variants={fadeInUp}>
                 Founded in 2025, we exist to solve a fundamental problem: quality custom software has been
-                completely out of reach for most growing businesses. Traditional agencies charge $150-300/hour,
-                making transformative technology accessible only to large corporations.
+                completely out of reach for most growing businesses. High development costs and lack of technical
+                guidance make transformative technology accessible only to large corporations.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                Through our cooperative structure, we can offer enterprise-quality development at 50-70% below
-                market rates while maintaining fair wages and high standards. We work with mission-driven
+                Through our cooperative structure and mission-aligned funding, we make enterprise-quality development
+                accessible to growing businesses while maintaining fair wages and high standards. We work with mission-driven
                 organizations across healthcare, food systems, sustainability, and social enterprise sectors.
               </motion.p>
             </motion.div>
@@ -146,10 +146,10 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Our Pricing</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Our Engagement Models</h3>
                 <p className="text-gray-700 text-sm">
-                  $40-150/hour depending on project type and client profile - 50-70% below traditional
-                  agency rates of $150-300/hour.
+                  We offer subsidized programs and flexible engagement models tailored to your organization&apos;s
+                  stage and needs. Contact us to discuss program eligibility and funding options.
                 </p>
               </motion.div>
 
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
                   <span><strong>No investor pressure:</strong> We reinvest profits in our mission, not
-                  external shareholders, allowing us to charge what's fair rather than maximizing extraction</span>
+                  external shareholders, allowing us to charge what&apos;s fair rather than maximizing extraction</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
@@ -199,7 +199,7 @@ export default function AboutPage() {
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
                   <span><strong>Mission alignment:</strong> We choose clients whose work we believe in
-                  and turn down projects that don't align with our values</span>
+                  and turn down projects that don&apos;t align with our values</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>

@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 const serviceSchema = createServiceSchema({
   name: 'Mobile Application Development',
   description: 'Cross-platform mobile applications for iOS and Android. React Native development and Progressive Web Apps for business needs.',
-  price: '50.00',
 });
 
 export default function MobileAppsPage() {
@@ -114,13 +113,9 @@ export default function MobileAppsPage() {
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
                   <ul className="text-gray-600 space-y-1 text-xs">
                     <li>• Standard app functionality</li>
-                    <li>• Limited budget</li>
+                    <li>• Most business use cases</li>
                     <li>• Faster time to market</li>
                   </ul>
-                </div>
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <div className="text-2xl font-bold text-primary-900">~$25K-60K</div>
-                  <div className="text-xs text-gray-600">Typical project cost</div>
                 </div>
               </div>
 
@@ -137,10 +132,6 @@ export default function MobileAppsPage() {
                     <li>• SEO important</li>
                   </ul>
                 </div>
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <div className="text-2xl font-bold text-primary-900">~$15K-40K</div>
-                  <div className="text-xs text-gray-600">Typical project cost</div>
-                </div>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md">
@@ -156,10 +147,6 @@ export default function MobileAppsPage() {
                     <li>• Performance-critical apps</li>
                   </ul>
                 </div>
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <div className="text-2xl font-bold text-primary-900">~$50K-120K</div>
-                  <div className="text-xs text-gray-600">Typical project cost</div>
-                </div>
               </div>
             </div>
           </div>
@@ -167,6 +154,29 @@ export default function MobileAppsPage() {
 
         <ServiceDetails {...serviceDetails} />
         <ProcessSection steps={processSteps} />
+
+        <Section background="white" paddingY="lg">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
+            <div className="bg-white rounded-xl p-8 shadow-md border border-gray-200">
+              <div className="mb-6">
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding makes mobile development accessible</div>
+              </div>
+              <div className="space-y-4 text-gray-700">
+                <p>
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized mobile app development for qualifying businesses.
+                </p>
+                <p>
+                  <strong>Platform flexibility:</strong> We&apos;ll help you choose the right platform approach—cross-platform, PWA, or native—based on your needs and budget.
+                </p>
+                <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
+                  Contact us to discuss your mobile app project and determine program eligibility.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Section>
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">

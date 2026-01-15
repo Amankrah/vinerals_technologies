@@ -234,24 +234,21 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Pricing</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$45-130/hour</div>
-                <div className="text-gray-600">Sustainability and ESG projects</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding for sustainability and ESG initiatives</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Carbon Tracking Dashboard:</strong> $12,000 - $35,000 (Scope 1-2 emissions, utility integration, reporting)
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized sustainability technology development for qualifying organizations.
                 </p>
                 <p>
-                  <strong>ESG Reporting Platform:</strong> $25,000 - $60,000 (multi-framework support, stakeholder portal, automation)
-                </p>
-                <p>
-                  <strong>Circular Economy System:</strong> $30,000 - $80,000 (material tracking, marketplace, lifecycle analytics)
+                  <strong>Common sustainability projects:</strong> Carbon tracking dashboards, ESG reporting platforms, circular economy systems, and environmental compliance tools—helping organizations measure and reduce their environmental impact.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  We offer discounted rates for B Corps, certified social enterprises, and climate non-profits.
+                  Special eligibility for B Corps, certified social enterprises, and climate-focused non-profits. Contact us to discuss your project and determine program eligibility.
                 </p>
               </div>
             </motion.div>

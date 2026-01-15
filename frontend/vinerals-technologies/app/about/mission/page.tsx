@@ -43,8 +43,9 @@ export default function MissionPage() {
               </p>
               <p className="text-gray-700 leading-relaxed">
                 By operating as a solidarity cooperative rather than a traditional for-profit agency,
-                we can reinvest in our mission instead of maximizing shareholder returns. This allows
-                us to offer enterprise-quality development at 50-70% below market rates while maintaining
+                we can reinvest in our mission instead of maximizing shareholder returns. Combined with
+                mission-aligned funding from government programs and impact funders, we can offer
+                subsidized programs that make enterprise-quality development accessible while maintaining
                 fair wages and high standards.
               </p>
             </motion.div>
@@ -91,11 +92,11 @@ export default function MissionPage() {
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <h3 className="font-bold text-gray-900 mb-3 text-lg">The Problem We Saw</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Traditional software agencies charge $150-300 per hour. A basic custom application
-                  costs $50,000-150,000. For most growing businesses, transformative technology has
-                  been completely out of reach. This creates a two-tier economy where large corporations
-                  get efficiency and innovation, while SMEs are stuck with inadequate off-the-shelf
-                  solutions or manual processes.
+                  Quality custom software requires significant investment—often $50,000-150,000+ for
+                  basic applications. For most growing businesses, this level of investment is simply
+                  out of reach. This creates a two-tier economy where large corporations get efficiency
+                  and innovation, while SMEs are stuck with inadequate off-the-shelf solutions or manual
+                  processes.
                 </p>
               </motion.div>
 
@@ -216,7 +217,7 @@ export default function MissionPage() {
                   <h3 className="font-bold text-gray-900 mb-2">Social Economy Commitment</h3>
                   <p className="text-gray-700">
                     As a solidarity cooperative, we are committed to the social economy ecosystem.
-                    We prioritize working with mission-driven organizations, offer discounted rates
+                    We prioritize working with mission-driven organizations, offer subsidized programs
                     for non-profits and co-ops, and contribute to building a more equitable economy.
                   </p>
                 </div>

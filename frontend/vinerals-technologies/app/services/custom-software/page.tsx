@@ -11,7 +11,7 @@ import { Code2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Custom Software Development Montreal | Vinerals Technologies',
-  description: 'Bespoke web applications and business software built for your exact needs. Full-stack development from $40/hour. Montreal-based, serving all of Canada.',
+  description: 'Bespoke web applications and business software built for your exact needs. Full-stack development with subsidized programs available. Montreal-based, serving all of Canada.',
   alternates: {
     canonical: 'https://vineralstechnologies.com/services/custom-software',
   },
@@ -84,7 +84,6 @@ export default function CustomSoftwarePage() {
   const serviceSchema = createServiceSchema({
     name: 'Custom Software Development',
     description: 'Bespoke web applications and business software built for your exact needs. Full-stack development with full code ownership.',
-    price: '40.00',
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -130,21 +129,21 @@ export default function CustomSoftwarePage() {
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Pricing</h2>
+            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$40-100/hour</div>
-                <div className="text-gray-600">Based on project complexity and scope</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding makes quality development accessible</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Fixed-price projects:</strong> For well-defined scopes, we offer fixed pricing with milestone-based payments.
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs, foundations, and donor support, we can provide subsidized engagements for qualifying businesses.
                 </p>
                 <p>
-                  <strong>Time & materials:</strong> For evolving requirements, we work hourly with weekly caps and transparent tracking.
+                  <strong>Flexible structures:</strong> Fixed-price projects with milestone payments, or time & materials with transparent tracking—tailored to your needs.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Average project: $15,000 - $75,000 | Timeline: 6-16 weeks
+                  Contact us to discuss your project and determine which program track fits your needs.
                 </p>
               </div>
             </div>

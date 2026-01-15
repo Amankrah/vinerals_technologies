@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
           content: 'If a quote is 50% below market rates, ask why. It might mean offshore teams with communication challenges, junior developers, or hidden costs. Conversely, quotes 3x above market might indicate agency overhead rather than better quality. Ask for detailed breakdowns, reference projects, and clarification on what is included vs. additional costs.'
         }
       ],
-      conclusion: 'Custom software does not have to be prohibitively expensive for SMEs. By understanding what drives costs, starting with focused scope, and working with mission-aligned partners like cooperatives, you can get quality custom software at accessible prices. At Vinerals, we price 50-70% below traditional agencies specifically to make custom software feasible for small businesses and non-profits.'
+      conclusion: 'Custom software does not have to be prohibitively expensive for SMEs. By understanding what drives costs, starting with focused scope, and working with mission-aligned partners like cooperatives, you can get quality custom software at accessible prices. At Vinerals, we offer subsidized programs backed by mission-aligned funding specifically to make custom software feasible for small businesses and non-profits.'
     },
     featured: true
   },

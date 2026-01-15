@@ -85,11 +85,11 @@ export default function ConsortiumsPage() {
               <div className="bg-white rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <CheckCircle2 className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">Accessible Pricing</h3>
+                  <h3 className="font-bold text-gray-900">Funded Accessibility</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  Rates 50-70% below traditional agencies mean your consortium can afford to build
-                  the technology infrastructure your members need without exhausting budgets.
+                  Subsidized programs backed by mission-aligned funding mean your consortium can afford
+                  to build the technology infrastructure your members need without exhausting budgets.
                 </p>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function ConsortiumsPage() {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">How It Works:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Consortium negotiates bulk discount rates</li>
+                      <li>• Consortium negotiates subsidized program access</li>
                       <li>• Members access services individually</li>
                       <li>• Consortium provides oversight and support</li>
                       <li>• Aggregate reporting on member outcomes</li>

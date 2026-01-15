@@ -230,28 +230,21 @@ export default function NonProfitsPage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Pricing</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$40-100/hour</div>
-                <div className="text-gray-600">Discounted rates for non-profits and cooperatives</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding for non-profits and social enterprises</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Member Portal:</strong> $8,000 - $20,000 (authentication, profiles, communications, document access)
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide highly subsidized technology development for qualifying non-profits, cooperatives, and social enterprises.
                 </p>
                 <p>
-                  <strong>Cooperative Management System:</strong> $15,000 - $40,000 (voting, governance, profit-sharing, reporting)
-                </p>
-                <p>
-                  <strong>Impact Measurement Platform:</strong> $12,000 - $35,000 (data collection, dashboards, funder reports)
-                </p>
-                <p>
-                  <strong>Donor/Volunteer CRM:</strong> $10,000 - $30,000 (donations, tax receipts, scheduling, communications)
+                  <strong>Common social sector projects:</strong> Member portals, cooperative management systems, impact measurement platforms, donor/volunteer CRMs, and custom tools for community engagement and governance.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  <strong>Special pricing for cooperatives:</strong> We offer 20-30% discounts for certified cooperatives
-                  and can structure deferred payment for organizations with grant-based revenue cycles.
+                  <strong>Priority eligibility:</strong> Non-profits, certified cooperatives, and social enterprises receive priority access to our most subsidized program tracks. We can also structure flexible payment terms aligned with grant-based revenue cycles. Contact us to discuss your project.
                 </p>
               </div>
             </motion.div>

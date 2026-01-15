@@ -230,24 +230,21 @@ export default function HealthcarePage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Pricing</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$50-150/hour</div>
-                <div className="text-gray-600">Healthcare projects require compliance expertise</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding for healthcare innovation</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Patient Portal:</strong> $20,000 - $50,000 (secure login, health records, appointments, messaging)
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized healthcare technology development for qualifying organizations.
                 </p>
                 <p>
-                  <strong>Telehealth Platform:</strong> $35,000 - $80,000 (video consultations, e-prescriptions, billing integration)
-                </p>
-                <p>
-                  <strong>Clinical Workflow System:</strong> $40,000 - $100,000+ (custom workflows, EMR integration, reporting)
+                  <strong>Common healthcare projects:</strong> Patient portals, telehealth platforms, clinical workflow systems, and EMR integrations—all with HIPAA/PHIPA compliance built-in.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  All projects include compliance documentation, security audits, and staff training.
+                  All projects include compliance documentation, security audits, and staff training. Contact us to discuss your healthcare project and determine program eligibility.
                 </p>
               </div>
             </motion.div>

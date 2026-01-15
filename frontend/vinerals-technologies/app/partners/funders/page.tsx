@@ -3,7 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CTA from '@/components/sections/CTA';
-import { Coins, TrendingUp, Target, Users, DollarSign, CheckCircle2 } from 'lucide-react';
+import { Coins, TrendingUp, Target, DollarSign, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Investment Opportunity | Social Finance | Vinerals Technologies',
@@ -47,14 +47,15 @@ export default function FundersPage() {
             <div className="bg-white rounded-xl p-8 shadow-md space-y-4 text-gray-700 leading-relaxed">
               <p>
                 <strong>The Problem:</strong> Small and medium enterprises are priced out of
-                transformative technology. Traditional software agencies charge $150-300/hour,
+                transformative technology. Quality software development requires significant investment,
                 making digital transformation inaccessible to 90% of Quebec businesses.
               </p>
               <p>
                 <strong>The Opportunity:</strong> Vinerals Technologies addresses this market
                 failure through a solidarity cooperative structure. By eliminating investor
-                profit extraction, we can offer enterprise-quality development at 50-70% below
-                market rates while maintaining sustainability.
+                profit extraction and securing mission-aligned funding, we can offer subsidized
+                programs that make enterprise-quality development accessible while maintaining
+                sustainability.
               </p>
               <p>
                 <strong>The Impact:</strong> Every dollar invested creates multiple returns -

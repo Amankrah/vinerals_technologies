@@ -24,7 +24,7 @@ export default function PartnersPage() {
           description="Vinerals Technologies is a solidarity cooperative contributing to Quebec's social economy and digital transformation objectives. We welcome partnerships with government, funders, and industry consortiums."
           icon={<Handshake className="w-8 h-8" />}
           stats={[
-            { value: '50-70%', label: 'Cost Savings' },
+            { value: 'Funded', label: 'Subsidized Programs' },
             { value: '10+', label: 'Quality Jobs Created' },
           ]}
           primaryCTA={{ label: 'Explore Partnerships', href: '#partnership-opportunities' }}
@@ -152,10 +152,10 @@ export default function PartnersPage() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-primary-900 mb-2">50-70%</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Cost Savings</div>
+                <div className="text-4xl font-bold text-primary-900 mb-2">Funded</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Access Programs</div>
                 <p className="text-sm text-gray-700">
-                  Below market rates making technology accessible to SMEs
+                  Mission-aligned funding making technology accessible to SMEs
                 </p>
               </div>
               <div>

@@ -8,11 +8,11 @@ import PricingSection from '@/components/sections/PricingSection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTA from '@/components/sections/CTA';
 import { Code2 } from 'lucide-react';
-import { PROCESS_STEPS, PRICING_TIERS } from '@/lib/constants';
+import { PROCESS_STEPS, ENGAGEMENT_MODELS } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Software Development Services | Custom Apps, AI, Mobile',
-  description: 'Full-stack software development services for SMEs. Custom applications, AI integration, mobile apps, and data systems. 50-70% below traditional agency rates.',
+  description: 'Full-stack software development services for SMEs. Custom applications, AI integration, mobile apps, and data systems. Made accessible through mission-aligned funding.',
 };
 
 const SERVICE_FAQS = [
@@ -63,9 +63,9 @@ export default function ServicesPage() {
           steps={PROCESS_STEPS}
         />
         <PricingSection
-          title="Transparent Pricing"
-          description="Our rates range from $40-150/hour depending on project type and your organization's profile."
-          tiers={PRICING_TIERS}
+          title="Engagement Models"
+          description="We offer different program tracks to ensure quality development is accessible to organizations at all stages."
+          tiers={ENGAGEMENT_MODELS}
         />
         <FAQSection
           title="Frequently Asked Questions"

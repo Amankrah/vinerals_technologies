@@ -185,7 +185,7 @@ export default function CooperativePage() {
                     <h3 className="font-bold text-gray-900 mb-2">Concern for Community</h3>
                     <p className="text-sm text-gray-700">
                       We work for the sustainable development of our communities through policies
-                      approved by our members - like offering discounted rates to non-profits
+                      approved by our members - like offering subsidized programs to non-profits
                       and social enterprises.
                     </p>
                   </div>
@@ -226,9 +226,10 @@ export default function CooperativePage() {
                   <h3 className="font-bold text-gray-900">Fair Pricing</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  Without pressure to deliver 30-40% margins to investors, we can charge
-                  what is fair rather than what the market will bear. This means 50-70%
-                  cost savings for our clients.
+                  Without pressure to deliver 30-40% margins to investors, we can reinvest
+                  surpluses into our mission. Combined with government funding and impact
+                  investment, we can offer subsidized programs that make quality development
+                  accessible to growing businesses.
                 </p>
               </motion.div>
 
@@ -278,8 +279,8 @@ export default function CooperativePage() {
               <motion.ul variants={staggerContainer} className="space-y-3">
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>50-70% cost savings:</strong> Without investor profit margins,
-                  we charge $40-150/hour vs traditional agencies at $150-300/hour</span>
+                  <span><strong>Subsidized programs available:</strong> Without investor profit margins,
+                  we reinvest surpluses into accessibility programs backed by government and impact funding</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>

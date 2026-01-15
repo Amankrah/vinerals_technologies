@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 const serviceSchema = createServiceSchema({
   name: 'Data Systems & Analytics',
   description: 'Database design, ETL pipelines, analytics dashboards, and business intelligence solutions. Turn your data into actionable insights.',
-  price: '55.00',
 });
 
 export default function DataSystemsPage() {
@@ -193,24 +192,24 @@ export default function DataSystemsPage() {
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Pricing</h2>
+            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-primary-900 mb-2">$45-120/hour</div>
-                <div className="text-gray-600">Based on data complexity and integration needs</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
+                <div className="text-gray-600">Mission-aligned funding makes data infrastructure accessible</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>Simple Dashboard:</strong> $5,000 - $15,000 (connect 2-3 sources, 5-10 key metrics)
+                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized data systems and analytics implementations for qualifying businesses.
                 </p>
                 <p>
-                  <strong>Full BI System:</strong> $20,000 - $60,000 (multiple sources, ETL pipelines, data warehouse)
+                  <strong>Scalable approach:</strong> Start with a focused dashboard to prove value, then expand with ETL pipelines and data infrastructure as your needs grow.
                 </p>
                 <p>
-                  <strong>Data Infrastructure:</strong> $30,000+ (complex integrations, real-time processing, ML)
+                  <strong>Right-sized solutions:</strong> From simple dashboards to full BI systems—we match the solution to your actual needs and budget.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Most clients start with a focused dashboard ($8K-12K) and expand over time.
+                  Contact us to discuss your data project and determine program eligibility.
                 </p>
               </div>
             </div>

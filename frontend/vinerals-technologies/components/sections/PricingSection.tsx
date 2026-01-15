@@ -4,16 +4,17 @@ import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
-interface PricingTier {
+interface EngagementModel {
   readonly name: string;
-  readonly rate: string;
+  readonly eligibility: string;
   readonly description: string;
+  readonly icon: string;
 }
 
 interface PricingSectionProps {
   title: string;
   description: string;
-  tiers: readonly PricingTier[];
+  tiers: readonly EngagementModel[];
 }
 
 const PricingSection = ({ title, description, tiers }: PricingSectionProps) => {
@@ -35,10 +36,10 @@ const PricingSection = ({ title, description, tiers }: PricingSectionProps) => {
           </motion.p>
         </div>
 
-        {/* Pricing Grid */}
+        {/* Engagement Models Grid */}
         <motion.div
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
         >
           {tiers.map((tier, index) => (
             <motion.div
@@ -47,8 +48,10 @@ const PricingSection = ({ title, description, tiers }: PricingSectionProps) => {
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{tier.name}</h3>
-                <div className="text-3xl font-bold text-primary-700 mb-2">{tier.rate}</div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">{tier.name}</h3>
+                <div className="text-sm font-semibold text-primary-600 mb-3 uppercase tracking-wide">
+                  {tier.eligibility}
+                </div>
                 <p className="text-sm text-gray-600">{tier.description}</p>
               </div>
             </motion.div>
@@ -58,7 +61,7 @@ const PricingSection = ({ title, description, tiers }: PricingSectionProps) => {
         {/* Additional Info */}
         <motion.div variants={fadeInUp} className="text-center mt-8">
           <p className="text-gray-600 max-w-2xl mx-auto">
-            All rates are per hour. We offer fixed-price quotes for defined scopes and can work with monthly retainers for ongoing work.
+            Contact us to discuss your project and determine which program track best fits your needs. We offer flexible engagement models including fixed-price projects and monthly retainers.
           </p>
         </motion.div>
       </motion.div>
