@@ -56,13 +56,13 @@ export default function FundersPage() {
             </div>
 
             <h1 className="hero-headline mb-6">
-              Investing in Accessible Technology Infrastructure
+              Invest in Quebec&apos;s Digital Economy
             </h1>
 
             <p className="lead-text">
-              Patient capital opportunity with measurable social return and sustainable
-              business model. Support Quebec&apos;s digital transformation while creating real
-              economic impact.
+              Patient capital opportunity with measurable social return. Support a proven bridge
+              model making enterprise-quality software accessible to Quebec SMEs - delivering
+              5-10x cost savings while creating quality jobs and strengthening the social economy.
             </p>
           </div>
         </Section>
@@ -70,30 +70,36 @@ export default function FundersPage() {
         {/* Investment Thesis */}
         <Section background="gray" paddingY="lg">
           <div className="max-w-4xl mx-auto">
-            <h2 className="section-headline mb-8 text-center">Investment Thesis</h2>
+            <h2 className="section-headline mb-8 text-center">Why Invest in Vinerals Technologies?</h2>
             <div className="bg-white rounded-xl p-8 shadow-md space-y-4 text-gray-700 leading-relaxed">
               <p>
-                <strong>The Problem:</strong> Small and medium enterprises are priced out of
-                transformative technology. Quality software development requires significant investment,
-                making digital transformation inaccessible to 90% of Quebec businesses.
+                <strong>The Problem:</strong> Quebec SMEs face a $30K-$250K+ barrier to quality software.
+                Montreal agencies charge $100-200/hr CAD (market rate for enterprise quality) - pricing 90%
+                of businesses out of digital transformation. This isn&apos;t agencies overcharging; it&apos;s
+                what professional engineering costs. The result? A two-tier economy where large corporations
+                get innovation while SMEs fall behind.
               </p>
               <p>
-                <strong>The Opportunity:</strong> Vinerals Technologies addresses this market
-                failure through a solidarity cooperative structure. By eliminating investor
-                profit extraction and securing mission-aligned funding, we can offer subsidized
-                programs that make enterprise-quality development accessible while maintaining
-                sustainability.
+                <strong>Our Solution - A Bridge, Not Charity:</strong> We don&apos;t undercut professional
+                rates or claim to do it cheaper. Instead, we&apos;ve structured as a solidarity cooperative
+                (eliminating investor profit extraction) and secured government subsidies, grants, and impact
+                funding to supplement project budgets. We deliver the same caliber as Spiria, Stradigi AI, or
+                Konverge - made accessible through mission-aligned funding, not by cutting corners.
               </p>
               <p>
-                <strong>The Impact:</strong> Every dollar invested creates multiple returns -
-                client cost savings (5-10x over traditional agencies), quality job creation,
-                SME productivity gains, and strengthening of Quebec&apos;s social economy ecosystem.
+                <strong>The Multiplier Effect:</strong> Every dollar invested creates multiple returns:
               </p>
+              <ul className="ml-6 space-y-2 text-sm">
+                <li>• <strong>Client impact:</strong> 5-10x cost savings vs traditional agencies ($50K saved per project average)</li>
+                <li>• <strong>Job creation:</strong> Quality, fair-wage tech jobs in Montreal&apos;s social economy</li>
+                <li>• <strong>SME competitiveness:</strong> Businesses gain AI/automation previously out of reach</li>
+                <li>• <strong>Ecosystem strengthening:</strong> Proven model other tech co-ops can replicate</li>
+              </ul>
               <p>
-                <strong>The Model:</strong> Hybrid revenue (earned income + mission-aligned
-                funding) creates a path to financial sustainability while maximizing social
-                impact. We are not seeking maximum returns - we are seeking patient capital
-                that values social ROI alongside financial sustainability.
+                <strong>Sustainable Business Model:</strong> Hybrid revenue (60-70% earned income + 30-40%
+                mission-aligned funding) creates path to self-sustainability within 5 years. We&apos;re not
+                seeking maximum returns - we&apos;re seeking patient capital (3-5%) that values closing
+                Canada&apos;s digital divide alongside financial sustainability.
               </p>
             </div>
           </div>
@@ -112,15 +118,15 @@ export default function FundersPage() {
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-secondary-600 mt-0.5">•</span>
-                    <span><strong>Client services (60-70%):</strong> Custom software, AI integration, mobile apps</span>
+                    <span><strong>Client services (60-70%):</strong> Earned revenue from custom software, AI integration, mobile apps at market-competitive (but accessible through co-funding) rates</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-secondary-600 mt-0.5">•</span>
-                    <span><strong>Government contracts (15-20%):</strong> SME support programs, sector initiatives</span>
+                    <span><strong>Government programs (15-20%):</strong> CIHR (health tech), ISED (innovation), MAPAQ (agtech), Community Futures</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-secondary-600 mt-0.5">•</span>
-                    <span><strong>Grants & funding (10-20%):</strong> Social economy, innovation, R&D</span>
+                    <span><strong>Impact funding (10-20%):</strong> Foundations, social finance (RISQ, Filaction), patient capital for capacity building</span>
                   </li>
                 </ul>
               </div>
@@ -288,9 +294,10 @@ export default function FundersPage() {
                   to scale operations and maximize social impact.
                 </p>
                 <p>
-                  <strong>Seeking:</strong> $150K-300K in patient capital (combination of loans,
-                  equity-like instruments, and grants) to support team growth and operational
-                  scale over 18-24 months.
+                  <strong>Seeking:</strong> Patient capital (loans, solidarity shares, grants, or
+                  hybrid structures) to scale from 1-2 senior developers to 6-8 person team over
+                  18-24 months. This enables us to serve 20-30 SMEs vs 5-10, creating $1M+ in
+                  client cost savings and 5-7 quality jobs.
                 </p>
                 <p>
                   <strong>Structure:</strong> Flexible terms aligned with social finance best
@@ -367,26 +374,26 @@ export default function FundersPage() {
               impact in Quebec.
             </p>
             <div className="bg-primary-50 rounded-xl p-8 mb-8">
-              <h3 className="font-bold text-gray-900 mb-4">What We Need From You</h3>
+              <h3 className="font-bold text-gray-900 mb-4">Ideal Funding Partners</h3>
               <p className="text-sm text-gray-700 mb-4">
-                We are looking for patient, mission-aligned capital partners who:
+                We seek patient, mission-aligned capital partners who understand:
               </p>
               <ul className="text-left text-sm text-gray-700 space-y-2 max-w-2xl mx-auto">
                 <li className="flex items-start gap-2">
                   <span className="text-secondary-600 mt-0.5">✓</span>
-                  <span>Value social ROI alongside financial returns</span>
+                  <span><strong>Social ROI matters:</strong> Closing digital divide, job creation, ecosystem building alongside financial sustainability (3-5% target)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-secondary-600 mt-0.5">✓</span>
-                  <span>Understand social enterprise/cooperative models</span>
+                  <span><strong>Cooperative economics:</strong> We reinvest surpluses in mission, not maximizing investor returns</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-secondary-600 mt-0.5">✓</span>
-                  <span>Have patient capital (3-5 year horizon minimum)</span>
+                  <span><strong>Patient timeline:</strong> 3-5 year horizon minimum for scale and self-sustainability</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-secondary-600 mt-0.5">✓</span>
-                  <span>Bring strategic connections to Quebec&apos;s SME/social economy ecosystem</span>
+                  <span><strong>Strategic value-add:</strong> Connections to Quebec SME ecosystem, social economy network, or sector expertise (health, food, sustainability)</span>
                 </li>
               </ul>
             </div>
