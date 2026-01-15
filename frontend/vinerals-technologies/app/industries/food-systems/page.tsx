@@ -7,11 +7,41 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Wheat } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
+const FOOD_SYSTEMS_FAQS = [
+  {
+    question: 'What is supply chain traceability and why is it important?',
+    answer: 'Supply chain traceability allows you to track food products from farm to table, recording every step of production, processing, and distribution. This is critical for food safety, regulatory compliance, consumer transparency, and quickly responding to contamination incidents or recalls.',
+  },
+  {
+    question: 'Can your software help with food safety compliance?',
+    answer: 'Yes. We build systems that help you meet Canadian Food Inspection Agency (CFIA) requirements, HACCP protocols, and provincial food safety regulations. Our tools automate compliance documentation, temperature monitoring, and audit trail generation.',
+  },
+  {
+    question: 'Do you work with small farms or only large food processors?',
+    answer: 'We work with food system organizations of all sizes - from individual farms and farmer cooperatives to food processors and distributors. Through subsidized programs funded by ISED and MAPAQ, we make professional agtech accessible to smaller producers.',
+  },
+  {
+    question: 'Can you integrate with IoT sensors for temperature and humidity monitoring?',
+    answer: 'Absolutely. We integrate with IoT sensors to provide real-time monitoring of storage conditions, automated alerts for out-of-range readings, and compliance documentation for food safety audits. This is especially important for cold chain management.',
+  },
+  {
+    question: 'How do you support sustainable agriculture practices?',
+    answer: 'Our technology helps sustainable agriculture by enabling precise resource tracking, reducing food waste through better inventory management, supporting local food networks through direct farm-to-consumer platforms, and providing data for sustainability reporting and certifications.',
+  },
+];
+
 export default function FoodSystemsPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Industries', url: 'https://vineralstechnologies.com/industries' },
+    { name: 'Food & Agriculture', url: 'https://vineralstechnologies.com/industries/food-systems' },
+  ]);
+  const faqSchema = createFAQSchema(FOOD_SYSTEMS_FAQS);
   const serviceDetails = {
     whatWeOffer: {
       title: 'Food Systems Solutions',
@@ -77,6 +107,8 @@ export default function FoodSystemsPage() {
 
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <IndustryHero

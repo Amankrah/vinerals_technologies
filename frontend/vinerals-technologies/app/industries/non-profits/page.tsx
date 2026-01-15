@@ -7,11 +7,41 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
+const NON_PROFITS_FAQS = [
+  {
+    question: 'What makes technology for non-profits different from business software?',
+    answer: 'Non-profit technology must balance limited budgets with high impact needs, support diverse stakeholder groups (donors, volunteers, beneficiaries, board members), measure social impact not just revenue, and often requires specialized features like grant reporting, donation management, and volunteer coordination.',
+  },
+  {
+    question: 'Can you help cooperatives manage member ownership and governance?',
+    answer: 'Yes. We build cooperative management systems that handle member directories, voting and decision-making processes, equity/ownership tracking, dividend calculations, governance documentation, and democratic participation tools designed specifically for cooperative organizational structures.',
+  },
+  {
+    question: 'How do you measure and report social impact?',
+    answer: 'We create impact measurement systems that track program outcomes, beneficiary data, social return on investment (SROI), and alignment with UN Sustainable Development Goals. Our dashboards help you report impact to funders, boards, and the public with compelling data visualization.',
+  },
+  {
+    question: 'Do you offer discounted rates for non-profits?',
+    answer: 'Yes. Through subsidized programs funded by foundations, Community Futures, and social innovation grants, we make professional technology development accessible to non-profits, cooperatives, and social enterprises. We offer different program tracks based on your stage and mission alignment.',
+  },
+  {
+    question: 'Can you integrate with existing donor management and CRM systems?',
+    answer: 'Absolutely. We integrate with popular non-profit platforms like Salesforce Non-Profit Cloud, Blackbaud, Canada Helps, and other donor management systems. We can also build custom donor portals, volunteer management tools, and impact tracking that complement your existing systems.',
+  },
+];
+
 export default function NonProfitsPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Industries', url: 'https://vineralstechnologies.com/industries' },
+    { name: 'Non-Profits & Social Enterprise', url: 'https://vineralstechnologies.com/industries/non-profits' },
+  ]);
+  const faqSchema = createFAQSchema(NON_PROFITS_FAQS);
   const serviceDetails = {
     whatWeOffer: {
       title: 'Social Sector Solutions',
@@ -77,6 +107,8 @@ export default function NonProfitsPage() {
 
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <IndustryHero

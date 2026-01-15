@@ -6,13 +6,45 @@ import Section from '@/components/ui/Section';
 import CTA from '@/components/sections/CTA';
 import IndustryHero from '@/components/sections/IndustryHero';
 import IndustriesGrid from '@/components/sections/IndustriesGrid';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { Users } from 'lucide-react';
 
+const INDUSTRIES_FAQS = [
+  {
+    question: 'Why does industry expertise matter for software development?',
+    answer: 'Industry expertise means we understand your specific regulations, workflows, and challenges from day one. This results in faster development, fewer revisions, and software that actually solves the problems you face. Generic agencies learn on your dime; we bring real-world experience from healthcare clinics, food production facilities, environmental research, and cooperative organizations.',
+  },
+  {
+    question: 'Do you only work with the industries listed on your website?',
+    answer: 'While we specialize in healthcare, food systems, sustainability, and non-profits, we also work with other mission-driven organizations. If your industry has compliance requirements, complex workflows, or social impact goals, we likely have transferable expertise. Contact us to discuss your specific needs.',
+  },
+  {
+    question: 'Can you help with industry-specific compliance and regulations?',
+    answer: 'Yes. We build compliance into our systems from day one - whether that\'s HIPAA/PHIPA for healthcare, HACCP and food safety for agriculture, environmental reporting standards for cleantech, or grant reporting requirements for non-profits. Compliance is not an afterthought; it\'s foundational to our industry-focused approach.',
+  },
+  {
+    question: 'What makes your team qualified to work in these industries?',
+    answer: 'Our developers have worked directly in these industries - not just built software for them. We have team members with healthcare experience, food systems backgrounds, sustainability research credentials, and cooperative governance expertise. This real-world knowledge informs every technical decision we make.',
+  },
+  {
+    question: 'Do you offer subsidized programs for industry-specific projects?',
+    answer: 'Yes. Through government programs (CIHR, ISED, SDTC, MAPAQ), foundation funding, and social innovation grants, we offer subsidized development for qualifying organizations in our focus industries. Different program tracks are available based on your stage, mission alignment, and project scope.',
+  },
+];
+
 export default function IndustriesPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Industries', url: 'https://vineralstechnologies.com/industries' },
+  ]);
+  const faqSchema = createFAQSchema(INDUSTRIES_FAQS);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <IndustryHero

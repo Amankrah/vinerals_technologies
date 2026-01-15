@@ -7,11 +7,41 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
+const HEALTHCARE_FAQS = [
+  {
+    question: 'Are your healthcare solutions HIPAA and PHIPA compliant?',
+    answer: 'Yes. All our healthcare systems are designed from day one with HIPAA (US) and PHIPA (Canada) compliance requirements, including encryption at rest and in transit, role-based access controls, comprehensive audit logging, and automated breach notification systems.',
+  },
+  {
+    question: 'Can you integrate with existing EMR/EHR systems?',
+    answer: 'Absolutely. We have experience integrating with major EMR/EHR systems using FHIR and HL7 standards. We can connect to your existing healthcare IT infrastructure to ensure seamless data flow and interoperability.',
+  },
+  {
+    question: 'Do you work with small clinics or only large healthcare organizations?',
+    answer: 'We work with healthcare organizations of all sizes, from independent clinics to multi-site healthcare networks. Through subsidized programs and mission-aligned funding, we make enterprise-quality healthcare technology accessible to smaller providers.',
+  },
+  {
+    question: 'What is your experience with telehealth platforms?',
+    answer: 'Our team has built telehealth platforms including video consultations, e-prescriptions, remote monitoring, and virtual triage systems. We understand both the technical requirements (WebRTC, secure video) and the clinical workflows needed for effective virtual care.',
+  },
+  {
+    question: 'How do you ensure patient data security?',
+    answer: 'We implement multiple layers of security: TLS 1.3 and AES-256 encryption, multi-factor authentication, role-based permissions, complete audit trails, automated security monitoring, and regular security audits. Patient data security is our highest priority.',
+  },
+];
+
 export default function HealthcarePage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Industries', url: 'https://vineralstechnologies.com/industries' },
+    { name: 'Healthcare', url: 'https://vineralstechnologies.com/industries/healthcare' },
+  ]);
+  const faqSchema = createFAQSchema(HEALTHCARE_FAQS);
   const serviceDetails = {
     whatWeOffer: {
       title: 'Healthcare Solutions',
@@ -77,6 +107,8 @@ export default function HealthcarePage() {
 
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <IndustryHero

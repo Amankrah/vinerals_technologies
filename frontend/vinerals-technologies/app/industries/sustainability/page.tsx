@@ -7,11 +7,41 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Leaf } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
+const SUSTAINABILITY_FAQS = [
+  {
+    question: 'What is carbon footprint tracking and how does it work?',
+    answer: 'Carbon footprint tracking measures greenhouse gas emissions from your operations, including direct emissions (Scope 1), energy use (Scope 2), and supply chain activities (Scope 3). Our software automates data collection from utility bills, fleet tracking, and supplier data to calculate emissions using standard methodologies like the GHG Protocol.',
+  },
+  {
+    question: 'Can you help with ESG reporting for investors and stakeholders?',
+    answer: 'Yes. We build ESG dashboards that track environmental, social, and governance metrics aligned with frameworks like GRI, SASB, and TCFD. Our systems generate reports for investors, annual sustainability reports, and CDP disclosures with audit-ready data trails.',
+  },
+  {
+    question: 'Do you work with small businesses or only large corporations?',
+    answer: 'We work with organizations of all sizes committed to sustainability. Through programs funded by Sustainable Development Technology Canada (SDTC) and Environment Canada, we make cleantech accessible to SMEs, startups, and social enterprises pursuing environmental goals.',
+  },
+  {
+    question: 'How do circular economy platforms reduce waste?',
+    answer: 'Circular economy platforms track material flows, identify reuse opportunities, connect waste streams to users who need those materials, and measure waste reduction impact. This helps businesses move from linear "take-make-dispose" models to circular systems where materials maintain value.',
+  },
+  {
+    question: 'Can you integrate with renewable energy systems and IoT sensors?',
+    answer: 'Absolutely. We integrate with solar monitoring systems, smart meters, environmental sensors, and building management systems to provide real-time tracking of energy generation, consumption, emissions, and environmental conditions for comprehensive sustainability monitoring.',
+  },
+];
+
 export default function SustainabilityPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Industries', url: 'https://vineralstechnologies.com/industries' },
+    { name: 'Sustainability & Cleantech', url: 'https://vineralstechnologies.com/industries/sustainability' },
+  ]);
+  const faqSchema = createFAQSchema(SUSTAINABILITY_FAQS);
   const serviceDetails = {
     whatWeOffer: {
       title: 'Sustainability Solutions',
@@ -77,6 +107,8 @@ export default function SustainabilityPage() {
 
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <IndustryHero
