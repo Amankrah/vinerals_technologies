@@ -7,12 +7,32 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import PricingSection from '@/components/sections/PricingSection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTA from '@/components/sections/CTA';
+import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
 import { Code2 } from 'lucide-react';
 import { PROCESS_STEPS, ENGAGEMENT_MODELS } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Software Development Services | Custom Apps, AI, Mobile',
   description: 'Full-stack software development services for SMEs. Custom applications, AI integration, mobile apps, and data systems. Made accessible through mission-aligned funding.',
+  keywords: [
+    'software development montreal',
+    'custom software development',
+    'ai integration services',
+    'mobile app development',
+    'data systems',
+    'software development canada',
+    'enterprise software sme',
+    'affordable software development',
+  ],
+  openGraph: {
+    title: 'Software Development Services | Vinerals Technologies',
+    description: 'Enterprise-quality software development made accessible for SMEs. Custom apps, AI integration, mobile development, and data systems.',
+    url: 'https://vineralstechnologies.com/services',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://vineralstechnologies.com/services',
+  },
 };
 
 const SERVICE_FAQS = [
@@ -43,8 +63,19 @@ const SERVICE_FAQS = [
 ];
 
 export default function ServicesPage() {
+  // Breadcrumb schema for SEO
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://vineralstechnologies.com' },
+    { name: 'Services', url: 'https://vineralstechnologies.com/services' },
+  ]);
+
+  // FAQ schema for rich results
+  const faqSchema = createFAQSchema(SERVICE_FAQS);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
         <ServiceHero
