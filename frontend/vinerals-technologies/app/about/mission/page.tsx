@@ -3,7 +3,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
-import ServiceHero from '@/components/sections/ServiceHero';
+import MissionHero from '@/components/sections/MissionHero';
 import CTA from '@/components/sections/CTA';
 import { Heart, Target, Compass, Users, TrendingUp, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -14,11 +14,14 @@ export default function MissionPage() {
     <>
       <Header />
       <main className="pt-16">
-        <ServiceHero
+        <MissionHero
           badge="Our Mission & Values"
-          title="AI & Software for Growing Businesses"
+          title="Making Technology Accessible to Every Business"
+          highlightedWord="Accessible"
           description="We exist to make transformative technology accessible to every business, regardless of size or budget."
-          icon={<Heart className="w-16 h-16" />}
+          icon={<Heart className="w-8 h-8" />}
+          primaryCTA={{ label: 'Our Values', href: '#core-values' }}
+          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
         />
 
         {/* Mission Statement */}

@@ -8,13 +8,22 @@ import IndustryHero from '@/components/sections/IndustryHero';
 import IndustriesGrid from '@/components/sections/IndustriesGrid';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { Users } from 'lucide-react';
 
 export default function IndustriesPage() {
   return (
     <>
       <Header />
       <main className="pt-16">
-        <IndustryHero />
+        <IndustryHero
+          badge="Industries We Serve"
+          title="Deep Industry Expertise That Makes a Difference"
+          highlightedWord="Makes a Difference"
+          description="We don't just build software—we understand your industry's challenges, regulations, and workflows. Our team brings real-world experience to every project."
+          icon={<Users className="w-8 h-8" />}
+          primaryCTA={{ label: 'Find Your Industry', href: '#industries' }}
+          secondaryCTA={{ label: 'See Case Studies', href: '/work' }}
+        />
 
         {/* Why Industry Expertise Matters */}
         <Section background="gray" paddingY="lg">

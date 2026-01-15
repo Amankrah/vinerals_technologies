@@ -2,7 +2,7 @@
 
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import ServiceHero from '@/components/sections/ServiceHero';
+import WorkHero from '@/components/sections/WorkHero';
 import StatsSection from '@/components/sections/StatsSection';
 import ProjectsGrid from '@/components/sections/ProjectsGrid';
 import CapabilitiesSection from '@/components/sections/CapabilitiesSection';
@@ -40,11 +40,18 @@ export default function WorkPage() {
     <>
       <Header />
       <main className="pt-16">
-        <ServiceHero
+        <WorkHero
           badge="Portfolio & Case Studies"
           title="Real Projects, Real Results"
-          description="We do not just build software - we solve problems. Here are some of the projects we have delivered for SMEs, non-profits, and social enterprises across Quebec and Canada."
-          icon={<Briefcase className="w-16 h-16" />}
+          highlightedWord="Real Results"
+          description="We don't just build software—we solve problems. Here are some of the projects we've delivered for SMEs, non-profits, and social enterprises across Quebec and Canada."
+          icon={<Briefcase className="w-8 h-8" />}
+          stats={[
+            { value: '12+', label: 'Completed Projects' },
+            { value: '100%', label: 'Client Satisfaction' },
+          ]}
+          primaryCTA={{ label: 'Start Your Project', href: '/contact' }}
+          secondaryCTA={{ label: 'View All Projects', href: '#projects' }}
         />
         <StatsSection stats={WORK_STATS} />
         <ProjectsGrid projects={PLACEHOLDER_PROJECTS} />

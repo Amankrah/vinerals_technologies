@@ -6,12 +6,16 @@ import { ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { heroVariants, heroItemVariants } from '@/hooks/useScrollAnimation';
 
-interface ServiceHeroProps {
-  badge: string;
+interface AboutHeroProps {
+  badge?: string;
   title: string;
-  highlightedWord?: string; // Optional: word to highlight with gradient
+  highlightedWord?: string;
   description: string;
   icon: React.ReactNode;
+  stats?: {
+    value: string;
+    label: string;
+  }[];
   primaryCTA?: {
     label: string;
     href: string;
@@ -22,14 +26,15 @@ interface ServiceHeroProps {
   };
 }
 
-const ServiceHero: React.FC<ServiceHeroProps> = ({
-  badge,
+const AboutHero: React.FC<AboutHeroProps> = ({
+  badge = "About Vinerals Technologies",
   title,
   highlightedWord,
   description,
   icon,
-  primaryCTA = { label: 'Start Your Project', href: '/contact' },
-  secondaryCTA = { label: 'See Our Work', href: '/work' }
+  stats,
+  primaryCTA = { label: 'Learn More', href: '#about' },
+  secondaryCTA = { label: 'Contact Us', href: '/contact' }
 }) => {
 
   // Split title to highlight a word if provided
@@ -42,7 +47,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
     return (
       <>
         <span className="text-gray-900">{parts[0]}</span>
-        <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-primary-500 via-secondary-400 to-secondary-500 bg-clip-text text-transparent">
           {highlightedWord}
         </span>
         <span className="text-gray-900">{parts[1] || ''}</span>
@@ -51,20 +56,20 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   };
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50/30">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-primary-50/40 via-white to-secondary-50/30">
 
       {/* ============================================
-          BACKGROUND ELEMENTS
+          BACKGROUND ELEMENTS - Blue/Teal gradient for about
           ============================================ */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/40 via-transparent to-secondary-50/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/20" />
 
-        {/* Dot grid pattern */}
+        {/* Dot grid pattern - blue */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `radial-gradient(circle, #1e3a8a 1.5px, transparent 1.5px)`,
+            backgroundImage: `radial-gradient(circle, #1e40af 1.5px, transparent 1.5px)`,
             backgroundSize: '32px 32px'
           }}
         />
@@ -76,7 +81,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute -right-48 -top-48 w-[500px] h-[500px] hidden md:block"
         >
-          <div className="w-full h-full bg-gradient-to-br from-primary-300/20 via-primary-200/15 to-secondary-300/20 rounded-full blur-3xl" />
+          <div className="w-full h-full bg-gradient-to-br from-primary-300/20 via-secondary-200/15 to-secondary-300/15 rounded-full blur-3xl" />
         </motion.div>
 
         {/* Secondary orb - bottom left */}
@@ -86,39 +91,48 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
           className="absolute -left-32 -bottom-32 w-[400px] h-[400px] hidden md:block"
         >
-          <div className="w-full h-full bg-gradient-to-tr from-secondary-300/15 to-transparent rounded-full blur-3xl" />
+          <div className="w-full h-full bg-gradient-to-tr from-secondary-200/15 to-transparent rounded-full blur-3xl" />
         </motion.div>
       </div>
 
       {/* ============================================
-          DECORATIVE SHAPES - Right Side (lighter than homepage)
+          DECORATIVE SHAPES - Right Side
           ============================================ */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        {/* Icon in decorative container - large, background element */}
+        {/* Icon in container with layered effect */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="absolute right-[10%] top-1/2 -translate-y-1/2 hidden lg:block"
         >
           <motion.div
-            animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
+            animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            {/* Large icon background */}
-            <div className="w-64 h-64 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 shadow-[0_8px_32px_rgba(30,58,138,0.08)] flex items-center justify-center">
-              <div className="text-primary-400/80 transform scale-[3]">
+            {/* Main icon container */}
+            <div className="w-60 h-60 bg-gradient-to-br from-white/90 to-primary-50/80 backdrop-blur-sm rounded-2xl border border-primary-100/60 shadow-[0_8px_32px_rgba(30,64,175,0.12)] flex items-center justify-center">
+              <div className="text-primary-500/80 transform scale-[2.8]">
                 {icon}
               </div>
             </div>
 
-            {/* Accent dot */}
+            {/* Floating badge with heart */}
             <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl shadow-lg"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full shadow-lg shadow-secondary-400/40 flex items-center justify-center"
+            >
+              <span className="text-white text-xl">❤</span>
+            </motion.div>
+
+            {/* Secondary card - slightly visible behind */}
+            <motion.div
+              animate={{ y: [0, 5, 0], x: [0, -3, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+              className="absolute -bottom-4 -right-6 w-52 h-52 bg-gradient-to-br from-secondary-100/70 to-primary-100/70 backdrop-blur-sm rounded-2xl border border-secondary-100/40 shadow-lg -z-10"
             />
           </motion.div>
         </motion.div>
@@ -134,40 +148,70 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
           <motion.div
             animate={{ rotate: [45, 50, 45], y: [0, -8, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[30%] top-[20%] w-12 h-12 border-2 border-primary-200/50 rounded-lg"
+            className="absolute right-[28%] top-[18%] w-12 h-12 border-2 border-primary-200/50 rounded-lg"
             style={{ transform: 'rotate(45deg)' }}
           />
 
-          {/* Small teal circle */}
+          {/* Circle */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[8%] bottom-[25%] w-16 h-16 bg-gradient-to-br from-secondary-300/40 to-secondary-400/40 rounded-full"
+            className="absolute right-[8%] bottom-[25%] w-14 h-14 bg-gradient-to-br from-secondary-300/40 to-secondary-400/40 rounded-full"
           />
 
-          {/* Tiny accent square */}
+          {/* Small accent element */}
           <motion.div
             animate={{ rotate: [0, 90, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[25%] bottom-[30%] w-6 h-6 bg-accent-400/50 rounded-md"
+            className="absolute right-[22%] bottom-[30%] w-6 h-6 bg-primary-400/50 rounded-md"
           />
 
           {/* Floating dots */}
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[35%] top-[30%] w-2 h-2 bg-primary-400 rounded-full"
+            className="absolute right-[32%] top-[28%] w-2.5 h-2.5 bg-primary-400 rounded-full"
           />
           <motion.div
-            animate={{ y: [0, 6, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute right-[5%] top-[40%] w-2 h-2 bg-secondary-400 rounded-full"
+            className="absolute right-[6%] top-[35%] w-2 h-2 bg-secondary-400 rounded-full"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.3, 1] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-[18%] bottom-[35%] w-2 h-2 bg-accent-400 rounded-full"
           />
         </motion.div>
+
+        {/* Connecting lines */}
+        <svg
+          className="absolute right-0 top-0 w-1/2 h-full hidden xl:block opacity-8"
+          viewBox="0 0 400 600"
+          fill="none"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+            d="M 280 140 L 320 200 M 320 200 L 260 280"
+            stroke="url(#about-gradient)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <defs>
+            <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#14b8a6" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
 
       {/* ============================================
-          CONTENT - Left aligned
+          CONTENT
           ============================================ */}
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <motion.div
@@ -184,7 +228,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
             </span>
           </motion.div>
 
-          {/* Mobile icon - only shows on mobile */}
+          {/* Mobile icon */}
           <motion.div
             variants={heroItemVariants}
             className="mb-6 lg:hidden"
@@ -209,6 +253,21 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
           >
             {description}
           </motion.p>
+
+          {/* Stats Row - optional */}
+          {stats && stats.length > 0 && (
+            <motion.div
+              variants={heroItemVariants}
+              className="flex flex-wrap gap-8 mb-8"
+            >
+              {stats.map((stat, index) => (
+                <div key={index} className="flex flex-col">
+                  <span className="text-3xl font-bold text-primary-600">{stat.value}</span>
+                  <span className="text-sm text-gray-500">{stat.label}</span>
+                </div>
+              ))}
+            </motion.div>
+          )}
 
           {/* CTAs */}
           <motion.div
@@ -244,4 +303,4 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   );
 };
 
-export default ServiceHero;
+export default AboutHero;

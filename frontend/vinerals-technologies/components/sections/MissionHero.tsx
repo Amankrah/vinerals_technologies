@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { heroVariants, heroItemVariants } from '@/hooks/useScrollAnimation';
 
-interface IndustryHeroProps {
+interface MissionHeroProps {
   badge?: string;
   title: string;
   highlightedWord?: string;
@@ -26,15 +26,15 @@ interface IndustryHeroProps {
   };
 }
 
-const IndustryHero: React.FC<IndustryHeroProps> = ({
-  badge = "Industries We Serve",
+const MissionHero: React.FC<MissionHeroProps> = ({
+  badge = "Our Mission & Values",
   title,
   highlightedWord,
   description,
   icon,
   stats,
-  primaryCTA = { label: 'Discuss Your Project', href: '/contact' },
-  secondaryCTA = { label: 'See Our Work', href: '/work' }
+  primaryCTA = { label: 'Our Values', href: '#values' },
+  secondaryCTA = { label: 'Contact Us', href: '/contact' }
 }) => {
 
   // Split title to highlight a word if provided
@@ -47,7 +47,7 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
     return (
       <>
         <span className="text-gray-900">{parts[0]}</span>
-        <span className="bg-gradient-to-r from-secondary-500 via-secondary-400 to-primary-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-accent-500 via-primary-400 to-primary-500 bg-clip-text text-transparent">
           {highlightedWord}
         </span>
         <span className="text-gray-900">{parts[1] || ''}</span>
@@ -56,32 +56,32 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
   };
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-secondary-50/50 via-white to-slate-50">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-accent-50/40 via-white to-primary-50/30">
 
       {/* ============================================
-          BACKGROUND ELEMENTS - Teal tinted for industries
+          BACKGROUND ELEMENTS - Amber/Blue for mission
           ============================================ */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/30 via-transparent to-primary-50/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-50/30 via-transparent to-primary-50/20" />
 
-        {/* Dot grid pattern - teal */}
+        {/* Dot grid pattern - amber */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `radial-gradient(circle, #0f766e 1.5px, transparent 1.5px)`,
+            backgroundImage: `radial-gradient(circle, #d97706 1.5px, transparent 1.5px)`,
             backgroundSize: '32px 32px'
           }}
         />
 
-        {/* Large gradient orb - top right (teal tinted) */}
+        {/* Large gradient orb - top right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute -right-48 -top-48 w-[500px] h-[500px] hidden md:block"
         >
-          <div className="w-full h-full bg-gradient-to-br from-secondary-300/20 via-secondary-200/15 to-primary-300/15 rounded-full blur-3xl" />
+          <div className="w-full h-full bg-gradient-to-br from-accent-300/20 via-primary-200/15 to-primary-300/15 rounded-full blur-3xl" />
         </motion.div>
 
         {/* Secondary orb - bottom left */}
@@ -96,97 +96,94 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
       </div>
 
       {/* ============================================
-          DECORATIVE SHAPES - Right Side
+          DECORATIVE SHAPES - Right Side (Mission/Purpose themed)
           ============================================ */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        {/* Icon in rounded container - industry feel */}
+        {/* Icon in container with radiating effect */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute right-[8%] top-1/2 -translate-y-1/2 hidden lg:block"
+          className="absolute right-[10%] top-1/2 -translate-y-1/2 hidden lg:block"
         >
           <motion.div
-            animate={{ y: [0, -12, 0], rotate: [0, 1, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            {/* Main icon container - more rounded than services */}
-            <div className="w-56 h-56 bg-gradient-to-br from-white/80 to-secondary-50/80 backdrop-blur-sm rounded-[2rem] border border-secondary-100/50 shadow-[0_8px_32px_rgba(15,118,110,0.1)] flex items-center justify-center">
-              <div className="text-secondary-500/80 transform scale-[2.5]">
+            {/* Main icon container */}
+            <div className="w-60 h-60 bg-gradient-to-br from-white/90 to-accent-50/80 backdrop-blur-sm rounded-2xl border border-accent-100/60 shadow-[0_8px_32px_rgba(217,119,6,0.12)] flex items-center justify-center">
+              <div className="text-accent-500/80 transform scale-[2.8]">
                 {icon}
               </div>
             </div>
 
-            {/* Orbiting badge */}
+            {/* Pulsing badge - mission pulse */}
             <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-4 -right-4 w-full h-full"
-              style={{ transformOrigin: 'center center' }}
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full shadow-lg shadow-primary-400/40 flex items-center justify-center"
             >
-              <div className="absolute top-0 right-0 w-10 h-10 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl shadow-lg shadow-secondary-400/30 flex items-center justify-center">
-                <span className="text-white text-xs font-bold">✓</span>
-              </div>
+              <span className="text-white text-lg">★</span>
             </motion.div>
 
-            {/* Secondary floating card behind */}
+            {/* Radiating rings - purpose */}
             <motion.div
-              animate={{ y: [0, 8, 0], rotate: [-8, -6, -8] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-6 -left-8 w-32 h-24 bg-white/60 backdrop-blur-sm rounded-xl border border-secondary-100/30 shadow-lg -z-10"
-            >
-              <div className="p-3 h-full flex flex-col justify-center">
-                <div className="h-2 bg-secondary-200/50 rounded-full w-full mb-2" />
-                <div className="h-2 bg-secondary-200/30 rounded-full w-4/5" />
-              </div>
-            </motion.div>
+              animate={{ scale: [1, 1.3], opacity: [0.4, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+              className="absolute inset-0 border-2 border-accent-400/50 rounded-2xl"
+            />
+            <motion.div
+              animate={{ scale: [1, 1.3], opacity: [0.4, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: 1.5 }}
+              className="absolute inset-0 border-2 border-primary-400/50 rounded-2xl"
+            />
+
+            {/* Secondary card */}
+            <motion.div
+              animate={{ y: [0, 5, 0], x: [0, -3, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+              className="absolute -bottom-4 -right-6 w-52 h-52 bg-gradient-to-br from-primary-100/70 to-accent-100/70 backdrop-blur-sm rounded-2xl border border-primary-100/40 shadow-lg -z-10"
+            />
           </motion.div>
         </motion.div>
 
-        {/* Floating shapes - teal themed */}
+        {/* Floating shapes - mission/values themed */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="hidden lg:block"
         >
-          {/* Hexagon-ish shape */}
+          {/* Star/compass shape */}
           <motion.div
-            animate={{ rotate: [0, 60, 0], y: [0, -8, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[28%] top-[18%] w-14 h-14 bg-gradient-to-br from-secondary-200/40 to-secondary-300/40 rounded-xl"
-            style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
+            animate={{ rotate: [0, 180, 0], y: [0, -10, 0] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-[28%] top-[18%] w-12 h-12 bg-gradient-to-br from-accent-300/50 to-accent-400/50 rounded-sm"
+            style={{ clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' }}
           />
 
-          {/* Circle cluster */}
-          <div className="absolute right-[5%] bottom-[28%]">
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="w-12 h-12 bg-gradient-to-br from-secondary-300/50 to-secondary-400/50 rounded-full"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -top-2 -right-3 w-6 h-6 bg-primary-300/40 rounded-full"
-            />
-          </div>
-
-          {/* Accent elements */}
+          {/* Circle */}
           <motion.div
-            animate={{ y: [0, 10, 0], rotate: [45, 50, 45] }}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-[8%] bottom-[25%] w-14 h-14 bg-gradient-to-br from-primary-300/40 to-primary-400/40 rounded-full"
+          />
+
+          {/* Diamond */}
+          <motion.div
+            animate={{ rotate: [45, 50, 45], y: [0, -8, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[22%] bottom-[22%] w-8 h-8 border-2 border-secondary-300/50 rounded-lg"
+            className="absolute right-[22%] bottom-[30%] w-8 h-8 bg-accent-400/50 rounded-sm"
             style={{ transform: 'rotate(45deg)' }}
           />
 
           {/* Floating dots */}
           <motion.div
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[32%] top-[28%] w-2.5 h-2.5 bg-secondary-400 rounded-full"
+            className="absolute right-[32%] top-[32%] w-2.5 h-2.5 bg-accent-400 rounded-full"
           />
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -196,13 +193,13 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
           <motion.div
             animate={{ scale: [1, 1.3, 1] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[18%] bottom-[35%] w-2 h-2 bg-accent-400 rounded-full"
+            className="absolute right-[18%] bottom-[38%] w-2 h-2 bg-secondary-400 rounded-full"
           />
         </motion.div>
 
-        {/* Connecting curve - subtle */}
+        {/* Connecting lines - purpose pathways */}
         <svg
-          className="absolute right-0 top-0 w-1/2 h-full hidden xl:block opacity-10"
+          className="absolute right-0 top-0 w-1/2 h-full hidden xl:block opacity-8"
           viewBox="0 0 400 600"
           fill="none"
           preserveAspectRatio="xMidYMid slice"
@@ -210,16 +207,26 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
           <motion.path
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 2, delay: 1, ease: "easeInOut" }}
-            d="M 300 120 Q 250 200 280 300 Q 310 400 250 480"
-            stroke="url(#industry-gradient)"
-            strokeWidth="2"
+            transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+            d="M 280 140 L 320 200 M 320 200 L 260 280"
+            stroke="url(#mission-gradient)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <motion.path
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 1.5, ease: "easeInOut" }}
+            d="M 260 280 L 300 360 M 300 360 L 240 420"
+            stroke="url(#mission-gradient)"
+            strokeWidth="1.5"
             strokeLinecap="round"
             fill="none"
           />
           <defs>
-            <linearGradient id="industry-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#14b8a6" />
+            <linearGradient id="mission-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f59e0b" />
               <stop offset="100%" stopColor="#3b82f6" />
             </linearGradient>
           </defs>
@@ -238,8 +245,8 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
         >
           {/* Badge */}
           <motion.div variants={heroItemVariants} className="mb-6">
-            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm text-secondary-700 border border-secondary-100 shadow-sm">
-              <span className="w-2 h-2 bg-secondary-400 rounded-full mr-2" />
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm text-accent-700 border border-accent-100 shadow-sm">
+              <span className="w-2 h-2 bg-accent-400 rounded-full mr-2" />
               {badge}
             </span>
           </motion.div>
@@ -249,7 +256,7 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
             variants={heroItemVariants}
             className="mb-6 lg:hidden"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary-50 rounded-2xl text-secondary-600">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-50 rounded-2xl text-accent-600">
               {icon}
             </div>
           </motion.div>
@@ -278,7 +285,7 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
             >
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col">
-                  <span className="text-3xl font-bold text-secondary-600">{stat.value}</span>
+                  <span className="text-3xl font-bold text-accent-600">{stat.value}</span>
                   <span className="text-sm text-gray-500">{stat.label}</span>
                 </div>
               ))}
@@ -319,4 +326,4 @@ const IndustryHero: React.FC<IndustryHeroProps> = ({
   );
 };
 
-export default IndustryHero;
+export default MissionHero;

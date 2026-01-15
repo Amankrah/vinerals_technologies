@@ -50,8 +50,11 @@ export default function ServicesPage() {
         <ServiceHero
           badge="Our Services"
           title="Software Development That Fits Your Budget"
+          highlightedWord="Fits Your Budget"
           description="Enterprise-quality custom software, AI integration, and digital transformation—priced for growing businesses."
-          icon={<Code2 className="w-16 h-16" />}
+          icon={<Code2 className="w-8 h-8" />}
+          primaryCTA={{ label: 'Get a Free Quote', href: '/contact' }}
+          secondaryCTA={{ label: 'See Our Work', href: '/work' }}
         />
         <ServicesGrid />
         <ProcessSection

@@ -3,7 +3,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
-import ServiceHero from '@/components/sections/ServiceHero';
+import TeamHero from '@/components/sections/TeamHero';
 import CTA from '@/components/sections/CTA';
 import { Users, Mail, Linkedin, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -38,11 +38,18 @@ export default function TeamPage() {
     <>
       <Header />
       <main className="pt-16">
-        <ServiceHero
+        <TeamHero
           badge="Meet the Team"
           title="The Developers Behind Vinerals"
+          highlightedWord="Behind Vinerals"
           description="We are a small team of experienced developers who care deeply about building technology that solves real problems for mission-driven organizations."
-          icon={<Users className="w-16 h-16" />}
+          icon={<Users className="w-8 h-8" />}
+          stats={[
+            { value: '5+', label: 'Years Experience' },
+            { value: '100%', label: 'Senior Developers' },
+          ]}
+          primaryCTA={{ label: 'Join Our Team', href: '#join' }}
+          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
         />
 
         {/* Team Intro */}

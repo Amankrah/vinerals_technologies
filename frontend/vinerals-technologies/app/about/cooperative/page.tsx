@@ -3,7 +3,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
-import ServiceHero from '@/components/sections/ServiceHero';
+import CooperativeHero from '@/components/sections/CooperativeHero';
 import CTA from '@/components/sections/CTA';
 import { Building2, Users, Heart, Scale, Lightbulb, Globe, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -14,11 +14,18 @@ export default function CooperativePage() {
     <>
       <Header />
       <main className="pt-16">
-        <ServiceHero
+        <CooperativeHero
           badge="Our Cooperative Model"
           title="Built Different, On Purpose"
+          highlightedWord="On Purpose"
           description="Vinerals Technologies is a solidarity cooperative - a social enterprise owned by workers and community, not investors seeking maximum returns."
-          icon={<Building2 className="w-16 h-16" />}
+          icon={<Building2 className="w-8 h-8" />}
+          stats={[
+            { value: '7', label: 'Cooperative Principles' },
+            { value: '1 = 1', label: 'Member Votes' },
+          ]}
+          primaryCTA={{ label: 'Learn More', href: '#what-is-cooperative' }}
+          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
         />
 
         {/* What is a Solidarity Cooperative */}

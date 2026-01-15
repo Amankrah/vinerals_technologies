@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
+import PartnersHero from '@/components/sections/PartnersHero';
 import CTA from '@/components/sections/CTA';
 import { Handshake, Coins, Building, Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -16,30 +17,19 @@ export default function PartnersPage() {
     <>
       <Header />
       <main className="pt-16">
-        {/* Hero Section */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-primary-700">
-              <Handshake className="w-16 h-16" />
-            </div>
-
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                For Partners & Funders
-              </span>
-            </div>
-
-            <h1 className="hero-headline mb-6">
-              Building Quebec&apos;s Accessible Tech Infrastructure
-            </h1>
-
-            <p className="lead-text">
-              Vinerals Technologies is a solidarity cooperative contributing to Quebec&apos;s
-              social economy and digital transformation objectives. We welcome partnerships
-              with government, funders, and industry consortiums.
-            </p>
-          </div>
-        </Section>
+        <PartnersHero
+          badge="Partnership Opportunities"
+          title="Building Quebec's Accessible Tech Infrastructure"
+          highlightedWord="Accessible Tech"
+          description="Vinerals Technologies is a solidarity cooperative contributing to Quebec's social economy and digital transformation objectives. We welcome partnerships with government, funders, and industry consortiums."
+          icon={<Handshake className="w-8 h-8" />}
+          stats={[
+            { value: '50-70%', label: 'Cost Savings' },
+            { value: '10+', label: 'Quality Jobs Created' },
+          ]}
+          primaryCTA={{ label: 'Explore Partnerships', href: '#partnership-opportunities' }}
+          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+        />
 
         {/* Partnership Opportunities */}
         <Section background="gray" paddingY="lg">

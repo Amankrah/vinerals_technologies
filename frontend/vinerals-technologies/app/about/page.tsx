@@ -3,7 +3,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
-import ServiceHero from '@/components/sections/ServiceHero';
+import AboutHero from '@/components/sections/AboutHero';
 import CTA from '@/components/sections/CTA';
 import Link from 'next/link';
 import { Heart, Users, Building2, ArrowRight } from 'lucide-react';
@@ -39,11 +39,14 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="pt-16">
-        <ServiceHero
+        <AboutHero
           badge="About Vinerals Technologies"
           title="AI & Software for Growing Businesses"
+          highlightedWord="Growing Businesses"
           description="We are a Montreal-based solidarity cooperative making enterprise-quality software accessible to small and medium businesses through the social economy model."
-          icon={<Heart className="w-16 h-16" />}
+          icon={<Heart className="w-8 h-8" />}
+          primaryCTA={{ label: 'Learn More', href: '#who-we-are' }}
+          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
         />
 
         {/* Introduction */}

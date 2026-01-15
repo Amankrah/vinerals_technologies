@@ -6,12 +6,16 @@ import { ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { heroVariants, heroItemVariants } from '@/hooks/useScrollAnimation';
 
-interface ServiceHeroProps {
-  badge: string;
+interface CooperativeHeroProps {
+  badge?: string;
   title: string;
-  highlightedWord?: string; // Optional: word to highlight with gradient
+  highlightedWord?: string;
   description: string;
   icon: React.ReactNode;
+  stats?: {
+    value: string;
+    label: string;
+  }[];
   primaryCTA?: {
     label: string;
     href: string;
@@ -22,14 +26,15 @@ interface ServiceHeroProps {
   };
 }
 
-const ServiceHero: React.FC<ServiceHeroProps> = ({
-  badge,
+const CooperativeHero: React.FC<CooperativeHeroProps> = ({
+  badge = "Our Cooperative Model",
   title,
   highlightedWord,
   description,
   icon,
-  primaryCTA = { label: 'Start Your Project', href: '/contact' },
-  secondaryCTA = { label: 'See Our Work', href: '/work' }
+  stats,
+  primaryCTA = { label: 'Learn More', href: '#cooperative' },
+  secondaryCTA = { label: 'Contact Us', href: '/contact' }
 }) => {
 
   // Split title to highlight a word if provided
@@ -54,13 +59,13 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
     <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50/30">
 
       {/* ============================================
-          BACKGROUND ELEMENTS
+          BACKGROUND ELEMENTS - Blue for cooperative
           ============================================ */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle gradient base */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-50/40 via-transparent to-secondary-50/20" />
 
-        {/* Dot grid pattern */}
+        {/* Dot grid pattern - blue */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -91,11 +96,11 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
       </div>
 
       {/* ============================================
-          DECORATIVE SHAPES - Right Side (lighter than homepage)
+          DECORATIVE SHAPES - Right Side (Cooperative/Democratic themed)
           ============================================ */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        {/* Icon in decorative container - large, background element */}
+        {/* Icon in container with cooperative circles */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -107,12 +112,40 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            {/* Large icon background */}
+            {/* Main icon container */}
             <div className="w-64 h-64 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 shadow-[0_8px_32px_rgba(30,58,138,0.08)] flex items-center justify-center">
               <div className="text-primary-400/80 transform scale-[3]">
                 {icon}
               </div>
             </div>
+
+            {/* Cooperative principle badges - 7 dots around */}
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0"
+              style={{ transformOrigin: 'center center' }}
+            >
+              {[...Array(7)].map((_, i) => {
+                const angle = (i * 360) / 7;
+                const radius = 140;
+                const x = Math.cos((angle * Math.PI) / 180) * radius;
+                const y = Math.sin((angle * Math.PI) / 180) * radius;
+                return (
+                  <div
+                    key={i}
+                    className="absolute w-8 h-8 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full shadow-lg flex items-center justify-center"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                    }}
+                  >
+                    <span className="text-white text-xs font-bold">{i + 1}</span>
+                  </div>
+                );
+              })}
+            </motion.div>
 
             {/* Accent dot */}
             <motion.div
@@ -167,7 +200,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
       </div>
 
       {/* ============================================
-          CONTENT - Left aligned
+          CONTENT
           ============================================ */}
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <motion.div
@@ -184,7 +217,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
             </span>
           </motion.div>
 
-          {/* Mobile icon - only shows on mobile */}
+          {/* Mobile icon */}
           <motion.div
             variants={heroItemVariants}
             className="mb-6 lg:hidden"
@@ -209,6 +242,21 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
           >
             {description}
           </motion.p>
+
+          {/* Stats Row - optional */}
+          {stats && stats.length > 0 && (
+            <motion.div
+              variants={heroItemVariants}
+              className="flex flex-wrap gap-8 mb-8"
+            >
+              {stats.map((stat, index) => (
+                <div key={index} className="flex flex-col">
+                  <span className="text-3xl font-bold text-primary-600">{stat.value}</span>
+                  <span className="text-sm text-gray-500">{stat.label}</span>
+                </div>
+              ))}
+            </motion.div>
+          )}
 
           {/* CTAs */}
           <motion.div
@@ -244,4 +292,4 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   );
 };
 
-export default ServiceHero;
+export default CooperativeHero;
