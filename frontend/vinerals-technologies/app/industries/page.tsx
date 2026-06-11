@@ -14,23 +14,23 @@ import { Users } from 'lucide-react';
 const INDUSTRIES_FAQS = [
   {
     question: 'Why does industry expertise matter for software development?',
-    answer: 'Industry expertise means we understand your specific regulations, workflows, and challenges from day one. This results in faster development, fewer revisions, and software that actually solves the problems you face. Generic agencies learn on your dime; we bring real-world experience from healthcare clinics, food production facilities, environmental research, and cooperative organizations.',
+    answer: 'Because we know your regulations, your workflows, and your edge cases from day one. That means less ramp-up, fewer revisions, and software that solves the problem you actually have. A generic shop learns your industry on your dime. We come in with real working experience from clinics, food production sites, environmental research labs, and cooperative organisations.',
   },
   {
-    question: 'Do you only work with the industries listed on your website?',
-    answer: 'While we specialize in healthcare, food systems, sustainability, and non-profits, we also work with other mission-driven organizations. If your industry has compliance requirements, complex workflows, or social impact goals, we likely have transferable expertise. Contact us to discuss your specific needs.',
+    question: 'Do you only work with the industries listed on this site?',
+    answer: 'We specialise in healthcare, food systems, sustainability, and non-profits, but we also work with other mission-driven organisations. If your sector has heavy compliance, complex workflows, or social impact goals, our experience usually carries over. Talk to us about your specifics.',
   },
   {
-    question: 'Can you help with industry-specific compliance and regulations?',
-    answer: 'Yes. We build compliance into our systems from day one - whether that\'s HIPAA/PHIPA for healthcare, HACCP and food safety for agriculture, environmental reporting standards for cleantech, or grant reporting requirements for non-profits. Compliance is not an afterthought; it\'s foundational to our industry-focused approach.',
+    question: 'Can you handle industry-specific compliance and regulations?',
+    answer: 'Yes. Compliance gets built in on day one, not bolted on the week before audit. HIPAA and PHIPA for healthcare. HACCP and food safety for agriculture. Environmental reporting for cleantech. Grant reporting for non-profits. It’s foundational to the way we work in these sectors.',
   },
   {
-    question: 'What makes your team qualified to work in these industries?',
-    answer: 'Our developers have worked directly in these industries - not just built software for them. We have team members with healthcare experience, food systems backgrounds, sustainability research credentials, and cooperative governance expertise. This real-world knowledge informs every technical decision we make.',
+    question: 'What makes your team qualified for these industries?',
+    answer: 'Our developers have worked inside these industries, not just on software for them. We have team members with healthcare experience, food systems background, sustainability research credentials, and cooperative governance under their belt. That working knowledge shapes every technical call we make.',
   },
   {
-    question: 'Do you offer subsidized programs for industry-specific projects?',
-    answer: 'Yes. Through government programs (CIHR, ISED, SDTC, MAPAQ), foundation funding, and social innovation grants, we offer subsidized development for qualifying organizations in our focus industries. Different program tracks are available based on your stage, mission alignment, and project scope.',
+    question: 'Are there subsidised tracks for industry-specific projects?',
+    answer: 'Yes. Through government programmes (CIHR, ISED, SDTC, MAPAQ), foundation funding, and social innovation grants, we offer subsidised builds for qualifying organisations in our focus sectors. The track depends on your stage, mission alignment, and project scope.',
   },
 ];
 
@@ -49,12 +49,12 @@ export default function IndustriesPage() {
       <main className="pt-16">
         <IndustryHero
           badge="Industries We Serve"
-          title="Deep Industry Expertise That Makes a Difference"
-          highlightedWord="Makes a Difference"
-          description="We don't just build software—we understand your industry's challenges, regulations, and workflows. Our team brings real-world experience to every project."
+          title="Sector experience that makes the work land."
+          highlightedWord="land."
+          description="We don’t just write software. We know your regulations, the shape of your data, and the workflows your team actually runs. Real working experience, baked into every project."
           icon={<Users className="w-8 h-8" />}
-          primaryCTA={{ label: 'Find Your Industry', href: '#industries' }}
-          secondaryCTA={{ label: 'See Case Studies', href: '/work' }}
+          primaryCTA={{ label: 'Find your sector', href: '#industries' }}
+          secondaryCTA={{ label: 'See case studies', href: '/work' }}
         />
 
         {/* Why Industry Expertise Matters */}
@@ -67,22 +67,22 @@ export default function IndustriesPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Why Industry Expertise Matters
+              Why sector experience matters
             </motion.h2>
             <div className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                Generic software agencies treat every project the same. They learn your industry
-                on your dime, make assumptions that don&apos;t fit your reality, and deliver solutions
-                that miss the mark.
+                A generic shop treats every project the same. They learn your industry on your dime,
+                make assumptions that don’t fit your reality, and hand over software that misses the
+                point.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                We&apos;re different. Our team includes developers who have worked in healthcare clinics,
-                food production facilities, environmental research labs, and cooperative organizations.
-                We speak your language. We understand your regulations. We anticipate your edge cases.
+                Our team includes developers who have worked inside clinics, food production sites,
+                environmental research labs, and cooperative organisations. We know the vocabulary.
+                We know the regulations. We see the edge cases before they bite.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                <strong>The result?</strong> Faster development, fewer revisions, and software that
-                actually solves the problems you face every day.
+                <strong>The result.</strong> Less ramp-up, fewer revisions, and software that actually
+                solves the problem you face every day.
               </motion.p>
             </div>
           </motion.div>
@@ -101,28 +101,28 @@ export default function IndustriesPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-12 text-center">
-              Cross-Industry Technical Capabilities
+              The cross-sector muscles
             </motion.h2>
             <motion.div
               variants={staggerContainer}
               className="grid md:grid-cols-3 gap-6"
             >
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-3">Compliance & Security</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Compliance & security</h3>
                 <p className="text-sm text-gray-700">
-                  HIPAA/PHIPA, GDPR, SOC 2, food safety regulations, environmental reporting standards
+                  HIPAA, PHIPA, GDPR, SOC 2, food safety regulations, and environmental reporting standards.
                 </p>
               </motion.div>
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-3">Data Integration</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Data integration</h3>
                 <p className="text-sm text-gray-700">
-                  EMR systems, ERP platforms, IoT sensors, supply chain APIs, environmental databases
+                  EMRs, ERPs, IoT sensors, supply-chain APIs, and the environmental databases nobody else wants to touch.
                 </p>
               </motion.div>
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-3">Mobile & Field Work</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Mobile & field work</h3>
                 <p className="text-sm text-gray-700">
-                  Offline-first apps for healthcare workers, field technicians, and remote teams
+                  Offline-first apps for healthcare workers, field technicians, and any team that doesn’t live at a desk.
                 </p>
               </motion.div>
             </motion.div>

@@ -113,8 +113,8 @@ export default function NonProfitsPage() {
       <main className="pt-16">
         <IndustryHero
           badge="Non-Profit & Social Enterprise"
-          title="Technology for Mission-Driven Organizations"
-          description="Built by a cooperative, for cooperatives. We understand governance, impact measurement, and building technology that serves communities - not shareholders."
+          title="Software for mission-driven organisations."
+          description="Built by a cooperative, for cooperatives. We understand governance, impact measurement, and how to build software that serves a community instead of a shareholder."
           icon={<Users className="w-16 h-16" />}
         />
 
@@ -127,22 +127,22 @@ export default function NonProfitsPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              The Non-Profit Technology Gap
+              The non-profit technology gap
             </motion.h2>
             <div className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                Non-profits and social enterprises are expected to operate with the same efficiency
-                as for-profit companies, but without the budget. Off-the-shelf software does not
-                fit cooperative governance models. SaaS subscriptions eat into mission budgets.
+                Non-profits and social enterprises are expected to run with the efficiency of a for-profit
+                company, on a fraction of the budget. Off-the-shelf software doesn’t fit cooperative
+                governance. SaaS subscriptions quietly eat into the programme line.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                We are a solidarity cooperative ourselves. We know what it is like to balance democratic
-                decision-making with operational efficiency. We understand that your technology needs to
-                serve your mission - not create new administrative burdens.
+                We’re a solidarity cooperative ourselves. We know what it’s like to balance democratic
+                decision-making with operational efficiency. Your software needs to serve the mission,
+                not invent a new administrative burden.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                <strong>We build tools that amplify your impact</strong> - not just software that
-                checks a box. And we do it at rates that make sense for social sector budgets.
+                <strong>We build tools that amplify your impact.</strong> Not software that ticks a box.
+                And at rates that make sense for social sector budgets.
               </motion.p>
             </div>
           </motion.div>
@@ -262,21 +262,21 @@ export default function NonProfitsPage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding for non-profits and social enterprises</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding for non-profits and social enterprises.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide highly subsidized technology development for qualifying non-profits, cooperatives, and social enterprises.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover a meaningful share of qualifying builds for non-profits, cooperatives, and social enterprises.
                 </p>
                 <p>
-                  <strong>Common social sector projects:</strong> Member portals, cooperative management systems, impact measurement platforms, donor/volunteer CRMs, and custom tools for community engagement and governance.
+                  <strong>The social sector projects we see most often.</strong> Member portals, cooperative management systems, impact measurement platforms, donor and volunteer CRMs, and the kind of community engagement tools nobody else wants to build.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  <strong>Priority eligibility:</strong> Non-profits, certified cooperatives, and social enterprises receive priority access to our most subsidized program tracks. We can also structure flexible payment terms aligned with grant-based revenue cycles. Contact us to discuss your project.
+                  <strong>Priority eligibility.</strong> Non-profits, certified cooperatives, and social enterprises get first call on our most subsidised tracks. We can also structure payment terms around the grant-funded revenue cycles you actually live with. Book a free consultation to talk it through.
                 </p>
               </div>
             </motion.div>
@@ -292,12 +292,12 @@ export default function NonProfitsPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6">
-              Built by a Cooperative, For Cooperatives
+              Built by a cooperative, for cooperatives.
             </motion.h2>
             <motion.p variants={fadeInUp} className="lead-text mb-8">
-              Vinerals Technologies is a solidarity cooperative. We are owned by our workers,
-              governed democratically, and committed to serving the social economy. When you work
-              with us, you are supporting the cooperative movement.
+              Vinerals Technologies is a solidarity cooperative. Worker-owned, democratically governed,
+              and committed to the social economy. Hiring us is a small act of support for the cooperative
+              movement, in addition to a software project.
             </motion.p>
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-6 py-3 bg-primary-100 text-primary-700 rounded-lg">
               <Users className="w-5 h-5" />

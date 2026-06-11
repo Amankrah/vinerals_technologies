@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ServiceCardProps {
@@ -11,9 +11,14 @@ interface ServiceCardProps {
   features?: string[];
   href: string;
   badge?: string;
+  index?: number;
   className?: string;
 }
 
+/**
+ * ServiceCard — magazine article tile. Numbered, hairline-divided,
+ * with an italic display title and a clay shadow on hover.
+ */
 export const ServiceCard: React.FC<ServiceCardProps> = ({
   icon,
   title,
@@ -21,39 +26,73 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   features,
   href,
   badge,
+  index,
   className,
 }) => {
+  const numeral = index !== undefined
+    ? String(index + 1).padStart(2, '0')
+    : null;
+
   return (
     <article
       className={cn(
-        'group relative bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300',
+        'group relative bg-[var(--paper)] p-8 md:p-10',
+        'border border-[var(--ink-hairline)]/40',
+        'shadow-paper',
+        'transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+        'hover:shadow-deckle hover:border-[var(--secondary-500)]',
+        'hover:-translate-y-1',
         className
       )}
     >
-      {badge && (
-        <span className="absolute top-4 right-4 bg-accent-500 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full">
-          {badge}
-        </span>
+      {/* Top row — numeral + badge */}
+      <div className="flex items-start justify-between mb-6">
+        {numeral ? (
+          <span className="numeral text-3xl md:text-4xl">{numeral}.</span>
+        ) : (
+          <span className="text-primary-700 [&_svg]:w-8 [&_svg]:h-8">{icon}</span>
+        )}
+        {badge && (
+          <span className="badge badge-accent">{badge}</span>
+        )}
+      </div>
+
+      {/* If we have a numeral, show icon as a small mark beside the heading */}
+      {numeral && (
+        <div className="mb-4 text-primary-700 [&_svg]:w-7 [&_svg]:h-7 opacity-80">
+          {icon}
+        </div>
       )}
-      <div className="mb-4 text-primary-700">{icon}</div>
-      <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
+
+      <h3 className="font-display text-2xl md:text-[1.75rem] leading-tight text-[var(--ink)] mb-4">
+        {title}
+      </h3>
+
+      <hr className="rule-soft my-5" />
+
+      <p className="text-[var(--ink-muted)] leading-relaxed mb-6">{description}</p>
+
       {features && features.length > 0 && (
-        <ul className="space-y-2 mb-4">
-          {features.map((feature, index) => (
-            <li key={index} className="text-sm text-gray-600 flex items-start">
-              <span className="text-secondary-600 mr-2">→</span>
-              {feature}
+        <ul className="space-y-2 mb-7">
+          {features.map((feature, i) => (
+            <li
+              key={i}
+              className="text-sm text-[var(--ink-muted)] flex items-start gap-3"
+            >
+              <span aria-hidden className="text-secondary-500 mt-[0.35em] w-2 shrink-0 leading-none text-base">·</span>
+              <span>{feature}</span>
             </li>
           ))}
         </ul>
       )}
+
       <Link
         href={href}
-        className="inline-flex items-center gap-2 text-primary-700 font-medium hover:gap-3 transition-all"
+        className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-primary-700 hover:text-secondary-500 transition-colors"
         title={`Learn more about ${title}`}
       >
-        Learn more <ArrowRight className="w-4 h-4" />
+        <span className="squiggle">Read the dossier</span>
+        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
       </Link>
     </article>
   );
@@ -64,24 +103,45 @@ interface StatCardProps {
   label: string;
   description?: string;
   icon?: React.ReactNode;
+  index?: number;
   className?: string;
 }
 
+/**
+ * StatCard — oversized oldstyle numeral, label small-caps mono below.
+ * Optional N°XX eyebrow matches AnimatedStatCard so static and animated
+ * stat blocks read as siblings.
+ */
 export const StatCard: React.FC<StatCardProps> = ({
   value,
   label,
   description,
   icon,
+  index,
   className,
 }) => {
   return (
-    <div className={cn('text-center', className)}>
-      {icon && <div className="mb-3 flex justify-center text-secondary-600">{icon}</div>}
-      <div className="text-4xl md:text-5xl font-bold text-primary-900 mb-2">
+    <div className={cn('text-left', className)}>
+      {index !== undefined && (
+        <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-secondary-500 mb-4">
+          N°{String(index + 1).padStart(2, '0')}
+        </div>
+      )}
+      {icon && (
+        <div className="mb-3 text-secondary-500 [&_svg]:w-6 [&_svg]:h-6">{icon}</div>
+      )}
+      <div className="font-display italic text-6xl md:text-7xl leading-none text-primary-700 mb-3 tracking-tight">
         {value}
       </div>
-      <div className="text-lg font-semibold text-gray-700 mb-1">{label}</div>
-      {description && <p className="text-sm text-gray-600">{description}</p>}
+      <hr className="rule-soft mb-3 w-12" />
+      <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--ink-muted)] mb-2">
+        {label}
+      </div>
+      {description && (
+        <p className="text-sm text-[var(--ink-faint)] leading-relaxed max-w-[28ch]">
+          {description}
+        </p>
+      )}
     </div>
   );
 };
@@ -98,6 +158,11 @@ interface TestimonialCardProps {
   className?: string;
 }
 
+/**
+ * TestimonialCard — pullquote with byline. Opens with a clay fleuron
+ * mark (❦) instead of a typographic quote, matching the section breaks
+ * elsewhere on the site.
+ */
 export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   quote,
   author,
@@ -105,56 +170,59 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   className,
 }) => {
   return (
-    <div
+    <figure
       className={cn(
-        'bg-white rounded-xl p-8 shadow-md',
+        'bg-[var(--paper)] p-10 md:p-12',
+        'border border-[var(--ink-hairline)]/40',
+        'shadow-paper relative',
         className
       )}
     >
+      {/* Opening fleuron ornament — clay, sits on the top edge as a section mark. */}
+      <span
+        aria-hidden
+        className="absolute -top-4 left-8 px-3 bg-[var(--paper)] font-display italic text-3xl leading-none text-secondary-500 select-none"
+      >
+        &#10086;
+      </span>
+
+      <blockquote className="pullquote mb-8 mt-4">{quote}</blockquote>
+
       {rating && (
-        <div className="flex gap-1 mb-4">
-          {[...Array(5)].map((_, i) => (
-            <svg
-              key={i}
-              className={cn(
-                'w-5 h-5',
-                i < rating ? 'text-accent-500' : 'text-gray-300'
-              )}
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
+        <div className="flex gap-1.5 mb-6 font-mono text-xs tracking-[0.22em] text-accent-500">
+          {Array.from({ length: rating }).map((_, i) => (
+            <span key={i} aria-hidden>
+              {String(i + 1).padStart(2, '0')}
+            </span>
           ))}
+          <span className="sr-only">Rated {rating} out of 5</span>
         </div>
       )}
-      <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
-        "{quote}"
-      </blockquote>
-      <div className="flex items-center gap-4">
+
+      <figcaption className="flex items-center gap-4 pt-6 border-t border-[var(--ink-hairline)]/40">
         {author.avatar ? (
           <Image
             src={author.avatar}
             alt={author.name}
             width={48}
             height={48}
-            className="w-12 h-12 rounded-full object-cover"
+            className="w-12 h-12 rounded-full object-cover grayscale"
           />
         ) : (
-          <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center">
-            <span className="text-primary-700 font-semibold text-lg">
-              {author.name.charAt(0)}
-            </span>
+          <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center font-display italic text-xl text-primary-700">
+            {author.name.charAt(0)}
           </div>
         )}
         <div>
-          <div className="font-semibold text-gray-900">{author.name}</div>
-          <div className="text-sm text-gray-600">
-            {author.title}, {author.company}
+          <div className="font-display text-lg text-[var(--ink)] leading-tight">
+            {author.name}
+          </div>
+          <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--ink-faint)] mt-1">
+            {author.title} · {author.company}
           </div>
         </div>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   );
 };
 
@@ -162,22 +230,37 @@ interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  index?: number;
   className?: string;
 }
 
+/**
+ * FeatureCard — left-aligned, no card chrome. Pure typesetting:
+ * numeral · italic title · body. Generous spacing.
+ */
 export const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   title,
   description,
+  index,
   className,
 }) => {
+  const numeral = index !== undefined ? String(index + 1).padStart(2, '0') : null;
+
   return (
-    <div className={cn('text-center md:text-left', className)}>
-      <div className="mb-4 flex justify-center md:justify-start text-primary-700">
-        {icon}
+    <div className={cn('text-left', className)}>
+      <div className="flex items-baseline gap-4 mb-5">
+        {numeral && (
+          <span className="numeral text-3xl">{numeral}</span>
+        )}
+        <span className="text-primary-700 [&_svg]:w-8 [&_svg]:h-8">{icon}</span>
       </div>
-      <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <h3 className="font-display text-2xl md:text-[1.625rem] leading-tight text-[var(--ink)] mb-3">
+        {title}
+      </h3>
+      <p className="text-[var(--ink-muted)] leading-relaxed max-w-[38ch]">
+        {description}
+      </p>
     </div>
   );
 };

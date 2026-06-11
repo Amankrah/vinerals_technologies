@@ -18,45 +18,57 @@ interface ProcessSectionProps {
   steps: readonly ProcessStep[];
 }
 
+/**
+ * ProcessSection — a process serial. Steps run as numbered chapters
+ * with hairline connectors. Borrows the layout of a magazine's
+ * how-it's-made spread.
+ */
 const ProcessSection: React.FC<ProcessSectionProps> = ({
-  title = "How We Work",
-  description = "A transparent, collaborative process designed for your success",
-  steps
+  title = 'How we work',
+  description = 'A transparent, collaborative process. Built like an editorial calendar, not a Gantt chart.',
+  steps,
 }) => {
   return (
     <Section background="gray" paddingY="lg">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
       >
-        <motion.div variants={fadeInUp} className="text-center mb-12">
-          <h2 className="section-headline mb-4">{title}</h2>
-          <p className="lead-text max-w-2xl mx-auto">
-            {description}
-          </p>
+        <motion.div variants={fadeInUp} className="max-w-3xl mb-16">
+          <span className="eyebrow mb-6 block">Le procédé</span>
+          <h2 className="section-headline mb-6">{title}</h2>
+          <p className="lead-text">{description}</p>
         </motion.div>
 
         <motion.div
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-[var(--ink-hairline)]/45 bg-[var(--paper)]"
         >
           {steps.map((step, index) => (
-            <motion.div key={index} variants={fadeInUp} className="relative">
-              <div className="bg-white rounded-xl p-6 h-full shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 text-primary-700 font-bold text-xl">
-                    {step.number}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-1">{step.title}</h3>
-                <p className="text-sm text-primary-600 font-semibold mb-3">{step.subtitle}</p>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              className={`relative p-8 md:p-10 ${
+                index < steps.length - 1 ? 'lg:border-r border-b lg:border-b-0 border-[var(--ink-hairline)]/45' : ''
+              } ${
+                index < steps.length - 2 ? 'md:border-b lg:border-b-0' : ''
+              }`}
+            >
+              <div className="numeral text-4xl md:text-5xl mb-6">
+                {String(step.number).padStart(2, '0')}
               </div>
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-primary-200 -translate-y-1/2 z-10" />
-              )}
+              <h3 className="font-display text-xl text-[var(--ink)] mb-2 leading-tight">
+                {step.title}
+              </h3>
+              <div className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary-700 mb-4">
+                {step.subtitle}
+              </div>
+              <hr className="rule-soft mb-4 w-10" />
+              <p className="text-sm text-[var(--ink-muted)] leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>

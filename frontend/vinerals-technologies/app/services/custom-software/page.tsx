@@ -59,25 +59,25 @@ export default function CustomSoftwarePage() {
       number: 1,
       title: 'Discovery',
       subtitle: 'Free',
-      description: 'Deep dive into your business processes, pain points, and requirements. We map out the complete system architecture.',
+      description: 'We sit with your team, walk the process end to end, and map the system that solves it. You leave with clarity, regardless of whether you hire us.',
     },
     {
       number: 2,
       title: 'Design & Planning',
       subtitle: 'Transparent',
-      description: 'UI/UX wireframes, technical specification, and project timeline with clear milestones.',
+      description: 'Wireframes, a technical spec, and a timeline with the milestones drawn in. Nothing hidden, nothing waved off as “we’ll figure it out later.”',
     },
     {
       number: 3,
       title: 'Development',
       subtitle: 'Iterative',
-      description: 'Agile sprints with weekly demos. You see working features, not just code.',
+      description: 'Two-week sprints with a working demo at the end of each one. You see software, not slides.',
     },
     {
       number: 4,
       title: 'Deployment',
       subtitle: 'Ongoing',
-      description: 'We handle hosting setup, deployment, team training, and documentation handoff.',
+      description: 'Hosting set up, the launch shipped, your team trained, the docs handed over. We stay reachable for the questions that show up at week three.',
     },
   ];
 
@@ -100,25 +100,25 @@ export default function CustomSoftwarePage() {
       <main className="pt-16">
         <ServiceHero
           badge="Custom Software Development"
-          title="Software Built for Your Business"
-          description="No compromises, no feature bloat, no vendor lock-in. Build exactly what your business needs with full code ownership."
+          title="Software shaped around how you actually work."
+          description="No compromises. No feature bloat. No vendor lock-in. We build the thing your business needs and hand you the keys when it’s done."
           icon={<Code2 className="w-16 h-16" />}
         />
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="section-headline mb-6">
-              Why Custom Software?
+              Why custom, instead of off the shelf?
             </h2>
             <div className="space-y-4 text-left">
               <p className="text-gray-700 leading-relaxed">
-                Off-the-shelf software forces you to adapt your business to the tool. Custom software adapts to your business.
+                Off-the-shelf software makes your business bend around someone else’s product. Custom software bends around you.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Whether you need a specialized CRM, a unique inventory system, or a customer portal with specific workflows - we build it exactly as you envision it.
+                A specialised CRM, an inventory system that finally matches reality, a client portal with the workflow your team has been hacking around in spreadsheets. We build it the way you actually need it.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <strong>And the best part?</strong> You own everything. No monthly SaaS fees that increase every year. No vendor controlling your data. No forced upgrades.
+                <strong>And the part nobody else offers:</strong> you own everything. No monthly SaaS fees that creep up every renewal. No vendor sitting on top of your data. No forced upgrade you didn’t ask for.
               </p>
             </div>
           </div>
@@ -129,21 +129,21 @@ export default function CustomSoftwarePage() {
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
+            <h2 className="section-headline mb-6 text-center">Engagement models</h2>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding makes quality development accessible</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding brings quality development inside reach.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs, foundations, and donor support, we can provide subsidized engagements for qualifying businesses.
+                  We run several tracks depending on your stage and eligibility. Government programmes, foundations, and donor support fund subsidised engagements for qualifying businesses.
                 </p>
                 <p>
-                  <strong>Flexible structures:</strong> Fixed-price projects with milestone payments, or time & materials with transparent tracking—tailored to your needs.
+                  <strong>Pick the shape that fits.</strong> Fixed-price commissions with milestone payments, or time and materials with fully transparent tracking. Whatever lines up with how your team buys software.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Contact us to discuss your project and determine which program track fits your needs.
+                  Book a free consultation. We&apos;ll tell you within a week which track applies, or that none does.
                 </p>
               </div>
             </div>

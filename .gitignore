@@ -2,6 +2,9 @@
 /frontend/docs
 frontend/docs/
 
+# proposals (private/internal)
+proposals/
+
 # OS files
 .DS_Store
 Thumbs.db

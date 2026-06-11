@@ -8,19 +8,24 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { WHY_US_FEATURES } from '@/lib/constants';
 
 const iconMap = {
-  Building: Building2,
+  Building:   Building2,
   DollarSign: DollarSign,
-  Handshake: Handshake,
-  Zap: Zap,
-  Heart: Heart,
-  Shield: Shield,
+  Landmark:   Building2,
+  Handshake:  Handshake,
+  Zap:        Zap,
+  Heart:      Heart,
+  Shield:     Shield,
 };
 
+/**
+ * WhyUs — set as an essayistic spread. Title sits left, body grid
+ * right. Each principle is a numbered manuscript note, no card.
+ */
 const WhyUs = () => {
   const features = WHY_US_FEATURES.map((feature) => {
     const IconComponent = iconMap[feature.icon as keyof typeof iconMap] || Building2;
     return {
-      icon: <IconComponent className="w-10 h-10" />,
+      icon: <IconComponent />,
       title: feature.title,
       description: feature.description,
     };
@@ -31,30 +36,32 @@ const WhyUs = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
+        className="grid md:grid-cols-12 gap-x-10 gap-y-12"
       >
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <motion.div variants={fadeInUp} className="mb-4">
-            <span className="text-sm font-semibold text-primary-700 uppercase tracking-wide">
-              Why Vinerals
-            </span>
-          </motion.div>
-          <motion.h2 variants={fadeInUp} className="section-headline mb-6">
-            Built Different,{' '}
-            <span className="text-primary-700">On Purpose</span>
-          </motion.h2>
-        </div>
+        {/* Title block — sticky in essayistic gutter */}
+        <motion.div variants={fadeInUp} className="md:col-span-4 md:sticky md:top-32 md:self-start">
+          <span className="eyebrow mb-4 md:mb-6 block">IV · Pourquoi</span>
+          <h2 className="section-headline mb-4 md:mb-6">
+            Built differently,
+            <br />
+            <em>on purpose.</em>
+          </h2>
+          <p className="lead-text max-w-[36ch]">
+            What makes the cooperative model show up in the actual work, not
+            just on the About page.
+          </p>
+        </motion.div>
 
-        {/* Features Grid */}
+        {/* Principles list */}
         <motion.div
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10 md:gap-y-14"
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={fadeInUp}>
-              <FeatureCard {...feature} />
+              <FeatureCard {...feature} index={index} />
             </motion.div>
           ))}
         </motion.div>

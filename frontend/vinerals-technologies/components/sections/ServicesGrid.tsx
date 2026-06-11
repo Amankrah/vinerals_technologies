@@ -8,17 +8,17 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { SERVICES } from '@/lib/constants';
 
 const iconMap = {
-  Code: Code2,
-  Brain: Brain,
+  Code:       Code2,
+  Brain:      Brain,
   Smartphone: Smartphone,
-  Database: Database,
+  Database:   Database,
 };
 
 const ServicesGrid = () => {
   const services = SERVICES.map((service) => {
     const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Code2;
     return {
-      icon: <IconComponent className="w-12 h-12" />,
+      icon: <IconComponent />,
       title: service.name,
       description: service.description,
       features: [...service.features],
@@ -31,13 +31,13 @@ const ServicesGrid = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7"
       >
         {services.map((service, index) => (
           <motion.div key={index} variants={fadeInUp}>
-            <ServiceCard {...service} />
+            <ServiceCard {...service} index={index} />
           </motion.div>
         ))}
       </motion.div>

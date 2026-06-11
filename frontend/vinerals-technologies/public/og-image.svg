@@ -1,68 +1,49 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#1e3a8a"/>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Forest paper substrate -->
+  <rect width="1200" height="630" fill="#1F3A2E"/>
 
-  <!-- Gradient overlay -->
+  <!-- Subtle paper grain — keeps the surface from reading as flat digital -->
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
-    </linearGradient>
-
-    <!-- Circuit pattern -->
-    <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-      <circle cx="10" cy="10" r="2" fill="#14b8a6" opacity="0.3"/>
-      <circle cx="50" cy="30" r="2" fill="#14b8a6" opacity="0.3"/>
-      <circle cx="80" cy="60" r="2" fill="#14b8a6" opacity="0.3"/>
-      <line x1="10" y1="10" x2="50" y2="30" stroke="#14b8a6" stroke-width="0.5" opacity="0.2"/>
-      <line x1="50" y1="30" x2="80" y2="60" stroke="#14b8a6" stroke-width="0.5" opacity="0.2"/>
-    </pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.247 0 0 0 0 0.219 0 0 0 0 0.161 0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
   </defs>
+  <rect width="1200" height="630" fill="#1F3A2E" filter="url(#grain)" opacity="0.5"/>
 
-  <rect width="1200" height="630" fill="url(#gradient)"/>
-  <rect width="1200" height="630" fill="url(#circuit)"/>
+  <!-- Top dateline strip -->
+  <text x="80" y="74" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="14" letter-spacing="3.5" fill="rgba(245, 239, 230, 0.55)">VINERALS · TECHNOLOGIES · ÉDITION 2025</text>
+  <line x1="80" y1="100" x2="1120" y2="100" stroke="rgba(245, 239, 230, 0.22)" stroke-width="1"/>
 
-  <!-- Logo/V Shape -->
-  <g transform="translate(100, 200)">
+  <!-- Hand-traced V monogram, top-right -->
+  <g transform="translate(1040, 30)">
     <path
-      d="M0 0 L80 200 L160 0"
-      stroke="#ffffff"
-      stroke-width="16"
+      d="M12 16 Q 20 14, 32 70 Q 44 14, 52 16"
+      stroke="#F5EFE6"
+      stroke-width="3"
       stroke-linecap="round"
       stroke-linejoin="round"
       fill="none"
     />
-    <!-- Tech accent dots -->
-    <circle cx="80" cy="140" r="10" fill="#14b8a6"/>
-    <circle cx="40" cy="80" r="6" fill="#14b8a6" opacity="0.8"/>
-    <circle cx="120" cy="80" r="6" fill="#14b8a6" opacity="0.8"/>
+    <circle cx="32" cy="70" r="3.2" fill="#B8634A"/>
   </g>
 
-  <!-- Company Name -->
-  <text x="350" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="#ffffff">
-    Vinerals Technologies
+  <!-- Eyebrow -->
+  <text x="80" y="195" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="16" letter-spacing="4" fill="#DA8C6E">— L’ÉDITION · N°01</text>
+
+  <!-- Headline, two lines: first cream, second clay-italic accent -->
+  <text x="80" y="310" font-family='"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif' font-style="italic" font-size="82" font-weight="500" fill="#F5EFE6">Software, made by hand,</text>
+  <text x="80" y="400" font-family='"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif' font-style="italic" font-size="82" font-weight="500" fill="#DA8C6E">for SMEs.</text>
+
+  <!-- Supporting line(s) -->
+  <text x="80" y="490" font-family='"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif' font-size="26" font-weight="400" fill="rgba(245, 239, 230, 0.75)">
+      <tspan x="80" dy="0">A Montréal solidarity cooperative building custom software and AI</tspan>
+      <tspan x="80" dy="38">for the businesses priced out of it.</tspan>
   </text>
 
-  <!-- Tagline -->
-  <text x="350" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="400" fill="#dbeafe">
-    AI &amp; Software for Growing Businesses
-  </text>
-
-  <!-- Subtitle -->
-  <text x="350" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#bfdbfe">
-    Montreal's Social Enterprise Tech Partner
-  </text>
-
-  <!-- Trust indicators -->
-  <g transform="translate(350, 450)">
-    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#14b8a6">
-      ✓ Funded accessibility programs
-    </text>
-    <text x="0" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#14b8a6">
-      ✓ Enterprise quality at accessible prices
-    </text>
-    <text x="0" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#14b8a6">
-      ✓ You own everything we build
-    </text>
-  </g>
+  <!-- Bottom hairline + imprint -->
+  <line x1="80" y1="550" x2="1120" y2="550" stroke="rgba(245, 239, 230, 0.22)" stroke-width="1"/>
+  <text x="80" y="582" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="13" letter-spacing="3" fill="rgba(245, 239, 230, 0.55)">COOPÉRATIVE DE SOLIDARITÉ · TIO'TIA:KE / MONTRÉAL · BILINGUE EN / FR</text>
+  <text x="1120" y="582" text-anchor="end" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="13" letter-spacing="3" fill="rgba(245, 239, 230, 0.55)">VINERALSTECHNOLOGIES.COM</text>
 </svg>

@@ -62,27 +62,27 @@ export default function MobileAppsPage() {
   const processSteps = [
     {
       number: 1,
-      title: 'Platform Strategy',
+      title: 'Platform strategy',
       subtitle: 'Strategic',
-      description: 'We help you decide: cross-platform, native, or PWA based on your users and budget.',
+      description: 'Cross-platform, native, or a PWA. We pick the one that matches your users, your timeline, and what your budget can carry.',
     },
     {
       number: 2,
-      title: 'Design & Prototype',
-      subtitle: 'User-Focused',
-      description: 'Mobile-specific UX/UI design with interactive prototypes for validation.',
+      title: 'Design & prototype',
+      subtitle: 'User-focused',
+      description: 'Mobile-first UX, interactive prototypes you can tap through on a real phone before any production code is written.',
     },
     {
       number: 3,
       title: 'Development',
       subtitle: 'Agile',
-      description: 'Agile sprints with TestFlight/beta builds for early feedback.',
+      description: 'Two-week sprints with TestFlight and beta builds out the door early, so feedback loops start before launch.',
     },
     {
       number: 4,
       title: 'Launch',
       subtitle: 'Supported',
-      description: 'App Store submission, approval support, and post-launch monitoring.',
+      description: 'App Store submission, approval support when Apple has notes, and monitoring once you’re live.',
     },
   ];
 
@@ -93,28 +93,28 @@ export default function MobileAppsPage() {
       <main className="pt-16">
         <ServiceHero
           badge="Mobile Application Development"
-          title="Apps Your Customers Will Actually Use"
-          description="Reach your customers and team wherever they are with fast, intuitive mobile applications."
+          title="Apps your customers will actually keep on the home screen."
+          description="Reach your customers and your team wherever they are. Fast to load, easy to use, written to last beyond launch week."
           icon={<Smartphone className="w-16 h-16" />}
         />
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="section-headline mb-6">
-              Which Mobile Platform?
+              Which platform makes sense for you?
             </h2>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div className="bg-white rounded-xl p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-3">Cross-Platform</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Cross-platform</h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  One codebase, iOS and Android apps. Fast and cost-effective.
+                  One codebase, two apps. The fastest, most cost-effective way to land on iOS and Android at once.
                 </p>
                 <div className="text-sm">
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
                   <ul className="text-gray-600 space-y-1 text-xs">
                     <li>• Standard app functionality</li>
                     <li>• Most business use cases</li>
-                    <li>• Faster time to market</li>
+                    <li>• Getting to market quickly</li>
                   </ul>
                 </div>
               </div>
@@ -122,28 +122,28 @@ export default function MobileAppsPage() {
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <h3 className="font-bold text-gray-900 mb-3">Progressive Web App</h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  Web app that feels native. No app store required.
+                  A web app that behaves like a native one. No App Store gauntlet, no install friction.
                 </p>
                 <div className="text-sm">
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
                   <ul className="text-gray-600 space-y-1 text-xs">
                     <li>• Content-heavy apps</li>
                     <li>• Frequent updates</li>
-                    <li>• SEO important</li>
+                    <li>• When SEO actually matters</li>
                   </ul>
                 </div>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-3">Native Apps</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Native apps</h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  Separate iOS and Android codebases. Maximum performance.
+                  Separate iOS and Android codebases when performance and hardware access have to be uncompromised.
                 </p>
                 <div className="text-sm">
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
                   <ul className="text-gray-600 space-y-1 text-xs">
                     <li>• Complex animations</li>
-                    <li>• Hardware integration</li>
+                    <li>• Deep hardware integration</li>
                     <li>• Performance-critical apps</li>
                   </ul>
                 </div>
@@ -157,21 +157,21 @@ export default function MobileAppsPage() {
 
         <Section background="white" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
+            <h2 className="section-headline mb-6 text-center">Engagement models</h2>
             <div className="bg-white rounded-xl p-8 shadow-md border border-gray-200">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding makes mobile development accessible</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding brings mobile work inside reach.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized mobile app development for qualifying businesses.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying mobile builds.
                 </p>
                 <p>
-                  <strong>Platform flexibility:</strong> We&apos;ll help you choose the right platform approach—cross-platform, PWA, or native—based on your needs and budget.
+                  <strong>Platform flexibility.</strong> Cross-platform, PWA, or native. We help you pick the one that matches your users and your budget instead of pushing whatever&apos;s easiest for us.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Contact us to discuss your mobile app project and determine program eligibility.
+                  Book a free consultation. We&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function MobileAppsPage() {
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Common Features We Build</h2>
+            <h2 className="section-headline mb-6 text-center">Features we build often</h2>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
                 <div className="flex items-start gap-2">

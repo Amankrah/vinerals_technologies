@@ -99,9 +99,9 @@ export default function SustainabilityPage() {
     },
     {
       number: 4,
-      title: 'Continuous Improvement',
+      title: 'Keep improving',
       subtitle: 'Ongoing',
-      description: 'Set up automated reporting, anomaly detection, and goal tracking to drive ongoing sustainability improvements.',
+      description: 'Automated reporting, anomaly detection, and goal tracking that turns the system into a feedback loop instead of a once-a-year exercise.',
     },
   ] as const;
 
@@ -113,8 +113,8 @@ export default function SustainabilityPage() {
       <main className="pt-16">
         <IndustryHero
           badge="Sustainability & CleanTech"
-          title="Measure, Reduce, Report"
-          description="Build climate accountability into your operations with real-time carbon tracking, ESG reporting, and environmental impact measurement."
+          title="Measure, reduce, report. For real."
+          description="Climate accountability built into the operations. Real-time carbon tracking, ESG reporting, and environmental impact measurement on a system that fits your business."
           icon={<Leaf className="w-16 h-16" />}
         />
 
@@ -127,23 +127,23 @@ export default function SustainabilityPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              The Sustainability Data Problem
+              The sustainability data problem
             </motion.h2>
             <div className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                Organizations commit to net-zero targets, but most struggle to actually measure
-                their carbon footprint. Data lives in spreadsheets, utility bills, and supplier
-                estimates. Annual sustainability reports take months of manual work.
+                Organisations commit to net-zero targets, then quietly struggle to actually measure
+                the footprint. Data hides in spreadsheets, utility bills, and supplier estimates.
+                The annual sustainability report eats months of manual work.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                Investors, customers, and regulators are demanding real ESG data - not just
-                greenwashing marketing. But existing sustainability software is either too expensive
-                ($50K+ per year) or too generic to fit your operations.
+                Investors, customers, and regulators want real ESG data, not greenwashing. The
+                existing sustainability software is either too expensive ($50K-plus per year) or
+                too generic to fit how your operations actually run.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                <strong>We build custom sustainability systems that fit your reality</strong> -
-                whether you are a manufacturer tracking Scope 1-3 emissions, a real estate company
-                monitoring building energy, or a retailer measuring supply chain impact.
+                <strong>We build custom sustainability systems that match your reality.</strong>
+                Whether that’s a manufacturer tracking Scope 1, 2 and 3 emissions, a real estate
+                portfolio monitoring building energy, or a retailer measuring supply chain impact.
               </motion.p>
             </div>
           </motion.div>
@@ -266,21 +266,21 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding for sustainability and ESG initiatives</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding for sustainability and ESG work.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized sustainability technology development for qualifying organizations.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying sustainability technology builds.
                 </p>
                 <p>
-                  <strong>Common sustainability projects:</strong> Carbon tracking dashboards, ESG reporting platforms, circular economy systems, and environmental compliance tools—helping organizations measure and reduce their environmental impact.
+                  <strong>The sustainability projects we see most often.</strong> Carbon tracking dashboards, ESG reporting platforms, circular economy systems, and environmental compliance tools. The work that helps organisations actually measure and reduce impact, not just talk about it.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Special eligibility for B Corps, certified social enterprises, and climate-focused non-profits. Contact us to discuss your project and determine program eligibility.
+                  B Corps, certified social enterprises, and climate-focused non-profits get extra eligibility consideration. Book a free consultation and we&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </motion.div>

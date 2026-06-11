@@ -113,8 +113,8 @@ export default function HealthcarePage() {
       <main className="pt-16">
         <IndustryHero
           badge="Healthcare Technology"
-          title="Software That Improves Patient Care"
-          description="Build healthcare technology that clinicians actually want to use - and patients trust. HIPAA/PHIPA compliant from day one."
+          title="Software that actually improves patient care."
+          description="Healthcare technology clinicians want to use, and patients trust. HIPAA and PHIPA compliant from day one, not bolted on at audit."
           icon={<Heart className="w-16 h-16" />}
         />
 
@@ -127,22 +127,23 @@ export default function HealthcarePage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              The Healthcare Technology Problem
+              The healthcare software problem
             </motion.h2>
             <div className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                Most healthcare software is built by people who have never worked in a clinic.
-                The result? Clunky interfaces that slow down clinicians, compliance features
-                that feel like checkbox exercises, and systems that do not integrate with existing workflows.
+                Most healthcare software is written by people who’ve never set foot in a clinic.
+                You can feel it. Clunky interfaces that slow down clinicians. Compliance features
+                that feel like a tick-box exercise. Systems that don’t integrate with the workflows
+                already running the floor.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                We are different. Our team includes developers with healthcare experience - we understand
-                the difference between inpatient and outpatient care, why clinical notes matter, and how
-                patient privacy regulations actually work in practice.
+                We come at it differently. Our team includes developers with healthcare experience.
+                We know the difference between inpatient and outpatient care, why clinical notes
+                matter, and what patient privacy regulations look like in the actual day-to-day.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                <strong>We build healthcare technology that solves real problems</strong> - not just
-                software that meets a spec sheet.
+                <strong>We build healthcare software that solves real problems.</strong> Not
+                software that meets a spec sheet and ignores the people using it.
               </motion.p>
             </div>
           </motion.div>
@@ -221,10 +222,10 @@ export default function HealthcarePage() {
               Compliance & Security
             </motion.h2>
             <motion.div variants={fadeInUp} className="bg-accent-100 border-l-4 border-accent-600 rounded-lg p-6 mb-6">
-              <h3 className="font-bold text-gray-900 mb-2">Built-In Compliance</h3>
+              <h3 className="font-bold text-gray-900 mb-2">Compliance, built in.</h3>
               <p className="text-sm text-gray-700">
-                We do not bolt on compliance as an afterthought. Our healthcare systems are designed
-                from day one with HIPAA (US) and PHIPA (Canada) requirements, including:
+                Compliance isn’t bolted on at audit. Our healthcare systems are designed from day one
+                with HIPAA (US) and PHIPA (Canada) requirements, including:
               </p>
             </motion.div>
             <motion.ul variants={staggerContainer} className="space-y-3 text-gray-700">
@@ -262,21 +263,21 @@ export default function HealthcarePage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding for healthcare innovation</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding for healthcare innovation.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized healthcare technology development for qualifying organizations.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying healthcare technology builds.
                 </p>
                 <p>
-                  <strong>Common healthcare projects:</strong> Patient portals, telehealth platforms, clinical workflow systems, and EMR integrations—all with HIPAA/PHIPA compliance built-in.
+                  <strong>The healthcare projects we see most often.</strong> Patient portals, telehealth platforms, clinical workflow systems, EMR integrations. HIPAA and PHIPA compliance built in, not retrofitted.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  All projects include compliance documentation, security audits, and staff training. Contact us to discuss your healthcare project and determine program eligibility.
+                  Every project includes compliance documentation, security audits, and staff training. Book a free consultation and we&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </motion.div>

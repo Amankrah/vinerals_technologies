@@ -16,12 +16,12 @@ export default function ResourcesPage() {
       <main className="pt-16">
         <ResourcesHero
           badge="Resources & Learning"
-          title="Knowledge for SMEs & Non-Profits"
+          title="Notes from the workshop, for SMEs and non-profits."
           highlightedWord="for SMEs"
-          description="Practical guides, honest insights, and real-world advice on custom software development, AI integration, and digital transformation."
+          description="Practical guides, honest insights, and the real-world experience we’ve picked up shipping custom software, AI work, and digital transformation projects."
           icon={<BookOpen className="w-8 h-8" />}
-          primaryCTA={{ label: 'Coming Soon', href: '#coming-soon' }}
-          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+          primaryCTA={{ label: 'Notes en route', href: '#coming-soon' }}
+          secondaryCTA={{ label: 'Get in touch', href: '/contact' }}
         />
 
         {/* Coming Soon Section */}
@@ -37,10 +37,11 @@ export default function ResourcesPage() {
               <div className="inline-flex items-center justify-center w-24 h-24 mb-6 bg-primary-100 rounded-full">
                 <BookOpen className="w-12 h-12 text-primary-700" />
               </div>
-              <h2 className="section-headline mb-4">Coming Soon</h2>
+              <h2 className="section-headline mb-4">Notes en route.</h2>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                We are working on creating valuable resources to help you navigate custom software
-                development, AI integration, and digital transformation for your organization.
+                We&apos;re writing up the practical material that comes out of the work. Guides,
+                teardowns, and honest opinions about what AI and custom software can (and can&apos;t)
+                do for an SME.
               </p>
             </motion.div>
 

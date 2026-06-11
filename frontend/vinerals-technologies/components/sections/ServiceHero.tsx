@@ -2,24 +2,18 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { heroVariants, heroItemVariants } from '@/hooks/useScrollAnimation';
 
 interface ServiceHeroProps {
   badge: string;
   title: string;
-  highlightedWord?: string; // Optional: word to highlight with gradient
+  highlightedWord?: string;
   description: string;
   icon: React.ReactNode;
-  primaryCTA?: {
-    label: string;
-    href: string;
-  };
-  secondaryCTA?: {
-    label: string;
-    href: string;
-  };
+  primaryCTA?: { label: string; href: string };
+  secondaryCTA?: { label: string; href: string };
 }
 
 const ServiceHero: React.FC<ServiceHeroProps> = ({
@@ -28,218 +22,78 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   highlightedWord,
   description,
   icon,
-  primaryCTA = { label: 'Start Your Project', href: '/contact' },
-  secondaryCTA = { label: 'See Our Work', href: '/work' }
+  primaryCTA = { label: 'Begin a project', href: '/contact' },
+  secondaryCTA = { label: 'Read past dossiers', href: '/work' },
 }) => {
-
-  // Split title to highlight a word if provided
   const renderTitle = () => {
-    if (!highlightedWord) {
-      return <span className="text-gray-900">{title}</span>;
-    }
-
+    if (!highlightedWord) return <span>{title}</span>;
     const parts = title.split(highlightedWord);
     return (
       <>
-        <span className="text-gray-900">{parts[0]}</span>
-        <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 bg-clip-text text-transparent">
-          {highlightedWord}
-        </span>
-        <span className="text-gray-900">{parts[1] || ''}</span>
+        <span>{parts[0]}</span>
+        <em className="text-primary-700">{highlightedWord}</em>
+        <span>{parts[1] || ''}</span>
       </>
     );
   };
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50/30">
-
-      {/* ============================================
-          BACKGROUND ELEMENTS
-          ============================================ */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/40 via-transparent to-secondary-50/20" />
-
-        {/* Dot grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `radial-gradient(circle, #1e3a8a 1.5px, transparent 1.5px)`,
-            backgroundSize: '32px 32px'
-          }}
-        />
-
-        {/* Large gradient orb - top right */}
+    <section className="relative bg-[var(--cream)] overflow-hidden pt-28 md:pt-32 grain">
+      <div className="above-grain relative container mx-auto py-16 md:py-24">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute -right-48 -top-48 w-[500px] h-[500px] hidden md:block"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-wrap items-center gap-3 pb-6 mb-10 border-b border-[var(--ink-hairline)]/40 font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--ink-muted)]"
         >
-          <div className="w-full h-full bg-gradient-to-br from-primary-300/20 via-primary-200/15 to-secondary-300/20 rounded-full blur-3xl" />
+          <span className="w-7 h-px bg-secondary-500" />
+          <span>{badge}</span>
         </motion.div>
 
-        {/* Secondary orb - bottom left */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-          className="absolute -left-32 -bottom-32 w-[400px] h-[400px] hidden md:block"
-        >
-          <div className="w-full h-full bg-gradient-to-tr from-secondary-300/15 to-transparent rounded-full blur-3xl" />
-        </motion.div>
-      </div>
-
-      {/* ============================================
-          DECORATIVE SHAPES - Right Side (lighter than homepage)
-          ============================================ */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        {/* Icon in decorative container - large, background element */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute right-[10%] top-1/2 -translate-y-1/2 hidden lg:block"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
-          >
-            {/* Large icon background */}
-            <div className="w-64 h-64 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 shadow-[0_8px_32px_rgba(30,58,138,0.08)] flex items-center justify-center">
-              <div className="text-primary-400/80 transform scale-[3]">
-                {icon}
-              </div>
-            </div>
-
-            {/* Accent dot */}
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl shadow-lg"
-            />
-          </motion.div>
-        </motion.div>
-
-        {/* Floating shapes */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="hidden lg:block"
-        >
-          {/* Outlined square */}
-          <motion.div
-            animate={{ rotate: [45, 50, 45], y: [0, -8, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[30%] top-[20%] w-12 h-12 border-2 border-primary-200/50 rounded-lg"
-            style={{ transform: 'rotate(45deg)' }}
-          />
-
-          {/* Small teal circle */}
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[8%] bottom-[25%] w-16 h-16 bg-gradient-to-br from-secondary-300/40 to-secondary-400/40 rounded-full"
-          />
-
-          {/* Tiny accent square */}
-          <motion.div
-            animate={{ rotate: [0, 90, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[25%] bottom-[30%] w-6 h-6 bg-accent-400/50 rounded-md"
-          />
-
-          {/* Floating dots */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-[35%] top-[30%] w-2 h-2 bg-primary-400 rounded-full"
-          />
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute right-[5%] top-[40%] w-2 h-2 bg-secondary-400 rounded-full"
-          />
-        </motion.div>
-      </div>
-
-      {/* ============================================
-          CONTENT - Left aligned
-          ============================================ */}
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <motion.div
           variants={heroVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl lg:max-w-2xl"
+          className="grid lg:grid-cols-12 gap-x-10 gap-y-12 items-start"
         >
-          {/* Badge */}
-          <motion.div variants={heroItemVariants} className="mb-6">
-            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm text-primary-700 border border-primary-100 shadow-sm">
-              <span className="w-2 h-2 bg-primary-400 rounded-full mr-2" />
-              {badge}
-            </span>
-          </motion.div>
+          <div className="lg:col-span-8">
+            <motion.h1
+              variants={heroItemVariants}
+              className="font-display font-medium text-[clamp(2.5rem,7vw,5.75rem)] leading-[0.96] tracking-[-0.022em] text-[var(--ink)] mb-8"
+            >
+              {renderTitle()}
+            </motion.h1>
 
-          {/* Mobile icon - only shows on mobile */}
-          <motion.div
-            variants={heroItemVariants}
-            className="mb-6 lg:hidden"
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-2xl text-primary-600">
-              {icon}
+            <motion.p variants={heroItemVariants} className="lead-text max-w-[58ch] mb-10">
+              {description}
+            </motion.p>
+
+            <motion.div variants={heroItemVariants} className="flex flex-col sm:flex-row gap-4">
+              <Button href={primaryCTA.href} size="lg" variant="primary" icon={<ArrowUpRight className="w-5 h-5" />}>
+                {primaryCTA.label}
+              </Button>
+              <Button href={secondaryCTA.href} size="lg" variant="secondary">
+                {secondaryCTA.label}
+              </Button>
+            </motion.div>
+          </div>
+
+          <motion.aside variants={heroItemVariants} className="hidden lg:block lg:col-span-4 lg:pt-4">
+            <div className="relative bg-[var(--paper)] border border-[var(--ink-hairline)]/45 p-10 shadow-paper">
+              <div className="absolute -top-3 left-6 px-3 bg-[var(--cream)] font-mono text-[0.65rem] uppercase tracking-[0.22em] text-secondary-500">
+                Le métier
+              </div>
+              <div className="text-primary-700 flex items-center justify-center py-8 [&_svg]:w-24 [&_svg]:h-24">
+                {icon}
+              </div>
+              <hr className="rule-soft my-6" />
+              <p className="font-display italic text-lg text-[var(--ink-muted)] text-center leading-snug">
+                {badge}
+              </p>
             </div>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={heroItemVariants}
-            className="hero-headline mb-6"
-          >
-            {renderTitle()}
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            variants={heroItemVariants}
-            className="lead-text mb-8 max-w-3xl text-gray-600"
-          >
-            {description}
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            variants={heroItemVariants}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <Button
-              href={primaryCTA.href}
-              size="lg"
-              variant="primary"
-              icon={<ArrowRight className="w-5 h-5" />}
-              className="shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-shadow"
-            >
-              {primaryCTA.label}
-            </Button>
-            <Button
-              href={secondaryCTA.href}
-              size="lg"
-              variant="secondary"
-              className="hover:bg-gray-50 transition-colors"
-            >
-              {secondaryCTA.label}
-            </Button>
-          </motion.div>
+          </motion.aside>
         </motion.div>
       </div>
-
-      {/* ============================================
-          BOTTOM FADE
-          ============================================ */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   );
 };

@@ -16,12 +16,12 @@ export default function MissionPage() {
       <main className="pt-16">
         <MissionHero
           badge="Our Mission & Values"
-          title="Making Technology Accessible to Every Business"
-          highlightedWord="Accessible"
-          description="We exist to make transformative technology accessible to every business, regardless of size or budget."
+          title="Bringing serious software inside reach for every business."
+          highlightedWord="inside reach"
+          description="We exist to make enterprise-calibre software a realistic option for small and mid-sized businesses, regardless of budget."
           icon={<Heart className="w-8 h-8" />}
-          primaryCTA={{ label: 'Our Values', href: '#core-values' }}
-          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+          primaryCTA={{ label: 'Our values', href: '#core-values' }}
+          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
         />
 
         {/* Mission Statement */}
@@ -34,31 +34,33 @@ export default function MissionPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Our Mission: Unlocking Technological Transformation for Quebec SMEs
+              Closing Québec’s digital divide, one SME at a time.
             </motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <p className="text-xl text-gray-900 font-medium leading-relaxed mb-6">
-                We exist to close Canada&apos;s digital divide by making enterprise-quality software and AI
-                solutions accessible to small and medium enterprises — especially in Quebec, where we&apos;re
-                uniquely positioned within the social economy ecosystem.
+                We exist to bring enterprise-calibre software and AI inside reach for small and mid-sized
+                businesses across Canada, with particular weight in Québec, where we sit inside one of the
+                most developed social economy ecosystems in the world.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>Here&apos;s the truth:</strong> Quality software engineering costs what it costs. Professional
-                development in Montreal typically runs $100-200/hr CAD blended rates, with projects ranging from
-                $30,000 to $250,000+. That&apos;s not agencies overcharging — that&apos;s what skilled developers,
-                proper architecture, security, and testing require.
+              <p className="text-gray-700 leading-relaxed mb-6">
+                <strong>The honest part.</strong> Good software engineering costs what it costs. Professional
+                builds in Montréal run $100 to $200 per hour blended, with projects landing between $30,000 and
+                $250,000 CAD. Agencies aren&apos;t overcharging. That&apos;s what skilled developers, proper
+                architecture, security, and testing actually require.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>We&apos;re not claiming to do it cheaper.</strong> Instead, we&apos;ve secured subsidies,
-                grants, and donor funding specifically to reduce barriers for SMEs. We&apos;re a bridge program —
-                making existing expertise accessible, not undercutting professionals.
+              <blockquote className="pullquote my-8">
+                We&apos;re not pretending to do it cheaper. We&apos;re building a bridge.
+              </blockquote>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                What we&apos;ve done is line up subsidies, grants, and donor funding specifically aimed
+                at SMEs. Same expertise, brought inside reach, without undercutting the people doing
+                the work.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                The real value? <strong>We start by helping you understand what&apos;s even possible</strong> with
-                AI and technology — before a single line of code. This knowledge gap is often more critical than
-                the cost barrier. By operating as a solidarity cooperative with mission-aligned funding, we can
-                deliver the same caliber of work that larger organizations receive, while maintaining fair wages
-                and high standards.
+                The piece that often matters more than the budget? <strong>We start by helping you understand
+                what&apos;s actually possible</strong> with AI and modern software, before any code is written.
+                Operating as a solidarity cooperative with mission-aligned funding behind us lets us ship the
+                same calibre of work larger organisations receive, on fair wages, at honest terms.
               </p>
             </motion.div>
           </motion.div>
@@ -74,16 +76,15 @@ export default function MissionPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6">
-              Our Vision
+              Our vision
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-700 leading-relaxed">
-              A future where every business, regardless of size, has access to transformative technology.
+              A future where the size of your business isn’t the size of the software you’re allowed to have.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-gray-700 mt-6 leading-relaxed">
-              We envision a world where cost is no longer a barrier to digital transformation.
-              Where a community health clinic can have the same quality patient portal as a
-              hospital network. Where a family farm can compete with agribusiness through
-              technology. Where social enterprises have the tools to maximize their impact.
+              Cost stops being the wall. A community health clinic runs the same calibre of patient portal as the
+              hospital network down the street. A family farm gets the traceability platform agribusiness takes
+              for granted. A non-profit ships the impact tool its mandate has been begging for.
             </motion.p>
           </motion.div>
         </Section>
@@ -98,44 +99,46 @@ export default function MissionPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              Why We Exist
+              Why we exist
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-6">
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">The Three Barriers SMEs Face</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">Three walls SMEs keep hitting</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>1. The Knowledge Gap:</strong> AI is transforming industries, but what does that actually
-                  mean for your business? Which solutions are real and which are hype? Without a technical partner,
-                  it&apos;s impossible to tell.<br /><br />
-                  <strong>2. The Cost Reality:</strong> Quality custom software costs $30,000-$250,000+ CAD. That&apos;s
-                  not agencies overcharging — that&apos;s what quality engineering requires. For most SMEs, this
-                  investment is simply out of reach.<br /><br />
-                  <strong>3. The Expertise Gap:</strong> Experienced developers work at funded startups or enterprise
-                  companies. SMEs often end up with junior freelancers or distant offshore teams who don&apos;t
-                  understand their context.
+                  <strong>1. The knowledge gap.</strong> AI is everywhere. What actually fits your business is
+                  a much shorter list. Without someone technical in your corner, sorting real from hype is
+                  nearly impossible.<br /><br />
+                  <strong>2. The cost reality.</strong> Quality custom software runs $30,000 to $250,000 CAD,
+                  sometimes higher. Agencies aren&apos;t overcharging. That&apos;s what good engineering takes.
+                  For most SMEs, the cheque just isn&apos;t there.<br /><br />
+                  <strong>3. The expertise gap.</strong> Senior developers work at funded startups and enterprise
+                  shops. SMEs end up with junior freelancers, or offshore teams who don&apos;t know the local
+                  business context. Both leave scar tissue.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">Why Existing Solutions Don&apos;t Work</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">Why the existing options don’t solve it</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Traditional Montreal agencies like Spiria, Stradigi AI, Konverge, and SDLC Corp deliver excellent
-                  work — but at market rates designed for mid-market and enterprise clients. Offshore options cut
-                  costs but sacrifice quality, communication, and understanding of Canadian business context.
-                  Off-the-shelf SaaS tools force compromises that rarely fit real business needs. Mission-driven
-                  organizations — healthcare clinics, sustainable food producers, social enterprises — need custom
-                  technology the most but can afford it the least.
+                  Established Montréal shops like Spiria, Stradigi AI, Konverge, and SDLC Corp do excellent work,
+                  at the rates mid-market and enterprise buyers expect. Offshore options trade quality, communication,
+                  and Canadian business context for a lower invoice. Off-the-shelf SaaS forces compromises that
+                  rarely fit the actual work.
                 </p>
+                <blockquote className="pullquote mt-6">
+                  The organisations that need custom software the most can afford it the least.
+                </blockquote>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">Our Solution: A Bridge Program</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">Our model: a bridge programme</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  We&apos;re not a discount agency — we&apos;re a publicly-supported technology adoption program.
-                  By structuring as a solidarity cooperative and securing government subsidies, grants, and impact
-                  funding, we can deliver the same enterprise-quality work at terms designed for growing businesses.
-                  We start with what you need to know, help you understand what&apos;s possible, and deliver solutions
-                  with the same senior talent — without the investor pressure to maximize extraction.
+                  We&apos;re not a discount agency. We&apos;re a publicly-supported technology adoption programme.
+                  Structuring as a solidarity cooperative and lining up government subsidies, grants, and impact
+                  funding means we can ship the same enterprise-calibre work at terms a growing business can
+                  defend on a board agenda. We start with what you need to know, walk you through what&apos;s
+                  possible, and deliver with senior people, without the investor pressure to extract every last
+                  dollar.
                 </p>
               </motion.div>
             </motion.div>
@@ -152,7 +155,7 @@ export default function MissionPage() {
             className="max-w-5xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-12 text-center">
-              Our Core Values
+              Our core values
             </motion.h2>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-8">
@@ -161,11 +164,10 @@ export default function MissionPage() {
                   <Compass className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Accessibility First</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">Accessibility first.</h3>
                   <p className="text-gray-700">
-                    Technology should be accessible to everyone, not just those with Fortune 500
-                    budgets. We price our services to be within reach of SMEs, non-profits, and
-                    social enterprises while maintaining quality and fair wages.
+                    Software shouldn’t be a luxury good. We price the work so SMEs, non-profits, and
+                    social enterprises can actually buy it, on fair wages, without compromising quality.
                   </p>
                 </div>
               </motion.div>
@@ -175,11 +177,11 @@ export default function MissionPage() {
                   <Shield className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Radical Transparency</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">Radical transparency.</h3>
                   <p className="text-gray-700">
-                    No hidden fees, no scope creep surprises, no vendor lock-in tactics. We publish
-                    our rates openly, explain our decisions clearly, and ensure you own everything
-                    we build. You deserve to know exactly what you are paying for.
+                    No hidden fees, no scope-creep surprises, no vendor lock-in tactics. We publish rates
+                    openly, explain trade-offs in plain language, and hand over everything we build. You
+                    know exactly what you’re paying for.
                   </p>
                 </div>
               </motion.div>
@@ -189,11 +191,11 @@ export default function MissionPage() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">True Partnership</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">A real partnership.</h3>
                   <p className="text-gray-700">
-                    We are not a vendor extracting maximum value - we are partners invested in your
-                    success. We provide honest advice even when it costs us revenue. We say no to
-                    projects that are not a good fit. We build relationships, not just software.
+                    We’re not a vendor squeezing every dollar out of an account. We’re partners with
+                    skin in your outcome. We give honest advice when it costs us revenue, walk away from
+                    bad fits, and build relationships, not just code.
                   </p>
                 </div>
               </motion.div>
@@ -203,11 +205,10 @@ export default function MissionPage() {
                   <TrendingUp className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Continuous Improvement</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">Always learning.</h3>
                   <p className="text-gray-700">
-                    Technology evolves rapidly and so do we. We invest in learning, adopt best
-                    practices, and constantly refine our processes. We bring the latest tools and
-                    techniques to every project without the consultant markup.
+                    Software moves fast, and so do we. We invest in learning, refine the process between
+                    projects, and bring the latest tools to the next client without the consultant markup.
                   </p>
                 </div>
               </motion.div>
@@ -217,11 +218,10 @@ export default function MissionPage() {
                   <Target className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Impact Over Revenue</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">Impact over revenue.</h3>
                   <p className="text-gray-700">
-                    We measure success by the impact our technology creates - time saved, costs
-                    reduced, communities served - not just revenue generated. If a project does not
-                    create real value for you, we will tell you.
+                    Success is measured in time saved, costs cut, and communities served, not just in
+                    invoices sent. If a project doesn’t move that needle, we’ll say so before you sign.
                   </p>
                 </div>
               </motion.div>
@@ -231,11 +231,11 @@ export default function MissionPage() {
                   <Heart className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Social Economy Commitment</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">In the social economy, for real.</h3>
                   <p className="text-gray-700">
-                    As a solidarity cooperative, we are committed to the social economy ecosystem.
-                    We prioritize working with mission-driven organizations, offer subsidized programs
-                    for non-profits and co-ops, and contribute to building a more equitable economy.
+                    As a solidarity cooperative, we’re part of the social economy and we act like it. We
+                    prioritise mission-driven clients, offer subsidised tracks for non-profits and co-ops,
+                    and contribute back to the ecosystem that makes us possible.
                   </p>
                 </div>
               </motion.div>
@@ -253,40 +253,39 @@ export default function MissionPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              Our Impact Goals
+              Our impact goals
             </motion.h2>
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="text-3xl font-bold text-primary-900 mb-2">50+</div>
-                <h3 className="font-semibold text-gray-900 mb-2">SMEs Empowered</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">SMEs unlocked</h3>
                 <p className="text-sm text-gray-700">
-                  Help 50+ small and medium enterprises access transformative technology by 2027
+                  50-plus small and mid-sized businesses given access to serious software by 2027.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="text-3xl font-bold text-primary-900 mb-2">$2M+</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Client Savings</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Saved off the cheque</h3>
                 <p className="text-sm text-gray-700">
-                  Save clients $2M+ in development costs vs traditional agencies through our
-                  cooperative model
+                  More than $2M in development costs absorbed by funding instead of by our clients.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="text-3xl font-bold text-primary-900 mb-2">10+</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Quality Jobs Created</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Quality jobs created</h3>
                 <p className="text-sm text-gray-700">
-                  Create 10+ well-paid technology jobs in Montreal&apos;s social economy by 2027
+                  10-plus well-paid technology jobs inside Montréal’s social economy by 2027.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="text-3xl font-bold text-primary-900 mb-2">20+</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Social Impact Projects</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Mission-driven projects shipped</h3>
                 <p className="text-sm text-gray-700">
-                  Complete 20+ projects for healthcare, sustainability, food systems, and social
-                  enterprise sectors
+                  20-plus completed projects across healthcare, sustainability, food systems, and
+                  social enterprise.
                 </p>
               </motion.div>
             </motion.div>
@@ -303,38 +302,37 @@ export default function MissionPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              How We Measure Success
+              How we measure success
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                Unlike traditional agencies that optimize for revenue growth, we measure success
-                across multiple dimensions:
+                Most agencies optimise for revenue growth. We watch a wider set of numbers:
               </motion.p>
               <motion.ul variants={staggerContainer} className="space-y-3">
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Client Impact:</strong> Time saved, costs reduced, revenue increased,
-                  communities served by the technology we build</span>
+                  <span><strong>Client impact.</strong> Time saved, costs cut, revenue lifted, communities
+                  better served by the software we shipped.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Accessibility:</strong> Number of SMEs and mission-driven organizations
-                  we make technology accessible to</span>
+                  <span><strong>Accessibility.</strong> How many SMEs and mission-driven organisations we
+                  helped get real software in their hands.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Cost Savings:</strong> Total amount clients save vs traditional agency
-                  pricing while getting the same quality</span>
+                  <span><strong>Cost relieved.</strong> What the funding side absorbed so the client side
+                  could still ship at the same calibre.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Worker Well-being:</strong> Fair wages, sustainable workload, professional
-                  development, and democratic governance</span>
+                  <span><strong>Worker wellbeing.</strong> Fair wages, sustainable workload, room to learn,
+                  and democratic governance that actually shows up in decisions.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Social Economy Contribution:</strong> Partnerships with other co-ops,
-                  support for local social economy, knowledge sharing</span>
+                  <span><strong>Contribution back to the ecosystem.</strong> Partnerships with other co-ops,
+                  active support for local social economy work, and knowledge passed forward.</span>
                 </motion.li>
               </motion.ul>
             </motion.div>

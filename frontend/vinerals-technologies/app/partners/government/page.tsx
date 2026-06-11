@@ -56,13 +56,13 @@ export default function GovernmentPage() {
             </div>
 
             <h1 className="hero-headline mb-6">
-              Accelerating Digital Transformation Across Quebec&apos;s SME Ecosystem
+              Accelerating digital transformation across Québec’s SME ecosystem.
             </h1>
 
             <p className="lead-text">
               A solidarity cooperative delivering measurable economic impact through accessible
-              technology services. Aligned with Quebec&apos;s digital economy objectives and SME
-              support priorities.
+              technology services. Lines up directly with Québec’s digital economy objectives and
+              SME support priorities.
             </p>
           </div>
         </Section>

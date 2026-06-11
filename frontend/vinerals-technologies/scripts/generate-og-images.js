@@ -13,6 +13,7 @@ try {
 const publicDir = path.join(__dirname, '..', 'public');
 
 const images = [
+  'og-image',
   'og-industries',
   'og-healthcare',
   'og-food-systems',
@@ -44,7 +45,9 @@ async function convertSvgToJpg() {
       await sharp(svgPath, { density: 300 })
         .resize(1200, 630, {
           fit: 'contain',
-          background: { r: 30, g: 58, b: 138 }, // Primary blue background
+          // Brand cream paper substrate — matches public/favicon.svg + the Atelier design system.
+          // Forest (#1F3A2E) is reserved for dark hero panels; cream reads correctly on every social platform.
+          background: { r: 245, g: 239, b: 230 },
         })
         .jpeg({ quality: 95 })
         .toFile(jpgPath);

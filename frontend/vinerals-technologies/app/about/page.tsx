@@ -14,21 +14,21 @@ export default function AboutPage() {
   const aboutSections = [
     {
       title: 'Our Mission',
-      description: 'Learn about our commitment to making transformative technology accessible to every business, regardless of size or budget.',
+      description: 'Why we exist, who we’re building for, and what we won’t do to grow.',
       href: '/about/mission',
       icon: Heart,
       color: 'from-primary-100 to-primary-200',
     },
     {
       title: 'Our Team',
-      description: 'Meet the experienced developers and engineers behind Vinerals Technologies who are passionate about mission-driven work.',
+      description: 'Meet the people writing the code. Senior, named, reachable. No account managers in the way.',
       href: '/about/team',
       icon: Users,
       color: 'from-secondary-100 to-secondary-200',
     },
     {
       title: 'Our Cooperative Model',
-      description: 'Discover how our solidarity cooperative structure enables fair pricing and sustainable, mission-focused development.',
+      description: 'How a solidarity cooperative actually changes the work: governance, ownership, profit, and why it matters to you.',
       href: '/about/cooperative',
       icon: Building2,
       color: 'from-accent-100 to-accent-200',
@@ -41,12 +41,12 @@ export default function AboutPage() {
       <main className="pt-16">
         <AboutHero
           badge="About Vinerals Technologies"
-          title="A Mission-Driven Cooperative"
-          highlightedWord="Mission-Driven"
-          description="We are a Montreal-based solidarity cooperative making enterprise-quality software accessible to small and medium businesses through the social economy model."
+          title="A mission-driven cooperative."
+          highlightedWord="mission-driven"
+          description="We’re a Montréal solidarity cooperative bringing enterprise-calibre software inside reach for small and mid-sized businesses, through the social economy model."
           icon={<Heart className="w-8 h-8" />}
-          primaryCTA={{ label: 'Learn More', href: '#who-we-are' }}
-          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+          primaryCTA={{ label: 'Read on', href: '#who-we-are' }}
+          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
         />
 
         {/* Introduction */}
@@ -59,30 +59,31 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Who We Are
+              Who we are
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
               <motion.p variants={fadeInUp}>
-                Vinerals Technologies is not your typical software agency. We are a <strong>solidarity cooperative</strong> -
-                a social enterprise owned by workers and community members, not external investors seeking
-                maximum returns.
+                Vinerals Technologies isn&apos;t your typical agency. We&apos;re a <strong>solidarity cooperative</strong>,
+                a social enterprise owned by workers and community members instead of investors hunting maximum returns.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                Founded in 2025 in Montreal, we exist to solve a fundamental problem facing Quebec SMEs and businesses
-                across Canada: <strong>quality custom software costs what it costs</strong> - typically $30,000-$250,000+
-                CAD for professional development. That&apos;s not agencies overcharging; that&apos;s what enterprise-quality
-                engineering requires. For most growing businesses, this investment is simply out of reach.
+                Founded in Montréal in 2025, we exist to solve a problem every Québec SME and growing Canadian
+                business has lived: <strong>quality custom software costs what it costs.</strong> Professional builds
+                land between $30,000 and $250,000 CAD, sometimes higher. Agencies aren&apos;t overcharging.
+                That&apos;s what serious engineering requires. For most growing businesses, the cheque just isn&apos;t there.
+              </motion.p>
+              <motion.blockquote variants={fadeInUp} className="pullquote my-4">
+                We&apos;re not undercutting anyone. We&apos;re building a bridge.
+              </motion.blockquote>
+              <motion.p variants={fadeInUp}>
+                We&apos;ve lined up <strong>subsidies, grants, and mission-aligned funding</strong> aimed squarely
+                at SMEs. We bring existing expertise inside reach, and we start by explaining what AI and modern
+                software can (and can&apos;t) realistically do for your business.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                We&apos;re not undercutting anyone or claiming to do it cheaper. Instead, we&apos;ve secured <strong>subsidies,
-                grants, and mission-aligned funding</strong> specifically to reduce barriers for SMEs. We&apos;re a bridge
-                program - making existing expertise accessible, while helping businesses understand what&apos;s even possible
-                with AI and modern technology.
-              </motion.p>
-              <motion.p variants={fadeInUp}>
-                Through our cooperative structure and funded accessibility programs, we deliver the same caliber of work
-                that larger organizations receive - at terms designed for growing businesses. We work with mission-driven
-                organizations across healthcare, food systems, sustainability, and social enterprise sectors.
+                Through the cooperative structure and these funded accessibility programmes, you get the same calibre
+                of work larger organisations pay full freight for, at terms a growing business can plan around. We work
+                with mission-driven organisations in healthcare, food systems, sustainability, and social enterprise.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -140,40 +141,40 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-12 text-center">
-              Quick Facts
+              Quick facts
             </motion.h2>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Our Structure</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Structure</h3>
                 <p className="text-gray-700 text-sm">
-                  Solidarity cooperative (coopérative de solidarité) - a Quebec social enterprise
-                  model that brings together worker, user, and supporting members in democratic governance.
+                  Solidarity cooperative (<em>coopérative de solidarité</em>). A Québec social enterprise model
+                  that brings worker, user, and supporting members into the same democratic governance.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Our Approach</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Approach</h3>
                 <p className="text-gray-700 text-sm">
-                  <strong>Quality software engineering costs what it costs.</strong> We&apos;ve secured
-                  mission-aligned funding so that cost doesn&apos;t have to be your barrier. And we start
-                  by helping you understand what&apos;s actually possible - before a single line of code.
+                  <strong>Good engineering costs what it costs.</strong> We&apos;ve gone after the funding so
+                  cost doesn&apos;t have to be the wall. And we start by walking you through what&apos;s actually
+                  possible before any code gets written.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Our Location</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Location</h3>
                 <p className="text-gray-700 text-sm">
-                  Based in Montreal, Quebec, Canada. We work with clients across Canada and internationally
-                  through remote collaboration.
+                  Based in Montréal, Québec. We work with clients across Canada and internationally through
+                  remote collaboration.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Our Focus</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Focus</h3>
                 <p className="text-gray-700 text-sm">
-                  Healthcare, food systems, sustainability, and social enterprise sectors. We work with
-                  SMEs, non-profits, and mission-driven organizations.
+                  Healthcare, food systems, sustainability, and social enterprise. We work with SMEs, non-profits,
+                  and the mission-driven organisations sitting between them.
                 </p>
               </motion.div>
             </motion.div>
@@ -190,49 +191,49 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Why Vinerals is Uniquely Positioned for Quebec SMEs
+              Why we’re positioned the way we are for Québec SMEs
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed mb-6">
               <motion.p variants={fadeInUp}>
-                Compare us to typical Montreal software agencies charging $100-200/hr CAD blended rates.
-                We&apos;re not competing on price - we&apos;re solving a different problem: <strong>the knowledge gap
-                and accessibility barrier</strong> that prevents SMEs from leveraging transformative technology.
+                Compared with the typical Montréal agency at $100 to $200 per hour blended, we&apos;re not competing
+                on price. We&apos;re solving a different problem: <strong>the knowledge gap and the accessibility
+                gap</strong> that keep SMEs locked out of the software they need.
               </motion.p>
             </motion.div>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700">
               <motion.ul variants={staggerContainer} className="space-y-3">
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Technology translation first:</strong> Before any code, we help you understand
-                  what&apos;s possible with AI and modern software - separating hype from practical ROI. This alone
+                  <span><strong>Translation first.</strong> Before any code, we sit down and explain what AI and
+                  modern software can actually do for your business, and what they can&apos;t. That conversation alone
                   is worth thousands in avoided mistakes.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Mission-aligned funding:</strong> Through government programs, impact investors,
-                  and donor support, we&apos;ve secured funding to reduce cost barriers - not by cutting corners,
-                  but by supplementing project budgets for qualifying organizations</span>
+                  <span><strong>Mission-aligned funding.</strong> Government programmes, impact investors, and donor
+                  support cover part of qualifying engagements. We&apos;re not cutting corners. We&apos;re supplementing
+                  the project budget so the math works.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>No investor pressure:</strong> As a cooperative, we reinvest in our mission
-                  rather than extracting maximum returns for external shareholders - enabling sustainable pricing
-                  and long-term client partnerships</span>
+                  <span><strong>No investor pressure.</strong> The cooperative model means profits get reinvested in the
+                  mission, not extracted for shareholders. That&apos;s what makes sustainable pricing and long-term client
+                  relationships possible in the first place.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Senior developers only:</strong> Every person you work with has 5+ years
-                  of professional experience. Same quality as Spiria, Stradigi AI, or Konverge - made accessible</span>
+                  <span><strong>Senior developers only.</strong> Every person you work with has at least five years
+                  in production. Same calibre of work you&apos;d get from Spiria, Stradigi AI, or Konverge, made accessible.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Full ownership guaranteed:</strong> You own 100% of the code, designs, and intellectual
-                  property we create - no vendor lock-in or proprietary systems</span>
+                  <span><strong>Full ownership.</strong> You own 100% of the code, the designs, and the IP we create.
+                  No vendor lock-in, no proprietary stack, no escape clause when you want to move on.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Social economy integration:</strong> Part of Quebec&apos;s 11,000+ social economy
-                  enterprises, with deep connections to CDRQ, PME MTL, CESIM, and the Chantier de l&apos;économie sociale</span>
+                  <span><strong>Plugged into the social economy.</strong> Part of Québec&apos;s 11,000-plus social
+                  economy enterprises, with working ties to CDRQ, PME MTL, CESIM, and the Chantier de l&apos;économie sociale.</span>
                 </motion.li>
               </motion.ul>
             </motion.div>

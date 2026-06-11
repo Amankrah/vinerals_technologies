@@ -26,8 +26,8 @@ export default function TeamPage() {
       name: 'Emmanuel Amankrah Kwofie',
       role: 'Lead Engineer & CTO',
       expertise: ['Full-Stack Development', 'Cloud Architecture', 'Machine Learning', 'DevOps'],
-      bio: 'Research-to-software engineer converting scientific concepts into functional systems. With experience at SASEL Lab McGill and background in building automation solutions, cloud-native applications, and high-performance systems for research and analytics platforms. Specialized in sustainable food systems, AI integration, and translating complex technical concepts into practical business solutions. 5+ years professional experience delivering enterprise-quality software.',
-      funFact: 'Built a comprehensive pea protein analysis platform integrating technical optimization, economic feasibility modeling, and environmental impact assessment—exactly the kind of cross-disciplinary problem-solving that helps SMEs leverage technology strategically.',
+      bio: 'A research-to-software engineer. The kind who turns scientific work into systems you can actually run. Past stints at SASEL Lab McGill and a background in automation, cloud-native applications, and high-performance research and analytics platforms. Focused on sustainable food systems, AI integration, and translating heavy technical concepts into practical business decisions. 5+ years shipping enterprise-calibre software.',
+      funFact: 'Built a full pea-protein analysis platform that wove together technical optimisation, economic feasibility modelling, and environmental impact assessment. The exact kind of cross-disciplinary problem-solving SMEs need when they’re trying to make a real call on technology.',
       linkedin: 'https://www.linkedin.com/in/eakwofie/',
       github: 'https://github.com/Amankrah',
       email: 'contact@vineralstechnologies.com',
@@ -40,16 +40,16 @@ export default function TeamPage() {
       <main className="pt-16">
         <TeamHero
           badge="Meet the Team"
-          title="The Developers Behind Vinerals"
-          highlightedWord="Behind Vinerals"
-          description="We are a small team of experienced developers who care deeply about building technology that solves real problems for mission-driven organizations."
+          title="The people behind the work."
+          highlightedWord="behind the work."
+          description="A small team of experienced developers, building software that solves real problems for mission-driven organisations. No account managers, no junior devs being trained on your project."
           icon={<Users className="w-8 h-8" />}
           stats={[
             { value: '5+', label: 'Years Experience' },
             { value: '100%', label: 'Senior Developers' },
           ]}
-          primaryCTA={{ label: 'Join Our Team', href: '#join' }}
-          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+          primaryCTA={{ label: 'Join us', href: '#join' }}
+          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
         />
 
         {/* Team Intro */}
@@ -62,29 +62,31 @@ export default function TeamPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Who We Are
+              Who we are
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
               <motion.p variants={fadeInUp}>
-                We are not your typical agency. There are no account managers, no sales team,
-                no junior developers fresh out of bootcamp. <strong>Every person you work with is a
-                senior engineer with 5+ years of experience</strong> — the same caliber of talent you&apos;d
-                find at Spiria, Stradigi AI, or Konverge.
+                We’re not the typical agency. No account managers, no sales team, no juniors fresh out
+                of bootcamp on your project. <strong>Every person you work with is a senior engineer with
+                at least five years of production experience.</strong> Same calibre of talent you’d hire at
+                Spiria, Stradigi AI, or Konverge.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                We came together because we were frustrated with how the tech industry operates.
-                We saw talented developers building vanity apps for startups while community health
-                clinics struggled with paper records. We saw sustainable food producers unable to
-                afford basic traceability systems. We saw non-profits paying consulting fees that
-                could have funded their programs. <strong>The knowledge gap and cost barrier were locking
-                Quebec SMEs out of technological transformation.</strong>
+                We came together because we were tired of how the industry works. Tired of watching
+                talented developers build vanity apps for startups while community health clinics ran
+                on paper. Tired of sustainable food producers priced out of basic traceability. Tired
+                of non-profits handing over consulting fees that could have funded their actual programmes.
+                <strong> The knowledge gap and the cost barrier were locking Québec SMEs out of the room.</strong>
               </motion.p>
+              <motion.blockquote variants={fadeInUp} className="pullquote my-4">
+                The team that starts your project is the team that finishes it.
+              </motion.blockquote>
               <motion.p variants={fadeInUp}>
-                So we built Vinerals Technologies — a solidarity cooperative where we could work
-                on projects we believe in, secure mission-aligned funding to bridge accessibility gaps,
-                and prove that enterprise-quality technology doesn&apos;t have to be out of reach for
-                growing businesses. We&apos;re not competing on price; we&apos;re solving the real problem:
-                helping SMEs understand what&apos;s possible and making professional implementation accessible.
+                So we built Vinerals Technologies. A solidarity cooperative where we could work on
+                projects we believe in, line up mission-aligned funding to close the accessibility gap,
+                and prove that enterprise-calibre software doesn’t have to be out of reach for a growing
+                business. We’re not competing on price. We’re solving the actual problem: helping SMEs
+                see what’s possible and bringing the professional implementation inside reach.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -202,40 +204,40 @@ export default function TeamPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              Why Work With Us
+              Why work with us
             </motion.h2>
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Senior Developers Only</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Senior developers only.</h3>
                 <p className="text-gray-700 text-sm">
-                  Every person you work with has 5+ years of professional experience. No junior
-                  devs learning on your dime.
+                  Everyone you work with has at least five years in production. No juniors learning
+                  on your dime.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Direct Access</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Direct access.</h3>
                 <p className="text-gray-700 text-sm">
-                  No account managers or middlemen. You work directly with the developers building
-                  your solution.
+                  No account managers, no middlemen. You talk to the developer building the thing,
+                  not the person managing the relationship.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Domain Expertise Beyond Code</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Domain understanding, not just code.</h3>
                 <p className="text-gray-700 text-sm">
-                  We have real-world experience in healthcare, food systems, sustainability, and
-                  social enterprise — not just tech. This means we understand your business context
-                  and can translate technology into strategic advantage.
+                  Real working experience in healthcare, food systems, sustainability, and social enterprise.
+                  We understand your context, which means we can translate technology into a decision
+                  you can actually act on.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Mission-Aligned, Quality-Focused</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Mission-aligned. Quality non-negotiable.</h3>
                 <p className="text-gray-700 text-sm">
-                  We care about the problems you are solving and turn down projects that don&apos;t
-                  align with our values. But we never compromise on quality — you get the same
-                  professional standards as larger Montreal agencies.
+                  We care about the problems you’re solving and walk away from work that doesn’t fit
+                  our values. But the quality bar stays the same as any larger Montréal shop. We won’t
+                  ship code we wouldn’t be proud of either way.
                 </p>
               </motion.div>
             </motion.div>
@@ -252,15 +254,15 @@ export default function TeamPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6">
-              Join Our Team
+              Join the team
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-700 leading-relaxed mb-8">
-              We are growing slowly and deliberately. If you are a senior developer who wants
-              to work on meaningful projects, earn fair wages, and help build a more equitable
-              tech industry, we would love to hear from you.
+              We’re growing slowly, on purpose. If you’re a senior developer who wants to work on
+              meaningful projects, earn a fair wage, and help build a more equitable tech industry,
+              we’d like to hear from you.
             </motion.p>
             <motion.div variants={fadeInUp} className="bg-primary-50 rounded-xl p-8">
-              <h3 className="font-bold text-gray-900 mb-4">What We Look For</h3>
+              <h3 className="font-bold text-gray-900 mb-4">What we look for</h3>
               <ul className="text-left space-y-3 text-gray-700 mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>

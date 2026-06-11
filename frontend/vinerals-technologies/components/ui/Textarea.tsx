@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -24,7 +24,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
-    const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+    const reactId = useId();
+    const textareaId = id || `textarea-${reactId}`;
 
     return (
       <div className={cn('w-full', containerClassName)}>
@@ -32,13 +33,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           <label
             htmlFor={textareaId}
             className={cn(
-              'block text-sm font-medium mb-2',
-              error ? 'text-error-600' : 'text-gray-700',
+              'block font-mono text-[0.7rem] uppercase tracking-[0.22em] mb-2.5',
+              error ? 'text-secondary-600' : 'text-[var(--ink-muted)]',
               disabled && 'opacity-50'
             )}
           >
             {label}
-            {required && <span className="text-error-600 ml-1">*</span>}
+            {required && <span className="text-secondary-500 ml-1">*</span>}
           </label>
         )}
 
@@ -48,40 +49,30 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           disabled={disabled}
           rows={rows}
           className={cn(
-            'w-full px-4 py-2.5 text-base',
-            'bg-white border rounded-lg',
-            'transition-all duration-200',
-            'placeholder:text-gray-400',
-            'focus:outline-none focus:ring-2 focus:ring-offset-0',
-            'resize-y',
+            'w-full bg-transparent border-0 border-b py-3 px-0 font-display text-lg text-[var(--ink)] leading-relaxed',
+            'transition-all duration-200 resize-y',
+            'placeholder:text-[var(--ink-faint)] placeholder:italic placeholder:font-display',
+            'focus:outline-none focus:ring-0',
             error
-              ? 'border-error-600 focus:border-error-600 focus:ring-error-500/20'
-              : 'border-gray-300 focus:border-primary-600 focus:ring-primary-500/20',
-            disabled && 'bg-gray-100 cursor-not-allowed opacity-60',
+              ? 'border-secondary-500 focus:border-secondary-600'
+              : 'border-[var(--ink-hairline)] focus:border-primary-700',
+            disabled && 'opacity-60 cursor-not-allowed',
             className
           )}
           {...props}
         />
 
         {error && (
-          <p className="mt-1.5 text-sm text-error-600 flex items-center gap-1">
-            <svg
-              className="w-4 h-4 flex-shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                clipRule="evenodd"
-              />
-            </svg>
+          <p className="mt-2 text-sm text-secondary-600 italic font-display flex items-center gap-1.5">
+            <span aria-hidden className="text-secondary-500">·</span>
             {error}
           </p>
         )}
 
         {helpText && !error && (
-          <p className="mt-1.5 text-sm text-gray-500">{helpText}</p>
+          <p className="mt-2 text-sm text-[var(--ink-faint)] italic font-display">
+            {helpText}
+          </p>
         )}
       </div>
     );

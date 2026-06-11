@@ -56,12 +56,13 @@ export default function ConsortiumsPage() {
             </div>
 
             <h1 className="hero-headline mb-6">
-              Your Technology Partner for Collective Impact
+              A technical partner for collective impact.
             </h1>
 
             <p className="lead-text">
               Collaborative development capacity for industry associations, networks, and social
-              economy organizations. Building technology that serves your entire ecosystem.
+              economy organisations. The technology that serves your whole ecosystem, not just one
+              member at a time.
             </p>
           </div>
         </Section>

@@ -56,13 +56,13 @@ export default function FundersPage() {
             </div>
 
             <h1 className="hero-headline mb-6">
-              Invest in Quebec&apos;s Digital Economy
+              Patient capital for Québec’s digital economy.
             </h1>
 
             <p className="lead-text">
-              Patient capital opportunity with measurable social return. Support a proven bridge
-              model making enterprise-quality software accessible to Quebec SMEs - delivering
-              5-10x cost savings while creating quality jobs and strengthening the social economy.
+              A measurable social return alongside real financial discipline. Back a proven bridge
+              model that brings enterprise-calibre software inside reach for Québec SMEs, with 5×
+              to 10× cost relief and quality jobs created inside the social economy.
             </p>
           </div>
         </Section>
@@ -73,33 +73,33 @@ export default function FundersPage() {
             <h2 className="section-headline mb-8 text-center">Why Invest in Vinerals Technologies?</h2>
             <div className="bg-white rounded-xl p-8 shadow-md space-y-4 text-gray-700 leading-relaxed">
               <p>
-                <strong>The Problem:</strong> Quebec SMEs face a $30K-$250K+ barrier to quality software.
-                Montreal agencies charge $100-200/hr CAD (market rate for enterprise quality) - pricing 90%
-                of businesses out of digital transformation. This isn&apos;t agencies overcharging; it&apos;s
-                what professional engineering costs. The result? A two-tier economy where large corporations
+                <strong>The problem.</strong> Québec SMEs face a $30K to $250K wall on quality software.
+                Montréal agencies charge $100 to $200 per hour blended (market rate for enterprise calibre work),
+                which prices 90% of businesses out of digital transformation. Agencies aren&apos;t overcharging.
+                That&apos;s what good engineering costs. The outcome is a two-tier economy where large corporates
                 get innovation while SMEs fall behind.
               </p>
               <p>
-                <strong>Our Solution - A Bridge, Not Charity:</strong> We don&apos;t undercut professional
-                rates or claim to do it cheaper. Instead, we&apos;ve structured as a solidarity cooperative
-                (eliminating investor profit extraction) and secured government subsidies, grants, and impact
-                funding to supplement project budgets. We deliver the same caliber as Spiria, Stradigi AI, or
-                Konverge - made accessible through mission-aligned funding, not by cutting corners.
+                <strong>The model. A bridge, not charity.</strong> We don&apos;t undercut professional rates
+                or pretend to do it cheaper. We structured as a solidarity cooperative (no investor profit
+                extraction) and lined up government subsidies, grants, and impact funding to cover part of
+                qualifying project budgets. The work itself is the same calibre as Spiria, Stradigi AI, or
+                Konverge. The mission-aligned funding is what brings it inside reach.
               </p>
               <p>
-                <strong>The Multiplier Effect:</strong> Every dollar invested creates multiple returns:
+                <strong>The multiplier effect.</strong> Every dollar invested generates several returns:
               </p>
               <ul className="ml-6 space-y-2 text-sm">
-                <li>• <strong>Client impact:</strong> 5-10x cost savings vs traditional agencies ($50K saved per project average)</li>
-                <li>• <strong>Job creation:</strong> Quality, fair-wage tech jobs in Montreal&apos;s social economy</li>
-                <li>• <strong>SME competitiveness:</strong> Businesses gain AI/automation previously out of reach</li>
-                <li>• <strong>Ecosystem strengthening:</strong> Proven model other tech co-ops can replicate</li>
+                <li>• <strong>Client impact.</strong> 5× to 10× cost relief vs traditional agencies, around $50K saved per project on average.</li>
+                <li>• <strong>Job creation.</strong> Quality, fair-wage technology jobs created inside Montréal&apos;s social economy.</li>
+                <li>• <strong>SME competitiveness.</strong> Businesses get the AI and automation that used to be out of reach.</li>
+                <li>• <strong>Ecosystem strengthening.</strong> A proven model other tech co-ops can replicate.</li>
               </ul>
               <p>
-                <strong>Sustainable Business Model:</strong> Hybrid revenue (60-70% earned income + 30-40%
-                mission-aligned funding) creates path to self-sustainability within 5 years. We&apos;re not
-                seeking maximum returns - we&apos;re seeking patient capital (3-5%) that values closing
-                Canada&apos;s digital divide alongside financial sustainability.
+                <strong>A sustainable business model.</strong> Hybrid revenue (60% to 70% earned income, 30%
+                to 40% mission-aligned funding) gives us a credible path to self-sustainability within five
+                years. We&apos;re not chasing maximum returns. We&apos;re looking for patient capital (3% to
+                5%) that values closing Canada&apos;s digital divide as much as financial sustainability.
               </p>
             </div>
           </div>

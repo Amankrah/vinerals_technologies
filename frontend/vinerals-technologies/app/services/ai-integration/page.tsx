@@ -57,27 +57,27 @@ export default function AIIntegrationPage() {
   const processSteps = [
     {
       number: 1,
-      title: 'Use Case Discovery',
-      subtitle: 'ROI-Focused',
-      description: 'We identify where AI can actually save time or money - not where it is just trendy.',
+      title: 'Use case discovery',
+      subtitle: 'ROI-focused',
+      description: 'We find the corners of your work where AI actually saves money or time, and we’re honest about the corners where it doesn’t.',
     },
     {
       number: 2,
-      title: 'Proof of Concept',
-      subtitle: 'Validate First',
-      description: 'Quick prototype to validate feasibility and ROI before full investment.',
+      title: 'Proof of concept',
+      subtitle: 'Validate first',
+      description: 'A small, fast prototype that proves the idea works in your data before anyone signs a six-figure cheque.',
     },
     {
       number: 3,
       title: 'Implementation',
-      subtitle: 'Production-Ready',
-      description: 'Production-ready AI integration with proper error handling and fallbacks.',
+      subtitle: 'Production-ready',
+      description: 'Built for the real world. Proper error handling, sensible fallbacks for when the model fails, and a clear budget for every API call.',
     },
     {
       number: 4,
-      title: 'Optimization',
+      title: 'Optimisation',
       subtitle: 'Continuous',
-      description: 'Monitor performance, reduce costs, and iterate based on real usage data.',
+      description: 'We watch usage, cut costs where we can, and iterate based on what your team actually does with it.',
     },
   ];
 
@@ -93,8 +93,8 @@ export default function AIIntegrationPage() {
       <main className="pt-16">
         <ServiceHero
           badge="AI & Machine Learning Integration"
-          title="AI That Actually Works for Your Business"
-          description="Cut through the hype. We implement AI solutions with clear ROI - not science projects."
+          title="AI that earns its keep in your business."
+          description="No hype, no science projects. We pick the few use cases where AI actually saves you money or time, and we build those properly."
           icon={<Brain className="w-16 h-16" />}
         />
 
@@ -104,56 +104,56 @@ export default function AIIntegrationPage() {
               <div className="flex items-start gap-3">
                 <AlertCircle className="w-6 h-6 text-accent-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Our AI Philosophy</h3>
+                  <h3 className="font-bold text-gray-900 mb-2">Our take on AI</h3>
                   <p className="text-gray-700">
-                    We do not believe in AI for AI sake. Every implementation must pass the ROI test:
-                    Will this save time, reduce costs, or improve outcomes in a measurable way? If not, we will tell you.
+                    We don&apos;t do AI for its own sake. Every project has to pass the same question:
+                    will this measurably save time, cut costs, or improve outcomes? If the answer is no, we&apos;ll say so and save you the budget.
                   </p>
                 </div>
               </div>
             </div>
 
             <h2 className="section-headline mb-6 text-center">
-              Real-World AI Use Cases
+              Use cases where AI actually pays back
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Document Processing</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Document processing</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Extract data from invoices, contracts, or forms - automatically.
+                  Pulling data out of invoices, contracts, and forms automatically, so a person isn&apos;t doing it row by row.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  ROI: 80% reduction in manual data entry
+                  Payback: roughly 80% less manual data entry
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Customer Support Automation</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Customer support automation</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  AI chatbots that actually understand context and provide helpful answers.
+                  Chatbots that understand context, hand off when they should, and stop sending people in circles.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  ROI: Handle 60% of tier-1 support tickets
+                  Payback: about 60% of tier-1 tickets resolved without a human
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Content Generation</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Content generation</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Product descriptions, email drafts, or report summaries - in seconds.
+                  Product descriptions, email drafts, report summaries. Drafted by AI, polished by a human in a fraction of the time.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  ROI: 5x faster content creation
+                  Payback: 5× faster from blank page to publish
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Predictive Analytics</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Predictive analytics</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Forecast demand, detect anomalies, or identify patterns in your data.
+                  Forecasting demand, flagging anomalies, surfacing the pattern hiding in the data you already collect.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  ROI: Better inventory planning, less waste
+                  Payback: better inventory planning, less waste, fewer fire drills
                 </p>
               </div>
             </div>
@@ -165,24 +165,24 @@ export default function AIIntegrationPage() {
 
         <Section background="gray" paddingY="lg">
           <div className="max-w-3xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">Engagement Models</h2>
+            <h2 className="section-headline mb-6 text-center">Engagement models</h2>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding makes AI accessible to more businesses</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding brings AI work inside reach for more businesses.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized AI implementations for qualifying businesses.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying AI engagements.
                 </p>
                 <p>
-                  <strong>Phased approach:</strong> Start with a proof of concept to validate ROI, then scale to full implementation—structured to fit your budget and timeline.
+                  <strong>Phase the work.</strong> Start with a proof of concept that pressure-tests ROI, then scale to the full build. Structured around your budget and your timeline, not ours.
                 </p>
                 <p className="text-sm text-gray-600">
-                  <strong>Note:</strong> AI API costs (OpenAI, etc.) are separate and typically based on usage.
+                  <strong>One footnote.</strong> AI API costs (OpenAI, Anthropic, and the rest) are billed at usage and stay separate from project fees.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Contact us to discuss your AI project and determine program eligibility.
+                  Book a free consultation. We&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

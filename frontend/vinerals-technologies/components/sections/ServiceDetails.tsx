@@ -2,77 +2,64 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 interface ServiceDetailsProps {
-  whatWeOffer: {
-    title: string;
-    items: string[];
-  };
-  technologies: {
-    title: string;
-    items: string[];
-  };
-  deliverables: {
-    title: string;
-    items: string[];
-  };
+  whatWeOffer:  { title: string; items: string[] };
+  technologies: { title: string; items: string[] };
+  deliverables: { title: string; items: string[] };
 }
 
+/**
+ * ServiceDetails — three-column manuscript spread. What we offer ·
+ * Technologies · Deliverables. Each list item is a numbered
+ * line set in a hanging indent.
+ */
 const ServiceDetails: React.FC<ServiceDetailsProps> = ({
   whatWeOffer,
   technologies,
   deliverables,
 }) => {
+  const columns = [
+    { kicker: 'I · Le métier',     ...whatWeOffer },
+    { kicker: 'II · Les outils',   ...technologies },
+    { kicker: 'III · La livraison', ...deliverables },
+  ];
+
   return (
     <Section background="white" paddingY="lg">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
-        className="grid md:grid-cols-3 gap-8"
+        className="grid md:grid-cols-3 gap-x-10 gap-y-12"
       >
-        {/* What We Offer */}
-        <motion.div variants={fadeInUp} className="space-y-4">
-          <h3 className="text-2xl font-bold text-gray-800">{whatWeOffer.title}</h3>
-          <ul className="space-y-3">
-            {whatWeOffer.items.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Technologies */}
-        <motion.div variants={fadeInUp} className="space-y-4">
-          <h3 className="text-2xl font-bold text-gray-800">{technologies.title}</h3>
-          <ul className="space-y-3">
-            {technologies.items.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Deliverables */}
-        <motion.div variants={fadeInUp} className="space-y-4">
-          <h3 className="text-2xl font-bold text-gray-800">{deliverables.title}</h3>
-          <ul className="space-y-3">
-            {deliverables.items.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        {columns.map((col, colIdx) => (
+          <motion.div
+            key={colIdx}
+            variants={fadeInUp}
+            className="md:pl-6 md:border-l border-[var(--ink-hairline)]/40 first:border-0 first:pl-0"
+          >
+            <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-secondary-500 mb-5">
+              {col.kicker}
+            </div>
+            <h3 className="font-display text-2xl text-[var(--ink)] mb-6 leading-tight">
+              {col.title}
+            </h3>
+            <ul className="space-y-4">
+              {col.items.map((item, index) => (
+                <li key={index} className="grid grid-cols-[2.25rem_1fr] gap-x-3 items-baseline">
+                  <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-secondary-500 pt-0.5">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-[var(--ink-soft)] leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
       </motion.div>
     </Section>
   );

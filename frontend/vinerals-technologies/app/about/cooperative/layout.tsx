@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cooperative Model | Vinerals Technologies - Solidarity Cooperative Making Technology Accessible',
-  description: 'Why solidarity cooperative? Mission over profit, funded accessibility (not discount rates), and worker ownership. We don&apos;t undercut professional rates ($100-200/hr CAD in Montreal). Instead, we&apos;ve secured government subsidies and impact funding to bridge accessibility gaps. Part of Quebec&apos;s 11,000+ social economy enterprises.',
+  title: 'Cooperative Model | Vinerals Technologies · A Solidarity Cooperative Bringing Software Inside Reach',
+  description: 'Why a solidarity cooperative? Mission over profit, funded accessibility (not discount rates), and worker ownership. We don&apos;t undercut professional rates ($100 to $200 per hour blended in Montréal). What we have done is line up government subsidies and impact funding to close the accessibility gap. Part of Québec&apos;s 11,000-plus social economy enterprises.',
   keywords: [
     'solidarity cooperative montreal',
     'worker cooperative technology',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Cooperative Model | Vinerals Technologies',
-    description: 'Built different, on purpose. Solidarity cooperative owned by workers and community—not investors demanding maximum returns. Enables enterprise-quality work for SMEs through mission-aligned funding.',
+    description: 'Built differently, on purpose. A solidarity cooperative owned by workers and community, not by investors hunting maximum returns. Enables enterprise-calibre work for SMEs through mission-aligned funding.',
     url: 'https://vineralstechnologies.com/about/cooperative',
     type: 'website',
     images: [
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-cooperative.jpg',
         width: 1200,
         height: 630,
-        alt: 'Our Cooperative Model - Built Different, On Purpose',
+        alt: 'Our Cooperative Model · Built Differently, On Purpose',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cooperative Model | Vinerals Technologies',
-    description: 'Solidarity cooperative structure enables mission over profit. Same quality as Spiria/Stradigi AI—made accessible through funded programs.',
+    description: 'A solidarity cooperative structure puts mission ahead of profit. Same calibre of work as Spiria or Stradigi AI, brought inside reach through funded programmes.',
     images: ['https://vineralstechnologies.com/og-cooperative.jpg'],
   },
   alternates: {

@@ -3,9 +3,9 @@
 export const SITE_CONFIG = {
   name: 'Vinerals Technologies',
   shortName: 'Vinerals Tech',
-  tagline: 'Technology for Everyone',
+  tagline: 'Software, made by hand, for the 99%.',
   description:
-    'Montreal-based solidarity cooperative helping small and medium businesses navigate digital transformation. Enterprise-quality software and AI solutions, made accessible through mission-aligned funding.',
+    'A Montréal solidarity cooperative that builds the software small and mid-sized businesses keep getting quoted $50K to $150K for. Same calibre of work, brought into reach through government and impact funding.',
   url: 'https://vineralstechnologies.com',
   email: 'contact@vineralstechnologies.com',
   phone: '+1 (514) 961-9754',
@@ -97,7 +97,7 @@ export const SERVICES = [
     slug: 'custom-software',
     shortName: 'Custom Software',
     description:
-      'Build exactly what your business needs—no compromises, no feature bloat, no vendor lock-in.',
+      'Software shaped around the way your business already runs, not bent around someone else’s product. No feature bloat, no vendor lock-in, and the code is yours.',
     features: ['Web applications', 'Internal tools', 'Client portals'],
     icon: 'Code',
   },
@@ -107,7 +107,7 @@ export const SERVICES = [
     slug: 'ai-integration',
     shortName: 'AI Integration',
     description:
-      'Put AI to work in your business with practical, ROI-focused implementations—not science projects.',
+      'The kind of AI work that pays back. Automating the report you write every Friday, the inbox you triage every morning, the data trapped inside your PDFs. Nothing dressed up as a science project.',
     features: ['Automation', 'Analytics', 'LLM integration'],
     icon: 'Brain',
   },
@@ -117,7 +117,7 @@ export const SERVICES = [
     slug: 'mobile-apps',
     shortName: 'Mobile Apps',
     description:
-      'Reach your customers and team wherever they are with cross-platform mobile solutions.',
+      'Apps your team actually opens in the field, and apps your customers keep on the home screen. One codebase across iOS, Android and the web, built to outlast its launch week.',
     features: ['iOS', 'Android', 'Progressive Web Apps'],
     icon: 'Smartphone',
   },
@@ -127,7 +127,7 @@ export const SERVICES = [
     slug: 'data-systems',
     shortName: 'Data Systems',
     description:
-      'Turn your data into decisions with modern infrastructure and visualization.',
+      'Pipelines that move your data without breaking. Dashboards that point to the next decision. Reporting that takes minutes, not half a day.',
     features: ['Databases', 'Dashboards', 'ETL pipelines'],
     icon: 'Database',
   },
@@ -138,28 +138,32 @@ export const INDUSTRIES = [
     id: 'healthcare',
     name: 'Healthcare',
     slug: 'healthcare',
-    description: 'Patient portals, telehealth, health data systems',
+    description: 'Patient portals, telehealth, and the small data systems clinics actually run on.',
+    features: ['EMR & EHR integrations', 'Telehealth platforms', 'Clinical workflow tools'],
     icon: 'Heart',
   },
   {
     id: 'food-systems',
     name: 'Food & Agriculture',
     slug: 'food-systems',
-    description: 'Supply chain, traceability, nutrition platforms',
+    description: 'Supply chain, traceability, and nutrition platforms for growers, co-ops, and processors.',
+    features: ['Traceability systems', 'Farm management', 'Online marketplaces'],
     icon: 'Wheat',
   },
   {
     id: 'sustainability',
     name: 'Sustainability & Cleantech',
     slug: 'sustainability',
-    description: 'Carbon tracking, ESG reporting, circular economy',
+    description: 'Carbon tracking, ESG reporting, and the systems behind a circular economy.',
+    features: ['Carbon accounting', 'ESG dashboards', 'Circular economy tools'],
     icon: 'Leaf',
   },
   {
     id: 'non-profits',
     name: 'Non-Profits & Social Enterprise',
     slug: 'non-profits',
-    description: 'Non-profit tech, cooperative systems, impact tools',
+    description: 'Non-profit tech, cooperative back-offices, and impact tools that don’t bleed your budget.',
+    features: ['Donor & member CRMs', 'Impact measurement', 'Cooperative platforms'],
     icon: 'Users',
   },
 ] as const;
@@ -167,15 +171,15 @@ export const INDUSTRIES = [
 // Trust indicators - focus on value, not price
 export const TRUST_INDICATORS = [
   {
-    label: 'Subsidized programs available',
+    label: 'Tracks for qualifying SMEs',
     value: 'Funded',
   },
   {
-    label: 'Average project kickoff',
+    label: 'Contract to kickoff',
     value: '3 weeks',
   },
   {
-    label: 'You own everything we build',
+    label: 'Your code, data, infra',
     value: '100%',
   },
 ] as const;
@@ -185,38 +189,38 @@ export const STATS = [
   {
     value: '100%',
     label: 'Code ownership',
-    description: 'You own everything we build—no vendor lock-in',
+    description: 'Every line, every credential, every doc. Yours from day one.',
   },
   {
     value: 'Funded',
     label: 'Accessibility programs',
-    description: 'Mission-aligned funding for qualifying businesses',
+    description: 'Government and impact funding covers part of the bill for qualifying businesses.',
   },
   {
-    value: 'Enterprise',
-    label: 'Quality engineering',
-    description: 'Same caliber as larger organizations receive',
+    value: 'Senior',
+    label: 'On every project',
+    description: 'You talk to the developer doing the work, not an account manager standing between you.',
   },
 ] as const;
 
 // The three barriers SMEs face - knowledge gap is primary
 export const BARRIERS = [
   {
-    title: "You Don't Know What You Don't Know",
+    title: 'You can’t tell the hype from the signal.',
     description:
-      "AI is transforming industries. But what does that actually mean for your business? Which solutions are real and which are hype? Without a technical partner, it's impossible to tell.",
+      "Everyone’s pitching AI. Most of it doesn’t fit your business. Without someone technical in your corner who has no quota, it’s nearly impossible to sort the real from the dressed-up.",
     icon: 'HelpCircle',
   },
   {
-    title: 'Quality Development Is Expensive',
+    title: 'Custom software costs real money.',
     description:
-      "Custom software costs $50,000–150,000+ CAD. That's not agencies overcharging—that's what quality engineering requires. For most SMEs, this investment is simply out of reach.",
+      "Quotes land between $50,000 and $150,000 CAD, sometimes higher. Agencies aren’t overcharging. That’s simply what good engineering costs. For most SMEs, the cheque just isn’t there.",
     icon: 'Lock',
   },
   {
-    title: 'The Right Expertise Is Hard to Access',
+    title: 'Senior developers are gated behind tech salaries.',
     description:
-      "Experienced developers work at funded startups or enterprise companies. SMEs often end up with junior freelancers or distant offshore teams who don't understand their context.",
+      "Experienced engineers work at funded startups and big enterprise shops. SMEs end up with juniors learning on the job, or offshore teams who never quite get the business context.",
     icon: 'Users',
   },
 ] as const;
@@ -224,21 +228,21 @@ export const BARRIERS = [
 // How the subsidy model works
 export const HOW_IT_WORKS = [
   {
-    title: 'Backed by Mission-Aligned Funding',
+    title: 'Backed by mission-aligned funding.',
     description:
-      "Government programs, foundations, and donors invest in Canada's digital economy. We channel these resources to reduce barriers for businesses that need technology most.",
+      "Government programmes, foundations, and impact funders already invest in Canada’s digital economy. We channel those resources toward the businesses that need the work most.",
     icon: 'Building',
   },
   {
-    title: 'We Start With What You Need to Know',
+    title: 'We start with what you actually need to know.',
     description:
-      "Before any code is written, we help you understand what's possible, what's practical, and what's actually worth building. No jargon. No pressure. Just clarity.",
+      "Before any code, we sit down and explain what’s possible, what’s practical, and what isn’t worth building. No jargon. No pressure. Often, the honest answer is don’t build it.",
     icon: 'Lightbulb',
   },
   {
-    title: 'Enterprise-Quality, Accessible Programs',
+    title: 'Enterprise-quality work at SME-accessible terms.',
     description:
-      'Through subsidized engagements and special programs, we deliver the same caliber of work that larger companies receive—at terms designed for growing businesses.',
+      "Through subsidised engagements and special programmes, you get the same calibre of work larger companies pay full freight for, at numbers a growing business can plan around.",
     icon: 'Sparkles',
   },
 ] as const;
@@ -246,39 +250,39 @@ export const HOW_IT_WORKS = [
 // Why Us section - updated to remove rate comparisons
 export const WHY_US_FEATURES = [
   {
-    title: 'Cooperative Model',
+    title: 'Cooperative model.',
     description:
-      "We're owned by our workers and community—not investors demanding maximum returns. Your project funds our mission, not someone's exit.",
+      "We’re owned by the people doing the work and the community we serve, not by investors hunting an exit. Your project funds the mission, not someone’s payday.",
     icon: 'Building',
   },
   {
-    title: 'Funded Accessibility',
+    title: 'Funded accessibility.',
     description:
-      'Through government programs, foundations, and donor support, we offer subsidized engagements that make quality development possible for growing businesses.',
+      'Government programmes and impact funders cover a meaningful share of qualifying engagements. A $50K to $150K build becomes a number you can plan around.',
     icon: 'Landmark',
   },
   {
-    title: 'True Partnership',
+    title: 'A real partnership.',
     description:
-      "We're not a vendor—we're a partner. You get direct access to senior developers, honest advice, and code you actually own.",
+      'You talk to the senior developer doing the work, not an account manager. You hear the truth when something is a bad idea. And you own every line of code we write.',
     icon: 'Handshake',
   },
   {
-    title: 'Technology Translation',
+    title: 'Translation before code.',
     description:
-      "We help you understand what's possible with AI and modern software—separating hype from practical solutions that deliver real ROI.",
+      'Before anyone opens an editor, we explain what software and AI can (and can’t) do for your business. Often the honest answer is, “don’t build that yet,” and you get it either way.',
     icon: 'MessageCircle',
   },
   {
-    title: 'Mission-Driven',
+    title: 'Mission-driven, by design.',
     description:
-      "Every project advances our goal: closing Canada's digital divide by making transformative technology accessible to businesses that need it most.",
+      'Every commercial project funds the next subsidised one. Serious engineering brought inside reach for the businesses priced out: clinics, food co-ops, climate startups, charities.',
     icon: 'Heart',
   },
   {
-    title: 'You Own Everything',
+    title: 'You own everything we ship.',
     description:
-      'No vendor lock-in, no proprietary systems. Your code, your data, your infrastructure—full documentation included.',
+      'No vendor lock-in. No proprietary platform. Your code, your data, your infrastructure, with the documentation that lets a future team pick it up.',
     icon: 'Shield',
   },
 ] as const;
@@ -289,52 +293,52 @@ export const PROCESS_STEPS = [
     title: 'Discovery',
     subtitle: 'Free',
     description:
-      "We learn your business, challenges, and goals. We'll help you understand what technology can realistically achieve. No charge, no obligation.",
+      "We learn your business, your bottlenecks, and what you’re actually trying to make happen. You leave with a realistic read on what tech can and can’t do for you. No charge, no obligation.",
   },
   {
     number: 2,
     title: 'Proposal',
     subtitle: 'Transparent',
     description:
-      "Clear scope, timeline, and funding options. We'll identify if subsidized programs apply to your situation.",
+      "Clear scope, clear timeline, clear money. We flag which subsidy or programme might apply, and we tell you when we don’t think you should build at all.",
   },
   {
     number: 3,
     title: 'Build',
     subtitle: 'Iterative',
     description:
-      'Iterative development with weekly demos. You see progress, not just promises.',
+      'Two-week cycles with a working demo at the end of each one. You see software, not slides.',
   },
   {
     number: 4,
     title: 'Launch & Support',
     subtitle: 'Ongoing',
     description:
-      'We deploy, train your team, and stick around for questions.',
+      'We deploy, train your team, hand over the keys, and stay reachable for the questions that always come three weeks later.',
   },
 ] as const;
 
 // Engagement models - not pricing tiers (removed specific rates)
 export const ENGAGEMENT_MODELS = [
   {
-    name: 'Subsidized Program',
+    name: 'Subsidised Track',
     eligibility: 'Non-profits, social enterprises, underserved SMEs',
     description:
-      'Funded through grants and donor support. Significant cost reduction for qualifying organizations.',
+      'Funded through grants and donor support. The cost reduction is substantial, often the difference between building the thing and not.',
     icon: 'Heart',
   },
   {
     name: 'Accessible Engagement',
     eligibility: 'Growth-stage SMEs',
     description:
-      'Balanced model with partial subsidy support. Quality development at terms that work for real businesses.',
+      'Partial subsidy with the rest priced for real businesses, not enterprise procurement departments. Same calibre of work, numbers you can defend to a board.',
     icon: 'TrendingUp',
   },
   {
     name: 'Partnership Projects',
-    eligibility: 'Established organizations, government',
+    eligibility: 'Established organisations, government',
     description:
-      'Market-rate engagements that help fund our subsidized programs for others.',
+      'Market-rate engagements that pay full freight. These projects keep the subsidised side of the house funded.',
     icon: 'Building2',
   },
 ] as const;
@@ -361,68 +365,68 @@ export const WORK_STATS = [
 
 export const CAPABILITIES = [
   {
-    title: 'Custom Software',
+    title: 'Custom software',
     description:
-      'Web apps, internal tools, client portals, and business systems built exactly to your needs',
+      'Web apps, internal tools, client portals, and the back-office systems your team actually has to live inside every day.',
   },
   {
-    title: 'AI Integration',
+    title: 'AI integration',
     description:
-      'Document processing, chatbots, automation, and predictive analytics with real ROI',
+      'Document processing, chatbots that don’t embarrass you, automation, and forecasting with a payback you can point to.',
   },
   {
-    title: 'Mobile Apps',
+    title: 'Mobile apps',
     description:
-      'iOS, Android, and Progressive Web Apps for field work and customer engagement',
+      'iOS, Android, and Progressive Web Apps for field crews, customers, and anyone who needs the work to follow them around.',
   },
   {
-    title: 'Data Systems',
+    title: 'Data systems',
     description:
-      'Dashboards, analytics, ETL pipelines, and data infrastructure for decision-making',
+      'Dashboards, analytics, ETL pipelines, and the warehouse underneath. The plumbing that turns spreadsheets into decisions.',
   },
   {
     title: 'Integrations',
     description:
-      'Connect your systems—EMRs, ERPs, payment processors, and third-party APIs',
+      'Stitching together your EMR, ERP, payment processor, and the half-dozen SaaS tools nobody quite knows how to connect.',
   },
   {
     title: 'Compliance',
     description:
-      'HIPAA/PHIPA, GDPR, food safety, and environmental reporting built-in',
+      'HIPAA, PHIPA, GDPR, food safety, environmental reporting. Built in from the start instead of bolted on the week before audit.',
   },
 ] as const;
 
 // Value propositions by audience
 export const VALUE_PROPS = {
   sme: {
-    headline: "Technology That Was Out of Reach, Now Isn't",
+    headline: "The software you’ve been quoted out of, brought into reach.",
     subhead:
-      "You know your business needs modern software and AI. We help you understand what's possible and make it accessible through funded programs.",
+      "You already know your business needs better software and, probably, some honest help with AI. We translate what’s possible, build what makes sense, and bring funding to the table when you qualify.",
     points: [
-      'We explain options in plain language, not jargon',
-      'Subsidized programs for qualifying businesses',
-      'You own everything we build',
+      'Plain language. We explain trade-offs, not sales decks.',
+      'Subsidised programmes for qualifying businesses.',
+      'Every line of code, every credential, every doc, yours.',
     ],
   },
   funders: {
-    headline: 'Investing in Accessible Technology Infrastructure',
+    headline: "Patient capital, with measurable social returns.",
     subhead:
-      'Patient capital opportunity with measurable social return and sustainable business model.',
+      'A cooperative that builds technology infrastructure for the Canadian SMEs your mandate is already aimed at. Earned revenue keeps the lights on, your capital extends the reach.',
     points: [
-      'Hybrid revenue model with earned revenue',
-      'Clear path to sustainability',
-      'Experienced technical team',
-      'Strong ecosystem connections (CDRQ, PME MTL, CESIM)',
+      'Hybrid revenue model anchored in earned client work.',
+      'A credible path to operating sustainability.',
+      'Experienced technical team, not a freshly minted agency.',
+      'Plugged into CDRQ, PME MTL, CESIM, and the broader social economy network.',
     ],
   },
   partners: {
-    headline: 'Your Technology Partner for Collective Impact',
+    headline: 'Technical capacity for the work no single SME could fund alone.',
     subhead:
-      'Collaborative development capacity for industry associations, networks, and social economy organizations.',
+      'Collaborative development capacity for industry associations, networks, and social economy organisations that want to ship something together.',
     points: [
-      'Flexible engagement models',
-      'Experience across healthcare, food systems, sustainability',
-      'Cooperative structure aligns with partnership values',
+      'Flexible engagement models. Fixed price, retainer, or hybrid.',
+      'Working experience across healthcare, food systems, and sustainability.',
+      'Cooperative structure that lines up with partnership values, instead of working against them.',
     ],
   },
 } as const;

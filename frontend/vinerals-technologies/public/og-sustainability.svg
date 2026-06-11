@@ -1,66 +1,49 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Forest paper substrate -->
+  <rect width="1200" height="630" fill="#1F3A2E"/>
+
+  <!-- Subtle paper grain — keeps the surface from reading as flat digital -->
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
-    </linearGradient>
-    <!-- Leaf pattern -->
-    <pattern id="leaves" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-      <path d="M40 30 Q50 20, 60 30 Q50 40, 40 30" fill="none" stroke="#14b8a6" stroke-width="1" opacity="0.2"/>
-      <path d="M60 60 Q70 50, 80 60 Q70 70, 60 60" fill="none" stroke="#14b8a6" stroke-width="1" opacity="0.2"/>
-    </pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.247 0 0 0 0 0.219 0 0 0 0 0.161 0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
   </defs>
+  <rect width="1200" height="630" fill="#1F3A2E" filter="url(#grain)" opacity="0.5"/>
 
-  <rect width="1200" height="630" fill="url(#gradient)"/>
-  <rect width="1200" height="630" fill="url(#leaves)"/>
+  <!-- Top dateline strip -->
+  <text x="80" y="74" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="14" letter-spacing="3.5" fill="rgba(245, 239, 230, 0.55)">VINERALS · TECHNOLOGIES · ÉDITION 2025</text>
+  <line x1="80" y1="100" x2="1120" y2="100" stroke="rgba(245, 239, 230, 0.22)" stroke-width="1"/>
 
-  <!-- Logo/V Shape -->
-  <g transform="translate(100, 180)">
+  <!-- Hand-traced V monogram, top-right -->
+  <g transform="translate(1040, 30)">
     <path
-      d="M0 0 L80 200 L160 0"
-      stroke="#ffffff"
-      stroke-width="16"
+      d="M12 16 Q 20 14, 32 70 Q 44 14, 52 16"
+      stroke="#F5EFE6"
+      stroke-width="3"
       stroke-linecap="round"
       stroke-linejoin="round"
       fill="none"
     />
-    <!-- Leaf icon -->
-    <g transform="translate(65, 120)">
-      <path d="M10 30 Q25 5, 30 0 Q25 5, 30 15 L25 20 Q20 25, 10 30"
-            fill="#14b8a6" transform="scale(1.5)"/>
-      <line x1="15" y1="23" x2="22" y2="12" stroke="#14b8a6" stroke-width="1.5" transform="scale(1.5)" opacity="0.7"/>
-    </g>
+    <circle cx="32" cy="70" r="3.2" fill="#B8634A"/>
   </g>
 
-  <!-- Main Title -->
-  <text x="350" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff">
-    Sustainability &amp;
-  </text>
-  <text x="350" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff">
-    Cleantech Solutions
+  <!-- Eyebrow -->
+  <text x="80" y="195" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="16" letter-spacing="4" fill="#DA8C6E">— SUSTAINABILITY · CLEANTECH</text>
+
+  <!-- Headline, two lines: first cream, second clay-italic accent -->
+  <text x="80" y="310" font-family='"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif' font-style="italic" font-size="82" font-weight="500" fill="#F5EFE6">Measure, reduce,</text>
+  <text x="80" y="400" font-family='"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif' font-style="italic" font-size="82" font-weight="500" fill="#DA8C6E">report. For real.</text>
+
+  <!-- Supporting line(s) -->
+  <text x="80" y="490" font-family='"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif' font-size="26" font-weight="400" fill="rgba(245, 239, 230, 0.75)">
+      <tspan x="80" dy="0">Real-time carbon tracking, ESG reporting, and the systems behind</tspan>
+      <tspan x="80" dy="38">a circular economy.</tspan>
   </text>
 
-  <!-- Tagline -->
-  <text x="350" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#dbeafe">
-    Technology That Drives Climate Action
-  </text>
-
-  <!-- Key Features -->
-  <g transform="translate(350, 390)">
-    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
-      ✓ Carbon Tracking • ESG Reporting
-    </text>
-    <text x="0" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
-      ✓ Circular Economy • Renewable Energy
-    </text>
-    <text x="0" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#14b8a6">
-      ✓ Environmental compliance &amp; monitoring
-    </text>
-  </g>
-
-  <!-- Bottom -->
-  <text x="350" y="550" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#bfdbfe">
-    Vinerals Technologies • Supporting Canadian Cleantech
-  </text>
+  <!-- Bottom hairline + imprint -->
+  <line x1="80" y1="550" x2="1120" y2="550" stroke="rgba(245, 239, 230, 0.22)" stroke-width="1"/>
+  <text x="80" y="582" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="13" letter-spacing="3" fill="rgba(245, 239, 230, 0.55)">COOPÉRATIVE DE SOLIDARITÉ · TIO'TIA:KE / MONTRÉAL · BILINGUE EN / FR</text>
+  <text x="1120" y="582" text-anchor="end" font-family='"DM Mono", "Courier New", Courier, monospace' font-size="13" letter-spacing="3" fill="rgba(245, 239, 230, 0.55)">VINERALSTECHNOLOGIES.COM</text>
 </svg>

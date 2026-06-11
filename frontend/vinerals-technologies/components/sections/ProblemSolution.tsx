@@ -6,107 +6,102 @@ import { StatCard } from '@/components/ui/Card';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { STATS } from '@/lib/constants';
 
+/**
+ * ProblemSolution — feature spread. Left column lists three barriers
+ * as numbered manuscript notes. Right column gives the cooperative's
+ * response, set as a pulled-aside answer. Stats appear below as a
+ * three-column dateline of oversized italic numerals.
+ */
 const ProblemSolution = () => {
   return (
     <Section background="white" paddingY="lg">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
       >
-        {/* Eyebrow */}        
-        <motion.div variants={fadeInUp} className="text-center mb-4">
-          <span className="text-sm font-semibold text-primary-700 uppercase tracking-wide">
-            Closing Canada&apos;s Digital Divide
-          </span>
-        </motion.div> 
+        <motion.div variants={fadeInUp} className="mb-4">
+          <span className="eyebrow">Le dossier · Canada&apos;s digital divide</span>
+        </motion.div>
 
-        {/* Headline */}
-        <motion.h2 variants={fadeInUp} className="section-headline text-center mb-6">
-          Technology Is Transforming Every Industry.{' '}
-          <br className="hidden md:block" />
-          Most Businesses Are Being Left Behind.
+        <motion.h2
+          variants={fadeInUp}
+          className="section-headline max-w-[20ch] mb-8 md:mb-12"
+        >
+          Software is rewriting every industry.
+          <br />
+          <em>Most SMEs</em> are still locked out.
         </motion.h2>
 
-        {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
-          {/* Problem */}
-          <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-800">Three Barriers Stand in Your Way</h3>
-
-            <div className="space-y-6">
-              <div>
-                <div className="flex items-start gap-3 mb-2">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm font-semibold">
-                    1
-                  </span>
-                  <h4 className="font-semibold text-gray-900">You don&apos;t know what&apos;s possible</h4>
-                </div>
-                <p className="text-gray-600 text-sm ml-9">
-                  AI is everywhere—but what works for <em>your</em> business? Most agencies assume you know. We start by helping you understand.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-start gap-3 mb-2">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm font-semibold">
-                    2
-                  </span>
-                  <h4 className="font-semibold text-gray-900">Quality development costs real money</h4>
-                </div>
-                <p className="text-gray-600 text-sm ml-9">
-                  Custom software runs $50K-150K+ CAD. For most growing businesses, that investment is simply out of reach.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-start gap-3 mb-2">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm font-semibold">
-                    3
-                  </span>
-                  <h4 className="font-semibold text-gray-900">The best talent is hard to access</h4>
-                </div>
-                <p className="text-gray-600 text-sm ml-9">
-                  Experienced developers work at funded companies. SMEs struggle to access the expertise larger organizations take for granted.
-                </p>
-              </div>
+        <div className="grid md:grid-cols-12 gap-x-10 gap-y-10 md:gap-y-14 mb-16 md:mb-24 items-start">
+          {/* Barriers — left column, 7/12. md:pt-6 keeps the eyebrow roughly aligned with the panel's eyebrow without opening a void. */}
+          <motion.div variants={fadeInUp} className="md:col-span-7 md:pt-4 lg:pt-6">
+            <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-secondary-500 mb-6 flex items-center gap-3">
+              <span className="w-7 h-px bg-secondary-500" />
+              Trois obstacles
             </div>
+
+            <h3 className="font-display text-3xl md:text-4xl text-[var(--ink)] mb-8 md:mb-10 leading-tight">
+              Three barriers stand in the way.
+            </h3>
+
+            <ol className="space-y-8 md:space-y-10">
+              {barriers.map((b, i) => (
+                <li key={b.title} className="grid grid-cols-[3rem_1fr] gap-x-6">
+                  <span className="numeral text-3xl pt-1">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h4 className="font-display text-xl text-[var(--ink)] mb-2 leading-snug">
+                      {b.title}
+                    </h4>
+                    <p className="text-[var(--ink-muted)] leading-relaxed max-w-[52ch]">
+                      {b.body}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </motion.div>
 
-          {/* Solution */}
-          <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-800">How We&apos;re Different</h3>
-
-            <div className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Technology translation, not just development</h4>
-                <p className="text-gray-600 text-sm">
-                  We help you understand what&apos;s possible before writing any code. No jargon, no pressure—we&apos;ll even advise against building when appropriate.
-                </p>
+          {/* Response — right column, 5/12, pulled aside on cream-deep panel */}
+          <motion.aside
+            variants={fadeInUp}
+            className="md:col-span-5 bg-[var(--cream-deep)] p-8 md:p-10 border border-[var(--ink-hairline)]/40 relative grain"
+          >
+            <div className="above-grain">
+              <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 mb-6 flex items-center gap-3">
+                <span className="w-7 h-px bg-primary-700" />
+                La réponse
               </div>
 
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Backed by mission-aligned funding</h4>
-                <p className="text-gray-600 text-sm">
-                  As a solidarity cooperative supported by government programs and impact funders, we can offer subsidized programs for qualifying businesses.
-                </p>
-              </div>
+              <h3 className="font-display text-3xl md:text-4xl text-[var(--ink)] mb-8 leading-tight">
+                How we&apos;re <em className="text-primary-700">different</em>.
+              </h3>
 
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Enterprise quality, real partnership</h4>
-                <p className="text-gray-600 text-sm">
-                  You get senior developers, strategic guidance, and code you own completely. No vendor lock-in. No investor pressure. Just mission-driven work.
-                </p>
+              <div className="space-y-8">
+                {responses.map((r) => (
+                  <div key={r.title}>
+                    <h4 className="font-display italic text-xl text-primary-700 mb-2 leading-snug">
+                      {r.title}
+                    </h4>
+                    <p className="text-[var(--ink-muted)] leading-relaxed">
+                      {r.body}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
-          </motion.div>
+          </motion.aside>
         </div>
 
-        {/* Stats */}
+        <hr className="rule mb-10 md:mb-16" />
+
+        {/* Stats row */}
         <motion.div
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-14"
         >
           {STATS.map((stat, index) => (
             <motion.div key={index} variants={fadeInUp}>
@@ -114,6 +109,7 @@ const ProblemSolution = () => {
                 value={stat.value}
                 label={stat.label}
                 description={stat.description}
+                index={index}
               />
             </motion.div>
           ))}
@@ -122,5 +118,35 @@ const ProblemSolution = () => {
     </Section>
   );
 };
+
+const barriers = [
+  {
+    title: "You can’t tell hype from signal.",
+    body: "AI is everywhere. What actually fits your business is a much shorter list. Most agencies assume you already know which is which. We start by walking through it with you.",
+  },
+  {
+    title: 'Good engineering costs real money.',
+    body: 'Custom software runs $50K to $150K CAD, often higher. For most growing businesses, that cheque simply isn’t in the chequebook.',
+  },
+  {
+    title: 'Senior developers are gated behind funded payrolls.',
+    body: 'The experienced people are at funded startups and big enterprise shops. SMEs end up with juniors learning on their dime, or offshore teams who never quite get the business.',
+  },
+];
+
+const responses = [
+  {
+    title: 'Translation before development.',
+    body: "We explain what’s possible before any code happens. No jargon, no pressure. When the honest answer is “don’t build it,” that’s the answer you’ll get.",
+  },
+  {
+    title: 'Backed by mission-aligned funding.',
+    body: 'As a solidarity cooperative supported by government programmes and impact funders, we offer subsidised engagements for SMEs that qualify.',
+  },
+  {
+    title: 'Enterprise calibre, real partnership.',
+    body: 'Senior developers on the work, strategic guidance baked in, and code you own outright. No vendor lock-in. No investor pressure. Mission, not exit.',
+  },
+];
 
 export default ProblemSolution;

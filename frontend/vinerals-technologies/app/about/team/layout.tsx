@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Team | Vinerals Technologies - Senior Developers Solving Real Problems for Quebec SMEs',
-  description: 'Meet the experienced developers behind Vinerals Technologies. No account managers, no sales team, no junior devs. Every person you work with has 5+ years professional experience—same caliber as Spiria, Stradigi AI, Konverge. Direct access to senior engineers who understand healthcare, food systems, sustainability, and social enterprise.',
+  title: 'Our Team | Vinerals Technologies · Senior Developers Solving Real Problems for Québec SMEs',
+  description: 'Meet the developers behind Vinerals Technologies. No account managers, no sales team, no junior devs being trained on your project. Everyone you work with has at least five years of production experience. Same calibre of talent as Spiria, Stradigi AI, or Konverge. Direct access to senior engineers who understand healthcare, food systems, sustainability, and social enterprise.',
   keywords: [
     'senior software developers montreal',
     'experienced software engineers quebec',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Our Team | Vinerals Technologies',
-    description: '5+ years experience. No junior devs learning on your dime. Domain expertise in healthcare, food systems, sustainability. We translate technology into strategic advantage for Quebec SMEs.',
+    description: 'At least five years in production. No juniors learning on your dime. Real working experience in healthcare, food systems, and sustainability. We translate technology into decisions Québec SMEs can actually act on.',
     url: 'https://vineralstechnologies.com/about/team',
     type: 'website',
     images: [
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-team.jpg',
         width: 1200,
         height: 630,
-        alt: 'Our Team - Senior Developers Behind Vinerals Technologies',
+        alt: 'Our Team · Senior Developers Behind Vinerals Technologies',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Our Team | Vinerals Technologies',
-    description: 'Senior developers only. Direct access. Domain expertise beyond code. Same quality as larger Montreal agencies—made accessible.',
+    description: 'Senior developers only. Direct access. Domain understanding beyond code. Same calibre as larger Montréal agencies, brought inside reach.',
     images: ['https://vineralstechnologies.com/og-team.jpg'],
   },
   alternates: {

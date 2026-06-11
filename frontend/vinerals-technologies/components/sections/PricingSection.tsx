@@ -17,51 +17,59 @@ interface PricingSectionProps {
   tiers: readonly EngagementModel[];
 }
 
+/**
+ * PricingSection — engagement plates. Each tier is a paper card with
+ * an oversized numeral, italic name, and mono eligibility line.
+ */
 const PricingSection = ({ title, description, tiers }: PricingSectionProps) => {
   return (
     <Section background="gray" paddingY="lg">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
       >
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <motion.h2 variants={fadeInUp} className="section-headline mb-4">
-            {title}
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="lead-text">
-            {description}
-          </motion.p>
-        </div>
+        <motion.div variants={fadeInUp} className="max-w-3xl mb-14">
+          <span className="eyebrow mb-6 block">Modèles d&apos;engagement</span>
+          <h2 className="section-headline mb-6">{title}</h2>
+          <p className="lead-text">{description}</p>
+        </motion.div>
 
-        {/* Engagement Models Grid */}
         <motion.div
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {tiers.map((tier, index) => (
-            <motion.div
+            <motion.article
               key={index}
               variants={fadeInUp}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="bg-[var(--paper)] p-8 md:p-10 border border-[var(--ink-hairline)]/45 shadow-paper hover:shadow-deckle hover:border-secondary-500 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{tier.name}</h3>
-                <div className="text-sm font-semibold text-primary-600 mb-3 uppercase tracking-wide">
-                  {tier.eligibility}
-                </div>
-                <p className="text-sm text-gray-600">{tier.description}</p>
+              <div className="flex items-baseline justify-between mb-6">
+                <span className="numeral text-3xl">{String(index + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-secondary-500">
+                  Track {String.fromCharCode(65 + index)}
+                </span>
               </div>
-            </motion.div>
+              <h3 className="font-display text-2xl text-[var(--ink)] mb-3 leading-tight">
+                {tier.name}
+              </h3>
+              <div className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary-700 mb-5">
+                {tier.eligibility}
+              </div>
+              <hr className="rule-soft mb-5" />
+              <p className="text-sm text-[var(--ink-muted)] leading-relaxed">
+                {tier.description}
+              </p>
+            </motion.article>
           ))}
         </motion.div>
 
-        {/* Additional Info */}
-        <motion.div variants={fadeInUp} className="text-center mt-8">
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Contact us to discuss your project and determine which program track best fits your needs. We offer flexible engagement models including fixed-price projects and monthly retainers.
+        <motion.div variants={fadeInUp} className="mt-12 pt-8 border-t border-[var(--ink-hairline)]/40">
+          <p className="font-display italic text-lg md:text-xl text-[var(--ink-muted)] max-w-[58ch]">
+            We&apos;ll help you find the right track. Fixed-price commissions,
+            monthly retainers, and hybrid engagements all on the table.
           </p>
         </motion.div>
       </motion.div>

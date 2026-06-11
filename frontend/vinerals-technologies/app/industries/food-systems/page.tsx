@@ -113,8 +113,8 @@ export default function FoodSystemsPage() {
       <main className="pt-16">
         <IndustryHero
           badge="Food & Agriculture Technology"
-          title="Farm to Fork Visibility"
-          description="Build supply chain transparency, support local food systems, and give farmers the tools they deserve."
+          title="Farm-to-fork visibility, for everyone in the chain."
+          description="Supply chain transparency, traceability, and the tools that let small producers stand on the same ground as the industrial players."
           icon={<Wheat className="w-16 h-16" />}
         />
 
@@ -127,22 +127,24 @@ export default function FoodSystemsPage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              The Food Systems Challenge
+              The food systems problem
             </motion.h2>
             <div className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                The food industry runs on spreadsheets, phone calls, and paper invoices. When a
-                food safety issue happens, tracing products back to the source takes days or weeks.
-                Small farmers lack the tools to compete with industrial agriculture.
+                The food industry still runs on spreadsheets, phone calls, and paper invoices. When a
+                food safety issue lands, tracing products back to the source can take days or weeks.
+                Small farmers lack the systems to compete with industrial agriculture on either price
+                or trust.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                We are building technology to fix this. Our team has worked with organic farms,
-                food hubs, community kitchens, and sustainable food distributors. We understand
-                the challenges of seasonality, perishability, and the complexity of agricultural supply chains.
+                We’re building the software to fix that. Our team has worked with organic farms,
+                food hubs, community kitchens, and sustainable distributors. Seasonality, perishability,
+                and the moving parts of an agricultural supply chain aren’t edge cases for us, they’re
+                the work.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
-                <strong>We believe technology should help small-scale food producers thrive</strong> -
-                not just make big agribusiness more efficient.
+                <strong>Technology should help small-scale food producers thrive.</strong> Not just
+                make big agribusiness a little more efficient.
               </motion.p>
             </div>
           </motion.div>
@@ -261,21 +263,21 @@ export default function FoodSystemsPage() {
             variants={staggerContainer}
             className="max-w-3xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement Models</motion.h2>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">Engagement models</motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
-                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidized Programs Available</div>
-                <div className="text-gray-600">Mission-aligned funding for food systems innovation</div>
+                <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
+                <div className="text-gray-600">Mission-aligned funding for food systems work.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We offer different program tracks based on your organization&apos;s stage and eligibility. Through government programs and impact funding, we can provide subsidized food systems technology development for qualifying organizations.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying food systems builds.
                 </p>
                 <p>
-                  <strong>Common food systems projects:</strong> Traceability systems, farm management platforms, online marketplaces, supply chain coordination tools—all built for the unique needs of food producers and distributors.
+                  <strong>The food systems projects we see most often.</strong> Traceability systems, farm management platforms, regional marketplaces, and supply chain coordination tools. Built for the realities of food producers, not for a generic SaaS pitch.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Special eligibility for cooperatives, non-profits, and small family farms. Contact us to discuss your project and determine program eligibility.
+                  Cooperatives, non-profits, and small family farms get extra eligibility consideration. Book a free consultation and we&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </motion.div>

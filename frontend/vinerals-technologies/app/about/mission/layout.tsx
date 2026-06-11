@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mission & Vision | Vinerals Technologies - Unlocking Digital Transformation for Quebec SMEs',
-  description: 'Our mission: Making enterprise-quality software accessible to Quebec SMEs through mission-aligned funding. Not a discount agency—a publicly-supported technology adoption program bridging the knowledge and cost gap. Quality software costs what it costs ($100-200/hr CAD in Montreal). We&apos;ve secured subsidies and grants so cost doesn&apos;t have to be your barrier.',
+  title: 'Mission & Vision | Vinerals Technologies · Closing the Digital Divide for Québec SMEs',
+  description: 'Our mission: bringing enterprise-calibre software inside reach for Québec SMEs through mission-aligned funding. Not a discount agency. A publicly-supported technology adoption programme that closes the knowledge and cost gap. Good engineering costs what it costs ($100 to $200 per hour blended in Montréal). We have lined up subsidies and grants so the cheque doesn&apos;t have to be the wall.',
   keywords: [
     'digital transformation quebec sme',
     'ai integration small business canada',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     'social economy technology',
   ],
   openGraph: {
-    title: 'Unlocking Technology for Quebec SMEs | Vinerals Mission',
-    description: 'The three barriers: Knowledge gap (what&apos;s possible with AI?), Cost reality ($30K-$250K+ CAD), Expertise gap (senior vs junior devs). Our solution: Bridge program with mission-aligned funding and technology translation.',
+    title: 'Closing the Digital Divide for Québec SMEs | Vinerals Mission',
+    description: 'The three walls SMEs keep hitting: the knowledge gap (what can AI actually do?), the cost reality ($30K to $250K CAD), and the expertise gap (senior vs junior developers). Our model: a bridge programme of mission-aligned funding and honest translation.',
     url: 'https://vineralstechnologies.com/about/mission',
     type: 'website',
     images: [
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-mission.jpg',
         width: 1200,
         height: 630,
-        alt: 'Our Mission - Unlocking Technology for Quebec SMEs',
+        alt: 'Our Mission · Closing the Digital Divide for Québec SMEs',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mission & Vision | Vinerals Technologies',
-    description: 'Closing Canada&apos;s digital divide by helping SMEs understand what&apos;s possible with AI and making professional implementation accessible.',
+    description: 'Closing Canada&apos;s digital divide by helping SMEs see what&apos;s possible with AI and bringing the professional implementation inside reach.',
     images: ['https://vineralstechnologies.com/og-mission.jpg'],
   },
   alternates: {

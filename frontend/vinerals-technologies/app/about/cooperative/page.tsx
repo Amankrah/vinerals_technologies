@@ -16,16 +16,16 @@ export default function CooperativePage() {
       <main className="pt-16">
         <CooperativeHero
           badge="Our Cooperative Model"
-          title="Built Different, On Purpose"
-          highlightedWord="On Purpose"
-          description="Vinerals Technologies is a solidarity cooperative - a social enterprise owned by workers and community, not investors seeking maximum returns."
+          title="Built differently, on purpose."
+          highlightedWord="on purpose"
+          description="Vinerals Technologies is a solidarity cooperative. A social enterprise owned by the people doing the work and the community we serve, not by investors hunting an exit."
           icon={<Building2 className="w-8 h-8" />}
           stats={[
             { value: '7', label: 'Cooperative Principles' },
             { value: '1 = 1', label: 'Member Votes' },
           ]}
-          primaryCTA={{ label: 'Learn More', href: '#what-is-cooperative' }}
-          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+          primaryCTA={{ label: 'Read on', href: '#what-is-cooperative' }}
+          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
         />
 
         {/* What is a Solidarity Cooperative */}
@@ -38,32 +38,35 @@ export default function CooperativePage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              What is a Solidarity Cooperative?
+              So what is a solidarity cooperative?
             </motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <p className="text-gray-700 leading-relaxed mb-4">
-                A solidarity cooperative (coopérative de solidarité in French) is a unique Quebec
-                business structure that brings together three types of members:
+                A solidarity cooperative (<em>coopérative de solidarité</em> in French) is a Québec
+                business structure that brings three kinds of member into the same room:
               </p>
               <ul className="space-y-3 text-gray-700 mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Worker members:</strong> Developers and staff who work in the co-op</span>
+                  <span><strong>Worker members.</strong> The developers and staff doing the actual work.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>User members:</strong> Clients who use our services (optional)</span>
+                  <span><strong>User members.</strong> Clients who choose to join (optional).</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Supporting members:</strong> Community stakeholders who believe in our mission</span>
+                  <span><strong>Supporting members.</strong> Community stakeholders who believe in the mission.</span>
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed">
-                Each member has one vote, regardless of their investment. Profits are reinvested
-                in the mission, distributed fairly to worker-members, or allocated to a community
-                fund - not extracted for external shareholders.
+                Each member gets one vote, no matter what they put in. Surpluses go back into the mission,
+                to worker-members, or to a community fund. Nothing flows out to external shareholders, because
+                there are none.
               </p>
+              <blockquote className="pullquote mt-8">
+                Mission over profit. Built differently, on purpose.
+              </blockquote>
             </motion.div>
           </motion.div>
         </Section>
@@ -78,11 +81,11 @@ export default function CooperativePage() {
             className="max-w-5xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              The Seven Cooperative Principles
+              The seven cooperative principles
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-              Cooperatives worldwide operate according to seven principles established by the
-              International Cooperative Alliance. Here is how we live them:
+              Cooperatives around the world run on seven shared principles set by the International
+              Cooperative Alliance. Here’s what each one looks like in our daily work.
             </motion.p>
 
             <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-8">
@@ -211,49 +214,49 @@ export default function CooperativePage() {
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="flex gap-3 mb-3">
                   <Heart className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Mission Over Profit</h3>
+                  <h3 className="font-bold text-gray-900">Mission over profit.</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  Traditional corporations are legally required to maximize shareholder value.
-                  As a cooperative, we can prioritize our mission — making technology accessible
-                  — over profit extraction. This is not about being cheaper; it&apos;s about
-                  reinvesting in our purpose rather than external shareholders.
+                  Traditional corporations are legally bound to maximise shareholder value. A cooperative
+                  is bound to its members and its mission. We choose to put bringing serious software
+                  inside reach ahead of profit extraction. That isn’t about being cheaper. It’s about
+                  reinvesting in the purpose instead of paying outside shareholders.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="flex gap-3 mb-3">
                   <Scale className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Funded Accessibility, Not Discount Rates</h3>
+                  <h3 className="font-bold text-gray-900">Funded accessibility, not discount rates.</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  We don&apos;t undercut professional rates. Quality software engineering costs what
-                  it costs ($100-200/hr CAD blended in Montreal). Instead, we&apos;ve secured government
-                  subsidies, grants, and impact funding to supplement project budgets for qualifying
-                  SMEs — bridging the accessibility gap without compromising quality or wages.
+                  We don’t undercut professional rates. Good engineering costs what it costs ($100 to
+                  $200 per hour blended in Montréal). What we’ve done is line up government subsidies,
+                  grants, and impact funding to cover part of qualifying SME budgets. The accessibility
+                  gap closes without anyone’s wages or quality taking the hit.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="flex gap-3 mb-3">
                   <Users className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Worker Ownership</h3>
+                  <h3 className="font-bold text-gray-900">Worker ownership.</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  Developers who build the software have a say in how the company runs.
-                  This leads to better decisions, higher quality work, and sustainable
-                  workloads.
+                  The people writing the code have a say in how the company is run. That’s how you end up
+                  with better decisions, higher-quality work, and workloads that don’t burn out the team
+                  shipping your project.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
                 <div className="flex gap-3 mb-3">
                   <Lightbulb className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Long-Term Thinking</h3>
+                  <h3 className="font-bold text-gray-900">A longer time horizon.</h3>
                 </div>
                 <p className="text-sm text-gray-700">
-                  No investors demanding quick exits or endless growth. We can focus on
-                  building lasting client relationships and sustainable operations.
+                  No investors demanding a quick exit or endless quarter-on-quarter growth. We can focus on
+                  client relationships that last and operations we can sustain.
                 </p>
               </motion.div>
             </motion.div>
@@ -270,46 +273,44 @@ export default function CooperativePage() {
             className="max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              How This Benefits You
+              What you get out of it
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
               <motion.p variants={fadeInUp}>
-                Our cooperative structure is not just good for us - it creates direct benefits
-                for our clients:
+                Our structure isn’t a feel-good story. It shows up in the work, in concrete ways:
               </motion.p>
               <motion.ul variants={staggerContainer} className="space-y-3">
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Access to enterprise-quality work:</strong> Same senior developers and
-                  professional standards as Spiria, Stradigi AI, or Konverge — made accessible through
-                  mission-aligned funding, not by cutting corners</span>
+                  <span><strong>Enterprise-calibre work.</strong> Same senior developers and standards
+                  you’d get from Spiria, Stradigi AI, or Konverge, brought into reach through mission-aligned
+                  funding instead of corner-cutting.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Knowledge gap bridging:</strong> We start by helping you understand what&apos;s
-                  possible with AI and technology — before any code. This strategic guidance alone prevents
-                  costly mistakes</span>
+                  <span><strong>The knowledge gap closed.</strong> We start by walking you through what
+                  AI and software can and can’t do for your business before anyone writes a line of code.
+                  That conversation alone tends to be worth thousands in mistakes you didn’t make.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Aligned incentives:</strong> We succeed when you succeed, not when
-                  we maximize billable hours or scope creep</span>
+                  <span><strong>Aligned incentives.</strong> We win when you win, not when we run up
+                  billable hours or stretch the scope.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Stable team:</strong> Worker ownership means low turnover. The
-                  developers who start your project finish it — no junior devs learning on your dime</span>
+                  <span><strong>The team that starts is the team that finishes.</strong> Worker ownership
+                  means low turnover. No juniors learning on your dime mid-project.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Mission-aligned work:</strong> We choose clients whose missions we
-                  believe in and turn down projects that don&apos;t align with our values, leading to
-                  better outcomes for everyone</span>
+                  <span><strong>Mission-fit clients.</strong> We choose engagements that match our values,
+                  and turn down the ones that don’t. Outcomes improve on both sides.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>True partnership:</strong> No vendor lock-in, no proprietary systems.
-                  You own 100% of the code and can take it anywhere</span>
+                  <span><strong>You own everything.</strong> No vendor lock-in, no proprietary systems.
+                  100% of the code, ready to leave with you the day you want it to.</span>
                 </motion.li>
               </motion.ul>
             </motion.div>
@@ -326,41 +327,39 @@ export default function CooperativePage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              How We Are Governed
+              How we’re governed
             </motion.h2>
             <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
               <p className="text-gray-700 leading-relaxed mb-6">
-                We operate with democratic governance while maintaining the ability to move quickly:
+                Democratic, but built to move quickly:
               </p>
               <div className="space-y-4 text-gray-700">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">General Assembly</h3>
                   <p className="text-sm">
-                    All members meet quarterly to review financials, approve major decisions,
-                    and elect the board of directors. One member, one vote.
+                    All members meet quarterly to review the books, approve big decisions, and elect
+                    the board. One member, one vote.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Board of Directors</h3>
                   <p className="text-sm">
-                    Elected board (worker and community representatives) provides strategic
-                    oversight and ensures we stay true to our mission.
+                    An elected board of worker and community representatives provides strategic oversight
+                    and keeps us honest about the mission.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Day-to-Day Operations</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">Day-to-day operations</h3>
                   <p className="text-sm">
-                    Worker-members make operational decisions collaboratively using consensus
-                    when possible, voting when needed. Technical decisions are made by those
-                    closest to the work.
+                    Worker-members make operational decisions by consensus when we can, by vote when
+                    we have to. Technical calls live with the people closest to the work.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Profit Distribution</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">Profit distribution</h3>
                   <p className="text-sm">
-                    After reserves and reinvestment, surpluses are distributed based on hours
-                    worked (patronage) rather than capital invested. A portion goes to community
-                    development.
+                    After reserves and reinvestment, surpluses are split based on hours worked
+                    (patronage) instead of capital invested. A portion goes to community development.
                   </p>
                 </div>
               </div>
@@ -378,16 +377,16 @@ export default function CooperativePage() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Part of Quebec&apos;s Social Economy
+              Part of Québec’s social economy
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed mb-8">
               <motion.p variants={fadeInUp}>
-                Vinerals Technologies is proud to be part of Quebec&apos;s vibrant social economy
-                ecosystem - a network of 11,000+ enterprises that prioritize social and
-                environmental goals alongside financial sustainability.
+                Vinerals Technologies sits inside Québec’s social economy ecosystem, a network of more
+                than 11,000 enterprises that take social and environmental goals as seriously as the
+                P&L.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                We work with and are supported by organizations including:
+                Among the organisations we work with and lean on:
               </motion.p>
             </motion.div>
 

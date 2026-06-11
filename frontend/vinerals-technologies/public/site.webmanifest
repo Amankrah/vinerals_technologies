@@ -1,11 +1,11 @@
 {
   "name": "Vinerals Technologies",
   "short_name": "Vinerals",
-  "description": "AI & Software for Growing Businesses - Montreal's Social Enterprise Tech Partner",
+  "description": "Custom software, made by hand, for SMEs. A Montréal solidarity cooperative.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1e3a8a",
+  "background_color": "#F5EFE6",
+  "theme_color": "#1F3A2E",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

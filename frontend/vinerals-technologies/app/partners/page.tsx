@@ -9,24 +9,24 @@ import Link from 'next/link';
 
 const PARTNERS_FAQS = [
   {
-    question: 'What types of partnerships does Vinerals Technologies offer?',
-    answer: 'We partner with funders and foundations (CIHR, ISED, SDTC, MAPAQ), government agencies (federal, provincial, municipal), and technology consortiums. Our cooperative model enables mission-aligned partnerships focused on accessible technology, social innovation, and measurable impact.',
+    question: 'What kinds of partnerships do you offer?',
+    answer: 'We partner with funders and foundations (CIHR, ISED, SDTC, MAPAQ), government agencies (federal, provincial, municipal), and technology consortiums. Our cooperative structure is built for mission-aligned partnerships focused on accessibility, social innovation, and measurable impact.',
   },
   {
-    question: 'How does partnering with a solidarity cooperative differ from traditional vendors?',
-    answer: 'As a solidarity cooperative, we prioritize social impact alongside financial sustainability. Partnerships support job creation, accessible technology development, and community benefit. We offer transparent governance, democratic decision-making, and alignment with social economy objectives.',
+    question: 'How is partnering with a cooperative different from working with a regular vendor?',
+    answer: 'A solidarity cooperative is built to weigh social impact alongside financial sustainability. Partnerships support job creation, accessible technology, and community benefit. The governance is transparent, decision-making is democratic, and our work lines up with the broader social economy.',
   },
   {
-    question: 'What reporting and impact measurement do you provide to partners?',
-    answer: 'We provide comprehensive impact reporting including jobs created, technology accessibility metrics, social enterprise outcomes, environmental impact (for cleantech), and program-specific KPIs. Reports align with funder requirements and social economy evaluation frameworks.',
+    question: 'What reporting and impact measurement do partners get?',
+    answer: 'Full impact reporting: jobs created, technology accessibility metrics, social enterprise outcomes, environmental impact for cleantech work, and the programme-specific KPIs you need. The reports line up with funder requirements and standard social economy evaluation frameworks.',
   },
   {
-    question: 'Can government agencies procure services from your cooperative?',
-    answer: 'Yes. As a registered solidarity cooperative, we are eligible for cooperative procurement programs, social enterprise procurement policies, and standard government technology contracts. We support federal, provincial, and municipal digital service needs.',
+    question: 'Can government agencies procure services from a cooperative?',
+    answer: 'Yes. As a registered solidarity cooperative, we’re eligible for cooperative procurement programmes, social enterprise procurement policies, and standard government technology contracts. We work with federal, provincial, and municipal digital service teams.',
   },
   {
-    question: 'How do I explore partnership opportunities with Vinerals Technologies?',
-    answer: 'Contact us to discuss partnership opportunities. We work with organizations aligned with our mission of accessible technology and social innovation. Whether you are a funder, government agency, or consortium, we welcome mission-aligned collaborations.',
+    question: 'How do we get the conversation started?',
+    answer: 'Reach out. We work with funders, government agencies, and consortiums whose mandate lines up with ours: accessible technology and social innovation. If that’s you, we’d like to hear what you’re trying to make happen.',
   },
 ];
 
@@ -45,23 +45,23 @@ export default function PartnersPage() {
       <main className="pt-16">
         <PartnersHero
           badge="Partnership Opportunities"
-          title="Building Quebec's Accessible Tech Infrastructure"
-          highlightedWord="Accessible Tech"
-          description="Vinerals Technologies is a solidarity cooperative contributing to Quebec's social economy and digital transformation objectives. We welcome partnerships with government, funders, and industry consortiums."
+          title="Building Québec’s accessible tech infrastructure."
+          highlightedWord="accessible tech"
+          description="Vinerals Technologies is a solidarity cooperative working inside Québec’s social economy and digital transformation agenda. We welcome partnerships with government, funders, and industry consortiums."
           icon={<Handshake className="w-8 h-8" />}
           stats={[
-            { value: 'Funded', label: 'Subsidized Programs' },
+            { value: 'Funded', label: 'Subsidised Programmes' },
             { value: '10+', label: 'Quality Jobs Created' },
           ]}
-          primaryCTA={{ label: 'Explore Partnerships', href: '#partnership-opportunities' }}
-          secondaryCTA={{ label: 'Contact Us', href: '/contact' }}
+          primaryCTA={{ label: 'See the options', href: '#partnership-opportunities' }}
+          secondaryCTA={{ label: 'Get in touch', href: '/contact' }}
         />
 
         {/* Partnership Opportunities */}
         <Section background="gray" paddingY="lg">
           <div className="max-w-6xl mx-auto">
             <h2 className="section-headline mb-12 text-center">
-              Partnership Opportunities
+              Where a partnership can land
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -74,11 +74,11 @@ export default function PartnersPage() {
                   <Coins className="w-12 h-12" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  For Funders
+                  For funders
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Patient capital opportunity in Quebec&apos;s social economy. Invest in accessible
-                  technology infrastructure with measurable social returns.
+                  Patient capital, inside Québec’s social economy. Back accessible technology
+                  infrastructure with measurable social return, not just a sentiment.
                 </p>
                 <div className="text-sm text-gray-600 space-y-2 mb-6">
                   <div className="flex items-center gap-2">
@@ -108,11 +108,11 @@ export default function PartnersPage() {
                   <Building className="w-12 h-12" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  For Government
+                  For government
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Supporting Quebec&apos;s digital transformation and SME ecosystem. Aligned with
-                  provincial digital economy strategy and job creation goals.
+                  Capacity that lines up with Québec’s digital economy strategy and SME support
+                  agenda, with job creation built in.
                 </p>
                 <div className="text-sm text-gray-600 space-y-2 mb-6">
                   <div className="flex items-center gap-2">
@@ -142,11 +142,11 @@ export default function PartnersPage() {
                   <Users className="w-12 h-12" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  For Consortiums
+                  For consortiums
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Collaborative technology development for industry associations, networks,
-                  and social economy organizations with collective impact goals.
+                  Shared technical capacity for industry associations, sector networks, and
+                  social economy organisations chasing collective impact.
                 </p>
                 <div className="text-sm text-gray-600 space-y-2 mb-6">
                   <div className="flex items-center gap-2">
@@ -174,28 +174,28 @@ export default function PartnersPage() {
         <Section background="white" paddingY="lg">
           <div className="max-w-5xl mx-auto">
             <h2 className="section-headline mb-12 text-center">
-              Our Impact Model
+              Our impact model
             </h2>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold text-primary-900 mb-2">Funded</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Access Programs</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Access tracks</div>
                 <p className="text-sm text-gray-700">
-                  Mission-aligned funding making technology accessible to SMEs
+                  Mission-aligned funding that brings real software inside reach for SMEs.
                 </p>
               </div>
               <div>
                 <div className="text-4xl font-bold text-primary-900 mb-2">10+</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Quality Jobs</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Quality jobs</div>
                 <p className="text-sm text-gray-700">
-                  Creating well-paid technology jobs in Quebec&apos;s social economy
+                  Well-paid technology jobs created inside Québec’s social economy.
                 </p>
               </div>
               <div>
                 <div className="text-4xl font-bold text-primary-900 mb-2">4</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Priority Sectors</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Priority sectors</div>
                 <p className="text-sm text-gray-700">
-                  Healthcare, food systems, sustainability, and social enterprise
+                  Healthcare, food systems, sustainability, and social enterprise.
                 </p>
               </div>
             </div>
@@ -206,54 +206,54 @@ export default function PartnersPage() {
         <Section background="gray" paddingY="lg">
           <div className="max-w-4xl mx-auto">
             <h2 className="section-headline mb-8 text-center">
-              Why Partner With Vinerals
+              Why partner with us
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Social Economy Enterprise</h3>
+                <h3 className="font-bold text-gray-900 mb-3">A social economy enterprise.</h3>
                 <p className="text-gray-700 text-sm">
-                  As a solidarity cooperative, we are part of Quebec&apos;s vibrant social economy
-                  ecosystem with democratic governance and transparent operations.
+                  We sit inside Québec’s social economy network as a solidarity cooperative,
+                  with democratic governance and transparent operations.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Measurable Impact</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Measurable impact.</h3>
                 <p className="text-gray-700 text-sm">
-                  We track client cost savings, job creation, and sector-specific outcomes
-                  to demonstrate clear social return on investment.
+                  We track client cost relief, job creation, and sector-specific outcomes so the
+                  social return on investment is more than a story.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Experienced Team</h3>
+                <h3 className="font-bold text-gray-900 mb-3">An experienced team.</h3>
                 <p className="text-gray-700 text-sm">
-                  Senior developers with 5+ years experience and deep domain expertise in
-                  healthcare, sustainability, and food systems.
+                  Senior developers with five-plus years in production, and real working knowledge
+                  of healthcare, sustainability, and food systems.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Sustainable Model</h3>
+                <h3 className="font-bold text-gray-900 mb-3">A sustainable model.</h3>
                 <p className="text-gray-700 text-sm">
-                  Hybrid revenue model (earned revenue + mission-aligned funding) creates
+                  Hybrid revenue (earned client work plus mission-aligned funding) gives us a credible
                   path to long-term financial sustainability.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Strategic Alignment</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Strategic alignment.</h3>
                 <p className="text-gray-700 text-sm">
-                  Our work advances Quebec&apos;s digital economy goals, SME support objectives,
+                  Our work directly advances Québec’s digital economy goals, SME support objectives,
                   and social economy development priorities.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Ecosystem Connections</h3>
+                <h3 className="font-bold text-gray-900 mb-3">Plugged into the ecosystem.</h3>
                 <p className="text-gray-700 text-sm">
-                  Strong relationships with CQCM, Chantier, PME MTL, RISQ, and other key
-                  social economy and economic development actors.
+                  Working relationships with CQCM, Chantier, PME MTL, RISQ, and the other actors
+                  carrying Québec’s social economy.
                 </p>
               </div>
             </div>
@@ -263,24 +263,24 @@ export default function PartnersPage() {
         {/* Contact Section */}
         <Section background="white" paddingY="lg">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-headline mb-6">Let&apos;s Discuss a Partnership</h2>
+            <h2 className="section-headline mb-6">Let’s talk about a partnership.</h2>
             <p className="text-gray-700 leading-relaxed mb-8">
-              Interested in partnering with Vinerals Technologies? We would love to explore
-              how we can work together to advance accessible technology, job creation, and
-              social impact in Quebec.
+              If your mandate touches accessible technology, job creation, or social impact in Québec,
+              we’d like to find out what we can build together. The first call is free, and we’ll be
+              straight with you about fit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:contact@vineralstechnologies.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
               >
-                Email Partnerships Team
+                Email the partnerships team
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 border-2 border-primary-700 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
               >
-                General Contact
+                General contact
               </Link>
             </div>
           </div>

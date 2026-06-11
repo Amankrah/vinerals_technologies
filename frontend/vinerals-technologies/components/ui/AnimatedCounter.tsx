@@ -11,10 +11,6 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-/**
- * Animated counter that counts up from 0 to the target value when it comes into view
- * Used for stats and metrics sections
- */
 export default function AnimatedCounter({
   value,
   suffix = '',
@@ -25,33 +21,24 @@ export default function AnimatedCounter({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    duration,
-    bounce: 0,
-  });
+  const springValue = useSpring(motionValue, { duration, bounce: 0 });
 
   useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
+    if (isInView) motionValue.set(value);
   }, [isInView, value, motionValue]);
 
   useEffect(() => {
     const unsubscribe = springValue.on('change', (latest) => {
       if (ref.current) {
-        // Round the value for whole numbers
-        const rounded = Math.round(latest);
-        ref.current.textContent = `${prefix}${rounded}${suffix}`;
+        ref.current.textContent = `${prefix}${Math.round(latest)}${suffix}`;
       }
     });
-
     return () => unsubscribe();
   }, [springValue, prefix, suffix]);
 
   return <span ref={ref} className={className}>{prefix}0{suffix}</span>;
 }
 
-// Alternative component for percentage or decimal values
 export function AnimatedDecimalCounter({
   value,
   suffix = '',
@@ -63,32 +50,24 @@ export function AnimatedDecimalCounter({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    duration,
-    bounce: 0,
-  });
+  const springValue = useSpring(motionValue, { duration, bounce: 0 });
 
   useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
+    if (isInView) motionValue.set(value);
   }, [isInView, value, motionValue]);
 
   useEffect(() => {
     const unsubscribe = springValue.on('change', (latest) => {
       if (ref.current) {
-        const fixed = latest.toFixed(decimals);
-        ref.current.textContent = `${prefix}${fixed}${suffix}`;
+        ref.current.textContent = `${prefix}${latest.toFixed(decimals)}${suffix}`;
       }
     });
-
     return () => unsubscribe();
   }, [springValue, prefix, suffix, decimals]);
 
   return <span ref={ref} className={className}>{prefix}0{suffix}</span>;
 }
 
-// Component for stats with label
 interface StatCardProps {
   value: number;
   label: string;
@@ -97,8 +76,13 @@ interface StatCardProps {
   prefix?: string;
   decimals?: number;
   icon?: React.ReactNode;
+  index?: number;
 }
 
+/**
+ * AnimatedStatCard — magazine stat block. Oversized italic numeral
+ * with mono label and rule above.
+ */
 export function AnimatedStatCard({
   value,
   label,
@@ -107,23 +91,27 @@ export function AnimatedStatCard({
   prefix = '',
   decimals,
   icon,
+  index,
 }: StatCardProps) {
   const CounterComponent = decimals !== undefined ? AnimatedDecimalCounter : AnimatedCounter;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5 }}
-      className="text-center"
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="text-left"
     >
-      {icon && (
-        <div className="flex justify-center mb-4">
-          <div className="text-secondary-600">{icon}</div>
+      {index !== undefined && (
+        <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-secondary-500 mb-4">
+          N°{String(index + 1).padStart(2, '0')}
         </div>
       )}
-      <div className="text-4xl md:text-5xl font-bold text-primary-900 mb-2">
+      {icon && (
+        <div className="mb-4 text-secondary-500 [&_svg]:w-6 [&_svg]:h-6">{icon}</div>
+      )}
+      <div className="font-display italic text-6xl md:text-7xl text-primary-700 leading-[0.95] mb-3 tracking-tight">
         <CounterComponent
           value={value}
           suffix={suffix}
@@ -132,9 +120,14 @@ export function AnimatedStatCard({
           duration={2000}
         />
       </div>
-      <div className="text-lg font-semibold text-gray-800 mb-1">{label}</div>
+      <hr className="rule-soft mb-3 w-12" />
+      <div className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--ink-muted)] mb-2">
+        {label}
+      </div>
       {description && (
-        <div className="text-sm text-gray-600">{description}</div>
+        <p className="text-sm text-[var(--ink-faint)] leading-relaxed max-w-[28ch]">
+          {description}
+        </p>
       )}
     </motion.div>
   );

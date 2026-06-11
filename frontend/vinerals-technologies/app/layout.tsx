@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, Spectral, DM_Mono } from "next/font/google";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ['latin'],
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
   preload: true,
   adjustFontFallback: true,
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
+const spectral = Spectral({
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-jetbrains',
-  preload: false,
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+  preload: true,
   adjustFontFallback: true,
+});
+
+const dmMono = DM_Mono({
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -82,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${spectral.variable} ${dmMono.variable}`}>
       <body className="antialiased">
         <GoogleAnalytics />
         {children}

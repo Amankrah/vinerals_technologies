@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Vinerals Technologies | Montreal Software Cooperative Unlocking Technology for Quebec SMEs',
-  description: 'Montreal-based solidarity cooperative making enterprise-quality software accessible to Quebec SMEs and Canadian businesses. Not a discount agency—a publicly-supported technology adoption program. Mission-aligned funding bridges the knowledge and cost gap. Same quality as Spiria, Stradigi AI, Konverge—made accessible.',
+  title: 'About Vinerals Technologies | Montréal Software Cooperative for Québec SMEs',
+  description: 'A Montréal solidarity cooperative bringing enterprise-calibre software inside reach for Québec SMEs and Canadian businesses. Not a discount agency. A publicly-supported technology adoption programme. Mission-aligned funding closes the knowledge and cost gap. Same calibre of work as Spiria, Stradigi AI, or Konverge.',
   keywords: [
     'montreal software development',
     'quebec sme technology',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     'enterprise software for smes',
   ],
   openGraph: {
-    title: 'About Vinerals Technologies | Bridge to Enterprise Software for Quebec SMEs',
-    description: 'Quality software costs what it costs—$30K-$250K+ CAD for professional development. We&apos;ve secured mission-aligned funding so cost doesn&apos;t have to be your barrier. We start by helping you understand what&apos;s possible.',
+    title: 'About Vinerals Technologies | A Bridge to Enterprise Software for Québec SMEs',
+    description: 'Good engineering costs what it costs, between $30K and $250K CAD for a professional build. We have lined up mission-aligned funding so the cheque doesn&apos;t have to be the wall. We start by walking you through what&apos;s possible.',
     url: 'https://vineralstechnologies.com/about',
     type: 'website',
     images: [
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Vinerals Technologies | Montreal Software Cooperative',
-    description: 'Not undercutting professionals—bridging accessibility gaps. Enterprise-quality software for Quebec SMEs through mission-aligned funding.',
+    title: 'About Vinerals Technologies | Montréal Software Cooperative',
+    description: 'Not undercutting professionals. Bridging the accessibility gap. Enterprise-calibre software for Québec SMEs through mission-aligned funding.',
     images: ['https://vineralstechnologies.com/og-about.jpg'],
   },
   alternates: {

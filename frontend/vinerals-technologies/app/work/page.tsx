@@ -42,23 +42,23 @@ export default function WorkPage() {
       <main className="pt-16">
         <WorkHero
           badge="Portfolio & Case Studies"
-          title="Real Projects, Real Results"
-          highlightedWord="Real Results"
-          description="We don't just build software—we solve problems. Here are some of the projects we've delivered for SMEs, non-profits, and social enterprises across Quebec and Canada."
+          title="Real projects, real results."
+          highlightedWord="Real results."
+          description="We don’t just write software. We solve the problem. A look at the work we’ve shipped for SMEs, non-profits, and social enterprises across Québec and Canada."
           icon={<Briefcase className="w-8 h-8" />}
           stats={[
             { value: '12+', label: 'Completed Projects' },
             { value: '100%', label: 'Client Satisfaction' },
           ]}
-          primaryCTA={{ label: 'Start Your Project', href: '/contact' }}
-          secondaryCTA={{ label: 'View All Projects', href: '#projects' }}
+          primaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'See all projects', href: '#projects' }}
         />
         <StatsSection stats={WORK_STATS} />
         <ProjectsGrid projects={PLACEHOLDER_PROJECTS} />
         <CapabilitiesSection capabilities={CAPABILITIES} />
         <ProcessSection
-          title="How We Work"
-          description="Our transparent, collaborative process ensures you're involved every step of the way."
+          title="How we work"
+          description="A transparent, collaborative process that keeps you in the loop without burying you in status updates."
           steps={PROCESS_STEPS}
         />
         <CTA />

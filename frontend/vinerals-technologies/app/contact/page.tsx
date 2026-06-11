@@ -5,8 +5,8 @@ import Section from '@/components/ui/Section';
 import { Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Start Your Project | Vinerals Technologies',
-  description: 'Get a free consultation for your software or AI project. Montreal-based development team ready to help. No pressure, no obligation.',
+  title: 'Contact | Book a Free Consultation | Vinerals Technologies',
+  description: 'Book a free consultation for your software or AI project. A Montréal development team, ready to talk. No deck, no pressure, no obligation.',
 };
 
 export default function ContactPage() {
@@ -19,12 +19,12 @@ export default function ContactPage() {
         <Section background="white" paddingY="lg">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Let&apos;s Talk About Your<br />
-              Project
+              Let&apos;s talk about<br />
+              your project.
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              Free consultation. Honest advice. No pressure.
+              A free first conversation. Honest advice. No pressure.
             </p>
           </div>
         </Section>
@@ -79,23 +79,23 @@ Best regards`)}`}
             {/* FAQ */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                Frequently Asked Questions
+                A few quick questions, answered.
               </h3>
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
-                    What happens after I contact you?
+                    What happens after I get in touch?
                   </h4>
                   <p className="text-gray-700 leading-relaxed">
-                    Send us an email and we&apos;ll get back to you within 24 hours to discuss your project needs and schedule a free consultation.
+                    Send us an email. We&apos;ll get back to you within 24 hours to ask a few questions and set up a free consultation.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
-                    Do you work with clients outside Montreal?
+                    Do you work with clients outside Montréal?
                   </h4>
                   <p className="text-gray-700 leading-relaxed">
-                    Yes! We work with clients across Canada and internationally. Most of our communication is remote.
+                    Yes. Most of our work is with clients across Canada and beyond, conducted remotely. We&apos;ve built the rhythms that make that work well.
                   </p>
                 </div>
                 <div>
@@ -103,7 +103,7 @@ Best regards`)}`}
                     What&apos;s your minimum project size?
                   </h4>
                   <p className="text-gray-700 leading-relaxed">
-                    We typically work on projects starting at $10K, but we&apos;re flexible for non-profits and social enterprises.
+                    Projects usually start around $10K. We&apos;re flexible with non-profits and social enterprises, and we&apos;ll be straight about whether a smaller scope makes sense.
                   </p>
                 </div>
               </div>
