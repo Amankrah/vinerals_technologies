@@ -1,190 +1,135 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { heroVariants, heroItemVariants } from '@/hooks/useScrollAnimation';
-import { TRUST_INDICATORS } from '@/lib/constants';
 
 /**
- * Hero — magazine cover. Asymmetric: oversized italic headline on the
- * left bleeds toward the gutter; an editorial "Sommaire" plate sits
- * on the right cataloguing the issue. Mono dateline at top, mono
- * trust indicators at the foot. Cream paper substrate.
+ * Hero — full-bleed visual plane. Workshop photograph carries the
+ * "made by hand" idea; brand + one headline + one line + CTAs sit in
+ * the calm left gutter. No cards, no sommaire plate, no first-viewport
+ * metadata strip — the image does the communicating.
  */
 const Hero = () => {
   return (
-    <section className="relative bg-[var(--cream)] overflow-hidden pt-24 md:pt-28 grain">
-      {/* Hand-drawn arc — sits within the sommaire column area, lower & fainter */}
-      <svg
-        aria-hidden
-        className="hidden md:block absolute top-[28rem] right-6 w-[360px] h-[360px] opacity-[0.12] animate-paper-drift pointer-events-none"
-        viewBox="0 0 200 200"
-        fill="none"
+    <section className="relative min-h-[100svh] overflow-hidden bg-primary-950">
+      {/* Full-bleed craft photograph */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <path
-          d="M 30 100 Q 80 30, 100 100 Q 120 170, 170 100"
-          stroke="var(--secondary-500)"
-          strokeWidth="1"
-          fill="none"
+        <Image
+          src="/hero-workshop.jpg"
+          alt="Hands and a laptop on a wooden workbench — software built by hand"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[58%_42%] md:object-center"
         />
-        <path
-          d="M 40 110 Q 100 0, 160 110"
-          stroke="var(--primary-700)"
-          strokeWidth="0.7"
-          fill="none"
-        />
-        <circle cx="100" cy="100" r="64" stroke="var(--ink-hairline)" strokeWidth="0.5" fill="none" />
-      </svg>
+      </motion.div>
 
-      <div className="above-grain relative container mx-auto py-12 md:py-24 lg:py-32">
+      {/* Readability veils — top for nav, left/bottom for copy; photo stays open on the right */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary-950/85 via-primary-950/45 to-transparent md:h-48"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-r from-primary-950/95 via-primary-950/70 to-transparent md:w-[68%] md:via-primary-950/55"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-t from-primary-950/95 via-primary-950/35 to-transparent"
+      />
 
-        {/* ============================================================
-            DATELINE — small-caps masthead row
-            ============================================================ */}
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap items-center justify-between gap-4 pb-6 md:pb-8 mb-8 md:mb-16 border-b border-[var(--ink-hairline)]/40 font-mono text-[0.65rem] md:text-[0.7rem] uppercase tracking-[0.28em] text-[var(--ink-muted)]"
-        >
-          <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-secondary-500 animate-pulse" />
-            <span>N°01 · Dispatch from Tio&apos;tia:ke / Montréal</span>
-          </div>
-          <div className="hidden md:flex items-center gap-6">
-            <span>Une coopérative de solidarité</span>
-            <span aria-hidden>·</span>
-            <span suppressHydrationWarning>Édition {new Date().getFullYear()}</span>
-          </div>
-        </motion.div>
-
-        {/* ============================================================
-            HEADLINE — asymmetric grid: oversized title + sommaire
-            ============================================================ */}
+      <div className="above-grain relative z-10 container mx-auto flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:pb-24 md:pt-40 lg:pb-28">
         <motion.div
           variants={heroVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-12 lg:gap-y-16"
+          className="relative max-w-xl lg:max-w-2xl"
         >
-          {/* Left — headline & lede (8 columns) */}
-          <div className="lg:col-span-8 xl:col-span-7">
-            <motion.h1
-              variants={heroItemVariants}
-              className="font-display font-medium text-[clamp(2.5rem,9vw,7.5rem)] leading-[0.94] md:leading-[0.92] tracking-[-0.025em] text-[var(--ink)] mb-8 md:mb-10"
-            >
-              Software,
-              <br />
-              <em className="text-primary-700 not-italic md:italic font-medium">made by hand,</em>
-              <br />
-              for SMEs.
-            </motion.h1>
+          {/* Soft scrim behind type — contrast without a card */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-8 -inset-y-10 -z-10 bg-[radial-gradient(ellipse_at_left,rgba(10,20,16,0.82)_0%,rgba(10,20,16,0.55)_45%,transparent_75%)] md:-inset-x-14 md:-inset-y-14"
+          />
 
-            <motion.div
-              variants={heroItemVariants}
-              className="max-w-[60ch] mb-8 md:mb-10 lg:mb-14"
-            >
-              <p className="text-lg md:text-2xl text-[var(--ink-soft)] leading-[1.55] md:leading-[1.5] font-body">
-                Software should fit how your business runs, not the other way
-                round. We&apos;re a Montréal cooperative building custom
-                software and AI at terms you can plan around. Funding partners
-                cover the rest.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={heroItemVariants}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-stretch sm:items-start"
-            >
-              <Button
-                href="/contact"
-                size="lg"
-                variant="accent"
-                icon={<ArrowUpRight className="w-5 h-5" />}
-              >
-                Book a free consultation
-              </Button>
-              <Button
-                href="/work"
-                size="lg"
-                variant="secondary"
-              >
-                See our work
-              </Button>
-            </motion.div>
-          </div>
-
-          {/* Right — sommaire plate. Paper background + hairline border so it reads as a distinct dispatch */}
-          <motion.aside
+          <motion.p
             variants={heroItemVariants}
-            className="lg:col-span-4 xl:col-span-5 relative bg-[var(--paper)] border border-[var(--ink-hairline)]/45 p-8 md:p-10 shadow-paper"
+            className="mb-4 font-display text-[clamp(1.85rem,4.2vw,2.85rem)] italic leading-none tracking-[-0.02em] text-white [text-shadow:0_1px_18px_rgba(10,20,16,0.55)] md:mb-6"
           >
-            <div className="absolute -top-3 left-6 px-3 bg-[var(--cream)] font-mono text-[0.7rem] uppercase tracking-[0.22em] text-secondary-500 flex items-center gap-2">
-              <span aria-hidden className="w-5 h-px bg-secondary-500" />
-              Sommaire
-            </div>
+            Vinerals
+            <span className="mx-2 text-secondary-200" aria-hidden>
+              ·
+            </span>
+            <span className="align-middle font-mono text-[0.32em] uppercase not-italic tracking-[0.28em] text-white/80">
+              Technologies
+            </span>
+          </motion.p>
 
-            <h2 className="font-display italic text-[1.25rem] text-[var(--ink-muted)] mb-8 leading-snug">
-              What we build in this house
-            </h2>
+          <motion.h1
+            variants={heroItemVariants}
+            className="mb-5 font-display text-[clamp(2.5rem,7.2vw,5.5rem)] font-medium leading-[0.94] tracking-[-0.025em] text-white [text-shadow:0_2px_24px_rgba(10,20,16,0.55)] md:mb-6"
+          >
+            Software,
+            <br />
+            <em className="font-medium not-italic text-secondary-100 md:italic [text-shadow:0_2px_20px_rgba(10,20,16,0.5)]">
+              made by hand,
+            </em>
+            <br />
+            for SMEs.
+          </motion.h1>
 
-            <ul className="space-y-1">
-              {sommaire.map((item, idx) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-baseline gap-4 py-4 border-b border-[var(--ink-hairline)]/30 last:border-b-0 -mx-2 px-2 hover:bg-[var(--cream)]/60 transition-colors"
-                  >
-                    <span className="numeral text-xl shrink-0 w-10">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <div className="flex-1">
-                      <div className="font-display text-lg text-[var(--ink)] leading-tight mb-1 group-hover:text-primary-700 transition-colors">
-                        {item.title}
-                      </div>
-                      <div className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
-                        {item.kicker}
-                      </div>
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-[var(--ink-faint)] group-hover:text-secondary-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.aside>
-        </motion.div>
+          <motion.p
+            variants={heroItemVariants}
+            className="mb-8 max-w-[36ch] font-body text-lg font-medium leading-relaxed text-white [text-shadow:0_1px_16px_rgba(10,20,16,0.7)] md:mb-10 md:text-[1.35rem] md:leading-snug"
+          >
+            Custom software and AI that fits how your business runs —
+            at terms you can plan around.
+          </motion.p>
 
-        {/* ============================================================
-            COLOPHON STRIP — trust indicators as a quiet dateline
-            ============================================================ */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 md:mt-24 pt-6 border-t border-[var(--ink-hairline)]/40 flex flex-wrap items-center gap-x-10 gap-y-3 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--ink-soft)]"
-        >
-          {TRUST_INDICATORS.map((indicator, idx) => (
-            <div key={idx} className="flex items-center gap-2.5">
-              <span className="text-secondary-500">{String(idx + 1).padStart(2, '0')}</span>
-              <span className="text-[var(--ink)]">{indicator.value}</span>
-              <span aria-hidden className="text-[var(--ink-faint)]">·</span>
-              <span className="text-[var(--ink-muted)]">{indicator.label}</span>
-            </div>
-          ))}
+          <motion.div
+            variants={heroItemVariants}
+            className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
+          >
+            <Button
+              href="/contact"
+              size="lg"
+              variant="accent"
+              icon={<ArrowUpRight className="h-5 w-5" />}
+            >
+              Book a free consultation
+            </Button>
+            <Button
+              href="/work"
+              size="lg"
+              variant="secondary"
+              className="border-white/75 bg-primary-950/35 text-white backdrop-blur-sm hover:border-white hover:bg-white hover:text-primary-900 focus:ring-offset-primary-950"
+            >
+              See our work
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Quiet edge cue — invites the scroll without competing for attention */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute bottom-5 left-1/2 hidden -translate-x-1/2 md:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.55 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+      >
+        <span className="block h-8 w-px bg-[var(--cream)]/50" />
+      </motion.div>
     </section>
   );
 };
-
-const sommaire = [
-  { title: 'Custom software, hand-built',     kicker: 'No vendor lock-in',                  href: '/services/custom-software' },
-  { title: 'AI & ML, integrated honestly',    kicker: 'Practical, not novelty',             href: '/services/ai-integration' },
-  { title: 'Mobile apps with shelf life',     kicker: 'iOS · Android · web',                href: '/services/mobile-apps' },
-  { title: 'Data systems that compound',      kicker: 'Pipelines · dashboards · reporting', href: '/services/data-systems' },
-];
 
 export default Hero;

@@ -21,7 +21,7 @@ export default function Logo({ className, variant = 'default', size = 'md' }: Lo
 
   const colorClasses = {
     default: 'text-[var(--ink)]',
-    light:   'text-[var(--cream)]',
+    light:   'text-white [text-shadow:0_1px_12px_rgba(10,20,16,0.45)]',
     dark:    'text-[var(--ink)]',
   };
 
@@ -37,13 +37,19 @@ export default function Logo({ className, variant = 'default', size = 'md' }: Lo
       aria-label="Vinerals Technologies · accueil"
     >
       <span className="italic">Vinerals</span>
-      <span aria-hidden className="text-secondary-500 font-display italic text-[0.65em] translate-y-[-0.2em]">
+      <span
+        aria-hidden
+        className={cn(
+          'font-display italic text-[0.65em] translate-y-[-0.2em]',
+          variant === 'light' ? 'text-secondary-200' : 'text-secondary-500'
+        )}
+      >
         ·
       </span>
       <span
         className={cn(
           'font-mono text-[0.42em] uppercase tracking-[0.28em] translate-y-[-0.15em]',
-          variant === 'light' ? 'text-white/70' : 'text-[var(--ink-muted)]'
+          variant === 'light' ? 'text-white/85' : 'text-[var(--ink-muted)]'
         )}
       >
         Technologies

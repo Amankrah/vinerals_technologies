@@ -13,7 +13,7 @@ export default function Home() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={localBusinessSchema} />
       <Header />
-      <main className="pt-16">
+      <main>
         <Hero />
         <ProblemSolution />
         <Services />

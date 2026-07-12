@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
@@ -11,11 +12,14 @@ import { NAVIGATION } from '@/lib/constants';
 /**
  * Header — magazine masthead. A double rule sits beneath; the logo
  * occupies the spine; nav items are mono small-caps; dropdowns open
- * as paper plates with hairline rules.
+ * as paper plates with hairline rules. On the homepage at rest it
+ * goes transparent over the full-bleed hero photograph.
  */
 const Header = () => {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const overHero = pathname === '/' && !scrolled && !mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -28,16 +32,26 @@ const Header = () => {
     <header
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-500',
-        // Opaque cream once scrolled — never bleeds through onto dark sections
-        // (the footer's forest block was washing out nav text under the previous /95 + blur).
-        scrolled
+        scrolled || mobileMenuOpen
           ? 'bg-[var(--cream)] shadow-paper'
-          : 'bg-white/95 backdrop-blur-sm'
+          : overHero
+            ? 'bg-gradient-to-b from-primary-950/80 via-primary-950/45 to-transparent'
+            : 'bg-white/95 backdrop-blur-sm'
       )}
     >
       {/* Editorial dateline strip */}
-      <div className="hidden md:block border-b border-[var(--ink-hairline)]/40">
-        <div className="container mx-auto flex items-center justify-between py-2 font-mono text-[0.72rem] uppercase tracking-[0.2em] text-[var(--ink-soft)]">
+      <div
+        className={cn(
+          'hidden md:block border-b transition-colors duration-500',
+          overHero ? 'border-white/25' : 'border-[var(--ink-hairline)]/40'
+        )}
+      >
+        <div
+          className={cn(
+            'container mx-auto flex items-center justify-between py-2 font-mono text-[0.72rem] uppercase tracking-[0.2em] transition-colors duration-500',
+            overHero ? 'text-white/90' : 'text-[var(--ink-soft)]'
+          )}
+        >
           <span>Vol. I · Montréal · Bilingue EN / FR</span>
           <span>Une coopérative de solidarité</span>
         </div>
@@ -45,7 +59,7 @@ const Header = () => {
 
       <nav className="container mx-auto py-5 md:py-6 relative">
         <div className="flex items-center justify-between">
-          <Logo size="md" />
+          <Logo size="md" variant={overHero ? 'light' : 'default'} />
 
           {/* Desktop nav — small-caps mono labels with squiggle on hover */}
           <div className="hidden lg:flex items-center gap-10">
@@ -55,10 +69,25 @@ const Header = () => {
                   <div className="group">
                     <Link
                       href={item.href}
-                      className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--ink-soft)] hover:text-primary-700 transition-colors py-2 inline-flex items-baseline gap-1.5"
+                      className={cn(
+                        'font-mono text-[0.7rem] uppercase tracking-[0.22em] transition-colors py-2 inline-flex items-baseline gap-1.5',
+                        overHero
+                          ? 'text-white hover:text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
+                          : 'text-[var(--ink-soft)] hover:text-primary-700'
+                      )}
                     >
                       <span className="squiggle">{item.name}</span>
-                      <span aria-hidden className="text-[0.6em] text-[var(--ink-faint)] group-hover:text-secondary-500">+</span>
+                      <span
+                        aria-hidden
+                        className={cn(
+                          'text-[0.6em]',
+                          overHero
+                            ? 'text-white/70 group-hover:text-secondary-200'
+                            : 'text-[var(--ink-faint)] group-hover:text-secondary-500'
+                        )}
+                      >
+                        +
+                      </span>
                     </Link>
                     {/* Dropdown plate */}
                     <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -81,7 +110,12 @@ const Header = () => {
                 ) : (
                   <Link
                     href={item.href}
-                    className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--ink-soft)] hover:text-primary-700 transition-colors"
+                    className={cn(
+                      'font-mono text-[0.7rem] uppercase tracking-[0.22em] transition-colors',
+                      overHero
+                        ? 'text-white hover:text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
+                        : 'text-[var(--ink-soft)] hover:text-primary-700'
+                    )}
                   >
                     <span className="squiggle">{item.name}</span>
                   </Link>
@@ -93,9 +127,14 @@ const Header = () => {
           {/* Demoted to a text link — the hero & footer own the button-weight CTA */}
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center gap-2 group font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 hover:text-secondary-500 transition-colors"
+            className={cn(
+              'hidden lg:inline-flex items-center gap-2 group font-mono text-[0.7rem] uppercase tracking-[0.22em] transition-colors',
+              overHero
+                ? 'text-white hover:text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
+                : 'text-primary-700 hover:text-secondary-500'
+            )}
           >
-            <span className="squiggle-forest">Begin a project</span>
+            <span className={overHero ? undefined : 'squiggle-forest'}>Begin a project</span>
             <span aria-hidden>→</span>
           </Link>
 
@@ -113,7 +152,12 @@ const Header = () => {
           ) : (
             <button
               type="button"
-              className="lg:hidden text-[var(--ink)] p-2 -mr-2 hover:text-primary-700 transition-colors"
+              className={cn(
+                'lg:hidden p-2 -mr-2 transition-colors',
+                overHero
+                  ? 'text-white hover:text-secondary-200'
+                  : 'text-[var(--ink)] hover:text-primary-700'
+              )}
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded="false"
@@ -124,7 +168,13 @@ const Header = () => {
         </div>
 
         {/* Bottom hairline of the masthead */}
-        <div aria-hidden className="absolute bottom-0 left-5 right-5 md:left-10 md:right-10 lg:left-14 lg:right-14 h-px bg-[var(--ink-hairline)]/40" />
+        <div
+          aria-hidden
+          className={cn(
+            'absolute bottom-0 left-5 right-5 md:left-10 md:right-10 lg:left-14 lg:right-14 h-px transition-colors duration-500',
+            overHero ? 'bg-white/30' : 'bg-[var(--ink-hairline)]/40'
+          )}
+        />
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
