@@ -139,7 +139,7 @@ export function createArticleSchema(article: {
     headline: article.title,
     description: article.description,
     author: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: article.author,
     },
     publisher: {

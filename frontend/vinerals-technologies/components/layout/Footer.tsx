@@ -7,6 +7,7 @@ import { Github, Linkedin, Mail, ArrowUpRight, MapPin } from 'lucide-react';
 import Logo from '@/components/shared/Logo';
 import Button from '@/components/ui/Button';
 import { NAVIGATION, SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
+import { getPublishedArticles } from '@/content/articles';
 
 /**
  * Footer — closing colophon. Photographic invitation block, then an
@@ -24,7 +25,7 @@ const Footer = () => {
       <section className="relative overflow-hidden bg-primary-950 text-[var(--cream)]">
         <Image
           src="/footer-cta.jpg"
-          alt="A quiet consultation at a wooden table — notebooks, laptop, and coffee"
+          alt="A quiet consultation at a wooden table with notebooks, laptop, and coffee"
           fill
           sizes="100vw"
           className="object-cover object-[center_40%]"
@@ -57,8 +58,8 @@ const Footer = () => {
 
             <p className="lead-text mb-12 max-w-xl text-white/90 [text-shadow:0_1px_14px_rgba(10,20,16,0.5)]">
               Then it would fit the work you actually do, instead of bending
-              you around someone else&apos;s product. Book a consultation —
-              the first conversation is free, honest, and without obligation.
+              you around someone else&apos;s product. Book a consultation.
+              The first conversation is free, honest, and without obligation.
             </p>
 
             <div className="flex flex-col items-start gap-5 sm:flex-row">
@@ -147,7 +148,13 @@ const Footer = () => {
             <FooterColumn
               eyebrow="03 · Notes"
               title="Resources"
-              links={NAVIGATION.footer.resources}
+              links={[
+                { name: 'All notes', href: '/resources' },
+                ...getPublishedArticles().map((article) => ({
+                  name: article.navTitle || article.title,
+                  href: `/resources/${article.slug}`,
+                })),
+              ]}
             />
             <FooterColumn
               eyebrow="04 · Correspondance"

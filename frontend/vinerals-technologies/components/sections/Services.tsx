@@ -37,9 +37,9 @@ const Services = () => {
             variants={fadeInUp}
             className="lead-text max-w-[42ch] md:col-span-5 md:ml-auto md:pl-12"
           >
-            Four disciplines, made by hand under one roof — so your database, AI
-            model, mobile app, and dashboards don&apos;t arrive stitched together
-            from four different vendors.
+            Four disciplines, made by hand under one roof. Your database, AI
+            model, mobile app, and dashboards stay in one workshop instead of
+            arriving stitched together from four different vendors.
           </motion.p>
         </div>
 

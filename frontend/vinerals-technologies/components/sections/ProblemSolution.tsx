@@ -137,15 +137,15 @@ const barriers = [
 const responses = [
   {
     title: 'Made by hand.',
-    body: 'Senior engineers shape software around how your business runs — not a template, not a platform you rent. Craft in the details, ownership in the contract.',
+    body: 'Senior engineers shape software around how your business runs. Craft in the details. Ownership in the contract. The system fits you, rather than asking you to fit a product.',
   },
   {
     title: 'Translation before development.',
-    body: "We explain what’s possible before any code happens. No jargon, no pressure. When the honest answer is “don’t build it,” that’s the answer you’ll get.",
+    body: "We explain what’s possible before any code happens. No jargon, no pressure. When the honest answer is “don’t build it,” that is the answer you will get.",
   },
   {
     title: 'Premium work, terms you can plan around.',
-    body: 'The same calibre larger firms pay full freight for — structured so a growing business can say yes. Mission-aligned funding when you qualify. Code you own outright.',
+    body: 'The same calibre larger firms pay full freight for, structured so a growing business can say yes. Mission-aligned funding when you qualify. Code you own outright.',
   },
 ];
 

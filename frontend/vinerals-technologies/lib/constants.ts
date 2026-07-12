@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   shortName: 'Vinerals Tech',
   tagline: 'Software, made by hand, for SMEs.',
   description:
-    'A Montréal solidarity cooperative. Custom software and AI, made by hand — senior engineering, code you own, at terms growing businesses can plan around.',
+    'A Montréal solidarity cooperative. Custom software and AI, made by hand. Senior engineering, code you own, at terms growing businesses can plan around.',
   url: 'https://vineralstechnologies.com',
   email: 'contact@vineralstechnologies.com',
   phone: '+1 (514) 961-9754',
@@ -74,8 +74,8 @@ export const NAVIGATION = {
       { name: 'Cooperative Model', href: '/about/cooperative' },
     ],
     resources: [
+      { name: 'All notes', href: '/resources' },
       { name: 'Blog', href: '/resources/blog' },
-      { name: 'Guides', href: '/resources/guides' },
       { name: 'Case Studies', href: '/work' },
     ],
     connect: [
@@ -205,7 +205,7 @@ export const STATS = [
   {
     value: 'Craft',
     label: 'Made by hand',
-    description: 'Senior engineers shape every system around how you work — not a template with your logo.',
+    description: 'Senior engineers shape every system around how you work. No template with your logo slapped on.',
   },
   {
     value: '100%',
@@ -268,31 +268,31 @@ export const WHY_US_FEATURES = [
   {
     title: 'Made by hand.',
     description:
-      'Senior engineers shape every system around how you actually work — not a rented platform, not a template with your logo. Craft you can feel in the details.',
+      'Senior engineers shape every system around how you actually work. Craft you can feel in the details. The result belongs to you.',
     icon: 'Zap',
   },
   {
     title: 'Cooperative model.',
     description:
-      "We’re owned by the people doing the work and the community we serve, not by investors hunting an exit. Your project funds the mission, not someone’s payday.",
+      "We’re owned by the people doing the work and the community we serve. Your project funds the mission, not someone’s exit payday.",
     icon: 'Building',
   },
   {
     title: 'A real partnership.',
     description:
-      'You talk to the senior developer doing the work, not an account manager. You hear the truth when something is a bad idea. And you own every line of code we write.',
+      'You talk to the senior developer doing the work. You hear the truth when something is a bad idea. And you own every line of code we write.',
     icon: 'Handshake',
   },
   {
     title: 'Translation before code.',
     description:
-      'Before anyone opens an editor, we explain what software and AI can (and can’t) do for your business. Often the honest answer is, “don’t build that yet,” and you get it either way.',
+      'Before anyone opens an editor, we explain what software and AI can do for your business, and what they cannot. Often the honest answer is “don’t build that yet,” and you get it either way.',
     icon: 'MessageCircle',
   },
   {
     title: 'Terms you can plan around.',
     description:
-      'Mission-aligned funding and clear engagement tracks bring serious engineering into reach for clinics, food co-ops, climate startups, and charities — without diluting the quality.',
+      'Mission-aligned funding and clear engagement tracks bring serious engineering into reach for clinics, food co-ops, climate startups, and charities. The craft stays intact.',
     icon: 'Landmark',
   },
   {

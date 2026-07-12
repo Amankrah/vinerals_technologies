@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/content/blog-posts';
+import { getPublishedArticles } from '@/content/articles';
 import { projects } from '@/content/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -174,8 +174,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic blog posts
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  // Dynamic published resource notes
+  const blogPages: MetadataRoute.Sitemap = getPublishedArticles().map((post) => ({
     url: `${baseUrl}/resources/${post.slug}`,
     lastModified: new Date(post.publishedDate),
     changeFrequency: 'monthly' as const,

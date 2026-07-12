@@ -49,8 +49,9 @@ const WhyUs = () => {
             <em>on purpose.</em>
           </h2>
           <p className="lead-text max-w-[36ch]">
-            Craft, ownership, and honest counsel — how the cooperative shows up
-            in the work itself, not just on the About page.
+            Craft, ownership, and honest counsel. How the cooperative shows up
+            in the work itself, including on the days nobody is reading the About
+            page.
           </p>
         </motion.div>
 
