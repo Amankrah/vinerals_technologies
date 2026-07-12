@@ -52,7 +52,7 @@ export const NAVIGATION = {
         { name: 'Our Mission', href: '/about/mission' },
         { name: 'Team', href: '/about/team' },
         { name: 'Cooperative Model', href: '/about/cooperative' },
-        { name: 'For Partners & Funders', href: '/partners' },
+        { name: 'Partners', href: '/partners' },
       ],
     },
     {

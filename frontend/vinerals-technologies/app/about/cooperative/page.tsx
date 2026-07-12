@@ -5,9 +5,10 @@ import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CooperativeHero from '@/components/sections/CooperativeHero';
 import CTA from '@/components/sections/CTA';
-import { Building2, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import Link from 'next/link';
 
 const PRINCIPLES = [
   {
@@ -140,8 +141,9 @@ export default function CooperativePage() {
           badge="Our Cooperative Model"
           title="Built differently, on purpose."
           highlightedWord="on purpose"
-          description="A solidarity cooperative — so craft, ownership, and honest counsel aren’t optional extras. Owned by the people doing the work and the community we serve, not by investors hunting an exit."
-          icon={<Building2 className="h-8 w-8" />}
+          description="A solidarity cooperative. Craft, ownership, and honest counsel — owned by workers and community, not by investors hunting an exit."
+          image="/cooperative-atelier.jpg"
+          imageAlt="Hands gathered around a wooden workshop table — cooperative craft"
           stats={[
             { value: '1 = 1', label: 'Member votes' },
             { value: 'Craft', label: 'Before extraction' },
@@ -226,8 +228,15 @@ export default function CooperativePage() {
                     —
                   </span>
                   <span>
-                    <strong className="text-[var(--ink)]">Worker members.</strong> The developers
-                    and staff doing the actual work.
+                    <strong className="text-[var(--ink)]">Worker members.</strong> The people
+                    doing the work — including the{' '}
+                    <Link
+                      href="/about/team"
+                      className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 transition-colors hover:text-secondary-600"
+                    >
+                      worker seats on our board
+                    </Link>
+                    .
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

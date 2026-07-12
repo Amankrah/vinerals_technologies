@@ -1,23 +1,21 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Government Technology Partners | Cooperative Procurement & Digital Services Montreal',
-  description: 'Technology development partner for federal, provincial, and municipal government agencies across Canada. Vinerals Technologies solidarity cooperative provides accessible digital services, cooperative procurement solutions, and social enterprise technology for government innovation programs. Supporting Quebec digital transformation, federal accessibility initiatives, and municipal technology needs.',
+  title: 'For Government | Craft Delivery for Digital & SME Mandates | Vinerals',
+  description:
+    'Government technology partner: Vinerals Technologies delivers craft software for Québec and Canadian digital-economy and SME programmes — social procurement fit, clear milestones, reporting you can stand behind.',
   keywords: [
-    'government technology procurement cooperative',
-    'solidarity cooperative government contracts',
-    'quebec government technology partners',
-    'federal government cooperative procurement',
-    'accessible technology programs canada',
-    'government digital services cooperative',
-    'municipal technology partners montreal',
-    'social enterprise government contracts',
-    'cooperative technology procurement',
-    'government innovation partners',
+    'government technology partner quebec',
+    'solidarity cooperative procurement',
+    'SME digital programme delivery',
+    'social procurement software canada',
+    'montreal cooperative government partner',
+    'digital economy implementation partner',
   ],
   openGraph: {
-    title: 'Government Technology Partners | Vinerals Technologies',
-    description: 'Accessible technology and digital services for government agencies. Solidarity cooperative supporting federal, provincial, and municipal innovation programs across Canada.',
+    title: 'For Government | Vinerals Technologies',
+    description:
+      'Craft delivery for public mandates — implementation capacity for digital-economy and SME programmes across Québec and Canada.',
     url: 'https://vineralstechnologies.com/partners/government',
     type: 'website',
     images: [
@@ -31,8 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Government Technology Partners | Vinerals Technologies',
-    description: 'Cooperative technology solutions for federal, provincial, and municipal government agencies.',
+    title: 'For Government | Vinerals Technologies',
+    description:
+      'Craft delivery for digital-economy and SME mandates — solidarity cooperative partner.',
     images: ['https://vineralstechnologies.com/og-partners-government.jpg'],
   },
   alternates: {

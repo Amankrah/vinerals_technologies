@@ -1,39 +1,39 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Building2, DollarSign, Users2, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import Section from '@/components/ui/Section';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 const partnerTypes = [
   {
-    title: 'Government',
-    kicker: 'Digital economy & SME support',
-    description: 'Lines up with digital-economy mandates, job creation, and SME support across Québec and Canada.',
-    icon: Building2,
-    href: '/partners/government',
-  },
-  {
     title: 'Funders',
-    kicker: 'Patient capital · social ROI',
-    description: 'Patient-capital opportunities with measurable social return alongside real financial discipline.',
-    icon: DollarSign,
+    kicker: 'Patient capital · foundations',
+    description:
+      'Back software made by hand for SMEs — social return with financial discipline, not a pitch-deck fantasy.',
     href: '/partners/funders',
   },
   {
+    title: 'Government',
+    kicker: 'Digital economy & SME mandates',
+    description:
+      'Implementation capacity that lines up with Québec and Canadian priorities — craft delivery, clear reporting.',
+    href: '/partners/government',
+  },
+  {
     title: 'Consortiums',
-    kicker: 'Industry-wide initiatives',
-    description: 'Industry-wide technology projects that no single SME could fund or staff on their own.',
-    icon: Users2,
+    kicker: 'Shared platforms for networks',
+    description:
+      'Technical partner for associations and sector networks — systems no single member could fund alone.',
     href: '/partners/consortiums',
   },
 ];
 
 /**
- * ForPartners — dispatch to government, funders and consortiums.
- * Set as a deep forest panel with cream text — a deliberate dark
- * spread between the lighter cream sections.
+ * ForPartners — dispatch to funders, government and consortiums.
+ * Deep forest panel with cream text — a deliberate dark spread
+ * between lighter cream sections.
  */
 const ForPartners = () => {
   return (
@@ -56,14 +56,14 @@ const ForPartners = () => {
           variants={fadeInUp}
           className="font-display text-4xl md:text-6xl lg:text-[4.5rem] leading-[1.05] md:leading-[1] tracking-tight text-[var(--cream)] mb-6 md:mb-8 max-w-[22ch]"
         >
-          Building Québec&apos;s <em className="text-secondary-300">accessible</em> tech infrastructure.
+          Craft partners for
+          <br />
+          <em className="text-secondary-300">public-interest</em> work.
         </motion.h2>
 
         <motion.p variants={fadeInUp} className="lead-text text-white/80 max-w-[58ch] mb-10 md:mb-16">
-          We channel public-interest funding into the Canadian businesses that
-          have been priced out of serious engineering. If your mandate touches
-          the social economy, digital transformation, or SME competitiveness,
-          here&apos;s how a partnership works in practice.
+          Funders, agencies, and networks that need senior engineering with
+          cooperative governance — not a discount agency, not a VC pitch.
         </motion.p>
 
         <motion.div
@@ -71,7 +71,6 @@ const ForPartners = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-white/20"
         >
           {partnerTypes.map((partner, idx) => {
-            const IconComponent = partner.icon;
             const isLast = idx === partnerTypes.length - 1;
 
             return (
@@ -86,7 +85,6 @@ const ForPartners = () => {
                     <span className="numeral text-2xl text-secondary-300">
                       {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <IconComponent className="w-7 h-7 text-white/40 group-hover:text-secondary-300 transition-colors" />
                   </div>
 
                   <h3 className="font-display text-3xl text-[var(--cream)] mb-3 leading-tight">

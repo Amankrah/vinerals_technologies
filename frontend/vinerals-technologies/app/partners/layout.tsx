@@ -1,23 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Technology Partnership Opportunities Montreal | Cooperative Software Development Partners',
-  description: 'Partner with Vinerals Technologies solidarity cooperative for technology development, social innovation, and digital transformation. Serving funders, government agencies, and industry consortiums across Canada. Mission-aligned partnerships for accessible technology, cooperative development, and social enterprise innovation.',
+  title: 'Partners | Patient Capital, Government & Consortiums | Vinerals Technologies',
+  description:
+    'Partner with Vinerals Technologies — a Montréal solidarity cooperative building software made by hand. Doors for funders, government agencies, and industry consortiums across Québec and Canada.',
   keywords: [
     'technology cooperative partnerships',
-    'solidarity cooperative technology',
-    'social enterprise tech partners',
-    'mission-aligned technology development',
-    'cooperative software partnerships canada',
-    'social innovation technology partners',
-    'accessible technology programs',
-    'worker cooperative technology montreal',
-    'technology partnership opportunities',
-    'cooperative digital transformation',
+    'solidarity cooperative montreal',
+    'patient capital software',
+    'government technology partners quebec',
+    'consortium shared platforms',
+    'mission-aligned software cooperative',
+    'SME craft software partners',
   ],
   openGraph: {
-    title: 'Partnership Opportunities | Vinerals Technologies Cooperative',
-    description: 'Build accessible technology infrastructure together. Partnership opportunities with a solidarity cooperative serving funders, government, and industry consortiums across Canada.',
+    title: 'Partners | Vinerals Technologies',
+    description:
+      'Three doors: patient capital, government mandates, and consortium shared platforms — craft delivery from a Montréal solidarity cooperative.',
     url: 'https://vineralstechnologies.com/partners',
     type: 'website',
     images: [
@@ -31,8 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Partnership Opportunities | Vinerals Technologies',
-    description: 'Technology cooperative partnerships for social innovation and accessible development.',
+    title: 'Partners | Vinerals Technologies',
+    description:
+      'Funders, government, and consortiums — craft software partnerships with a Montréal solidarity cooperative.',
     images: ['https://vineralstechnologies.com/og-partners.jpg'],
   },
   alternates: {

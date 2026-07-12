@@ -1,23 +1,21 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Technology Consortium & Network Partnerships Montreal | Innovation Ecosystems',
-  description: 'Join technology consortiums, innovation networks, and cooperative ecosystems with Vinerals Technologies. Member of Canadian technology consortiums supporting social enterprise, cleantech innovation, healthcare technology, and agtech development. Building collaborative innovation partnerships across Montreal, Quebec, and Canada.',
+  title: 'For Consortiums & Networks | Shared Platforms & Craft Capacity | Vinerals',
+  description:
+    'Technical partner for associations and sector networks. Shared platforms, member programmes, and sector initiatives — systems no single member could fund alone, built by a Montréal solidarity cooperative.',
   keywords: [
-    'technology consortium member canada',
-    'innovation network partners montreal',
-    'cooperative consortium partnerships',
-    'technology ecosystem montreal',
-    'innovation cluster member quebec',
-    'collaborative technology development',
-    'consortium partnerships canada',
-    'tech ecosystem partners',
-    'innovation network membership',
-    'technology alliance canada',
+    'technology consortium partner canada',
+    'shared platform development associations',
+    'industry network software cooperative',
+    'innovation cluster implementation',
+    'cooperative federation technology',
+    'sector alliance digital infrastructure',
   ],
   openGraph: {
-    title: 'Technology Consortium Partnerships | Vinerals Technologies',
-    description: 'Building innovation ecosystems together. Technology consortium and network partnerships for collaborative development, knowledge sharing, and ecosystem growth across Canada.',
+    title: 'For Consortiums & Networks | Vinerals Technologies',
+    description:
+      'Shared platforms and craft capacity for associations and sector networks — owned by the network.',
     url: 'https://vineralstechnologies.com/partners/consortiums',
     type: 'website',
     images: [
@@ -31,8 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology Consortium Partnerships | Vinerals Technologies',
-    description: 'Innovation network and consortium partnerships for collaborative technology development.',
+    title: 'For Consortiums & Networks | Vinerals Technologies',
+    description:
+      'Shared platforms. Shared craft. Technical partner for associations and sector networks.',
     images: ['https://vineralstechnologies.com/og-partners-consortiums.jpg'],
   },
   alternates: {

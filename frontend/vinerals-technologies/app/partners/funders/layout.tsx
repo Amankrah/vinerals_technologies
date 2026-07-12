@@ -1,25 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'For Funders & Foundations | Technology Cooperative Funding Partners | CIHR, ISED, SDTC',
-  description: 'Technology development partner for funders, foundations, and grant programs across Canada. Vinerals Technologies solidarity cooperative delivers accessible technology through CIHR digital health funding, ISED innovation programs, SDTC cleantech grants, MAPAQ agtech initiatives, and social innovation funds. Track impact, create quality jobs, and support social enterprise through mission-aligned technology partnerships.',
+  title: 'For Funders & Foundations | Patient Capital for Craft Software | Vinerals',
+  description:
+    'Patient capital and foundation partnerships with Vinerals Technologies — a Montréal solidarity cooperative. Back hand-made software for SMEs with social return and financial discipline, not extractive equity.',
   keywords: [
-    'CIHR technology funding partners',
-    'ISED innovation program participants',
-    'SDTC funded cooperative',
-    'MAPAQ agtech funding recipients',
-    'technology funding programs canada',
-    'social innovation fund technology',
-    'foundation technology grants',
-    'cooperative funding opportunities',
-    'accessible technology funding',
-    'impact investment technology',
-    'social enterprise technology grants',
-    'community futures technology',
+    'patient capital cooperative',
+    'foundation technology partner canada',
+    'solidarity cooperative funding',
+    'social innovation software grants',
+    'CIHR ISED SDTC MAPAQ partners',
+    'impact funding craft software',
+    'montreal cooperative funders',
   ],
   openGraph: {
     title: 'For Funders & Foundations | Vinerals Technologies',
-    description: 'Partner with a technology cooperative that delivers measurable social impact. Supporting CIHR, ISED, SDTC, MAPAQ, and foundation-funded accessible technology development across Canada.',
+    description:
+      'Patient capital for hand-made software. Back a solidarity cooperative that keeps craft intact for Québec SMEs.',
     url: 'https://vineralstechnologies.com/partners/funders',
     type: 'website',
     images: [
@@ -34,7 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'For Funders & Foundations | Vinerals Technologies',
-    description: 'Technology cooperative delivering accessible innovation through CIHR, ISED, SDTC, MAPAQ, and foundation partnerships.',
+    description:
+      'Patient capital for craft software — solidarity cooperative, not a VC pitch.',
     images: ['https://vineralstechnologies.com/og-partners-funders.jpg'],
   },
   alternates: {

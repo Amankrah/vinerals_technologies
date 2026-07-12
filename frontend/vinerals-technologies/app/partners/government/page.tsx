@@ -1,30 +1,86 @@
+'use client';
+
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
+import PartnersHero from '@/components/sections/PartnersHero';
 import CTA from '@/components/sections/CTA';
-import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
-import { Building, Target, Briefcase, TrendingUp, Users, CheckCircle2 } from 'lucide-react';
+import FaqAccordion from '@/components/sections/FaqAccordion';
+import StructuredData, {
+  createFAQSchema,
+  createBreadcrumbSchema,
+} from '@/components/shared/StructuredData';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+
+const ALIGNMENT = [
+  {
+    title: 'SME competitiveness.',
+    body: 'Custom software and AI that growing businesses can actually ship with — not another awareness workshop.',
+  },
+  {
+    title: 'Quality employment.',
+    body: 'Well-paid engineering roles inside Montréal’s social economy, with cooperative governance and transparent books.',
+  },
+  {
+    title: 'Digital adoption that sticks.',
+    body: 'Owned code, documentation, and handover. Adoption measured by systems in use — not slide decks.',
+  },
+  {
+    title: 'Sector priorities.',
+    body: 'Healthcare, food systems, sustainability, and social enterprise — where regulation and workflows matter.',
+  },
+] as const;
+
+const ASK = [
+  {
+    title: 'Approved implementation partner.',
+    body: 'List us for grant recipients who need credible technical delivery — not another vendor brochure.',
+  },
+  {
+    title: 'Social procurement pathways.',
+    body: 'Engage a Québec solidarity cooperative under social-procurement and cooperative vendor programmes where they apply.',
+  },
+  {
+    title: 'Referral & programme fit.',
+    body: 'Point qualifying SMEs our way when your mandate needs craft delivery with clear milestones and reporting.',
+  },
+] as const;
+
+const FIT = [
+  'Federal, provincial, and municipal agencies with digital-economy or SME mandates',
+  'Programme officers who need a delivery partner, not a policy deck',
+  'Social procurement and cooperative vendor pathways',
+  'Sector initiatives in health, food systems, cleantech, or social enterprise',
+] as const;
 
 const GOVERNMENT_FAQS = [
   {
-    question: 'How does Vinerals Technologies support government digital transformation objectives?',
-    answer: 'We accelerate digital transformation by making enterprise-quality technology accessible to SMEs. Through subsidized programs, we help small businesses adopt AI, cloud, and modern software - directly advancing government priorities for economic competitiveness, innovation adoption, and digital skills development.',
+    question: 'How do you support digital-economy and SME mandates?',
+    answer:
+      'We deliver the software and integrations SMEs get priced out of elsewhere — senior engineering, owned code, honest scope. That advances competitiveness and adoption with systems that stay in use.',
   },
   {
-    question: 'What makes a solidarity cooperative model beneficial for government partnerships?',
-    answer: 'Our cooperative structure ensures reinvestment in communities, democratic governance, quality job creation, and alignment with social economy priorities. This model provides accountability, transparency, and measurable social impact alongside technology delivery - perfect alignment with government social procurement and economic development goals.',
+    question: 'Why partner with a solidarity cooperative?',
+    answer:
+      'Impact sits in governance: transparent books, democratic decision-making, surpluses to mission and workers. You get craft delivery with incentives that match social-economy and social-procurement goals.',
   },
   {
-    question: 'Can government agencies procure technology services from your cooperative?',
-    answer: 'Yes. As a registered solidarity cooperative, we are eligible for social procurement programs, cooperative vendor status, and standard government technology contracts. We serve federal, provincial, and municipal agencies for digital services, innovation pilots, and technology implementation across priority sectors.',
+    question: 'Can agencies procure from you?',
+    answer:
+      'Yes. As a Québec-registered solidarity cooperative we pursue social procurement, cooperative vendor status, and standard technology contracts where eligible — federal, provincial, and municipal.',
   },
   {
-    question: 'What reporting do you provide for government partnership accountability?',
-    answer: 'We provide comprehensive impact metrics: SMEs served by region/sector, jobs created (FTE, wages, benefits), cost savings vs market rates, technology adoption outcomes, revenue reinvested in social economy, and sector-specific results (healthcare, environment, food systems). Reports align with government evaluation frameworks.',
+    question: 'What reporting do you provide?',
+    answer:
+      'Milestones, financial transparency, and KPIs agreed up front — clients served, jobs supported, and programme-specific outcomes. Reports are designed to fit your evaluation framework.',
   },
   {
-    question: 'How can government programs refer SMEs to Vinerals Technologies?',
-    answer: 'Government programs can list us as approved technology implementation partners for grant recipients, refer SMEs needing affordable tech services, include us in vendor directories for social procurement, or collaborate on sector-specific innovation initiatives. We complement existing SME support programs with accessible technology delivery.',
+    question: 'How should programmes refer SMEs?',
+    answer:
+      'List us as an approved implementation partner for grant recipients, refer businesses that need craft delivery, or include us in social-procurement directories. Start with contact@vineralstechnologies.com.',
   },
 ];
 
@@ -32,7 +88,7 @@ export default function GovernmentPage() {
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: 'Home', url: 'https://vineralstechnologies.com' },
     { name: 'Partners', url: 'https://vineralstechnologies.com/partners' },
-    { name: 'For Government', url: 'https://vineralstechnologies.com/partners/government' },
+    { name: 'Government', url: 'https://vineralstechnologies.com/partners/government' },
   ]);
   const faqSchema = createFAQSchema(GOVERNMENT_FAQS);
 
@@ -42,410 +98,143 @@ export default function GovernmentPage() {
       <StructuredData data={faqSchema} />
       <Header />
       <main className="pt-16">
-        {/* Hero Section */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-primary-700">
-              <Building className="w-16 h-16" />
-            </div>
+        <PartnersHero
+          badge="For Government"
+          title="Craft delivery for public mandates."
+          highlightedWord="Craft"
+          description="Implementation capacity for Québec and Canadian digital-economy and SME programmes — senior engineering, owned code, reporting you can stand behind."
+          image="/government-atelier.jpg"
+          imageAlt="Desk with dossiers and a laptop in soft natural light"
+          stats={[
+            { value: 'Delivery', label: 'Not policy theatre' },
+            { value: 'Co-op', label: 'Social procurement fit' },
+          ]}
+          primaryCTA={{ label: 'See the ask', href: '#ask' }}
+          secondaryCTA={{ label: 'Contact us', href: '/contact' }}
+        />
 
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                For Government Partners
-              </span>
-            </div>
-
-            <h1 className="hero-headline mb-6">
-              Accelerating digital transformation across Québec’s SME ecosystem.
-            </h1>
-
-            <p className="lead-text">
-              A solidarity cooperative delivering measurable economic impact through accessible
-              technology services. Lines up directly with Québec’s digital economy objectives and
-              SME support priorities.
-            </p>
-          </div>
-        </Section>
-
-        {/* Strategic Alignment */}
         <Section background="gray" paddingY="lg">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="section-headline mb-8 text-center">
-              Strategic Alignment with Quebec&apos;s Priorities
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Target className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">Digital Economy Strategy</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-4">
-                  Our mission directly advances Quebec&apos;s digital economy goals by:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Increasing SME adoption of digital technologies</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Democratizing access to AI and advanced tech</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Building local technology capacity</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Reducing dependency on foreign tech services</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Briefcase className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">SME Support</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-4">
-                  We complement existing SME support programs by:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Offering affordable technology implementation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Providing technical expertise for grant recipients</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Helping SMEs leverage government programs</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Extending reach beyond traditional tech hubs</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <TrendingUp className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">Social Economy Development</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-4">
-                  As a solidarity cooperative, we strengthen Quebec&apos;s social economy:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Creating quality jobs with democratic governance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Reinvesting profits in community and mission</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Collaborating with other social economy actors</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Demonstrating viable alternative business model</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Users className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">Skills Development</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-4">
-                  We contribute to technology workforce development through:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Hiring and training local technology talent</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Mentoring junior developers and students</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Building domain expertise in priority sectors</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Knowledge sharing through open resources</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* Economic Impact */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="section-headline mb-12 text-center">
-              Measurable Economic Impact
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8 text-center mb-12">
-              <div>
-                <div className="text-4xl font-bold text-primary-900 mb-2">$2M+</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Client Savings Target</div>
-                <p className="text-sm text-gray-700">
-                  Cumulative cost savings for Quebec SMEs vs traditional agency pricing by 2027
-                </p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary-900 mb-2">50+</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">SMEs Empowered</div>
-                <p className="text-sm text-gray-700">
-                  Small and medium businesses gaining access to transformative technology
-                </p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary-900 mb-2">10+</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Quality Jobs</div>
-                <p className="text-sm text-gray-700">
-                  Well-paid technology positions created in Quebec&apos;s social economy
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-xl p-8">
-              <h3 className="font-bold text-gray-900 mb-4 text-center">Reporting & Accountability</h3>
-              <p className="text-gray-700 text-center mb-6">
-                We provide government partners with detailed impact reporting including:
-              </p>
-              <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span>Number of SMEs served by region and sector</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span>Cost savings achieved vs market rates</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span>Jobs created (FTE, wages, benefits)</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span>Technology adoption rates by SME category</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span>Revenue reinvested in social economy</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span>Sector-specific outcomes (health, food, environment)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* Partnership Opportunities */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="section-headline mb-8 text-center">
-              Partnership Opportunities
-            </h2>
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Technology Implementation Partner</h3>
-                <p className="text-gray-700 text-sm mb-4">
-                  Work with us to deliver technology solutions to SMEs participating in government
-                  digital transformation programs. We can:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Provide implementation services at accessible rates</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Serve as approved vendor for grant recipients</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Deliver on sector-specific technology initiatives</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Support regional economic development through technology</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Procurement & Contracting</h3>
-                <p className="text-gray-700 text-sm mb-4">
-                  As a certified solidarity cooperative, we are eligible for social procurement
-                  programs. Potential collaborations include:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Technology modernization for government services</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Digital platforms for economic development initiatives</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Innovation pilots in healthcare, environment, or food systems</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Data infrastructure for policy research and reporting</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Research & Innovation Collaboration</h3>
-                <p className="text-gray-700 text-sm mb-4">
-                  Partner with us on research and innovation initiatives exploring:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>AI adoption barriers and enablers for Quebec SMEs</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Alternative business models for technology sector</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Sector-specific technology needs and solutions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Social economy technology development capacity</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Policy & Program Development</h3>
-                <p className="text-gray-700 text-sm mb-4">
-                  Leverage our on-the-ground experience to inform policy and program design:
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>SME technology adoption challenges and solutions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Effective support mechanisms for digital transformation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Social procurement frameworks for technology services</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary-600">•</span>
-                    <span>Cooperative models in technology sector</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* Priority Sectors */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="section-headline mb-6 text-center">
-              Priority Sector Expertise
-            </h2>
-            <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-              We bring deep expertise in sectors aligned with Quebec&apos;s economic development
-              and social policy priorities:
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Healthcare & Social Services</h3>
-                <p className="text-sm text-gray-700">
-                  Digital health solutions, patient portals, telehealth platforms, and health
-                  data systems supporting Quebec&apos;s healthcare modernization objectives.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Food Systems & Agriculture</h3>
-                <p className="text-sm text-gray-700">
-                  Supply chain traceability, farm management systems, and food safety compliance
-                  tools supporting local and sustainable food production.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Sustainability & Environment</h3>
-                <p className="text-sm text-gray-700">
-                  Carbon tracking, ESG reporting, circular economy platforms, and environmental
-                  data systems advancing Quebec&apos;s climate action goals.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Social Economy & Non-Profits</h3>
-                <p className="text-sm text-gray-700">
-                  Cooperative management systems, impact measurement tools, and mission-driven
-                  technology supporting Quebec&apos;s social economy ecosystem.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* Contact Section */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-headline mb-6">Connect With Us</h2>
-            <p className="text-gray-700 leading-relaxed mb-8">
-              Interested in partnering with Vinerals Technologies to advance Quebec&apos;s digital
-              economy and social economy objectives? We would welcome the opportunity to discuss
-              collaboration.
-            </p>
-            <div className="bg-white rounded-xl p-6 mb-8">
-              <h3 className="font-bold text-gray-900 mb-4">Contact Information</h3>
-              <div className="space-y-2 text-gray-700">
-                <p>
-                  <strong>Email:</strong>{' '}
-                  <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:text-primary-800">
-                    contact@vineralstechnologies.com
-                  </a>
-                </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  For government partnership inquiries
-                </p>
-                <p className="text-sm text-gray-600 mt-4">
-                  We respond to government partnership inquiries within 24-48 hours.
-                </p>
-              </div>
-            </div>
-            <a
-              href="mailto:contact@vineralstechnologies.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
+          >
+            <motion.div variants={fadeInUp} className="md:col-span-4">
+              <span className="eyebrow mb-6 block">Alignment</span>
+              <h2 className="section-headline max-w-[14ch]">
+                Where we
+                <br />
+                <em>line up.</em>
+              </h2>
+            </motion.div>
+            <motion.ol
+              variants={staggerContainer}
+              className="space-y-8 md:col-span-7 md:col-start-6"
             >
-              Contact Government Relations
-            </a>
-          </div>
+              {ALIGNMENT.map((item, i) => (
+                <motion.li
+                  key={item.title}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[3rem_1fr] gap-x-6 border-b border-[var(--ink-hairline)]/35 pb-8 last:border-0 last:pb-0"
+                >
+                  <span className="numeral text-xl">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="mb-2 font-display text-xl text-[var(--ink)]">{item.title}</h3>
+                    <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
+                </motion.li>
+              ))}
+            </motion.ol>
+          </motion.div>
         </Section>
+
+        <Section background="white" paddingY="lg" id="ask">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="mx-auto max-w-3xl"
+          >
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">The ask</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-4">
+              One partnership,
+              <br />
+              <em>three doors in.</em>
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="lead-text mb-10 max-w-[48ch]">
+              We are not asking for a blank cheque. We are asking to be the craft
+              delivery partner when your programme needs software that ships.
+            </motion.p>
+            <motion.div
+              variants={staggerContainer}
+              className="space-y-8 border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10"
+            >
+              {ASK.map((item) => (
+                <motion.div key={item.title} variants={fadeInUp}>
+                  <h3 className="mb-2 font-display text-xl text-[var(--ink)]">{item.title}</h3>
+                  <p className="leading-relaxed text-[var(--ink-muted)]">{item.body}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+            <motion.div variants={fadeInUp} className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 hover:text-secondary-600"
+              >
+                Start a government conversation
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </Section>
+
+        <Section background="gray" paddingY="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="mx-auto max-w-3xl"
+          >
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">Fit</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-8">
+              Who this page
+              <br />
+              <em>is for.</em>
+            </motion.h2>
+            <motion.ul variants={staggerContainer} className="space-y-4">
+              {FIT.map((line) => (
+                <motion.li
+                  key={line}
+                  variants={fadeInUp}
+                  className="flex items-start gap-3 leading-relaxed text-[var(--ink-muted)]"
+                >
+                  <span className="mt-1 text-secondary-600" aria-hidden>
+                    —
+                  </span>
+                  <span>{line}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        </Section>
+
+        <FaqAccordion
+          title="Questions agencies ask."
+          description="Mandates, procurement, reporting, and how to refer SMEs."
+          faqs={GOVERNMENT_FAQS}
+        />
 
         <CTA />
       </main>
