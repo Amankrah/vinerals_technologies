@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   email: 'contact@vineralstechnologies.com',
   phone: '+1 (514) 961-9754',
   location: 'Montreal, Quebec, Canada',
-  foundingYear: 2025,
+  foundingYear: 2026,
 } as const;
 
 export const SOCIAL_LINKS = {

@@ -5,9 +5,131 @@ import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CooperativeHero from '@/components/sections/CooperativeHero';
 import CTA from '@/components/sections/CTA';
-import { Building2, Users, Heart, Scale, Lightbulb, Globe, ExternalLink } from 'lucide-react';
+import { Building2, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+
+const PRINCIPLES = [
+  {
+    n: '01',
+    title: 'Voluntary & open membership',
+    body: 'Anyone who can use our services and accepts membership responsibilities can join. We do not discriminate.',
+  },
+  {
+    n: '02',
+    title: 'Democratic member control',
+    body: 'One member, one vote. Major decisions are made collectively through democratic processes.',
+  },
+  {
+    n: '03',
+    title: 'Member economic participation',
+    body: 'Members contribute equitably and control capital democratically. Surpluses are reinvested or distributed fairly.',
+  },
+  {
+    n: '04',
+    title: 'Autonomy & independence',
+    body: 'Self-governed by members. No external investors control our direction or extract profits.',
+  },
+  {
+    n: '05',
+    title: 'Education, training & information',
+    body: 'We invest in member development and educate the public about the cooperative model.',
+  },
+  {
+    n: '06',
+    title: 'Cooperation among cooperatives',
+    body: 'We work with other co-ops, share resources, and strengthen the cooperative movement.',
+  },
+  {
+    n: '07',
+    title: 'Concern for community',
+    body: 'Sustainable community development through member-approved policies — including tracks that keep craft in reach for non-profits and social enterprises.',
+  },
+] as const;
+
+const WHY_STRUCTURE = [
+  {
+    title: 'Craft over extraction.',
+    body: 'Traditional corporations maximise shareholder value. A cooperative is bound to its members and its mission. We put software made by hand ahead of profit extraction — reinvesting in quality and reach, not paying outside shareholders.',
+  },
+  {
+    title: 'Terms without corner-cutting.',
+    body: 'Good engineering costs what it costs. Mission-aligned funding can cover part of qualifying budgets so growing businesses can say yes — without wages or quality taking the hit.',
+  },
+  {
+    title: 'Worker ownership.',
+    body: 'The people writing the code have a say in how the company is run. Better decisions, higher-quality work, and workloads that don’t burn out the team shipping your project.',
+  },
+  {
+    title: 'A longer time horizon.',
+    body: 'No investors demanding a quick exit. We focus on client relationships that last and operations we can sustain.',
+  },
+] as const;
+
+const CLIENT_BENEFITS = [
+  {
+    title: 'Software made by hand.',
+    body: 'Same senior standards you’d expect from a serious Montréal shop — craft first, with terms a growing business can plan around.',
+  },
+  {
+    title: 'Translation before code.',
+    body: 'We walk you through what AI and software can and can’t do before anyone writes a line. Mistakes you don’t make are worth real money.',
+  },
+  {
+    title: 'Aligned incentives.',
+    body: 'We win when you win — not when we run up billable hours or stretch the scope.',
+  },
+  {
+    title: 'The team that starts finishes.',
+    body: 'Worker ownership means low turnover. No juniors learning mid-project on your dime.',
+  },
+  {
+    title: 'You own everything.',
+    body: 'No vendor lock-in, no proprietary trap. 100% of the code, ready to leave with you.',
+  },
+] as const;
+
+const GOVERNANCE = [
+  {
+    title: 'General Assembly',
+    body: 'Members meet quarterly to review the books, approve big decisions, and elect the board. One member, one vote.',
+  },
+  {
+    title: 'Board of Directors',
+    body: 'Elected worker and community representatives provide strategic oversight and keep us honest about the mission.',
+  },
+  {
+    title: 'Day-to-day operations',
+    body: 'Worker-members decide by consensus when we can, by vote when we must. Technical calls live with the people closest to the work.',
+  },
+  {
+    title: 'Surplus distribution',
+    body: 'After reserves and reinvestment, surpluses follow hours worked (patronage), not capital invested. A portion goes to community development.',
+  },
+] as const;
+
+const ECOSYSTEM = [
+  {
+    name: 'Conseil québécois de la coopération et de la mutualité (CQCM)',
+    body: 'Québec’s cooperative network — support, advocacy, and connections.',
+    href: 'https://www.coopquebec.coop/',
+  },
+  {
+    name: "Chantier de l'économie sociale",
+    body: 'Network promoting and supporting Québec’s social economy enterprises.',
+    href: 'https://chantier.qc.ca/',
+  },
+  {
+    name: 'PME MTL',
+    body: 'Montréal’s network supporting SME and social economy development.',
+    href: 'https://pmemtl.com/',
+  },
+  {
+    name: "RISQ (Réseau d'investissement social du Québec)",
+    body: 'Social finance network providing patient capital to social enterprises.',
+    href: 'https://risq.qc.ca/',
+  },
+] as const;
 
 export default function CooperativePage() {
   return (
@@ -18,450 +140,293 @@ export default function CooperativePage() {
           badge="Our Cooperative Model"
           title="Built differently, on purpose."
           highlightedWord="on purpose"
-          description="Vinerals Technologies is a solidarity cooperative. A social enterprise owned by the people doing the work and the community we serve, not by investors hunting an exit."
-          icon={<Building2 className="w-8 h-8" />}
+          description="A solidarity cooperative — so craft, ownership, and honest counsel aren’t optional extras. Owned by the people doing the work and the community we serve, not by investors hunting an exit."
+          icon={<Building2 className="h-8 w-8" />}
           stats={[
-            { value: '7', label: 'Cooperative Principles' },
-            { value: '1 = 1', label: 'Member Votes' },
+            { value: '1 = 1', label: 'Member votes' },
+            { value: 'Craft', label: 'Before extraction' },
           ]}
-          primaryCTA={{ label: 'Read on', href: '#what-is-cooperative' }}
+          primaryCTA={{ label: 'How it shows up', href: '#in-the-work' }}
           secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
-        {/* What is a Solidarity Cooperative */}
-        <Section background="gray" paddingY="lg">
+        {/* Lead with work impact */}
+        <Section background="gray" paddingY="lg" id="in-the-work">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-3xl mx-auto"
+            className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              So what is a solidarity cooperative?
-            </motion.h2>
-            <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                A solidarity cooperative (<em>coopérative de solidarité</em> in French) is a Québec
-                business structure that brings three kinds of member into the same room:
+            <motion.div variants={fadeInUp} className="md:col-span-4">
+              <span className="eyebrow mb-6 block">In the work</span>
+              <h2 className="section-headline max-w-[14ch]">
+                The model
+                <br />
+                <em>you can feel.</em>
+              </h2>
+              <p className="lead-text mt-6 max-w-[32ch]">
+                Structure isn&apos;t a feel-good story. It changes who you talk to, what you own,
+                and whether quality gets sacrificed for an exit.
               </p>
-              <ul className="space-y-3 text-gray-700 mb-6">
+            </motion.div>
+            <motion.ol
+              variants={staggerContainer}
+              className="space-y-8 md:col-span-7 md:col-start-6"
+            >
+              {CLIENT_BENEFITS.map((item, i) => (
+                <motion.li
+                  key={item.title}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[3rem_1fr] gap-x-6 border-b border-[var(--ink-hairline)]/35 pb-8 last:border-0 last:pb-0"
+                >
+                  <span className="numeral text-xl">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="mb-2 font-display text-xl text-[var(--ink)]">{item.title}</h3>
+                    <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
+                </motion.li>
+              ))}
+            </motion.ol>
+          </motion.div>
+        </Section>
+
+        <Section background="white" paddingY="lg" id="what-is-cooperative">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="mx-auto max-w-3xl"
+          >
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">Définition</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-8">
+              So what is a
+              <br />
+              <em>solidarity cooperative?</em>
+            </motion.h2>
+            <motion.div
+              variants={fadeInUp}
+              className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10"
+            >
+              <p className="mb-6 leading-relaxed text-[var(--ink-muted)]">
+                A solidarity cooperative (<em>coopérative de solidarité</em>) is a Québec business
+                structure that brings three kinds of member into the same room:
+              </p>
+              <ul className="mb-6 space-y-3 text-[var(--ink-muted)]">
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Worker members.</strong> The developers and staff doing the actual work.</span>
+                  <span className="mt-1 text-secondary-600" aria-hidden>
+                    —
+                  </span>
+                  <span>
+                    <strong className="text-[var(--ink)]">Worker members.</strong> The developers
+                    and staff doing the actual work.
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>User members.</strong> Clients who choose to join (optional).</span>
+                  <span className="mt-1 text-secondary-600" aria-hidden>
+                    —
+                  </span>
+                  <span>
+                    <strong className="text-[var(--ink)]">User members.</strong> Clients who choose
+                    to join (optional).
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Supporting members.</strong> Community stakeholders who believe in the mission.</span>
+                  <span className="mt-1 text-secondary-600" aria-hidden>
+                    —
+                  </span>
+                  <span>
+                    <strong className="text-[var(--ink)]">Supporting members.</strong> Community
+                    stakeholders who believe in the mission.
+                  </span>
                 </li>
               </ul>
-              <p className="text-gray-700 leading-relaxed">
-                Each member gets one vote, no matter what they put in. Surpluses go back into the mission,
-                to worker-members, or to a community fund. Nothing flows out to external shareholders, because
-                there are none.
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                Each member gets one vote, no matter what they put in. Surpluses go back into the
+                mission, to worker-members, or to a community fund. Nothing flows out to external
+                shareholders — because there are none.
               </p>
               <blockquote className="pullquote mt-8">
-                Mission over profit. Built differently, on purpose.
+                Craft over extraction. Built differently, on purpose.
               </blockquote>
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Seven Cooperative Principles */}
-        <Section background="white" paddingY="lg">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              The seven cooperative principles
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-              Cooperatives around the world run on seven shared principles set by the International
-              Cooperative Alliance. Here’s what each one looks like in our daily work.
-            </motion.p>
-
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-8">
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Voluntary & Open Membership</h3>
-                    <p className="text-sm text-gray-700">
-                      Anyone who can use our services and accepts membership responsibilities
-                      can join. We do not discriminate.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Democratic Member Control</h3>
-                    <p className="text-sm text-gray-700">
-                      One member, one vote. Major decisions are made collectively through
-                      democratic processes.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Member Economic Participation</h3>
-                    <p className="text-sm text-gray-700">
-                      Members contribute equitably and control capital democratically. Surpluses
-                      are reinvested or distributed fairly.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Autonomy & Independence</h3>
-                    <p className="text-sm text-gray-700">
-                      We are self-governed by our members. No external investors control
-                      our direction or extract profits.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    5
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Education, Training & Information</h3>
-                    <p className="text-sm text-gray-700">
-                      We invest in member development and educate the public about the
-                      cooperative model.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    6
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Cooperation Among Cooperatives</h3>
-                    <p className="text-sm text-gray-700">
-                      We work with other co-ops, share resources, and strengthen the cooperative
-                      movement.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6 md:col-span-2">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-700 text-white rounded-full flex items-center justify-center font-bold">
-                    7
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Concern for Community</h3>
-                    <p className="text-sm text-gray-700">
-                      We work for the sustainable development of our communities through policies
-                      approved by our members - like offering subsidized programs to non-profits
-                      and social enterprises.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </Section>
-
-        {/* Why This Structure */}
         <Section background="gray" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              Why We Chose This Structure
-            </motion.h2>
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <div className="flex gap-3 mb-3">
-                  <Heart className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Mission over profit.</h3>
-                </div>
-                <p className="text-sm text-gray-700">
-                  Traditional corporations are legally bound to maximise shareholder value. A cooperative
-                  is bound to its members and its mission. We choose to put bringing serious software
-                  inside reach ahead of profit extraction. That isn’t about being cheaper. It’s about
-                  reinvesting in the purpose instead of paying outside shareholders.
-                </p>
-              </motion.div>
+            <motion.div variants={fadeInUp} className="mx-auto mb-10 max-w-3xl md:mb-14">
+              <span className="eyebrow mb-6 block">Seven principles</span>
+              <h2 className="section-headline mb-4">
+                How the ICA principles
+                <br />
+                <em>show up daily.</em>
+              </h2>
+              <p className="lead-text max-w-[48ch]">
+                Cooperatives worldwide share seven principles from the International Cooperative
+                Alliance. Here&apos;s what each looks like in our work.
+              </p>
+            </motion.div>
 
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <div className="flex gap-3 mb-3">
-                  <Scale className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Funded accessibility, not discount rates.</h3>
-                </div>
-                <p className="text-sm text-gray-700">
-                  We don’t undercut professional rates. Good engineering costs what it costs ($100 to
-                  $200 per hour blended in Montréal). What we’ve done is line up government subsidies,
-                  grants, and impact funding to cover part of qualifying SME budgets. The accessibility
-                  gap closes without anyone’s wages or quality taking the hit.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <div className="flex gap-3 mb-3">
-                  <Users className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Worker ownership.</h3>
-                </div>
-                <p className="text-sm text-gray-700">
-                  The people writing the code have a say in how the company is run. That’s how you end up
-                  with better decisions, higher-quality work, and workloads that don’t burn out the team
-                  shipping your project.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <div className="flex gap-3 mb-3">
-                  <Lightbulb className="w-6 h-6 text-primary-700 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">A longer time horizon.</h3>
-                </div>
-                <p className="text-sm text-gray-700">
-                  No investors demanding a quick exit or endless quarter-on-quarter growth. We can focus on
-                  client relationships that last and operations we can sustain.
-                </p>
-              </motion.div>
+            <motion.div
+              variants={staggerContainer}
+              className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)]"
+            >
+              {PRINCIPLES.map((p, index) => (
+                <motion.div
+                  key={p.n}
+                  variants={fadeInUp}
+                  className={`grid gap-3 p-6 md:grid-cols-12 md:items-baseline md:gap-x-8 md:p-8 ${
+                    index > 0 ? 'border-t border-[var(--ink-hairline)]/40' : ''
+                  }`}
+                >
+                  <span className="numeral text-xl md:col-span-1">{p.n}</span>
+                  <h3 className="font-display text-xl text-[var(--ink)] md:col-span-4">
+                    {p.title}
+                  </h3>
+                  <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)] md:col-span-7">
+                    {p.body}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* How It Benefits Clients */}
         <Section background="white" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-3xl mx-auto"
+            className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              What you get out of it
-            </motion.h2>
-            <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
-              <motion.p variants={fadeInUp}>
-                Our structure isn’t a feel-good story. It shows up in the work, in concrete ways:
-              </motion.p>
-              <motion.ul variants={staggerContainer} className="space-y-3">
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Software made by hand.</strong> Same senior developers and standards
-                  you’d expect from Spiria, Stradigi AI, or Konverge — craft first, with terms a growing
-                  business can plan around, not corner-cutting.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>The knowledge gap closed.</strong> We start by walking you through what
-                  AI and software can and can’t do for your business before anyone writes a line of code.
-                  That conversation alone tends to be worth thousands in mistakes you didn’t make.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Aligned incentives.</strong> We win when you win, not when we run up
-                  billable hours or stretch the scope.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>The team that starts is the team that finishes.</strong> Worker ownership
-                  means low turnover. No juniors learning on your dime mid-project.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Mission-fit clients.</strong> We choose engagements that match our values,
-                  and turn down the ones that don’t. Outcomes improve on both sides.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>You own everything.</strong> No vendor lock-in, no proprietary systems.
-                  100% of the code, ready to leave with you the day you want it to.</span>
-                </motion.li>
-              </motion.ul>
+            <motion.div variants={fadeInUp} className="md:col-span-4">
+              <span className="eyebrow mb-6 block">Pourquoi</span>
+              <h2 className="section-headline max-w-[12ch]">
+                Why this
+                <br />
+                <em>structure.</em>
+              </h2>
+            </motion.div>
+            <motion.div
+              variants={staggerContainer}
+              className="space-y-8 md:col-span-7 md:col-start-6"
+            >
+              {WHY_STRUCTURE.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[3rem_1fr] gap-x-6 border-b border-[var(--ink-hairline)]/35 pb-8 last:border-0 last:pb-0"
+                >
+                  <span className="numeral text-xl">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="mb-2 font-display text-xl text-[var(--ink)]">{item.title}</h3>
+                    <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Governance */}
         <Section background="gray" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
+            className="mx-auto max-w-3xl"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              How we’re governed
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">Gouvernance</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-8">
+              How we&apos;re governed
             </motion.h2>
-            <motion.div variants={fadeInUp} className="bg-white rounded-xl p-8 shadow-md">
-              <p className="text-gray-700 leading-relaxed mb-6">
+            <motion.div
+              variants={fadeInUp}
+              className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10"
+            >
+              <p className="mb-8 leading-relaxed text-[var(--ink-muted)]">
                 Democratic, but built to move quickly:
               </p>
-              <div className="space-y-4 text-gray-700">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">General Assembly</h3>
-                  <p className="text-sm">
-                    All members meet quarterly to review the books, approve big decisions, and elect
-                    the board. One member, one vote.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Board of Directors</h3>
-                  <p className="text-sm">
-                    An elected board of worker and community representatives provides strategic oversight
-                    and keeps us honest about the mission.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Day-to-day operations</h3>
-                  <p className="text-sm">
-                    Worker-members make operational decisions by consensus when we can, by vote when
-                    we have to. Technical calls live with the people closest to the work.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Profit distribution</h3>
-                  <p className="text-sm">
-                    After reserves and reinvestment, surpluses are split based on hours worked
-                    (patronage) instead of capital invested. A portion goes to community development.
-                  </p>
-                </div>
-              </div>
+              <dl className="space-y-8">
+                {GOVERNANCE.map((item) => (
+                  <div key={item.title}>
+                    <dt className="font-display text-xl text-[var(--ink)]">{item.title}</dt>
+                    <dd className="mt-2 leading-relaxed text-[var(--ink-muted)]">{item.body}</dd>
+                  </div>
+                ))}
+              </dl>
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Quebec Social Economy */}
         <Section background="white" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Part of Québec’s social economy
-            </motion.h2>
-            <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed mb-8">
-              <motion.p variants={fadeInUp}>
-                Vinerals Technologies sits inside Québec’s social economy ecosystem, a network of more
-                than 11,000 enterprises that take social and environmental goals as seriously as the
-                P&L.
-              </motion.p>
-              <motion.p variants={fadeInUp}>
-                Among the organisations we work with and lean on:
-              </motion.p>
+            <motion.div variants={fadeInUp} className="mx-auto mb-10 max-w-3xl md:mb-14">
+              <span className="eyebrow mb-6 block">Écosystème</span>
+              <h2 className="section-headline mb-4">
+                Part of Québec&apos;s
+                <br />
+                <em>social economy.</em>
+              </h2>
+              <p className="lead-text max-w-[48ch]">
+                More than 11,000 enterprises that take social and environmental goals as seriously
+                as the P&amp;L. Among the organisations we work with and lean on:
+              </p>
             </motion.div>
 
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Globe className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">Conseil québécois de la coopération et de la mutualité (CQCM)</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-3">
-                  Quebec&apos;s cooperative network providing support, advocacy, and connections.
-                </p>
-                <a
-                  href="https://www.coopquebec.coop/"
+            <motion.div
+              variants={staggerContainer}
+              className="border border-[var(--ink-hairline)]/45"
+            >
+              {ECOSYSTEM.map((org, index) => (
+                <motion.a
+                  key={org.href}
+                  variants={fadeInUp}
+                  href={org.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary-700 hover:text-primary-800 inline-flex items-center gap-1"
+                  className={`group grid gap-3 p-6 transition-colors hover:bg-[var(--cream-deep)]/60 md:grid-cols-12 md:items-baseline md:gap-x-8 md:p-8 ${
+                    index > 0 ? 'border-t border-[var(--ink-hairline)]/40' : ''
+                  }`}
                 >
-                  Learn more <ExternalLink className="w-3 h-3" />
-                </a>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Globe className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">Chantier de l&apos;économie sociale</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-3">
-                  Network promoting and supporting Quebec&apos;s social economy enterprises.
-                </p>
-                <a
-                  href="https://chantier.qc.ca/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary-700 hover:text-primary-800 inline-flex items-center gap-1"
-                >
-                  Learn more <ExternalLink className="w-3 h-3" />
-                </a>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Globe className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">PME MTL</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-3">
-                  Montreal&apos;s network supporting SME and social economy development.
-                </p>
-                <a
-                  href="https://pmemtl.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary-700 hover:text-primary-800 inline-flex items-center gap-1"
-                >
-                  Learn more <ExternalLink className="w-3 h-3" />
-                </a>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-gray-50 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Globe className="w-6 h-6 text-primary-700" />
-                  <h3 className="font-bold text-gray-900">RISQ (Réseau d&apos;investissement social du Québec)</h3>
-                </div>
-                <p className="text-sm text-gray-700 mb-3">
-                  Social finance network providing patient capital to social enterprises.
-                </p>
-                <a
-                  href="https://risq.qc.ca/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary-700 hover:text-primary-800 inline-flex items-center gap-1"
-                >
-                  Learn more <ExternalLink className="w-3 h-3" />
-                </a>
-              </motion.div>
+                  <h3 className="font-display text-xl text-[var(--ink)] transition-colors group-hover:text-primary-700 md:col-span-5">
+                    {org.name}
+                  </h3>
+                  <p className="max-w-[40ch] leading-relaxed text-[var(--ink-muted)] md:col-span-5">
+                    {org.body}
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 md:col-span-2 md:justify-end">
+                    Visit
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </span>
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
         </Section>

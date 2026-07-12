@@ -57,7 +57,7 @@ function buildSvg({ eyebrow, headlineMain, headlineAccent, supporting }) {
   <rect width="1200" height="630" fill="${BRAND.forest}" filter="url(#grain)" opacity="0.5"/>
 
   <!-- Top dateline strip -->
-  <text x="80" y="74" font-family='${FONT.mono}' font-size="14" letter-spacing="3.5" fill="${BRAND.cream50}">VINERALS · TECHNOLOGIES · ÉDITION 2025</text>
+  <text x="80" y="74" font-family='${FONT.mono}' font-size="14" letter-spacing="3.5" fill="${BRAND.cream50}">VINERALS · TECHNOLOGIES · ÉDITION 2026</text>
   <line x1="80" y1="100" x2="1120" y2="100" stroke="${BRAND.hairline}" stroke-width="1"/>
 
   <!-- Hand-traced V monogram, top-right -->

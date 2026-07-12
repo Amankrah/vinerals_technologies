@@ -5,7 +5,8 @@ import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import TeamHero from '@/components/sections/TeamHero';
 import CTA from '@/components/sections/CTA';
-import { Users, Mail, Linkedin, Github } from 'lucide-react';
+import Link from 'next/link';
+import { Users, Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
@@ -14,10 +15,11 @@ interface TeamMember {
   role: string;
   expertise: string[];
   bio: string;
-  funFact: string;
+  note: string;
   linkedin?: string;
   github?: string;
   email?: string;
+  site?: string;
 }
 
 export default function TeamPage() {
@@ -25,14 +27,39 @@ export default function TeamPage() {
     {
       name: 'Emmanuel Amankrah Kwofie',
       role: 'Founder & CTO',
-      expertise: ['Full-Stack Development', 'Cloud Architecture', 'Machine Learning', 'DevOps'],
+      expertise: [
+        'Full-stack development',
+        'Cloud architecture',
+        'Machine learning',
+        'DevOps',
+      ],
       bio: 'Founder of Vinerals Technologies and research-to-software engineer. At SASEL Lab, McGill University, he built the platforms now live across sustainable food systems — from environmental nutrition and protein-process simulation to public-finance intelligence and EU food-fraud risk models — with academic and industry partners in Canada, Europe, and Africa. Focused on turning scientific work into systems organisations can actually run.',
-      funFact: 'Built a full pea-protein analysis platform that wove together technical optimisation, economic feasibility modelling, and environmental impact assessment. The exact kind of cross-disciplinary problem-solving SMEs need when they’re trying to make a real call on technology.',
+      note: 'Built a pea-protein analysis platform that wove technical optimisation, economic feasibility, and environmental impact into one decision tool — the kind of cross-disciplinary craft SMEs need when the call is real.',
       linkedin: 'https://www.linkedin.com/in/eakwofie/',
       github: 'https://github.com/Amankrah',
       email: 'contact@vineralstechnologies.com',
+      site: 'https://www.eakwofie.com/',
     },
   ];
+
+  const whyUs = [
+    {
+      title: 'Senior developers only.',
+      body: 'Everyone you work with has years in production. No juniors learning on your dime.',
+    },
+    {
+      title: 'Direct access.',
+      body: 'You talk to the engineer building the thing — not an account manager managing the relationship.',
+    },
+    {
+      title: 'Domain before code.',
+      body: 'Working experience across healthcare, food systems, sustainability, and social enterprise — so the craft fits the context.',
+    },
+    {
+      title: 'Mission-aligned. Quality non-negotiable.',
+      body: 'We walk away from work that doesn’t fit. The quality bar stays the same either way.',
+    },
+  ] as const;
 
   return (
     <>
@@ -40,126 +67,139 @@ export default function TeamPage() {
       <main className="pt-16">
         <TeamHero
           badge="Meet the Team"
-          title="The people behind the work."
-          highlightedWord="behind the work."
-          description="A small team of experienced developers, building software that solves real problems for mission-driven organisations. No account managers, no junior devs being trained on your project."
-          icon={<Users className="w-8 h-8" />}
+          title="Named people. Hand-made work."
+          highlightedWord="Hand-made"
+          description="Senior engineers you can reach. Software made by hand means the people writing the code are the people you talk to — no theatre in between."
+          icon={<Users className="h-8 w-8" />}
           stats={[
-            { value: '5+', label: 'Years Experience' },
-            { value: '100%', label: 'Senior Developers' },
+            { value: 'Senior', label: 'On every project' },
+            { value: '100%', label: 'Named & reachable' },
           ]}
-          primaryCTA={{ label: 'Join us', href: '#join' }}
-          secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
+          primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'See our work', href: '/work' }}
         />
 
-        {/* Team Intro */}
         <Section background="gray" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-3xl mx-auto"
+            className="mx-auto max-w-3xl"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Who we are
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">Le métier · People</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-8">
+              Small on purpose.
+              <br />
+              <em>Senior by design.</em>
             </motion.h2>
-            <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
+            <motion.div
+              variants={staggerContainer}
+              className="space-y-5 leading-relaxed text-[var(--ink-muted)]"
+            >
               <motion.p variants={fadeInUp}>
-                We’re not the typical agency. No account managers, no sales team, no juniors fresh out
-                of bootcamp on your project. <strong>Every person you work with is a senior engineer with
-                at least five years of production experience.</strong> Same calibre of talent you’d hire at
-                Spiria, Stradigi AI, or Konverge.
+                No account managers, no sales floor, no juniors fresh out of bootcamp on your
+                project.{' '}
+                <strong className="text-[var(--ink)]">
+                  Every person you work with is a senior engineer with production experience.
+                </strong>{' '}
+                Same calibre you&apos;d expect at Spiria, Stradigi AI, or Konverge — without the
+                enterprise theatre.
               </motion.p>
-              <motion.p variants={fadeInUp}>
-                We came together because we were tired of how the industry works. Tired of watching
-                talented developers build vanity apps for startups while community health clinics ran
-                on paper. Tired of sustainable food producers priced out of basic traceability. Tired
-                of non-profits handing over consulting fees that could have funded their actual programmes.
-                <strong> The knowledge gap and the cost barrier were locking Québec SMEs out of the room.</strong>
-              </motion.p>
-              <motion.blockquote variants={fadeInUp} className="pullquote my-4">
+              <motion.blockquote variants={fadeInUp} className="pullquote my-6">
                 The team that starts your project is the team that finishes it.
               </motion.blockquote>
               <motion.p variants={fadeInUp}>
-                So we built Vinerals Technologies. A solidarity cooperative where we could work on
-                projects we believe in, line up mission-aligned funding to close the accessibility gap,
-                and prove that enterprise-calibre software doesn’t have to be out of reach for a growing
-                business. We’re not competing on price. We’re solving the actual problem: helping SMEs
-                see what’s possible and bringing the professional implementation inside reach.
+                We built Vinerals as a solidarity cooperative so we could ship software made by
+                hand for organisations that usually get priced out of serious engineering —
+                clinics, food co-ops, climate startups, charities — without lowering the craft.
               </motion.p>
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Team Members */}
-        <Section background="white" paddingY="lg">
+        <Section background="white" paddingY="lg" id="team">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-6xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-12 text-center">
-              Our Team
-            </motion.h2>
+            <motion.div variants={fadeInUp} className="mb-10 md:mb-14">
+              <span className="eyebrow mb-6 block">Dossier</span>
+              <h2 className="section-headline max-w-[18ch]">
+                Who you&apos;ll
+                <br />
+                <em>actually meet.</em>
+              </h2>
+            </motion.div>
 
-            <motion.div variants={staggerContainer} className="space-y-12">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={index}
+            <motion.div variants={staggerContainer} className="space-y-10">
+              {teamMembers.map((member) => (
+                <motion.article
+                  key={member.name}
                   variants={fadeInUp}
-                  className="bg-gray-50 rounded-xl p-8 md:flex md:gap-8"
+                  className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:flex md:gap-10 md:p-10"
                 >
-                  {/* Avatar Placeholder */}
-                  <div className="flex-shrink-0 mb-6 md:mb-0">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white text-4xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
+                  <div className="mb-6 flex-shrink-0 md:mb-0">
+                    <div className="flex h-28 w-28 items-center justify-center border border-[var(--ink-hairline)]/50 bg-primary-900 font-display text-3xl text-[var(--cream)]">
+                      {member.name
+                        .split(' ')
+                        .filter((_, i, arr) => i === 0 || i === arr.length - 1)
+                        .map((n) => n[0])
+                        .join('')}
                     </div>
                   </div>
 
-                  {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                      {member.name}
-                    </h3>
-                    <div className="text-primary-700 font-semibold mb-4">
+                    <h3 className="font-display text-3xl text-[var(--ink)]">{member.name}</h3>
+                    <p className="mt-1 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-secondary-600">
                       {member.role}
-                    </div>
+                    </p>
 
-                    {/* Expertise Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {member.expertise.map((skill, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-gray-200"
+                    <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
+                      {member.expertise.map((skill) => (
+                        <li
+                          key={skill}
+                          className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-muted)]"
                         >
                           {skill}
-                        </span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
 
-                    <p className="text-gray-700 mb-4 leading-relaxed">
+                    <p className="mt-6 max-w-[58ch] leading-relaxed text-[var(--ink-muted)]">
                       {member.bio}
                     </p>
 
-                    <div className="bg-accent-100 border-l-4 border-accent-600 rounded-lg p-4 mb-4">
-                      <p className="text-sm text-gray-900">
-                        <strong>Fun Fact:</strong> {member.funFact}
+                    <aside className="mt-6 border-l-2 border-secondary-500 pl-5">
+                      <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-secondary-600">
+                        Field note
                       </p>
-                    </div>
+                      <p className="mt-2 max-w-[52ch] leading-relaxed text-[var(--ink)]">
+                        {member.note}
+                      </p>
+                    </aside>
 
-                    {/* Contact Links */}
-                    <div className="flex gap-4">
+                    <div className="mt-8 flex flex-wrap gap-6">
+                      {member.site && (
+                        <a
+                          href={member.site}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
+                        >
+                          Site <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      )}
                       {member.email && (
                         <a
                           href={`mailto:${member.email}`}
-                          className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800"
-                          title={`Email ${member.name}`}
+                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
                         >
-                          <Mail className="w-5 h-5" />
-                          <span className="text-sm">Email</span>
+                          <Mail className="h-3.5 w-3.5" /> Email
                         </a>
                       )}
                       {member.linkedin && (
@@ -167,11 +207,9 @@ export default function TeamPage() {
                           href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800"
-                          title={`${member.name} on LinkedIn`}
+                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
                         >
-                          <Linkedin className="w-5 h-5" />
-                          <span className="text-sm">LinkedIn</span>
+                          <Linkedin className="h-3.5 w-3.5" /> LinkedIn
                         </a>
                       )}
                       {member.github && (
@@ -179,14 +217,53 @@ export default function TeamPage() {
                           href={member.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800"
-                          title={`${member.name} on GitHub`}
+                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
                         >
-                          <Github className="w-5 h-5" />
-                          <span className="text-sm">GitHub</span>
+                          <Github className="h-3.5 w-3.5" /> GitHub
                         </a>
                       )}
                     </div>
+                  </div>
+                </motion.article>
+              ))}
+            </motion.div>
+          </motion.div>
+        </Section>
+
+        <Section background="gray" paddingY="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
+          >
+            <motion.div variants={fadeInUp} className="md:col-span-4">
+              <span className="eyebrow mb-6 block">Pourquoi</span>
+              <h2 className="section-headline max-w-[12ch]">
+                Why work
+                <br />
+                <em>with us.</em>
+              </h2>
+            </motion.div>
+            <motion.div
+              variants={staggerContainer}
+              className="space-y-8 md:col-span-7 md:col-start-6"
+            >
+              {whyUs.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[3rem_1fr] gap-x-6 border-b border-[var(--ink-hairline)]/35 pb-8 last:border-0 last:pb-0"
+                >
+                  <span className="numeral text-xl">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="mb-2 font-display text-xl text-[var(--ink)]">{item.title}</h3>
+                    <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                      {item.body}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -194,104 +271,56 @@ export default function TeamPage() {
           </motion.div>
         </Section>
 
-        {/* Why Work With Us */}
-        <Section background="gray" paddingY="lg">
+        <Section background="white" paddingY="lg" id="join">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
+            className="mx-auto max-w-3xl"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-8 text-center">
-              Why work with us
-            </motion.h2>
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Senior developers only.</h3>
-                <p className="text-gray-700 text-sm">
-                  Everyone you work with has at least five years in production. No juniors learning
-                  on your dime.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Direct access.</h3>
-                <p className="text-gray-700 text-sm">
-                  No account managers, no middlemen. You talk to the developer building the thing,
-                  not the person managing the relationship.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Domain understanding, not just code.</h3>
-                <p className="text-gray-700 text-sm">
-                  Real working experience in healthcare, food systems, sustainability, and social enterprise.
-                  We understand your context, which means we can translate technology into a decision
-                  you can actually act on.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Mission-aligned. Quality non-negotiable.</h3>
-                <p className="text-gray-700 text-sm">
-                  We care about the problems you’re solving and walk away from work that doesn’t fit
-                  our values. But the quality bar stays the same as any larger Montréal shop. We won’t
-                  ship code we wouldn’t be proud of either way.
-                </p>
-              </motion.div>
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">Growing slowly</span>
             </motion.div>
-          </motion.div>
-        </Section>
-
-        {/* Join Us */}
-        <Section background="white" paddingY="lg">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-3xl mx-auto text-center"
-          >
             <motion.h2 variants={fadeInUp} className="section-headline mb-6">
-              Join the team
+              Join the workshop.
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-gray-700 leading-relaxed mb-8">
-              We’re growing slowly, on purpose. If you’re a senior developer who wants to work on
-              meaningful projects, earn a fair wage, and help build a more equitable tech industry,
-              we’d like to hear from you.
+            <motion.p
+              variants={fadeInUp}
+              className="mb-10 max-w-[48ch] leading-relaxed text-[var(--ink-muted)]"
+            >
+              We grow on purpose. If you&apos;re a senior developer who wants meaningful projects,
+              fair wages, and cooperative governance — write us. No careers portal. Just email.
             </motion.p>
-            <motion.div variants={fadeInUp} className="bg-primary-50 rounded-xl p-8">
-              <h3 className="font-bold text-gray-900 mb-4">What we look for</h3>
-              <ul className="text-left space-y-3 text-gray-700 mb-6">
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span>5+ years of professional development experience</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span>Track record of shipping production applications</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span>Interest in mission-driven work and cooperative governance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span>Based in or willing to relocate to Montreal</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span>Strong communication skills (English/French a plus)</span>
-                </li>
+            <motion.div
+              variants={fadeInUp}
+              className="border border-[var(--ink-hairline)]/45 bg-[var(--cream-deep)] p-8 md:p-10"
+            >
+              <h3 className="mb-6 font-display text-2xl text-[var(--ink)]">What we look for</h3>
+              <ul className="mb-8 space-y-3 text-[var(--ink-muted)]">
+                {[
+                  '5+ years of professional development experience',
+                  'Track record of shipping production applications',
+                  'Interest in mission-driven work and cooperative governance',
+                  'Based in or willing to work with Montréal',
+                  'Clear communication (English / French a plus)',
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-3">
+                    <span className="mt-1 text-secondary-600" aria-hidden>
+                      —
+                    </span>
+                    <span>{line}</span>
+                  </li>
+                ))}
               </ul>
-              <a
-                href="mailto:contact@vineralstechnologies.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
+              <Link
+                href="mailto:contact@vineralstechnologies.com?subject=Joining%20Vinerals"
+                className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 transition-colors hover:text-secondary-600"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="h-4 w-4" />
                 contact@vineralstechnologies.com
-              </a>
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </motion.div>
           </motion.div>
         </Section>

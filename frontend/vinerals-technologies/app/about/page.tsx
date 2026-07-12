@@ -6,35 +6,84 @@ import Section from '@/components/ui/Section';
 import AboutHero from '@/components/sections/AboutHero';
 import CTA from '@/components/sections/CTA';
 import Link from 'next/link';
-import { Heart, Users, Building2, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
-export default function AboutPage() {
-  const aboutSections = [
-    {
-      title: 'Our Mission',
-      description: 'Why we exist, who we’re building for, and what we won’t do to grow.',
-      href: '/about/mission',
-      icon: Heart,
-      color: 'from-primary-100 to-primary-200',
-    },
-    {
-      title: 'Our Team',
-      description: 'Meet the people writing the code. Senior, named, reachable. No account managers in the way.',
-      href: '/about/team',
-      icon: Users,
-      color: 'from-secondary-100 to-secondary-200',
-    },
-    {
-      title: 'Our Cooperative Model',
-      description: 'How a solidarity cooperative actually changes the work: governance, ownership, profit, and why it matters to you.',
-      href: '/about/cooperative',
-      icon: Building2,
-      color: 'from-accent-100 to-accent-200',
-    },
-  ];
+const DOSSIERS = [
+  {
+    numeral: '01',
+    eyebrow: 'Mission',
+    title: 'Why we exist.',
+    description:
+      'Who we’re building for, what quality means here, and what we won’t do to grow.',
+    href: '/about/mission',
+  },
+  {
+    numeral: '02',
+    eyebrow: 'Team',
+    title: 'The people writing the code.',
+    description:
+      'Senior, named, reachable. No account managers standing between you and the work.',
+    href: '/about/team',
+  },
+  {
+    numeral: '03',
+    eyebrow: 'Cooperative',
+    title: 'How ownership changes the work.',
+    description:
+      'Governance, surplus, and why a solidarity cooperative shows up in craft — not just on a letterhead.',
+    href: '/about/cooperative',
+  },
+] as const;
 
+const FACTS = [
+  {
+    label: 'Structure',
+    body: 'Solidarity cooperative (coopérative de solidarité). Worker, user, and supporting members — one vote each.',
+  },
+  {
+    label: 'Craft',
+    body: 'Software made by hand. Senior engineering, systems shaped around how you already work, code you own.',
+  },
+  {
+    label: 'Location',
+    body: 'Montréal, Québec. Clients across Canada and beyond — remote collaboration with workshop standards.',
+  },
+  {
+    label: 'Focus',
+    body: 'Healthcare, food systems, sustainability, and social enterprise. SMEs and mission-driven organisations.',
+  },
+] as const;
+
+const PRINCIPLES = [
+  {
+    title: 'Made by hand.',
+    body: 'Senior engineers shape every system around how you operate — not a rented platform, not a template with your logo.',
+  },
+  {
+    title: 'Translation before code.',
+    body: 'Before anyone opens an editor, we explain what software and AI can and can’t do. Often the honest answer is don’t build that yet.',
+  },
+  {
+    title: 'You own everything we ship.',
+    body: 'Code, credentials, docs, infrastructure. No vendor lock-in. No proprietary trap when you want to move on.',
+  },
+  {
+    title: 'The team that starts finishes.',
+    body: 'You talk to the developer doing the work. No juniors learning on your dime. No account manager in the middle.',
+  },
+  {
+    title: 'Terms you can plan around.',
+    body: 'Mission-aligned funding when you qualify — without diluting the craft. Premium work, structured so a growing business can say yes.',
+  },
+  {
+    title: 'Plugged into the social economy.',
+    body: 'Ties to CDRQ, PME MTL, CESIM, and the Chantier — Québec’s social economy as working context, not decoration.',
+  },
+] as const;
+
+export default function AboutPage() {
   return (
     <>
       <Header />
@@ -44,38 +93,47 @@ export default function AboutPage() {
           title="Software, made by hand."
           highlightedWord="made by hand"
           description="A Montréal solidarity cooperative. Senior engineering shaped around how SMEs actually work — craft you can feel, code you own, at terms you can plan around."
-          icon={<Heart className="w-8 h-8" />}
+          image="/about-vignette.jpg"
+          imageAlt="Hands at a wooden workshop desk with a laptop and notebook — software made by hand"
           primaryCTA={{ label: 'Read on', href: '#who-we-are' }}
           secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
-        {/* Introduction */}
-        <Section background="gray" paddingY="lg">
+        <Section background="gray" paddingY="lg" id="who-we-are">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-3xl mx-auto"
+            className="mx-auto max-w-3xl"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Who we are
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">Le dossier · Who we are</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-8">
+              Craft without the
+              <br />
+              <em>enterprise theatre.</em>
             </motion.h2>
-            <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
+            <motion.div
+              variants={staggerContainer}
+              className="space-y-5 leading-relaxed text-[var(--ink-muted)]"
+            >
               <motion.p variants={fadeInUp}>
-                Vinerals Technologies isn&apos;t your typical agency. We&apos;re a{' '}
-                <strong>solidarity cooperative</strong> — owned by the people doing the
-                work and the community we serve. What we sell is quality:{' '}
-                <strong>software made by hand</strong>, senior engineering, and systems
-                that fit how your business already runs.
+                Vinerals Technologies isn&apos;t a typical agency. We&apos;re a{' '}
+                <strong className="text-[var(--ink)]">solidarity cooperative</strong> —
+                owned by the people doing the work and the community we serve. What we
+                sell is quality:{' '}
+                <strong className="text-[var(--ink)]">software made by hand</strong>,
+                senior engineering, and systems that fit how your business already runs.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                Founded in Montréal in 2025, we exist because growing businesses deserve
+                Founded in Montréal in 2026, we exist because growing businesses deserve
                 craft without the enterprise theatre. Professional builds cost real money —
                 that&apos;s honest. What isn&apos;t honest is bending your operations around
                 someone else&apos;s product, or getting juniors learning on your dime.
               </motion.p>
-              <motion.blockquote variants={fadeInUp} className="pullquote my-4">
+              <motion.blockquote variants={fadeInUp} className="pullquote my-6">
                 Premium work. Owned code. Terms you can plan around.
               </motion.blockquote>
               <motion.p variants={fadeInUp}>
@@ -93,41 +151,59 @@ export default function AboutPage() {
           </motion.div>
         </Section>
 
-        {/* About Sections */}
         <Section background="white" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-6xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-12 text-center">
-              Learn More About Us
-            </motion.h2>
+            <div className="mb-10 grid items-end gap-x-10 gap-y-6 md:mb-14 md:grid-cols-12">
+              <motion.div variants={fadeInUp} className="md:col-span-7">
+                <span className="eyebrow mb-6 block">Trois dossiers</span>
+                <h2 className="section-headline max-w-[16ch]">
+                  Go deeper
+                  <br />
+                  <em>when you want to.</em>
+                </h2>
+              </motion.div>
+              <motion.p
+                variants={fadeInUp}
+                className="lead-text max-w-[40ch] md:col-span-5 md:ml-auto"
+              >
+                The hub tells the story. These pages hold the detail — mission, people,
+                and how the cooperative model shows up in the work.
+              </motion.p>
+            </div>
 
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-3 gap-8">
-              {aboutSections.map((section, index) => (
-                <motion.div key={index} variants={fadeInUp}>
+            <motion.div
+              variants={staggerContainer}
+              className="border border-[var(--ink-hairline)]/45"
+            >
+              {DOSSIERS.map((dossier, index) => (
+                <motion.div key={dossier.href} variants={fadeInUp}>
                   <Link
-                    href={section.href}
-                    className="block h-full bg-white rounded-xl border-2 border-gray-200 hover:border-primary-400 transition-all hover:shadow-lg p-8 group"
+                    href={dossier.href}
+                    className={`group grid gap-4 p-6 transition-colors hover:bg-[var(--cream-deep)]/60 md:grid-cols-12 md:items-baseline md:gap-x-8 md:p-8 ${
+                      index > 0 ? 'border-t border-[var(--ink-hairline)]/40' : ''
+                    }`}
                   >
-                    <div className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-lg bg-gradient-to-br ${section.color}`}>
-                      <section.icon className="w-8 h-8 text-primary-700" />
+                    <span className="numeral text-2xl md:col-span-1">{dossier.numeral}</span>
+                    <div className="md:col-span-3">
+                      <span className="font-mono text-[0.65rem] uppercase tracking-[0.24em] text-secondary-600">
+                        {dossier.eyebrow}
+                      </span>
+                      <h3 className="mt-2 font-display text-2xl text-[var(--ink)] transition-colors group-hover:text-primary-700 md:text-[1.65rem]">
+                        {dossier.title}
+                      </h3>
                     </div>
-
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
-                      {section.title}
-                    </h3>
-
-                    <p className="text-gray-700 mb-6 leading-relaxed">
-                      {section.description}
+                    <p className="max-w-[42ch] leading-relaxed text-[var(--ink-muted)] md:col-span-6">
+                      {dossier.description}
                     </p>
-
-                    <div className="flex items-center text-primary-700 font-semibold group-hover:gap-3 transition-all">
-                      Learn more <ArrowRight className="w-5 h-5 ml-2" />
-                    </div>
+                    <span className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary-700 md:col-span-2 md:justify-end">
+                      Open
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
                   </Link>
                 </motion.div>
               ))}
@@ -135,112 +211,87 @@ export default function AboutPage() {
           </motion.div>
         </Section>
 
-        {/* Quick Facts */}
         <Section background="gray" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
+            className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-12 text-center">
-              Quick facts
-            </motion.h2>
-
-            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Structure</h3>
-                <p className="text-gray-700 text-sm">
-                  Solidarity cooperative (<em>coopérative de solidarité</em>). A Québec social enterprise model
-                  that brings worker, user, and supporting members into the same democratic governance.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Approach</h3>
-                <p className="text-gray-700 text-sm">
-                  <strong>Good engineering costs what it costs.</strong> We&apos;ve gone after the funding so
-                  cost doesn&apos;t have to be the wall. And we start by walking you through what&apos;s actually
-                  possible before any code gets written.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Location</h3>
-                <p className="text-gray-700 text-sm">
-                  Based in Montréal, Québec. We work with clients across Canada and internationally through
-                  remote collaboration.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Focus</h3>
-                <p className="text-gray-700 text-sm">
-                  Healthcare, food systems, sustainability, and social enterprise. We work with SMEs, non-profits,
-                  and the mission-driven organisations sitting between them.
-                </p>
-              </motion.div>
+            <motion.div variants={fadeInUp} className="md:col-span-4">
+              <span className="eyebrow mb-6 block">Dateline</span>
+              <h2 className="section-headline max-w-[12ch]">
+                Quick
+                <br />
+                <em>facts.</em>
+              </h2>
             </motion.div>
+            <motion.dl
+              variants={staggerContainer}
+              className="space-y-8 md:col-span-7 md:col-start-6"
+            >
+              {FACTS.map((fact) => (
+                <motion.div
+                  key={fact.label}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[7rem_1fr] gap-x-6 border-b border-[var(--ink-hairline)]/35 pb-8 last:border-0 last:pb-0"
+                >
+                  <dt className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-secondary-600">
+                    {fact.label}
+                  </dt>
+                  <dd className="leading-relaxed text-[var(--ink-muted)]">{fact.body}</dd>
+                </motion.div>
+              ))}
+            </motion.dl>
           </motion.div>
         </Section>
 
-        {/* What Makes Us Different */}
         <Section background="white" paddingY="lg">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="max-w-3xl mx-auto"
+            className="grid items-start gap-x-10 gap-y-12 md:grid-cols-12"
           >
-            <motion.h2 variants={fadeInUp} className="section-headline mb-6 text-center">
-              Why we’re positioned the way we are for Québec SMEs
-            </motion.h2>
-            <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed mb-6">
-              <motion.p variants={fadeInUp}>
-                Compared with the typical Montréal agency at $100 to $200 per hour blended, we&apos;re not competing
-                on price. We&apos;re solving a different problem: <strong>the knowledge gap and the accessibility
-                gap</strong> that keep SMEs locked out of the software they need.
-              </motion.p>
+            <motion.div variants={fadeInUp} className="md:col-span-4 md:sticky md:top-32 md:self-start">
+              <span className="eyebrow mb-6 block">Pourquoi</span>
+              <h2 className="section-headline mb-4 max-w-[14ch]">
+                Built this way
+                <br />
+                <em>on purpose.</em>
+              </h2>
+              <p className="lead-text max-w-[32ch]">
+                Craft first. Ownership next. Funding is how we keep the quality in reach —
+                not how we define the brand.
+              </p>
             </motion.div>
-            <motion.div variants={staggerContainer} className="space-y-4 text-gray-700">
-              <motion.ul variants={staggerContainer} className="space-y-3">
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Translation first.</strong> Before any code, we sit down and explain what AI and
-                  modern software can actually do for your business, and what they can&apos;t. That conversation alone
-                  is worth thousands in avoided mistakes.</span>
+
+            <motion.ol
+              variants={staggerContainer}
+              className="space-y-10 md:col-span-7 md:col-start-6"
+            >
+              {PRINCIPLES.map((item, i) => (
+                <motion.li
+                  key={item.title}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[3rem_1fr] gap-x-6"
+                >
+                  <span className="numeral pt-1 text-2xl">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="mb-2 font-display text-xl leading-snug text-[var(--ink)]">
+                      {item.title}
+                    </h3>
+                    <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
                 </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Mission-aligned funding.</strong> Government programmes, impact investors, and donor
-                  support cover part of qualifying engagements. We&apos;re not cutting corners. We&apos;re supplementing
-                  the project budget so the math works.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>No investor pressure.</strong> The cooperative model means profits get reinvested in the
-                  mission, not extracted for shareholders. That&apos;s what makes sustainable pricing and long-term client
-                  relationships possible in the first place.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Senior developers only.</strong> Every person you work with has at least five years
-                  in production. Same calibre of work you&apos;d get from Spiria, Stradigi AI, or Konverge, made accessible.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Full ownership.</strong> You own 100% of the code, the designs, and the IP we create.
-                  No vendor lock-in, no proprietary stack, no escape clause when you want to move on.</span>
-                </motion.li>
-                <motion.li variants={fadeInUp} className="flex items-start gap-3">
-                  <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Plugged into the social economy.</strong> Part of Québec&apos;s 11,000-plus social
-                  economy enterprises, with working ties to CDRQ, PME MTL, CESIM, and the Chantier de l&apos;économie sociale.</span>
-                </motion.li>
-              </motion.ul>
-            </motion.div>
+              ))}
+            </motion.ol>
           </motion.div>
         </Section>
 

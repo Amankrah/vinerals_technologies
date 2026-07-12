@@ -26,7 +26,7 @@ export const organizationSchema = {
   logo: 'https://vineralstechnologies.com/logo.png',
   description:
     'Montréal solidarity cooperative. Custom software and AI, made by hand for SMEs — senior engineering, owned code, terms you can plan around.',
-  foundingDate: '2025',
+  foundingDate: '2026',
   foundingLocation: {
     '@type': 'Place',
     address: {
