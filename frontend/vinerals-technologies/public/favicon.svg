@@ -2,16 +2,24 @@
   <!-- Forest paper substrate -->
   <rect width="32" height="32" rx="4" fill="#1F3A2E"/>
 
-  <!-- Hand-traced V monogram, cream stroke with slight italic bow -->
+  <!-- Grain join — left rail -->
   <path
-    d="M6 6 Q 10 5, 16 26 Q 22 5, 26 6"
-    stroke="#F5EFE6"
-    stroke-width="2.4"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
+    d="M7 5.5 L 11.2 5.5 L 14.6 18.8 L 13.1 18.8 L 12.35 16.2 L 10.85 16.2 L 11.7 19.4 L 14.9 27.2 L 12.6 27.2 L 7 5.5 Z"
+    fill="#F5EFE6"
   />
-
-  <!-- Clay ink drop at the base — editorial accent -->
-  <circle cx="16" cy="26" r="1.6" fill="#B8634A"/>
+  <!-- Grain join — right rail -->
+  <path
+    d="M25.2 5.5 L 21.1 5.5 L 16.4 19.0 L 17.9 19.0 L 18.6 21.4 L 20.1 21.4 L 19.0 18.2 L 17.0 27.2 L 19.3 27.2 L 25.2 5.5 Z"
+    fill="#F5EFE6"
+  />
+  <!-- Grain ticks -->
+  <path
+    d="M8.4 8.2 L 10.1 8.0 M8.7 11.0 L 10.5 10.7 M9.1 13.8 L 11.0 13.4"
+    stroke="#F5EFE6"
+    stroke-width="0.55"
+    stroke-linecap="round"
+    opacity="0.35"
+  />
+  <!-- Clay peg at the join -->
+  <circle cx="16" cy="20.2" r="1.45" fill="#B8634A"/>
 </svg>

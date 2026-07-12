@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import MonogramGrainJoin from '@/components/shared/logo-concepts/MonogramGrainJoin';
+import type { ConceptSize } from '@/components/shared/logo-concepts/types';
 
 interface LogoProps {
   className?: string;
@@ -7,31 +9,69 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
+const sizeClasses: Record<NonNullable<LogoProps['size']>, string> = {
+  sm: 'text-xl md:text-[1.375rem]',
+  md: 'text-2xl md:text-[1.75rem]',
+  lg: 'text-3xl md:text-[2.25rem]',
+};
+
 /**
- * Logo — editorial wordmark. Display serif italic, with a small
- * hand-traced V monogram. No technical iconography; this is a
- * masthead, not a SaaS logo.
+ * Logo — craft monogram (Grain join) + wordmark.
+ * Software made by hand: two rails locking at a carved notch.
  */
 export default function Logo({ className, variant = 'default', size = 'md' }: LogoProps) {
-  const sizeClasses = {
-    sm: 'text-xl md:text-[1.375rem]',
-    md: 'text-2xl md:text-[1.75rem]',
-    lg: 'text-3xl md:text-[2.25rem]',
-  };
-
-  const colorClasses = {
-    default: 'text-[var(--ink)]',
-    light:   'text-white [text-shadow:0_1px_12px_rgba(10,20,16,0.45)]',
-    dark:    'text-[var(--ink)]',
-  };
+  const isLight = variant === 'light';
 
   return (
     <Link
       href="/"
       className={cn(
-        'font-display leading-none transition-opacity hover:opacity-80 inline-flex items-baseline gap-2.5',
+        'inline-flex items-center gap-2.5 font-display leading-none transition-opacity hover:opacity-80',
         sizeClasses[size],
-        colorClasses[variant],
+        isLight
+          ? 'text-white [text-shadow:0_1px_12px_rgba(10,20,16,0.45)]'
+          : 'text-[var(--ink)]',
+        className
+      )}
+      aria-label="Vinerals Technologies · accueil"
+    >
+      <MonogramGrainJoin
+        size={size as ConceptSize}
+        className={isLight ? 'text-white' : 'text-primary-800'}
+      />
+      <span className="inline-flex items-baseline gap-2">
+        <span className="italic">Vinerals</span>
+        <span
+          aria-hidden
+          className={cn(
+            'translate-y-[-0.2em] font-display text-[0.65em] italic',
+            isLight ? 'text-secondary-200' : 'text-secondary-500'
+          )}
+        >
+          ·
+        </span>
+        <span
+          className={cn(
+            'translate-y-[-0.15em] font-mono text-[0.42em] uppercase tracking-[0.28em]',
+            isLight ? 'text-white/85' : 'text-[var(--ink-muted)]'
+          )}
+        >
+          Technologies
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+export function LogoText({ className, variant = 'default' }: Omit<LogoProps, 'size'>) {
+  const isLight = variant === 'light';
+
+  return (
+    <Link
+      href="/"
+      className={cn(
+        'inline-flex items-baseline gap-2 font-display text-xl leading-none transition-opacity hover:opacity-80 md:text-[1.375rem]',
+        isLight ? 'text-[var(--cream)]' : 'text-[var(--ink)]',
         className
       )}
       aria-label="Vinerals Technologies · accueil"
@@ -39,51 +79,14 @@ export default function Logo({ className, variant = 'default', size = 'md' }: Lo
       <span className="italic">Vinerals</span>
       <span
         aria-hidden
-        className={cn(
-          'font-display italic text-[0.65em] translate-y-[-0.2em]',
-          variant === 'light' ? 'text-secondary-200' : 'text-secondary-500'
-        )}
+        className="translate-y-[-0.2em] font-display text-[0.65em] italic text-secondary-500"
       >
         ·
       </span>
       <span
         className={cn(
-          'font-mono text-[0.42em] uppercase tracking-[0.28em] translate-y-[-0.15em]',
-          variant === 'light' ? 'text-white/85' : 'text-[var(--ink-muted)]'
-        )}
-      >
-        Technologies
-      </span>
-    </Link>
-  );
-}
-
-export function LogoText({ className, variant = 'default' }: Omit<LogoProps, 'size'>) {
-  const colorClasses = {
-    default: 'text-[var(--ink)]',
-    light:   'text-[var(--cream)]',
-    dark:    'text-[var(--ink)]',
-  };
-
-  return (
-    <Link
-      href="/"
-      className={cn(
-        'font-display leading-none transition-opacity hover:opacity-80 inline-flex items-baseline gap-2',
-        'text-xl md:text-[1.375rem]',
-        colorClasses[variant],
-        className
-      )}
-      aria-label="Vinerals Technologies · accueil"
-    >
-      <span className="italic">Vinerals</span>
-      <span aria-hidden className="text-secondary-500 font-display italic text-[0.65em] translate-y-[-0.2em]">
-        ·
-      </span>
-      <span
-        className={cn(
-          'font-mono text-[0.42em] uppercase tracking-[0.28em] translate-y-[-0.15em]',
-          variant === 'light' ? 'text-white/70' : 'text-[var(--ink-muted)]'
+          'translate-y-[-0.15em] font-mono text-[0.42em] uppercase tracking-[0.28em]',
+          isLight ? 'text-white/70' : 'text-[var(--ink-muted)]'
         )}
       >
         Technologies
@@ -93,49 +96,53 @@ export function LogoText({ className, variant = 'default' }: Omit<LogoProps, 'si
 }
 
 /**
- * LogoSeal — cooperative stamp / colophon mark. Italic Vinerals
- * over a mono-caps eyebrow, optionally framed by a hairline rectangle.
- * Use as a press-kit mark, business-card stamp, or footer signature.
+ * LogoSeal — cooperative stamp / colophon with Grain join monogram.
  */
 export function LogoSeal({
   className,
   variant = 'default',
   framed = false,
 }: Omit<LogoProps, 'size'> & { framed?: boolean }) {
+  const isLight = variant === 'light';
   const colorClasses = {
     default: 'text-[var(--ink)] border-[var(--ink-hairline)]/60',
-    light:   'text-[var(--cream)] border-white/30',
-    dark:    'text-[var(--ink)] border-[var(--ink-hairline)]/60',
+    light: 'text-[var(--cream)] border-white/30',
+    dark: 'text-[var(--ink)] border-[var(--ink-hairline)]/60',
   };
-  const mutedTone =
-    variant === 'light' ? 'text-white/60' : 'text-[var(--ink-muted)]';
+  const mutedTone = isLight ? 'text-white/60' : 'text-[var(--ink-muted)]';
 
   return (
     <div
       className={cn(
-        'inline-flex flex-col items-start gap-1.5 leading-none',
+        'inline-flex flex-col items-start gap-2 leading-none',
         framed && 'border px-5 py-4',
         colorClasses[variant],
         className
       )}
       aria-label="Vinerals Technologies · Coopérative de solidarité"
     >
-      <div className="inline-flex items-baseline gap-2">
-        <span className="font-display italic text-2xl md:text-[1.625rem]">Vinerals</span>
-        <span
-          aria-hidden
-          className="text-secondary-500 font-display italic text-base translate-y-[-0.15em]"
-        >
-          ·
-        </span>
-        <span
-          className={cn(
-            'font-mono text-[0.6rem] uppercase tracking-[0.28em] translate-y-[-0.1em]',
-            mutedTone
-          )}
-        >
-          Technologies
-        </span>
+      <div className="inline-flex items-center gap-2.5">
+        <MonogramGrainJoin
+          size="sm"
+          className={isLight ? 'text-[var(--cream)]' : 'text-primary-800'}
+        />
+        <div className="inline-flex items-baseline gap-2">
+          <span className="font-display text-2xl italic md:text-[1.625rem]">Vinerals</span>
+          <span
+            aria-hidden
+            className="translate-y-[-0.15em] font-display text-base italic text-secondary-500"
+          >
+            ·
+          </span>
+          <span
+            className={cn(
+              'translate-y-[-0.1em] font-mono text-[0.6rem] uppercase tracking-[0.28em]',
+              mutedTone
+            )}
+          >
+            Technologies
+          </span>
+        </div>
       </div>
       <div className={cn('font-mono text-[0.6rem] uppercase tracking-[0.24em]', mutedTone)}>
         Coopérative de solidarité · MTL
@@ -145,31 +152,13 @@ export function LogoSeal({
 }
 
 export function LogoIcon({ className, size = 'md' }: Pick<LogoProps, 'className' | 'size'>) {
-  const sizeMap = { sm: 24, md: 32, lg: 40 };
-  const dimension = sizeMap[size];
-
   return (
-    <Link href="/" className={cn('transition-opacity hover:opacity-80', className)} aria-label="Vinerals · accueil">
-      <svg
-        width={dimension}
-        height={dimension}
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden
-      >
-        {/* Hand-traced V — uneven stroke, slight bow, italic lean. */}
-        <path
-          d="M6 5 Q 10 4, 16 27 Q 22 4, 26 5"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        {/* Single ink drop for character */}
-        <circle cx="16" cy="27" r="1.6" fill="currentColor" />
-      </svg>
+    <Link
+      href="/"
+      className={cn('inline-flex transition-opacity hover:opacity-80', className)}
+      aria-label="Vinerals · accueil"
+    >
+      <MonogramGrainJoin size={size as ConceptSize} className="text-primary-800" />
     </Link>
   );
 }
