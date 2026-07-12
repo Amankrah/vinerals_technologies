@@ -24,9 +24,9 @@ export default function TeamPage() {
   const teamMembers: TeamMember[] = [
     {
       name: 'Emmanuel Amankrah Kwofie',
-      role: 'Lead Engineer & CTO',
+      role: 'Founder & CTO',
       expertise: ['Full-Stack Development', 'Cloud Architecture', 'Machine Learning', 'DevOps'],
-      bio: 'A research-to-software engineer. The kind who turns scientific work into systems you can actually run. Past stints at SASEL Lab McGill and a background in automation, cloud-native applications, and high-performance research and analytics platforms. Focused on sustainable food systems, AI integration, and translating heavy technical concepts into practical business decisions. 5+ years shipping enterprise-calibre software.',
+      bio: 'Founder of Vinerals Technologies and research-to-software engineer. At SASEL Lab, McGill University, he built the platforms now live across sustainable food systems — from environmental nutrition and protein-process simulation to public-finance intelligence and EU food-fraud risk models — with academic and industry partners in Canada, Europe, and Africa. Focused on turning scientific work into systems organisations can actually run.',
       funFact: 'Built a full pea-protein analysis platform that wove together technical optimisation, economic feasibility modelling, and environmental impact assessment. The exact kind of cross-disciplinary problem-solving SMEs need when they’re trying to make a real call on technology.',
       linkedin: 'https://www.linkedin.com/in/eakwofie/',
       github: 'https://github.com/Amankrah',
@@ -49,7 +49,7 @@ export default function TeamPage() {
             { value: '100%', label: 'Senior Developers' },
           ]}
           primaryCTA={{ label: 'Join us', href: '#join' }}
-          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
         {/* Team Intro */}

@@ -49,8 +49,8 @@ const WhyUs = () => {
             <em>on purpose.</em>
           </h2>
           <p className="lead-text max-w-[36ch]">
-            What makes the cooperative model show up in the actual work, not
-            just on the About page.
+            Craft, ownership, and honest counsel — how the cooperative shows up
+            in the work itself, not just on the About page.
           </p>
         </motion.div>
 

@@ -5,23 +5,22 @@ export interface Project {
   industry: 'healthcare' | 'food-systems' | 'sustainability' | 'non-profit' | 'other';
   services: string[];
   year: string;
-  thumbnail: string;
-  hero: string;
+  status?: 'live' | 'beta';
+  partner?: string;
+  partnerUrl?: string;
+  externalUrl?: string;
+  image?: string;
+  imageAlt?: string;
   description: string;
-  challenge: string;
-  solution: string;
-  results: {
+  challenge?: string;
+  solution?: string;
+  results?: {
     metric: string;
     value: string;
     description: string;
   }[];
-  technologies: string[];
-  features: string[];
-  testimonial?: {
-    quote: string;
-    author: string;
-    role: string;
-    company: string;
-  };
+  technologies?: string[];
+  features?: string[];
+  tags?: string[];
   featured: boolean;
 }

@@ -11,7 +11,7 @@ import { Code2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Custom Software Development Montreal | Vinerals Technologies',
-  description: 'Bespoke web applications and business software built for your exact needs. Full-stack development with subsidized programs available. Montreal-based, serving all of Canada.',
+  description: 'Bespoke web applications and business software made by hand for your exact needs. Full-stack development, full code ownership. Montréal-based, serving Canada.',
   alternates: {
     canonical: 'https://vineralstechnologies.com/services/custom-software',
   },
@@ -143,7 +143,7 @@ export default function CustomSoftwarePage() {
                   <strong>Pick the shape that fits.</strong> Fixed-price commissions with milestone payments, or time and materials with fully transparent tracking. Whatever lines up with how your team buys software.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a free consultation. We&apos;ll tell you within a week which track applies, or that none does.
+                  Book a consultation. We&apos;ll tell you within a week which track applies, or that none does.
                 </p>
               </div>
             </div>

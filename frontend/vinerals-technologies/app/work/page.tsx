@@ -3,37 +3,16 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WorkHero from '@/components/sections/WorkHero';
-import StatsSection from '@/components/sections/StatsSection';
 import ProjectsGrid from '@/components/sections/ProjectsGrid';
 import CapabilitiesSection from '@/components/sections/CapabilitiesSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
-import { Briefcase, Heart, Wheat, Leaf } from 'lucide-react';
-import { WORK_STATS, CAPABILITIES, PROCESS_STEPS } from '@/lib/constants';
-
-const PLACEHOLDER_PROJECTS = [
-  {
-    id: 1,
-    title: 'Healthcare Innovation',
-    industry: 'Healthcare',
-    icon: Heart,
-    color: 'from-blue-100 to-blue-200',
-  },
-  {
-    id: 2,
-    title: 'Food Systems Platform',
-    industry: 'Food Systems',
-    icon: Wheat,
-    color: 'from-green-100 to-green-200',
-  },
-  {
-    id: 3,
-    title: 'Sustainability Dashboard',
-    industry: 'Sustainability',
-    icon: Leaf,
-    color: 'from-emerald-100 to-emerald-200',
-  },
-] as const;
+import Section from '@/components/ui/Section';
+import { CAPABILITIES, PROCESS_STEPS } from '@/lib/constants';
+import { projects } from '@/content/projects';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function WorkPage() {
   return (
@@ -41,24 +20,99 @@ export default function WorkPage() {
       <Header />
       <main className="pt-16">
         <WorkHero
-          badge="Portfolio & Case Studies"
-          title="Real projects, real results."
-          highlightedWord="Real results."
-          description="We don’t just write software. We solve the problem. A look at the work we’ve shipped for SMEs, non-profits, and social enterprises across Québec and Canada."
-          icon={<Briefcase className="w-8 h-8" />}
-          stats={[
-            { value: '12+', label: 'Completed Projects' },
-            { value: '100%', label: 'Client Satisfaction' },
-          ]}
-          primaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
-          secondaryCTA={{ label: 'See all projects', href: '#projects' }}
+          badge="Portfolio & Collaborations"
+          title="Work that already ships."
+          highlightedWord="ships."
+          description="Vinerals is young. Our founder isn’t. These platforms were made by hand at McGill’s SASEL Lab by Emmanuel Amankrah Kwofie — with academic and industry partners across Canada, Europe, and Africa."
+          image="/sector-food.jpg"
+          imageAlt="Hands holding freshly harvested greens at a farm packing table"
+          primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'Browse the dossiers', href: '#projects' }}
         />
-        <StatsSection stats={WORK_STATS} />
-        <ProjectsGrid projects={PLACEHOLDER_PROJECTS} />
+
+        <Section background="gray" paddingY="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid items-start gap-x-10 gap-y-8 md:grid-cols-12"
+          >
+            <motion.div variants={fadeInUp} className="md:col-span-5">
+              <span className="eyebrow mb-6 block">Provenance</span>
+              <h2 className="section-headline max-w-[16ch]">
+                Built at <em>McGill.</em>
+              </h2>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="md:col-span-6 md:col-start-7">
+              <p className="mb-5 max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                <a
+                  href="https://www.eakwofie.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 transition-colors hover:text-secondary-600"
+                >
+                  Emmanuel Amankrah Kwofie
+                </a>{' '}
+                is the founder and CTO of Vinerals Technologies. At{' '}
+                <a
+                  href="https://www.sasellab.com/technologies"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 transition-colors hover:text-secondary-600"
+                >
+                  SASEL Lab, McGill University
+                </a>
+                , he designed and engineered the platforms below — research-to-software systems for
+                sustainable food systems, public finance, logistics, and environmental assessment.
+              </p>
+              <p className="mb-8 max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                The work sits inside partnerships with universities, research institutes, government
+                ministries, and industry across Canada, Europe, and Africa. That same depth — and the
+                habit of shipping under real constraints — is what Vinerals brings to SME and
+                mission-driven commissions.
+              </p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-[var(--ink-soft)]">
+                <a
+                  href="https://www.sasellab.com/technologies"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary-700 transition-colors hover:text-secondary-600"
+                >
+                  SASEL technologies
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+                <a
+                  href="https://www.eakwofie.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary-700 transition-colors hover:text-secondary-600"
+                >
+                  Founder portfolio
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        </Section>
+
+        <ProjectsGrid
+          eyebrow="McGill · SASEL · Partners"
+          title={
+            <>
+              Seven platforms.
+              <br />
+              <em>Real deployments.</em>
+            </>
+          }
+          description="Each dossier opens a short brief here, with a link through to the full technology page at SASEL Lab."
+          projects={projects}
+        />
+
         <CapabilitiesSection capabilities={CAPABILITIES} />
         <ProcessSection
           title="How we work"
-          description="A transparent, collaborative process that keeps you in the loop without burying you in status updates."
+          description="A transparent process that keeps you in the loop without burying you in status updates."
           steps={PROCESS_STEPS}
         />
         <CTA />

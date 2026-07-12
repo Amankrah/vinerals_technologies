@@ -209,7 +209,7 @@ export default function DataSystemsPage() {
                   <strong>Right-sized to the work.</strong> A single dashboard or a full BI stack. We match the build to the problem, not the other way round.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a free consultation. We&apos;ll tell you within a week if a programme fits.
+                  Book a consultation. We&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

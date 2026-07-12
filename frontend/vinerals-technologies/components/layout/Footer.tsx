@@ -57,9 +57,8 @@ const Footer = () => {
 
             <p className="lead-text mb-12 max-w-xl text-white/90 [text-shadow:0_1px_14px_rgba(10,20,16,0.5)]">
               Then it would fit the work you actually do, instead of bending
-              you around someone else&apos;s product. The first conversation is
-              free. We sit with your problem and tell you honestly whether
-              software is even the right move.
+              you around someone else&apos;s product. Book a consultation —
+              the first conversation is free, honest, and without obligation.
             </p>
 
             <div className="flex flex-col items-start gap-5 sm:flex-row">
@@ -69,7 +68,7 @@ const Footer = () => {
                 variant="accent"
                 icon={<ArrowUpRight className="h-5 w-5" />}
               >
-                Book a free consultation
+                Book a consultation
               </Button>
               <Link
                 href="/work"

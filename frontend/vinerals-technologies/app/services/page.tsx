@@ -10,25 +10,26 @@ import dynamic from 'next/dynamic';
 const FaqAccordion = dynamic(() => import('@/components/sections/FaqAccordion'));
 import CTA from '@/components/sections/CTA';
 import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
-import { Code2 } from 'lucide-react';
 import { PROCESS_STEPS, ENGAGEMENT_MODELS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Software Development Services | Custom Apps, AI, Mobile',
-  description: 'Full-stack software development for SMEs. Custom applications, AI integration, mobile apps, and data systems. Brought into reach through mission-aligned funding.',
+  title: 'Software Development Services | Made by Hand',
+  description:
+    'Custom software, AI, mobile, and data systems — made by hand in Montréal. Senior engineering for SMEs, code you own, at terms you can plan around.',
   keywords: [
-    'software development montreal',
-    'custom software development',
+    'software made by hand',
+    'custom software development montreal',
+    'handcrafted software',
     'ai integration services',
     'mobile app development',
     'data systems',
     'software development canada',
-    'enterprise software sme',
-    'affordable software development',
+    'senior software engineers montreal',
   ],
   openGraph: {
     title: 'Software Development Services | Vinerals Technologies',
-    description: 'Enterprise-calibre software development, brought into reach for SMEs. Custom apps, AI integration, mobile development, and data systems.',
+    description:
+      'Custom apps, AI, mobile, and data systems — made by hand. Senior engineering for SMEs who want craft, ownership, and clarity.',
     url: 'https://vineralstechnologies.com/services',
     type: 'website',
   },
@@ -82,22 +83,23 @@ export default function ServicesPage() {
       <main className="pt-16">
         <ServiceHero
           badge="Our Services"
-          title="Enterprise-calibre software, at numbers a growing business can plan around."
+          title="Software you can plan around."
           highlightedWord="plan around."
-          description="Custom software, AI integration, mobile apps, and data systems. Same calibre of work larger firms pay full freight for, made accessible through mission-aligned funding."
-          icon={<Code2 className="w-8 h-8" />}
-          primaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
+          description="Custom software, AI, mobile, and data systems — made by hand. Same calibre larger firms pay full freight for, at terms a growing business can plan around."
+          image="/service-software.jpg"
+          imageAlt="Hands typing on a laptop at a wooden workshop desk"
+          primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
           secondaryCTA={{ label: 'See our work', href: '/work' }}
         />
         <ServicesGrid />
         <ProcessSection
           title="How we work"
-          description="A transparent, collaborative process that keeps you in the loop without burying you in status updates."
+          description="A transparent process that keeps you in the loop without burying you in status updates."
           steps={PROCESS_STEPS}
         />
         <PricingSection
           title="Engagement models"
-          description="A few tracks to choose from, so the shape of the engagement actually matches your stage."
+          description="A few tracks to choose from, so the shape of the engagement matches your stage."
           tiers={ENGAGEMENT_MODELS}
         />
         <FaqAccordion

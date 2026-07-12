@@ -23,14 +23,14 @@ interface PricingSectionProps {
  */
 const PricingSection = ({ title, description, tiers }: PricingSectionProps) => {
   return (
-    <Section background="gray" paddingY="lg">
+    <Section background="white" paddingY="lg">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
         variants={staggerContainer}
       >
-        <motion.div variants={fadeInUp} className="max-w-3xl mb-14">
+        <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
           <span className="eyebrow mb-6 block">Modèles d&apos;engagement</span>
           <h2 className="section-headline mb-6">{title}</h2>
           <p className="lead-text">{description}</p>

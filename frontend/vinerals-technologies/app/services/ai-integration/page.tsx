@@ -182,7 +182,7 @@ export default function AIIntegrationPage() {
                   <strong>One footnote.</strong> AI API costs (OpenAI, Anthropic, and the rest) are billed at usage and stay separate from project fees.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a free consultation. We&apos;ll tell you within a week if a programme fits.
+                  Book a consultation. We&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

@@ -41,12 +41,12 @@ export default function AboutPage() {
       <main className="pt-16">
         <AboutHero
           badge="About Vinerals Technologies"
-          title="A mission-driven cooperative."
-          highlightedWord="mission-driven"
-          description="We’re a Montréal solidarity cooperative bringing enterprise-calibre software inside reach for small and mid-sized businesses, through the social economy model."
+          title="Software, made by hand."
+          highlightedWord="made by hand"
+          description="A Montréal solidarity cooperative. Senior engineering shaped around how SMEs actually work — craft you can feel, code you own, at terms you can plan around."
           icon={<Heart className="w-8 h-8" />}
           primaryCTA={{ label: 'Read on', href: '#who-we-are' }}
-          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
         {/* Introduction */}
@@ -63,27 +63,31 @@ export default function AboutPage() {
             </motion.h2>
             <motion.div variants={staggerContainer} className="space-y-4 text-gray-700 leading-relaxed">
               <motion.p variants={fadeInUp}>
-                Vinerals Technologies isn&apos;t your typical agency. We&apos;re a <strong>solidarity cooperative</strong>,
-                a social enterprise owned by workers and community members instead of investors hunting maximum returns.
+                Vinerals Technologies isn&apos;t your typical agency. We&apos;re a{' '}
+                <strong>solidarity cooperative</strong> — owned by the people doing the
+                work and the community we serve. What we sell is quality:{' '}
+                <strong>software made by hand</strong>, senior engineering, and systems
+                that fit how your business already runs.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                Founded in Montréal in 2025, we exist to solve a problem every Québec SME and growing Canadian
-                business has lived: <strong>quality custom software costs what it costs.</strong> Professional builds
-                land between $30,000 and $250,000 CAD, sometimes higher. Agencies aren&apos;t overcharging.
-                That&apos;s what serious engineering requires. For most growing businesses, the cheque just isn&apos;t there.
+                Founded in Montréal in 2025, we exist because growing businesses deserve
+                craft without the enterprise theatre. Professional builds cost real money —
+                that&apos;s honest. What isn&apos;t honest is bending your operations around
+                someone else&apos;s product, or getting juniors learning on your dime.
               </motion.p>
               <motion.blockquote variants={fadeInUp} className="pullquote my-4">
-                We&apos;re not undercutting anyone. We&apos;re building a bridge.
+                Premium work. Owned code. Terms you can plan around.
               </motion.blockquote>
               <motion.p variants={fadeInUp}>
-                We&apos;ve lined up <strong>subsidies, grants, and mission-aligned funding</strong> aimed squarely
-                at SMEs. We bring existing expertise inside reach, and we start by explaining what AI and modern
-                software can (and can&apos;t) realistically do for your business.
+                We start by explaining what AI and modern software can (and can&apos;t)
+                realistically do. Then we build — carefully, by hand — and structure
+                engagements so a growing business can say yes, including mission-aligned
+                funding when you qualify.
               </motion.p>
               <motion.p variants={fadeInUp}>
-                Through the cooperative structure and these funded accessibility programmes, you get the same calibre
-                of work larger organisations pay full freight for, at terms a growing business can plan around. We work
-                with mission-driven organisations in healthcare, food systems, sustainability, and social enterprise.
+                We work with organisations in healthcare, food systems, sustainability, and
+                social enterprise — the same calibre larger firms pay full freight for,
+                without diluting the craft.
               </motion.p>
             </motion.div>
           </motion.div>

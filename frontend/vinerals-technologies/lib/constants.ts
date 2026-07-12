@@ -3,9 +3,9 @@
 export const SITE_CONFIG = {
   name: 'Vinerals Technologies',
   shortName: 'Vinerals Tech',
-  tagline: 'Software, made by hand, for the 99%.',
+  tagline: 'Software, made by hand, for SMEs.',
   description:
-    'A Montréal solidarity cooperative that builds the software small and mid-sized businesses keep getting quoted $50K to $150K for. Same calibre of work, brought into reach through government and impact funding.',
+    'A Montréal solidarity cooperative. Custom software and AI, made by hand — senior engineering, code you own, at terms growing businesses can plan around.',
   url: 'https://vineralstechnologies.com',
   email: 'contact@vineralstechnologies.com',
   phone: '+1 (514) 961-9754',
@@ -203,14 +203,14 @@ export const TRUST_INDICATORS = [
 // Stats for Problem/Solution section - no rates, focus on model
 export const STATS = [
   {
+    value: 'Craft',
+    label: 'Made by hand',
+    description: 'Senior engineers shape every system around how you work — not a template with your logo.',
+  },
+  {
     value: '100%',
     label: 'Code ownership',
     description: 'Every line, every credential, every doc. Yours from day one.',
-  },
-  {
-    value: 'Funded',
-    label: 'Accessibility programs',
-    description: 'Government and impact funding covers part of the bill for qualifying businesses.',
   },
   {
     value: 'Senior',
@@ -266,16 +266,16 @@ export const HOW_IT_WORKS = [
 // Why Us section - updated to remove rate comparisons
 export const WHY_US_FEATURES = [
   {
+    title: 'Made by hand.',
+    description:
+      'Senior engineers shape every system around how you actually work — not a rented platform, not a template with your logo. Craft you can feel in the details.',
+    icon: 'Zap',
+  },
+  {
     title: 'Cooperative model.',
     description:
       "We’re owned by the people doing the work and the community we serve, not by investors hunting an exit. Your project funds the mission, not someone’s payday.",
     icon: 'Building',
-  },
-  {
-    title: 'Funded accessibility.',
-    description:
-      'Government programmes and impact funders cover a meaningful share of qualifying engagements. A $50K to $150K build becomes a number you can plan around.',
-    icon: 'Landmark',
   },
   {
     title: 'A real partnership.',
@@ -290,10 +290,10 @@ export const WHY_US_FEATURES = [
     icon: 'MessageCircle',
   },
   {
-    title: 'Mission-driven, by design.',
+    title: 'Terms you can plan around.',
     description:
-      'Every commercial project funds the next subsidised one. Serious engineering brought inside reach for the businesses priced out: clinics, food co-ops, climate startups, charities.',
-    icon: 'Heart',
+      'Mission-aligned funding and clear engagement tracks bring serious engineering into reach for clinics, food co-ops, climate startups, and charities — without diluting the quality.',
+    icon: 'Landmark',
   },
   {
     title: 'You own everything we ship.',
@@ -415,12 +415,12 @@ export const CAPABILITIES = [
 // Value propositions by audience
 export const VALUE_PROPS = {
   sme: {
-    headline: "The software you’ve been quoted out of, brought into reach.",
+    headline: 'Software made by hand — for the way your business actually runs.',
     subhead:
-      "You already know your business needs better software and, probably, some honest help with AI. We translate what’s possible, build what makes sense, and bring funding to the table when you qualify.",
+      'Senior engineering, shaped around your work, not bent around someone else’s product. We translate what’s possible, build what earns its keep, and structure terms a growing business can plan around.',
     points: [
-      'Plain language. We explain trade-offs, not sales decks.',
-      'Subsidised programmes for qualifying businesses.',
+      'Craft first. Systems fit how you operate — no template bloat.',
+      'Honest counsel before code. Trade-offs, not sales decks.',
       'Every line of code, every credential, every doc, yours.',
     ],
   },
@@ -447,21 +447,21 @@ export const VALUE_PROPS = {
   },
 } as const;
 
-// SEO Keywords - updated to reflect mission
+// SEO Keywords — craft + quality lead; accessibility supports
 export const PRIMARY_KEYWORDS = [
-  'software development montreal',
+  'software made by hand montreal',
+  'custom software montreal',
+  'handcrafted software development',
   'ai integration sme canada',
   'custom software quebec',
-  'social enterprise technology',
-  'digital transformation small business',
 ] as const;
 
 export const SECONDARY_KEYWORDS = [
+  'senior software engineers montreal',
   'solidarity cooperative technology',
   'healthcare software development montreal',
   'food supply chain software canada',
   'non-profit technology solutions quebec',
-  'subsidized software development sme',
 ] as const;
 
 // Ecosystem partners for credibility

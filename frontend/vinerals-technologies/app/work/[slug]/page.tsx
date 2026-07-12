@@ -5,13 +5,14 @@ import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import CTA from '@/components/sections/CTA';
 import { projects, getProjectBySlug } from '@/content/projects';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -21,7 +22,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -30,188 +32,207 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${project.title} | Case Study | Vinerals Technologies`,
+    title: `${project.title} | Work | Vinerals Technologies`,
     description: project.description,
   };
 }
 
-export default function ProjectPage({ params }: PageProps) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
-  const industryColors = {
-    healthcare: 'text-blue-700 bg-blue-100',
-    'food-systems': 'text-green-700 bg-green-100',
-    sustainability: 'text-emerald-700 bg-emerald-100',
-    'non-profit': 'text-purple-700 bg-purple-100',
-    other: 'text-gray-700 bg-gray-100',
-  };
+  const related = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
     <>
       <Header />
       <main className="pt-16">
-        {/* Hero Section */}
         <Section background="white" paddingY="lg">
-          <div className="max-w-5xl mx-auto">
+          <div className="mx-auto max-w-5xl">
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 mb-6 font-medium"
+              className="mb-8 inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 transition-colors hover:text-secondary-600"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Portfolio
+              <ArrowLeft className="h-4 w-4" />
+              Back to work
             </Link>
 
-            <div className="mb-6">
-              <span className={`px-3 py-1 rounded-full text-sm font-semibold ${industryColors[project.industry]}`}>
-                {project.industry.charAt(0).toUpperCase() + project.industry.slice(1).replace('-', ' ')}
-              </span>
+            <div className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--ink-soft)]">
+              {project.status && (
+                <span className="border border-[var(--ink-hairline)]/50 px-2.5 py-1 text-secondary-600">
+                  {project.status}
+                </span>
+              )}
+              <span>{project.partner || project.client}</span>
+              <span aria-hidden>·</span>
+              <span>Édition {project.year}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="mb-6 font-display text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[0.96] tracking-[-0.022em] text-[var(--ink)]">
               {project.title}
             </h1>
 
-            <div className="flex flex-wrap gap-6 text-gray-700 mb-8">
-              <div>
-                <span className="font-semibold">Client:</span> {project.client}
-              </div>
-              <div>
-                <span className="font-semibold">Year:</span> {project.year}
-              </div>
-              <div>
-                <span className="font-semibold">Services:</span> {project.services.join(', ')}
-              </div>
-            </div>
+            <p className="lead-text mb-8 max-w-[58ch]">{project.description}</p>
 
-            <p className="text-xl text-gray-700 leading-relaxed">
-              {project.description}
-            </p>
-          </div>
-        </Section>
-
-        {/* Hero Image Placeholder */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-6xl mx-auto">
-            <div className="h-96 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center">
-              <div className="text-center p-8">
-                <h2 className="text-3xl font-bold text-primary-900 mb-2">
-                  {project.title}
-                </h2>
-                <p className="text-primary-700 text-lg">{project.client}</p>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* Results Section */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="section-headline mb-8 text-center">Results</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {project.results.map((result, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-5xl font-bold text-primary-900 mb-2">
-                    {result.metric}
-                  </div>
-                  <div className="text-xl font-semibold text-gray-900 mb-2">
-                    {result.value}
-                  </div>
-                  <p className="text-gray-700">{result.description}</p>
-                </div>
+            <div className="mb-10 flex flex-wrap gap-3 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+              {project.services.map((service) => (
+                <span key={service}>{service}</span>
               ))}
             </div>
+
+            {project.externalUrl && (
+              <a
+                href={project.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mb-2 inline-flex items-center justify-center gap-2.5 border border-primary-800 bg-primary-700 px-8 py-4 font-mono text-[0.95rem] uppercase tracking-[0.18em] text-[var(--cream)] transition-all duration-300 hover:-translate-x-[2px] hover:-translate-y-[2px] hover:bg-primary-800 hover:shadow-[4px_4px_0_var(--secondary-500)]"
+              >
+                View on SASEL Lab
+                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </a>
+            )}
           </div>
         </Section>
 
-        {/* Challenge & Solution */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">The Challenge</h2>
-                <p className="text-gray-700 leading-relaxed">{project.challenge}</p>
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Solution</h2>
-                <p className="text-gray-700 leading-relaxed">{project.solution}</p>
-              </div>
-            </div>
-          </div>
-        </Section>
+        {project.image && (
+          <section className="relative h-[42vh] min-h-[280px] overflow-hidden bg-primary-950 md:h-[52vh]">
+            <Image
+              src={project.image}
+              alt={project.imageAlt || project.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-primary-950/50 via-transparent to-primary-950/20"
+            />
+          </section>
+        )}
 
-        {/* Features */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="section-headline mb-8 text-center">Key Features</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {project.features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-secondary-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{feature}</span>
+        {(project.challenge || project.solution) && (
+          <Section background="gray" paddingY="lg">
+            <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2">
+              {project.challenge && (
+                <div>
+                  <span className="eyebrow mb-4 block">The brief</span>
+                  <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">Challenge</h2>
+                  <p className="leading-relaxed text-[var(--ink-muted)]">{project.challenge}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        {/* Technologies */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="section-headline mb-8 text-center">Technologies Used</h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {project.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-white text-gray-900 rounded-lg font-medium border border-gray-200"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        {/* Testimonial */}
-        {project.testimonial && (
-          <Section background="white" paddingY="lg">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-primary-50 rounded-xl p-8 md:p-12">
-                <div className="text-4xl text-primary-700 mb-4">&ldquo;</div>
-                <blockquote className="text-xl md:text-2xl text-gray-900 font-medium mb-6 leading-relaxed">
-                  {project.testimonial.quote}
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-primary-200 flex items-center justify-center text-primary-900 font-bold text-xl">
-                    {project.testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900">{project.testimonial.author}</div>
-                    <div className="text-gray-700">
-                      {project.testimonial.role}, {project.testimonial.company}
-                    </div>
-                  </div>
+              )}
+              {project.solution && (
+                <div>
+                  <span className="eyebrow mb-4 block">The build</span>
+                  <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">Approach</h2>
+                  <p className="leading-relaxed text-[var(--ink-muted)]">{project.solution}</p>
                 </div>
-              </div>
+              )}
             </div>
           </Section>
         )}
 
-        {/* More Projects */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="section-headline mb-6">Explore More Projects</h2>
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
-            >
-              View All Projects
-            </Link>
+        {project.features && project.features.length > 0 && (
+          <Section background="white" paddingY="lg">
+            <div className="mx-auto max-w-5xl">
+              <span className="eyebrow mb-6 block">Capacités</span>
+              <h2 className="section-headline mb-10">What it does</h2>
+              <ul className="grid gap-4 md:grid-cols-2">
+                {project.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-3 border-b border-[var(--ink-hairline)]/30 pb-4 text-[var(--ink-muted)]"
+                  >
+                    <span aria-hidden className="mt-2 text-secondary-500">
+                      ·
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Section>
+        )}
+
+        {project.tags && project.tags.length > 0 && (
+          <Section background="gray" paddingY="md">
+            <div className="mx-auto max-w-5xl">
+              <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-[var(--ink-soft)]">
+                {project.tags.join(' · ')}
+              </p>
+            </div>
+          </Section>
+        )}
+
+        <Section background="white" paddingY="lg">
+          <div className="mx-auto max-w-5xl">
+            <span className="eyebrow mb-6 block">Attribution</span>
+            <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">
+              Built by the founder
+            </h2>
+            <p className="mb-6 max-w-[54ch] leading-relaxed text-[var(--ink-muted)]">
+              Engineered by{' '}
+              <a
+                href="https://www.eakwofie.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 hover:text-secondary-600"
+              >
+                Emmanuel Amankrah Kwofie
+              </a>
+              , founder and CTO of Vinerals Technologies, at{' '}
+              <a
+                href={project.partnerUrl || 'https://www.sasellab.com/technologies'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 hover:text-secondary-600"
+              >
+                SASEL Lab, McGill University
+              </a>
+              , with academic and industry partners across Canada, Europe, and Africa.
+            </p>
+            {project.externalUrl && (
+              <a
+                href={project.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 hover:text-secondary-600"
+              >
+                Full technology page at SASEL
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
           </div>
         </Section>
+
+        {related.length > 0 && (
+          <Section background="gray" paddingY="lg">
+            <div className="mx-auto max-w-5xl">
+              <h2 className="section-headline mb-8">More dossiers</h2>
+              <ul className="divide-y divide-[var(--ink-hairline)]/35 border-y border-[var(--ink-hairline)]/35">
+                {related.map((item) => (
+                  <li key={item.slug}>
+                    <Link
+                      href={`/work/${item.slug}`}
+                      className="group flex items-baseline justify-between gap-6 py-5"
+                    >
+                      <span className="font-display text-xl text-[var(--ink)] transition-colors group-hover:text-primary-700">
+                        {item.title}
+                      </span>
+                      <span className="shrink-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+                        {item.status || item.year}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Section>
+        )}
 
         <CTA />
       </main>

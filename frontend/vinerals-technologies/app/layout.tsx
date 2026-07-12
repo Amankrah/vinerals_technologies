@@ -34,11 +34,20 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://vineralstechnologies.com'),
   title: {
-    default: 'Vinerals Technologies | Enterprise AI & Software Made Accessible',
+    default: 'Vinerals Technologies | Software Made by Hand for SMEs',
     template: '%s | Vinerals Technologies'
   },
-  description: 'Montreal-based solidarity cooperative building custom software and AI solutions for small and medium businesses. Mission-aligned funding makes quality development accessible.',
-  keywords: ['software development montreal', 'ai integration sme', 'custom software quebec', 'subsidized software development', 'social enterprise technology', 'solidarity cooperative'],
+  description: 'Montréal cooperative crafting custom software and AI by hand for SMEs. Senior engineering, owned code, honest counsel — at terms you can plan around.',
+  keywords: [
+    'software made by hand',
+    'custom software montreal',
+    'handcrafted software development',
+    'software development montreal',
+    'ai integration sme',
+    'custom software quebec',
+    'solidarity cooperative software',
+    'senior software engineers montreal',
+  ],
   authors: [{ name: 'Vinerals Technologies' }],
   creator: 'Vinerals Technologies',
   publisher: 'Vinerals Technologies',
@@ -59,21 +68,21 @@ export const metadata: Metadata = {
     alternateLocale: 'fr_CA',
     url: 'https://vineralstechnologies.com',
     siteName: 'Vinerals Technologies',
-    title: 'Vinerals Technologies | Enterprise AI & Software Made Accessible',
-    description: 'Montreal-based solidarity cooperative building custom software and AI solutions. Mission-aligned funding makes quality development accessible to growing businesses.',
+    title: 'Vinerals Technologies | Software Made by Hand for SMEs',
+    description: 'Custom software and AI, made by hand in Montréal. Senior engineering for growing businesses — craft, ownership, and terms you can plan around.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Vinerals Technologies - Enterprise AI & Software Made Accessible',
+        alt: 'Vinerals Technologies — Software, made by hand, for SMEs',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vinerals Technologies | Enterprise AI & Software Made Accessible',
-    description: 'Montreal-based solidarity cooperative building custom software and AI solutions. Mission-aligned funding makes quality development accessible.',
+    title: 'Vinerals Technologies | Software Made by Hand for SMEs',
+    description: 'Custom software and AI, made by hand in Montréal. Senior engineering for growing businesses.',
     images: ['/og-image.jpg'],
   },
   icons: {

@@ -136,16 +136,16 @@ const barriers = [
 
 const responses = [
   {
+    title: 'Made by hand.',
+    body: 'Senior engineers shape software around how your business runs — not a template, not a platform you rent. Craft in the details, ownership in the contract.',
+  },
+  {
     title: 'Translation before development.',
     body: "We explain what’s possible before any code happens. No jargon, no pressure. When the honest answer is “don’t build it,” that’s the answer you’ll get.",
   },
   {
-    title: 'Backed by mission-aligned funding.',
-    body: 'As a solidarity cooperative supported by government programmes and impact funders, we offer subsidised engagements for SMEs that qualify.',
-  },
-  {
-    title: 'Enterprise calibre, real partnership.',
-    body: 'Senior developers on the work, strategic guidance baked in, and code you own outright. No vendor lock-in. No investor pressure. Mission, not exit.',
+    title: 'Premium work, terms you can plan around.',
+    body: 'The same calibre larger firms pay full freight for — structured so a growing business can say yes. Mission-aligned funding when you qualify. Code you own outright.',
   },
 ];
 

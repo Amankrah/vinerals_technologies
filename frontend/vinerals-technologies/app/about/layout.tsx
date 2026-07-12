@@ -1,25 +1,24 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Vinerals Technologies | Montréal Software Cooperative for Québec SMEs',
-  description: 'A Montréal solidarity cooperative bringing enterprise-calibre software inside reach for Québec SMEs and Canadian businesses. Not a discount agency. A publicly-supported technology adoption programme. Mission-aligned funding closes the knowledge and cost gap. Same calibre of work as Spiria, Stradigi AI, or Konverge.',
+  title: 'About Vinerals Technologies | Software Made by Hand in Montréal',
+  description:
+    'A Montréal solidarity cooperative. Custom software and AI, made by hand — senior engineering, owned code, and terms Québec SMEs can plan around. Craft first. Not a discount agency.',
   keywords: [
-    'montreal software development',
-    'quebec sme technology',
-    'solidarity cooperative montreal',
-    'custom software quebec',
-    'ai integration canada',
-    'social enterprise technology',
-    'digital transformation small business',
-    'technology adoption program',
-    'subsidized software development',
+    'software made by hand montreal',
     'montreal software cooperative',
-    'social economy technology',
+    'custom software quebec',
+    'handcrafted software development',
+    'solidarity cooperative montreal',
+    'ai integration canada',
+    'senior software engineers montreal',
+    'social enterprise technology',
     'enterprise software for smes',
   ],
   openGraph: {
-    title: 'About Vinerals Technologies | A Bridge to Enterprise Software for Québec SMEs',
-    description: 'Good engineering costs what it costs, between $30K and $250K CAD for a professional build. We have lined up mission-aligned funding so the cheque doesn&apos;t have to be the wall. We start by walking you through what&apos;s possible.',
+    title: 'About Vinerals Technologies | Software Made by Hand',
+    description:
+      'Senior engineering shaped around how SMEs actually work. Craft, ownership, and honest counsel — from a Montréal solidarity cooperative.',
     url: 'https://vineralstechnologies.com/about',
     type: 'website',
     images: [
@@ -27,14 +26,15 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-about.jpg',
         width: 1200,
         height: 630,
-        alt: 'About Vinerals Technologies - Montreal Software Cooperative',
+        alt: 'Vinerals Technologies — Software made by hand in Montréal',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Vinerals Technologies | Montréal Software Cooperative',
-    description: 'Not undercutting professionals. Bridging the accessibility gap. Enterprise-calibre software for Québec SMEs through mission-aligned funding.',
+    title: 'About Vinerals Technologies | Software Made by Hand',
+    description:
+      'Custom software made by hand in Montréal. Senior engineering for Québec SMEs — craft, ownership, terms you can plan around.',
     images: ['https://vineralstechnologies.com/og-about.jpg'],
   },
   alternates: {

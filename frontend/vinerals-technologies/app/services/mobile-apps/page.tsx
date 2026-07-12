@@ -171,7 +171,7 @@ export default function MobileAppsPage() {
                   <strong>Platform flexibility.</strong> Cross-platform, PWA, or native. We help you pick the one that matches your users and your budget instead of pushing whatever&apos;s easiest for us.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a free consultation. We&apos;ll tell you within a week if a programme fits.
+                  Book a consultation. We&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

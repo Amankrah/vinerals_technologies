@@ -277,7 +277,7 @@ export default function FoodSystemsPage() {
                   <strong>The food systems projects we see most often.</strong> Traceability systems, farm management platforms, regional marketplaces, and supply chain coordination tools. Built for the realities of food producers, not for a generic SaaS pitch.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Cooperatives, non-profits, and small family farms get extra eligibility consideration. Book a free consultation and we&apos;ll tell you within a week if a programme fits.
+                  Cooperatives, non-profits, and small family farms get extra eligibility consideration. Book a consultation and we&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </motion.div>

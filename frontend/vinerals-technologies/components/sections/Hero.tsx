@@ -90,8 +90,8 @@ const Hero = () => {
             variants={heroItemVariants}
             className="mb-8 max-w-[36ch] font-body text-lg font-medium leading-relaxed text-white [text-shadow:0_1px_16px_rgba(10,20,16,0.7)] md:mb-10 md:text-[1.35rem] md:leading-snug"
           >
-            Custom software and AI that fits how your business runs —
-            at terms you can plan around.
+            Custom software and AI, made by hand to fit how your business runs —
+            senior work, at terms you can plan around.
           </motion.p>
 
           <motion.div
@@ -104,7 +104,7 @@ const Hero = () => {
               variant="accent"
               icon={<ArrowUpRight className="h-5 w-5" />}
             >
-              Book a free consultation
+              Book a consultation
             </Button>
             <Button
               href="/work"

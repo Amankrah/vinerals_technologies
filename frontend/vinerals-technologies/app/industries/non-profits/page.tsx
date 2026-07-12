@@ -276,7 +276,7 @@ export default function NonProfitsPage() {
                   <strong>The social sector projects we see most often.</strong> Member portals, cooperative management systems, impact measurement platforms, donor and volunteer CRMs, and the kind of community engagement tools nobody else wants to build.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  <strong>Priority eligibility.</strong> Non-profits, certified cooperatives, and social enterprises get first call on our most subsidised tracks. We can also structure payment terms around the grant-funded revenue cycles you actually live with. Book a free consultation to talk it through.
+                  <strong>Priority eligibility.</strong> Non-profits, certified cooperatives, and social enterprises get first call on our most subsidised tracks. We can also structure payment terms around the grant-funded revenue cycles you actually live with. Book a consultation to talk it through.
                 </p>
               </div>
             </motion.div>

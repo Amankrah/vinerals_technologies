@@ -21,7 +21,7 @@ export default function MissionPage() {
           description="We exist to make enterprise-calibre software a realistic option for small and mid-sized businesses, regardless of budget."
           icon={<Heart className="w-8 h-8" />}
           primaryCTA={{ label: 'Our values', href: '#core-values' }}
-          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
         {/* Mission Statement */}

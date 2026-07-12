@@ -25,7 +25,7 @@ export default function CooperativePage() {
             { value: '1 = 1', label: 'Member Votes' },
           ]}
           primaryCTA={{ label: 'Read on', href: '#what-is-cooperative' }}
-          secondaryCTA={{ label: 'Book a free consultation', href: '/contact' }}
+          secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
         {/* What is a Solidarity Cooperative */}
@@ -282,9 +282,9 @@ export default function CooperativePage() {
               <motion.ul variants={staggerContainer} className="space-y-3">
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>
-                  <span><strong>Enterprise-calibre work.</strong> Same senior developers and standards
-                  you’d get from Spiria, Stradigi AI, or Konverge, brought into reach through mission-aligned
-                  funding instead of corner-cutting.</span>
+                  <span><strong>Software made by hand.</strong> Same senior developers and standards
+                  you’d expect from Spiria, Stradigi AI, or Konverge — craft first, with terms a growing
+                  business can plan around, not corner-cutting.</span>
                 </motion.li>
                 <motion.li variants={fadeInUp} className="flex items-start gap-3">
                   <span className="text-secondary-600 mt-1">✓</span>

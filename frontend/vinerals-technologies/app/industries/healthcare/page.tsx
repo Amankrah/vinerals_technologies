@@ -277,7 +277,7 @@ export default function HealthcarePage() {
                   <strong>The healthcare projects we see most often.</strong> Patient portals, telehealth platforms, clinical workflow systems, EMR integrations. HIPAA and PHIPA compliance built in, not retrofitted.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Every project includes compliance documentation, security audits, and staff training. Book a free consultation and we&apos;ll tell you within a week if a programme fits.
+                  Every project includes compliance documentation, security audits, and staff training. Book a consultation and we&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </motion.div>

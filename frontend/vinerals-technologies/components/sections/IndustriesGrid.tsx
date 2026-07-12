@@ -4,16 +4,30 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import Section from '@/components/ui/Section';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { INDUSTRIES } from '@/lib/constants';
 
+interface IndustriesGridProps {
+  eyebrow?: string;
+  title?: ReactNode;
+  description?: string;
+}
+
 /**
- * IndustriesGrid — four photographic dossiers. Each sector is named
- * by a real scene first; title and one line follow. The hairline
- * lattice stays so it still reads as a periodical plate.
+ * IndustriesGrid — four photographic dossiers. Heading copy can be
+ * swapped so the landing page and /industries don’t repeat each other.
  */
-const IndustriesGrid = () => {
+const IndustriesGrid = ({
+  eyebrow = 'III · Les secteurs',
+  title = (
+    <>
+      Sectors we know <em>by heart.</em>
+    </>
+  ),
+  description = "Four sectors where we've already shipped, and learned the regulations, the data shapes, and the constraints unique to each one.",
+}: IndustriesGridProps) => {
   return (
     <Section background="white" paddingY="lg" id="industries-grid">
       <motion.div
@@ -23,7 +37,7 @@ const IndustriesGrid = () => {
         variants={staggerContainer}
       >
         <motion.div variants={fadeInUp} className="mb-4">
-          <span className="eyebrow">III · Les secteurs</span>
+          <span className="eyebrow">{eyebrow}</span>
         </motion.div>
 
         <div className="mb-10 grid items-end gap-x-10 gap-y-6 md:mb-16 md:grid-cols-12">
@@ -31,15 +45,13 @@ const IndustriesGrid = () => {
             variants={fadeInUp}
             className="section-headline max-w-[20ch] md:col-span-7"
           >
-            Sectors we know <em>by heart.</em>
+            {title}
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="lead-text max-w-[42ch] md:col-span-5 md:ml-auto"
           >
-            Four sectors where we&apos;ve already shipped, and learned the
-            regulations, the data shapes, and the constraints unique to each
-            one.
+            {description}
           </motion.p>
         </div>
 
@@ -56,7 +68,7 @@ const IndustriesGrid = () => {
                 <Link
                   href={`/industries/${industry.slug}`}
                   className={`group relative flex h-full flex-col bg-[var(--paper)] transition-colors duration-500 hover:bg-[var(--cream-deep)] ${
-                    !isRight ? 'md:border-r border-[var(--ink-hairline)]/45' : ''
+                    !isRight ? 'border-[var(--ink-hairline)]/45 md:border-r' : ''
                   } ${
                     !isBottom ? 'border-b border-[var(--ink-hairline)]/45' : ''
                   }`}

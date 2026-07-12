@@ -280,7 +280,7 @@ export default function SustainabilityPage() {
                   <strong>The sustainability projects we see most often.</strong> Carbon tracking dashboards, ESG reporting platforms, circular economy systems, and environmental compliance tools. The work that helps organisations actually measure and reduce impact, not just talk about it.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  B Corps, certified social enterprises, and climate-focused non-profits get extra eligibility consideration. Book a free consultation and we&apos;ll tell you within a week if a programme fits.
+                  B Corps, certified social enterprises, and climate-focused non-profits get extra eligibility consideration. Book a consultation and we&apos;ll tell you within a week if a programme fits.
                 </p>
               </div>
             </motion.div>
