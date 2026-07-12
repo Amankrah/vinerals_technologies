@@ -141,6 +141,8 @@ export const INDUSTRIES = [
     description: 'Patient portals, telehealth, and the small data systems clinics actually run on.',
     features: ['EMR & EHR integrations', 'Telehealth platforms', 'Clinical workflow tools'],
     icon: 'Heart',
+    image: '/sector-healthcare.jpg',
+    imageAlt: 'Clinician reviewing a tablet beside a paper chart in a quiet clinic',
   },
   {
     id: 'food-systems',
@@ -149,6 +151,8 @@ export const INDUSTRIES = [
     description: 'Supply chain, traceability, and nutrition platforms for growers, co-ops, and processors.',
     features: ['Traceability systems', 'Farm management', 'Online marketplaces'],
     icon: 'Wheat',
+    image: '/sector-food.jpg',
+    imageAlt: 'Hands holding freshly harvested greens at a farm packing table',
   },
   {
     id: 'sustainability',
@@ -157,6 +161,8 @@ export const INDUSTRIES = [
     description: 'Carbon tracking, ESG reporting, and the systems behind a circular economy.',
     features: ['Carbon accounting', 'ESG dashboards', 'Circular economy tools'],
     icon: 'Leaf',
+    image: '/sector-sustainability.jpg',
+    imageAlt: 'Hands adjusting a field tablet beside solar panels at golden hour',
   },
   {
     id: 'non-profits',
@@ -165,6 +171,8 @@ export const INDUSTRIES = [
     description: 'Non-profit tech, cooperative back-offices, and impact tools that don’t bleed your budget.',
     features: ['Donor & member CRMs', 'Impact measurement', 'Cooperative platforms'],
     icon: 'Users',
+    image: '/sector-nonprofits.jpg',
+    imageAlt: 'Hands gathered around a wooden table in a cooperative meeting',
   },
 ] as const;
 
