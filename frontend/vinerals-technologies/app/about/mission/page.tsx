@@ -103,11 +103,11 @@ export default function MissionPage() {
       <main className="pt-16">
         <MissionHero
           badge="Our Mission & Values"
-          title="Software made by hand — for businesses priced out of serious engineering."
-          highlightedWord="made by hand"
-          description="Craft first. Owned code. Honest counsel. Terms a growing business can plan around — without diluting the quality."
-          image="/mission-vignette.jpg"
-          imageAlt="Open notebook and pen on a wooden workshop desk — craft before code"
+          title="Craft without compromise."
+          highlightedWord="without compromise"
+          description="Senior engineering for growing businesses. Owned code, honest counsel, terms you can plan around — quality intact."
+          image="/mission-atelier.jpg"
+          imageAlt="Hands typing on a laptop at a wooden workshop desk — software made by hand"
           primaryCTA={{ label: 'Our values', href: '#core-values' }}
           secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />

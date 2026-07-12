@@ -6,61 +6,31 @@ import Section from '@/components/ui/Section';
 import TeamHero from '@/components/sections/TeamHero';
 import CTA from '@/components/sections/CTA';
 import Link from 'next/link';
-import { Users, Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react';
+import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { TEAM_MEMBERS } from '@/content/team';
 
-interface TeamMember {
-  name: string;
-  role: string;
-  expertise: string[];
-  bio: string;
-  note: string;
-  linkedin?: string;
-  github?: string;
-  email?: string;
-  site?: string;
-}
+const CAPACITY = [
+  {
+    title: 'Food systems specialism.',
+    body: 'Traceability, nutrition platforms, processor and field realities — not software that learns your sector on your dime.',
+  },
+  {
+    title: 'Research to production.',
+    body: 'McGill Bioresource Engineering depth, shipped systems across Canada, Europe, and Africa.',
+  },
+  {
+    title: 'Compliance in the build.',
+    body: 'DPIA, federated storage, NDPA / DPA / GDPR alignment — data protection as craft, not a bolt-on.',
+  },
+  {
+    title: 'Cloud-native stack.',
+    body: 'Next.js, TypeScript, Python, Rust, ML/AI — on Vercel, AWS, and Azure. Software and data only.',
+  },
+] as const;
 
 export default function TeamPage() {
-  const teamMembers: TeamMember[] = [
-    {
-      name: 'Emmanuel Amankrah Kwofie',
-      role: 'Founder & CTO',
-      expertise: [
-        'Full-stack development',
-        'Cloud architecture',
-        'Machine learning',
-        'DevOps',
-      ],
-      bio: 'Founder of Vinerals Technologies and research-to-software engineer. At SASEL Lab, McGill University, he built the platforms now live across sustainable food systems — from environmental nutrition and protein-process simulation to public-finance intelligence and EU food-fraud risk models — with academic and industry partners in Canada, Europe, and Africa. Focused on turning scientific work into systems organisations can actually run.',
-      note: 'Built a pea-protein analysis platform that wove technical optimisation, economic feasibility, and environmental impact into one decision tool — the kind of cross-disciplinary craft SMEs need when the call is real.',
-      linkedin: 'https://www.linkedin.com/in/eakwofie/',
-      github: 'https://github.com/Amankrah',
-      email: 'contact@vineralstechnologies.com',
-      site: 'https://www.eakwofie.com/',
-    },
-  ];
-
-  const whyUs = [
-    {
-      title: 'Senior developers only.',
-      body: 'Everyone you work with has years in production. No juniors learning on your dime.',
-    },
-    {
-      title: 'Direct access.',
-      body: 'You talk to the engineer building the thing — not an account manager managing the relationship.',
-    },
-    {
-      title: 'Domain before code.',
-      body: 'Working experience across healthcare, food systems, sustainability, and social enterprise — so the craft fits the context.',
-    },
-    {
-      title: 'Mission-aligned. Quality non-negotiable.',
-      body: 'We walk away from work that doesn’t fit. The quality bar stays the same either way.',
-    },
-  ] as const;
-
   return (
     <>
       <Header />
@@ -69,11 +39,10 @@ export default function TeamPage() {
           badge="Meet the Team"
           title="Named people. Hand-made work."
           highlightedWord="Hand-made"
-          description="Senior engineers you can reach. Software made by hand means the people writing the code are the people you talk to — no theatre in between."
-          icon={<Users className="h-8 w-8" />}
+          description="The worker members on our board — project direction, engineering, and data protection. A Québec solidarity cooperative: you talk to the people who ship, not an account manager in between."
           stats={[
-            { value: 'Senior', label: 'On every project' },
-            { value: '100%', label: 'Named & reachable' },
+            { value: 'Board', label: 'Worker members' },
+            { value: '1 = 1', label: 'Member votes' },
           ]}
           primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
           secondaryCTA={{ label: 'See our work', href: '/work' }}
@@ -88,33 +57,32 @@ export default function TeamPage() {
             className="mx-auto max-w-3xl"
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <span className="eyebrow">Le métier · People</span>
+              <span className="eyebrow">Le métier · Capacity</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="section-headline mb-8">
-              Small on purpose.
+              Custom software and AI
               <br />
-              <em>Senior by design.</em>
+              <em>for SMEs.</em>
             </motion.h2>
             <motion.div
               variants={staggerContainer}
               className="space-y-5 leading-relaxed text-[var(--ink-muted)]"
             >
               <motion.p variants={fadeInUp}>
-                No account managers, no sales floor, no juniors fresh out of bootcamp on your
-                project.{' '}
-                <strong className="text-[var(--ink)]">
-                  Every person you work with is a senior engineer with production experience.
-                </strong>{' '}
-                Same calibre you&apos;d expect at Spiria, Stradigi AI, or Konverge — without the
-                enterprise theatre.
+                Vinerals Technologies is a Québec-registered solidarity cooperative. We build
+                custom software and AI integrations for growing businesses, with{' '}
+                <strong className="text-[var(--ink)]">food-systems traceability</strong> as a
+                specialism — and the same craft across healthcare, sustainability, and social
+                enterprise.
               </motion.p>
               <motion.blockquote variants={fadeInUp} className="pullquote my-6">
                 The team that starts your project is the team that finishes it.
               </motion.blockquote>
               <motion.p variants={fadeInUp}>
-                We built Vinerals as a solidarity cooperative so we could ship software made by
-                hand for organisations that usually get priced out of serious engineering —
-                clinics, food co-ops, climate startups, charities — without lowering the craft.
+                Below are the <strong className="text-[var(--ink)]">worker members on the board</strong> —
+                the people leading delivery. The cooperative itself is broader: user and supporting
+                members sit in the same democratic structure. Software made by hand means you meet
+                the people writing the code and shaping the compliance — not a sales floor.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -128,28 +96,31 @@ export default function TeamPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="mb-10 md:mb-14">
-              <span className="eyebrow mb-6 block">Dossier</span>
+              <span className="eyebrow mb-6 block">Board · Worker members</span>
               <h2 className="section-headline max-w-[18ch]">
                 Who you&apos;ll
                 <br />
                 <em>actually meet.</em>
               </h2>
+              <p className="lead-text mt-6 max-w-[42ch]">
+                Project direction, AI &amp; software engineering, and data protection — the
+                worker seats on the board.
+              </p>
             </motion.div>
 
-            <motion.div variants={staggerContainer} className="space-y-10">
-              {teamMembers.map((member) => (
+            <motion.div variants={staggerContainer} className="space-y-8">
+              {TEAM_MEMBERS.map((member, index) => (
                 <motion.article
                   key={member.name}
                   variants={fadeInUp}
                   className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:flex md:gap-10 md:p-10"
                 >
                   <div className="mb-6 flex-shrink-0 md:mb-0">
-                    <div className="flex h-28 w-28 items-center justify-center border border-[var(--ink-hairline)]/50 bg-primary-900 font-display text-3xl text-[var(--cream)]">
-                      {member.name
-                        .split(' ')
-                        .filter((_, i, arr) => i === 0 || i === arr.length - 1)
-                        .map((n) => n[0])
-                        .join('')}
+                    <div className="flex h-28 w-28 flex-col items-center justify-center border border-[var(--ink-hairline)]/50 bg-primary-900 text-[var(--cream)]">
+                      <span className="font-display text-3xl">{member.initials}</span>
+                      <span className="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.2em] text-white/55">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
                     </div>
                   </div>
 
@@ -170,59 +141,70 @@ export default function TeamPage() {
                       ))}
                     </ul>
 
-                    <p className="mt-6 max-w-[58ch] leading-relaxed text-[var(--ink-muted)]">
+                    {member.languages && member.languages.length > 0 && (
+                      <p className="mt-3 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--ink-muted)]">
+                        Languages · {member.languages.join(' · ')}
+                      </p>
+                    )}
+
+                    <p className="mt-6 max-w-[62ch] leading-relaxed text-[var(--ink-muted)]">
                       {member.bio}
                     </p>
 
                     <aside className="mt-6 border-l-2 border-secondary-500 pl-5">
                       <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-secondary-600">
-                        Field note
+                        On the work
                       </p>
-                      <p className="mt-2 max-w-[52ch] leading-relaxed text-[var(--ink)]">
+                      <p className="mt-2 max-w-[54ch] leading-relaxed text-[var(--ink)]">
                         {member.note}
                       </p>
                     </aside>
 
-                    <div className="mt-8 flex flex-wrap gap-6">
-                      {member.site && (
-                        <a
-                          href={member.site}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
-                        >
-                          Site <ArrowUpRight className="h-3.5 w-3.5" />
-                        </a>
-                      )}
-                      {member.email && (
-                        <a
-                          href={`mailto:${member.email}`}
-                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
-                        >
-                          <Mail className="h-3.5 w-3.5" /> Email
-                        </a>
-                      )}
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
-                        >
-                          <Linkedin className="h-3.5 w-3.5" /> LinkedIn
-                        </a>
-                      )}
-                      {member.github && (
-                        <a
-                          href={member.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
-                        >
-                          <Github className="h-3.5 w-3.5" /> GitHub
-                        </a>
-                      )}
-                    </div>
+                    {(member.site ||
+                      member.email ||
+                      member.linkedin ||
+                      member.github) && (
+                      <div className="mt-8 flex flex-wrap gap-6">
+                        {member.site && (
+                          <a
+                            href={member.site}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
+                          >
+                            Site <ArrowUpRight className="h-3.5 w-3.5" />
+                          </a>
+                        )}
+                        {member.email && (
+                          <a
+                            href={`mailto:${member.email}`}
+                            className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
+                          >
+                            <Mail className="h-3.5 w-3.5" /> Email
+                          </a>
+                        )}
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
+                          >
+                            <Linkedin className="h-3.5 w-3.5" /> LinkedIn
+                          </a>
+                        )}
+                        {member.github && (
+                          <a
+                            href={member.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary-700 hover:text-secondary-600"
+                          >
+                            <Github className="h-3.5 w-3.5" /> GitHub
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </motion.article>
               ))}
@@ -239,18 +221,18 @@ export default function TeamPage() {
             className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
           >
             <motion.div variants={fadeInUp} className="md:col-span-4">
-              <span className="eyebrow mb-6 block">Pourquoi</span>
+              <span className="eyebrow mb-6 block">Atelier</span>
               <h2 className="section-headline max-w-[12ch]">
-                Why work
+                How the
                 <br />
-                <em>with us.</em>
+                <em>shop runs.</em>
               </h2>
             </motion.div>
             <motion.div
               variants={staggerContainer}
               className="space-y-8 md:col-span-7 md:col-start-6"
             >
-              {whyUs.map((item, i) => (
+              {CAPACITY.map((item, i) => (
                 <motion.div
                   key={item.title}
                   variants={fadeInUp}
@@ -289,8 +271,8 @@ export default function TeamPage() {
               variants={fadeInUp}
               className="mb-10 max-w-[48ch] leading-relaxed text-[var(--ink-muted)]"
             >
-              We grow on purpose. If you&apos;re a senior developer who wants meaningful projects,
-              fair wages, and cooperative governance — write us. No careers portal. Just email.
+              We grow on purpose. If you&apos;re a senior practitioner who wants meaningful
+              projects, fair wages, and cooperative governance — write us.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -299,8 +281,8 @@ export default function TeamPage() {
               <h3 className="mb-6 font-display text-2xl text-[var(--ink)]">What we look for</h3>
               <ul className="mb-8 space-y-3 text-[var(--ink-muted)]">
                 {[
-                  '5+ years of professional development experience',
-                  'Track record of shipping production applications',
+                  'Deep production experience in software, data, or food-systems delivery',
+                  'Track record of shipping real systems — not slide decks',
                   'Interest in mission-driven work and cooperative governance',
                   'Based in or willing to work with Montréal',
                   'Clear communication (English / French a plus)',

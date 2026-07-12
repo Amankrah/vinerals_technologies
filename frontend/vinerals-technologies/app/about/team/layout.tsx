@@ -1,23 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Team | Vinerals Technologies · Senior Developers Solving Real Problems for Québec SMEs',
-  description: 'Meet the developers behind Vinerals Technologies. No account managers, no sales team, no junior devs being trained on your project. Everyone you work with has at least five years of production experience. Same calibre of talent as Spiria, Stradigi AI, or Konverge. Direct access to senior engineers who understand healthcare, food systems, sustainability, and social enterprise.',
+  title: 'Our Team | Worker Members of the Cooperative',
+  description:
+    'Meet the worker members on the board of Vinerals Technologies: Etornam Celestine Tsyawo, Emmanuel Amankrah Kwofie, and Joël Mongeon — project direction, AI & software engineering, and data protection.',
   keywords: [
-    'senior software developers montreal',
-    'experienced software engineers quebec',
-    'full-stack developers montreal',
-    'ai integration specialists',
-    'healthcare software developers',
-    'social enterprise technology team',
-    'cooperative software team',
-    'direct developer access',
-    'senior engineering team',
-    'mission-driven developers',
+    'vinerals technologies team',
+    'etornam celestine tsyawo',
+    'emmanuel amankrah kwofie',
+    'joël mongeon',
+    'software cooperative montreal',
+    'food systems software team',
+    'senior engineers montreal',
   ],
   openGraph: {
     title: 'Our Team | Vinerals Technologies',
-    description: 'At least five years in production. No juniors learning on your dime. Real working experience in healthcare, food systems, and sustainability. We translate technology into decisions Québec SMEs can actually act on.',
+    description:
+      'Worker members on the board — project direction, engineering, and compliance. Named people, hand-made software.',
     url: 'https://vineralstechnologies.com/about/team',
     type: 'website',
     images: [
@@ -25,14 +24,15 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-team.jpg',
         width: 1200,
         height: 630,
-        alt: 'Our Team · Senior Developers Behind Vinerals Technologies',
+        alt: 'Vinerals Technologies — cooperative worker members on the board',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Our Team | Vinerals Technologies',
-    description: 'Senior developers only. Direct access. Domain understanding beyond code. Same calibre as larger Montréal agencies, brought inside reach.',
+    description:
+      'Etornam Celestine Tsyawo, Emmanuel Amankrah Kwofie, and Joël Mongeon — worker members on the board.',
     images: ['https://vineralstechnologies.com/og-team.jpg'],
   },
   alternates: {

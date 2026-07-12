@@ -8,7 +8,9 @@ interface TeamHeroProps {
   title: string;
   highlightedWord?: string;
   description: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
+  image?: string;
+  imageAlt?: string;
   stats?: { value: string; label: string }[];
   primaryCTA?: { label: string; href: string };
   secondaryCTA?: { label: string; href: string };

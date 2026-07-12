@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mission & Values | Software Made by Hand',
-  description:
-    'Our mission: software made by hand for SMEs — senior engineering, owned code, honest counsel. Craft first; terms you can plan around. A Montréal solidarity cooperative.',
+    description:
+      'Craft without compromise. Senior engineering for SMEs — owned code, honest counsel, terms you can plan around. A Montréal solidarity cooperative.',
   keywords: [
     'software made by hand',
     'mission driven software montreal',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mission & Values | Vinerals Technologies',
     description:
-      'Software made by hand for businesses priced out of serious engineering. Craft, ownership, and honest counsel — from a Montréal solidarity cooperative.',
+      'Craft without compromise. Senior engineering for growing businesses — from a Montréal solidarity cooperative.',
     url: 'https://vineralstechnologies.com/about/mission',
     type: 'website',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-mission.jpg',
         width: 1200,
         height: 630,
-        alt: 'Vinerals Technologies — Mission: software made by hand',
+        alt: 'Vinerals Technologies — Mission: craft without compromise',
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mission & Values | Vinerals Technologies',
     description:
-      'Software made by hand for SMEs. Senior engineering, owned code, terms you can plan around.',
+      'Craft without compromise. Senior engineering, owned code, terms you can plan around.',
     images: ['https://vineralstechnologies.com/og-mission.jpg'],
   },
   alternates: {

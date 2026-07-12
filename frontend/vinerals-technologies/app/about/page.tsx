@@ -24,7 +24,7 @@ const DOSSIERS = [
     eyebrow: 'Team',
     title: 'The people writing the code.',
     description:
-      'Senior, named, reachable. No account managers standing between you and the work.',
+      'Worker members on the board — project direction, engineering, and compliance. Senior, named, reachable.',
     href: '/about/team',
   },
   {
