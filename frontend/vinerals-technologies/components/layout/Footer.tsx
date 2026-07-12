@@ -2,15 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Github, Linkedin, Mail, ArrowUpRight, MapPin } from 'lucide-react';
 import Logo from '@/components/shared/Logo';
 import Button from '@/components/ui/Button';
 import { NAVIGATION, SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
 
 /**
- * Footer — closing colophon. Forest block holding the call-to-action,
- * then an ink-deep masthead reprise with sitemap columns and a magazine
+ * Footer — closing colophon. Photographic invitation block, then an
+ * ink-deep masthead reprise with sitemap columns and a magazine
  * imprint line at the foot.
  */
 const Footer = () => {
@@ -21,67 +21,62 @@ const Footer = () => {
       {/* ============================================================
           DERNIÈRE PAGE — invitation block
           ============================================================ */}
-      <section className="relative bg-[var(--primary-700)] text-[var(--cream)] overflow-hidden grain">
-        {/* Hand-drawn arc ornament */}
-        <svg
+      <section className="relative overflow-hidden bg-primary-950 text-[var(--cream)]">
+        <Image
+          src="/footer-cta.jpg"
+          alt="A quiet consultation at a wooden table — notebooks, laptop, and coffee"
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_40%]"
+          priority={false}
+        />
+        <div
           aria-hidden
-          className="absolute -top-24 -right-24 w-[420px] h-[420px] opacity-15"
-          viewBox="0 0 200 200"
-          fill="none"
-        >
-          <path
-            d="M 20 100 Q 100 -30, 180 100 Q 100 230, 20 100 Z"
-            stroke="currentColor"
-            strokeWidth="1"
-            fill="none"
-          />
-          <path
-            d="M 40 100 Q 100 0, 160 100 Q 100 200, 40 100 Z"
-            stroke="currentColor"
-            strokeWidth="1"
-            fill="none"
-            opacity="0.5"
-          />
-        </svg>
+          className="absolute inset-0 bg-gradient-to-r from-primary-950/92 via-primary-950/78 to-primary-950/55"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-primary-950/40"
+        />
 
         <div className="above-grain relative container mx-auto py-20 md:py-28">
           <div className="max-w-4xl">
-            <div className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-white/70 mb-8 flex items-center gap-3">
-              <span aria-hidden className="w-7 h-px bg-secondary-400" />
+            <div className="mb-8 flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.28em] text-white/85">
+              <span aria-hidden className="h-px w-7 bg-secondary-300" />
               Fin · Begin again
             </div>
 
-            <h2 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] text-[var(--cream)] mb-4 tracking-tight">
-              <em className="text-secondary-300">Et si</em> votre logiciel
+            <h2 className="mb-4 font-display text-5xl leading-[0.95] tracking-tight text-white [text-shadow:0_2px_24px_rgba(10,20,16,0.45)] md:text-7xl lg:text-[5.5rem]">
+              <em className="text-secondary-200">Et si</em> votre logiciel
               <br />
-              était fait <em className="text-secondary-300">à la main?</em>
+              était fait <em className="text-secondary-200">à la main?</em>
             </h2>
-            <p className="font-display italic text-xl md:text-2xl text-white/60 mb-10">
+            <p className="mb-10 font-display text-xl italic text-white/80 md:text-2xl">
               What if your software were made by hand?
             </p>
 
-            <p className="lead-text text-white/80 max-w-xl mb-12">
+            <p className="lead-text mb-12 max-w-xl text-white/90 [text-shadow:0_1px_14px_rgba(10,20,16,0.5)]">
               Then it would fit the work you actually do, instead of bending
               you around someone else&apos;s product. The first conversation is
               free. We sit with your problem and tell you honestly whether
               software is even the right move.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 items-start">
+            <div className="flex flex-col items-start gap-5 sm:flex-row">
               <Button
                 href="/contact"
                 size="lg"
                 variant="accent"
-                icon={<ArrowUpRight className="w-5 h-5" />}
+                icon={<ArrowUpRight className="h-5 w-5" />}
               >
                 Book a free consultation
               </Button>
               <Link
                 href="/work"
-                className="inline-flex items-center gap-2 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-white/80 hover:text-[var(--cream)] transition-colors pt-4"
+                className="inline-flex items-center gap-2 pt-4 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-white/90 transition-colors hover:text-white"
               >
-                <span className="squiggle-forest">See our work</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <span>See our work</span>
+                <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

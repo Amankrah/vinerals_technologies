@@ -100,6 +100,8 @@ export const SERVICES = [
       'Software shaped around the way your business already runs, not bent around someone else’s product. No feature bloat, no vendor lock-in, and the code is yours.',
     features: ['Web applications', 'Internal tools', 'Client portals'],
     icon: 'Code',
+    image: '/service-software.jpg',
+    imageAlt: 'Hands typing on a laptop at a wooden workshop desk',
   },
   {
     id: 'ai-integration',
@@ -110,6 +112,8 @@ export const SERVICES = [
       'The kind of AI work that pays back. Automating the report you write every Friday, the inbox you triage every morning, the data trapped inside your PDFs. Nothing dressed up as a science project.',
     features: ['Automation', 'Analytics', 'LLM integration'],
     icon: 'Brain',
+    image: '/service-ai.jpg',
+    imageAlt: 'Notebook diagrams beside a laptop with soft abstract AI nodes',
   },
   {
     id: 'mobile-apps',
@@ -120,6 +124,8 @@ export const SERVICES = [
       'Apps your team actually opens in the field, and apps your customers keep on the home screen. One codebase across iOS, Android and the web, built to outlast its launch week.',
     features: ['iOS', 'Android', 'Progressive Web Apps'],
     icon: 'Smartphone',
+    image: '/service-mobile.jpg',
+    imageAlt: 'Hands holding a phone near a greenhouse doorway',
   },
   {
     id: 'data-systems',
@@ -130,6 +136,8 @@ export const SERVICES = [
       'Pipelines that move your data without breaking. Dashboards that point to the next decision. Reporting that takes minutes, not half a day.',
     features: ['Databases', 'Dashboards', 'ETL pipelines'],
     icon: 'Database',
+    image: '/service-data.jpg',
+    imageAlt: 'Hands reviewing a dashboard on a laptop with printed charts',
   },
 ] as const;
 
