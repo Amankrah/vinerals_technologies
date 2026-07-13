@@ -1,281 +1,307 @@
-'use client';
-
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
-import { Shield } from 'lucide-react';
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/lib/constants';
+
+const LAST_UPDATED = 'July 12, 2026';
 
 export default function PrivacyPage() {
   return (
     <>
       <Header />
       <main className="pt-16">
-        {/* Hero */}
         <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary-100 rounded-full">
-              <Shield className="w-8 h-8 text-primary-700" />
-            </div>
-            <h1 className="hero-headline mb-4">Privacy Policy</h1>
-            <p className="text-gray-600 mb-4">Last Updated: January 14, 2025</p>
-            <p className="lead-text max-w-3xl mx-auto">
-              At Vinerals Technologies, we take your privacy seriously. This policy explains how we collect, use, and protect your personal information.
+          <div className="mx-auto max-w-3xl">
+            <span className="eyebrow mb-6 block">Legal</span>
+            <h1 className="section-headline mb-4">Privacy Policy</h1>
+            <p className="mb-6 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--ink-soft)]">
+              Last updated: {LAST_UPDATED}
+            </p>
+            <p className="lead-text max-w-[48ch]">
+              This policy explains what personal information we collect on this website, why we
+              collect it, and how you can exercise your rights. It applies to{' '}
+              {SITE_CONFIG.url.replace('https://', '')} and related contact channels.
             </p>
           </div>
         </Section>
 
-        {/* Information Collection */}
         <Section background="gray" paddingY="lg">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                1. Information We Collect
+          <article className="mx-auto max-w-3xl space-y-12 border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10">
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                1. Who we are
               </h2>
-              <div>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  We collect information that you provide directly to us when you:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li>Fill out our contact form</li>
-                  <li>Subscribe to our newsletter</li>
-                  <li>Communicate with us via email or phone</li>
-                  <li>Use our website (through cookies and analytics)</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  This information may include:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Name and contact information (email, phone number)</li>
-                  <li>Company name and role</li>
-                  <li>Project details and budget information</li>
-                  <li>Website usage data (pages visited, time spent, device information)</li>
-                  <li>IP address and browser type</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* How We Use Your Information */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-50 rounded-xl p-8 space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                2. How We Use Your Information
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We use the information we collect to:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Respond to your inquiries and provide customer support</li>
-                <li>Deliver services you&apos;ve requested</li>
-                <li>Send you newsletters and updates (with your consent)</li>
-                <li>Improve our website and services</li>
-                <li>Analyze website usage and optimize user experience</li>
-                <li>Comply with legal obligations</li>
-              </ul>
-            </div>
-          </div>
-        </Section>
-
-        {/* Information Sharing & Data Security */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                3. Information Sharing
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We do not sell, rent, or share your personal information with third parties except:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>With your explicit consent</li>
-                <li>To service providers who assist in our operations (e.g., email services, analytics tools)</li>
-                <li>When required by law or to protect our legal rights</li>
-                <li>In connection with a business transfer (merger, acquisition, etc.)</li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                4. Data Security
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We implement reasonable security measures to protect your information from unauthorized access, disclosure, or destruction. This includes:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                <li>SSL encryption for data transmission</li>
-                <li>Secure storage of contact information</li>
-                <li>Limited access to personal data</li>
-                <li>Regular security assessments</li>
-              </ul>
-              <p className="text-gray-700 leading-relaxed">
-                However, no method of transmission over the internet is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.
-              </p>
-            </div>
-          </div>
-        </Section>
-
-        {/* Cookies & Third-Party Services */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-gray-50 rounded-xl p-8 space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                5. Cookies and Tracking
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We use cookies and similar tracking technologies to:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                <li>Remember your preferences</li>
-                <li>Understand how you use our website</li>
-                <li>Improve website performance</li>
-                <li>Analyze traffic patterns</li>
-              </ul>
-              <p className="text-gray-700 leading-relaxed">
-                You can control cookies through your browser settings. Note that disabling cookies may affect website functionality.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-xl p-8 space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                6. Third-Party Services
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Our website may use third-party services such as:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                <li><strong>Google Analytics:</strong> For website analytics and usage statistics</li>
-                <li><strong>Email service providers:</strong> For sending newsletters and transactional emails</li>
-                <li><strong>Hosting providers:</strong> For website hosting and data storage</li>
-              </ul>
-              <p className="text-gray-700 leading-relaxed">
-                These services have their own privacy policies and may collect information about your use of our website.
-              </p>
-            </div>
-          </div>
-        </Section>
-
-        {/* Your Rights & Data Retention */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                7. Your Rights
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                You have the right to:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                <li>Access the personal information we hold about you</li>
-                <li>Request correction of inaccurate information</li>
-                <li>Request deletion of your personal information</li>
-                <li>Opt-out of marketing communications</li>
-                <li>Object to processing of your personal information</li>
-                <li>Request data portability</li>
-              </ul>
-              <p className="text-gray-700 leading-relaxed">
-                To exercise these rights, please contact us at{' '}
-                <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:underline font-semibold">
-                  contact@vineralstechnologies.com
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                Vinerals Technologies is a Québec solidarity cooperative based in Montréal. We
+                build custom software, practical AI integrations, mobile apps, and data systems
+                for growing businesses and mission-driven organisations. For privacy requests,
+                write to{' '}
+                <a
+                  href={`mailto:${SITE_CONFIG.email}`}
+                  className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 hover:text-secondary-600"
+                >
+                  {SITE_CONFIG.email}
                 </a>
+                .
               </p>
-            </div>
+            </section>
 
-            <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                8. Data Retention
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                2. Scope
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                We retain your personal information for as long as necessary to fulfill the purposes outlined in this privacy policy, unless a longer retention period is required by law. Contact form submissions and email communications are typically retained for 3 years.
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                This policy covers personal information collected through our public website,
+                contact forms, email, and phone. Client project work is also governed by the
+                written service agreement for that engagement. Where a service agreement sets
+                stricter rules, those rules apply to that project.
               </p>
-            </div>
-          </div>
-        </Section>
+            </section>
 
-        {/* Additional Policies */}
-        <Section background="white" paddingY="lg">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-gray-50 rounded-xl p-8 space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                9. Children&apos;s Privacy
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                3. Information we collect
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately.
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                We collect information you give us when you:
               </p>
-            </div>
+              <ul className="mb-6 list-disc space-y-2 pl-6 text-[var(--ink-muted)]">
+                <li>Submit a contact or consultation request</li>
+                <li>Email or call us</li>
+                <li>Subscribe to updates, if we offer a mailing list and you opt in</li>
+                <li>Browse the site (technical and analytics data, described below)</li>
+              </ul>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                That information may include:
+              </p>
+              <ul className="list-disc space-y-2 pl-6 text-[var(--ink-muted)]">
+                <li>Name, email address, and phone number</li>
+                <li>Organisation name and role</li>
+                <li>Project details you choose to share (including budget ranges, if provided)</li>
+                <li>
+                  Technical data such as IP address, browser type, device type, pages viewed, and
+                  approximate location derived from IP
+                </li>
+              </ul>
+            </section>
 
-            <div className="bg-gray-50 rounded-xl p-8 space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                10. International Data Transfers
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                4. How we use information
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Your information may be transferred to and processed in countries other than Canada. These countries may have different data protection laws. By using our services, you consent to such transfers.
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                We use personal information to:
               </p>
-            </div>
+              <ul className="list-disc space-y-2 pl-6 text-[var(--ink-muted)]">
+                <li>Respond to inquiries and book consultations</li>
+                <li>Deliver services you have asked for under a service agreement</li>
+                <li>Send operational messages about your request or project</li>
+                <li>Send marketing updates only when you have consented</li>
+                <li>Improve the website and understand how it is used</li>
+                <li>Meet legal and regulatory obligations</li>
+              </ul>
+            </section>
 
-            <div className="bg-gray-50 rounded-xl p-8 space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                11. Changes to This Policy
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                5. Legal bases and Québec Law 25
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                We may update this privacy policy from time to time. We will notify you of significant changes by posting a notice on our website or sending you an email. The &quot;Last Updated&quot; date at the top of this page indicates when the policy was last revised.
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                We handle personal information in line with:
               </p>
-            </div>
-          </div>
-        </Section>
+              <ul className="mb-4 list-disc space-y-2 pl-6 text-[var(--ink-muted)]">
+                <li>
+                  PIPEDA (Personal Information Protection and Electronic Documents Act), where it
+                  applies
+                </li>
+                <li>
+                  Québec&apos;s Act respecting the protection of personal information in the
+                  private sector (commonly called Law 25), including rules on consent, purpose
+                  limitation, retention, and individual rights
+                </li>
+              </ul>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                We collect information for identified purposes. Where consent is required, we ask
+                for it in clear language. You may withdraw consent for optional uses (such as
+                marketing) without affecting services that still need your information to operate.
+              </p>
+            </section>
 
-        {/* Contact Information */}
-        <Section background="gray" paddingY="lg">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                12. Contact Us
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                6. Sharing
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                If you have questions or concerns about this privacy policy or our data practices, please contact us:
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                We do not sell personal information. We share it only when needed:
               </p>
-              <div className="bg-primary-50 rounded-lg p-6 mb-6">
-                <p className="text-gray-900 font-bold mb-3">
-                  Vinerals Technologies
+              <ul className="list-disc space-y-2 pl-6 text-[var(--ink-muted)]">
+                <li>With your direction or consent</li>
+                <li>
+                  With service providers who help us operate (for example hosting, email delivery,
+                  and analytics), under obligations to protect the information
+                </li>
+                <li>When required by law, or to protect rights, safety, or security</li>
+                <li>
+                  In a transfer of cooperative assets or restructuring, if one occurs, with notice
+                  where the law requires it
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                7. Cookies and analytics
+              </h2>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                The site may use cookies and similar technologies for basic operation and to
+                understand traffic. We use Google Analytics to measure visits, pages viewed, and
+                related usage statistics. Google may process this data under its own terms.
+              </p>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                You can control cookies in your browser. Blocking some cookies may affect how
+                parts of the site work. Where required by law, we will adjust cookie practices to
+                match consent requirements.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                8. Service providers and transfers
+              </h2>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                We rely on providers for hosting, email, and analytics. Some of those providers
+                may process data outside Québec or Canada (including the United States). When that
+                happens, we take contractual and practical steps appropriate to the risk, and we
+                remain responsible for the information we entrust to them.
+              </p>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                Typical categories: website hosting, email delivery, and Google Analytics.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                9. Security
+              </h2>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                We use reasonable administrative, technical, and physical safeguards for the
+                sensitivity of the information we hold. That includes encrypted transport (HTTPS),
+                access limited to people who need it, and secure storage of contact records.
+              </p>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                No internet transmission or storage system is perfectly secure. If we become aware
+                of a breach that creates a risk of serious injury, we will notify affected people
+                and the Commission d&apos;accès à l&apos;information du Québec when Law 25
+                requires it.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                10. Retention
+              </h2>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                We keep personal information only as long as needed for the purposes above, or
+                longer when the law requires it. Contact form submissions and related
+                correspondence are typically kept for up to three years after the last meaningful
+                contact, then deleted or anonymised, unless a longer period is needed for a live
+                project, dispute, or legal obligation.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                11. Your rights
+              </h2>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                Subject to limits in applicable law, you may ask us to:
+              </p>
+              <ul className="mb-4 list-disc space-y-2 pl-6 text-[var(--ink-muted)]">
+                <li>Access the personal information we hold about you</li>
+                <li>Correct inaccurate or incomplete information</li>
+                <li>Withdraw consent for optional uses</li>
+                <li>Request deletion, where the law allows</li>
+                <li>Learn how your information has been used and to whom it has been disclosed</li>
+                <li>File a complaint with us, and if needed with the Commission d&apos;accès à
+                  l&apos;information du Québec or the Office of the Privacy Commissioner of Canada
+                </li>
+              </ul>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                Send privacy requests to{' '}
+                <a
+                  href={`mailto:${SITE_CONFIG.email}?subject=Privacy%20request`}
+                  className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 hover:text-secondary-600"
+                >
+                  {SITE_CONFIG.email}
+                </a>
+                . We will respond within the timelines set by applicable law.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                12. Children
+              </h2>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                This site and our services are aimed at adults and organisations. We do not
+                knowingly collect personal information from children under 14. If you believe we
+                have collected such information, contact us and we will delete it.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                13. Changes
+              </h2>
+              <p className="leading-relaxed text-[var(--ink-muted)]">
+                We may update this policy when our practices or the law change. The &quot;Last
+                updated&quot; date at the top shows the latest revision. For material changes, we
+                will post a notice on this page or contact you when we have your email and the
+                change affects you directly.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-4 font-display text-2xl text-[var(--ink)]">
+                14. Contact
+              </h2>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                Privacy questions and requests:
+              </p>
+              <div className="border border-[var(--ink-hairline)]/40 bg-[var(--cream)]/50 p-6">
+                <p className="mb-2 font-display text-xl text-[var(--ink)]">
+                  {SITE_CONFIG.name}
                 </p>
-                <p className="text-gray-700 mb-2">
+                <p className="mb-1 text-[var(--ink-muted)]">
                   Email:{' '}
-                  <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline">
-                    contact@vineralstechnologies.com
+                  <a
+                    href={`mailto:${SITE_CONFIG.email}`}
+                    className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 hover:text-secondary-600"
+                  >
+                    {SITE_CONFIG.email}
                   </a>
                 </p>
-                <p className="text-gray-700 mb-2">
-                  General inquiries:{' '}
-                  <a href="mailto:contact@vineralstechnologies.com" className="text-primary-700 hover:text-primary-800 font-semibold hover:underline">
-                    contact@vineralstechnologies.com
-                  </a>
-                </p>
-                <p className="text-gray-700">
-                  Location: Montreal, Quebec, Canada
-                </p>
+                <p className="mb-1 text-[var(--ink-muted)]">Phone: {SITE_CONFIG.phone}</p>
+                <p className="text-[var(--ink-muted)]">{SITE_CONFIG.location}</p>
               </div>
-
-              <div className="border-t border-gray-200 pt-6">
-                <p className="text-sm text-gray-600">
-                  This privacy policy is governed by the laws of Quebec and Canada, including compliance with PIPEDA (Personal Information Protection and Electronic Documents Act).
-                </p>
-              </div>
-            </div>
-          </div>
+            </section>
+          </article>
         </Section>
 
-        {/* Bottom Navigation */}
-        <Section background="gray" paddingY="sm">
-          <div className="max-w-4xl mx-auto flex justify-between items-center">
-            <Link href="/" className="text-primary-700 hover:text-primary-800 font-semibold">
-              ← Back to Home
+        <Section background="white" paddingY="sm">
+          <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <Link
+              href="/"
+              className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-primary-700 hover:text-secondary-600"
+            >
+              ← Home
             </Link>
-            <Link href="/legal/terms" className="text-primary-700 hover:text-primary-800 font-semibold">
-              View Terms of Service →
+            <Link
+              href="/legal/terms"
+              className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-primary-700 hover:text-secondary-600"
+            >
+              Terms of Service →
             </Link>
           </div>
         </Section>

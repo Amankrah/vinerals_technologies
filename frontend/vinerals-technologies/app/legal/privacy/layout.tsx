@@ -1,24 +1,28 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Data Protection | Vinerals Technologies',
-  description: 'Learn how Vinerals Technologies collects, uses, and protects your personal information. Our privacy policy complies with PIPEDA and Quebec data protection laws.',
+  title: 'Privacy Policy | How We Handle Personal Information',
+  description:
+    'How Vinerals Technologies collects, uses, and protects personal information under PIPEDA and Québec Law 25. Contact us to exercise your privacy rights.',
   keywords: [
     'privacy policy',
     'data protection',
-    'PIPEDA compliance',
+    'PIPEDA',
+    'Law 25 Quebec',
     'personal information protection',
-    'data privacy quebec',
+    'vinerals technologies privacy',
   ],
   openGraph: {
     title: 'Privacy Policy | Vinerals Technologies',
-    description: 'How we collect, use, and protect your personal information. PIPEDA compliant privacy practices.',
+    description:
+      'How we collect, use, and protect personal information under Canadian and Québec privacy law.',
     type: 'website',
     url: 'https://vineralstechnologies.com/legal/privacy',
   },
   twitter: {
+    card: 'summary',
     title: 'Privacy Policy | Vinerals Technologies',
-    description: 'Our privacy policy and data protection practices.',
+    description: 'Personal information practices under PIPEDA and Québec Law 25.',
   },
   alternates: {
     canonical: 'https://vineralstechnologies.com/legal/privacy',

@@ -1,24 +1,27 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Legal | Vinerals Technologies',
-  description: 'Terms of Service for Vinerals Technologies website and services. Understand your rights and obligations when using our custom software development, AI integration, and technology consulting services.',
+  title: 'Terms of Service | Website and Engagement Terms',
+  description:
+    'Terms governing use of the Vinerals Technologies website and how professional engagements work. Québec solidarity cooperative. Client work product ownership on full payment.',
   keywords: [
     'terms of service',
     'terms and conditions',
-    'service agreement',
-    'legal terms',
-    'software development terms',
+    'vinerals technologies terms',
+    'software development agreement',
+    'quebec cooperative terms',
   ],
   openGraph: {
     title: 'Terms of Service | Vinerals Technologies',
-    description: 'Terms of Service for Vinerals Technologies website and professional services.',
+    description:
+      'Website use and engagement terms for Vinerals Technologies, a Montréal solidarity cooperative.',
     type: 'website',
     url: 'https://vineralstechnologies.com/legal/terms',
   },
   twitter: {
+    card: 'summary',
     title: 'Terms of Service | Vinerals Technologies',
-    description: 'Terms of Service for our website and professional services.',
+    description: 'Website and professional engagement terms.',
   },
   alternates: {
     canonical: 'https://vineralstechnologies.com/legal/terms',
