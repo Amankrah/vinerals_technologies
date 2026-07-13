@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'For Consortiums & Networks | Shared Platforms & Craft Capacity | Vinerals',
+  title: 'For Consortiums & Networks | Shared Platforms & Delivery Capacity | Vinerals',
   description:
-    'Technical partner for associations and sector networks. Shared platforms, member programmes, and sector initiatives — systems no single member could fund alone, built by a Montréal solidarity cooperative.',
+    'Technical partner for associations and sector networks. Shared platforms, member programmes, and sector initiatives. Systems no single member could fund alone, built by a Montréal solidarity cooperative.',
   keywords: [
     'technology consortium partner canada',
     'shared platform development associations',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For Consortiums & Networks | Vinerals Technologies',
     description:
-      'Shared platforms and craft capacity for associations and sector networks — owned by the network.',
+      'Shared platforms and delivery capacity for associations and sector networks. Architecture and ownership designed for the network.',
     url: 'https://vineralstechnologies.com/partners/consortiums',
     type: 'website',
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'For Consortiums & Networks | Vinerals Technologies',
     description:
-      'Shared platforms. Shared craft. Technical partner for associations and sector networks.',
+      'Shared platforms. Shared delivery. Technical partner for associations and sector networks.',
     images: ['https://vineralstechnologies.com/og-partners-consortiums.jpg'],
   },
   alternates: {

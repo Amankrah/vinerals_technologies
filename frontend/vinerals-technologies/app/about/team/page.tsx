@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import TeamHero from '@/components/sections/TeamHero';
 import CTA from '@/components/sections/CTA';
+import Button from '@/components/ui/Button';
 import Link from 'next/link';
 import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -13,20 +14,35 @@ import { TEAM_MEMBERS } from '@/content/team';
 
 const CAPACITY = [
   {
-    title: 'Food systems specialism.',
-    body: 'Traceability, nutrition platforms, processor and field realities — not software that learns your sector on your dime.',
+    title: 'Food systems depth.',
+    body: 'Traceability, nutrition platforms, processor and field realities. Sector knowledge in the room from day one.',
   },
   {
-    title: 'Research to production.',
-    body: 'McGill Bioresource Engineering depth, shipped systems across Canada, Europe, and Africa.',
+    title: 'Research that ships.',
+    body: 'McGill Bioresource Engineering background, with platforms already live across Canada, Europe, and Africa.',
   },
   {
     title: 'Compliance in the build.',
-    body: 'DPIA, federated storage, NDPA / DPA / GDPR alignment — data protection as craft, not a bolt-on.',
+    body: 'DPIA, storage architecture, and NDPA / DPA / GDPR alignment designed in, not bolted on the week before launch.',
   },
   {
-    title: 'Cloud-native stack.',
-    body: 'Next.js, TypeScript, Python, Rust, ML/AI — on Vercel, AWS, and Azure. Software and data only.',
+    title: 'A stack we run in production.',
+    body: 'Next.js, TypeScript, Python, Rust, and ML on Vercel, AWS, and Azure. Software and data systems, end to end.',
+  },
+] as const;
+
+const WORKING_WITH_US = [
+  {
+    title: 'The team that starts finishes.',
+    body: 'You are not handed off mid-project. The people named on this page stay on the work through handover.',
+  },
+  {
+    title: 'You talk to who builds.',
+    body: 'No account manager between you and the engineering. Questions go to the person who can answer them.',
+  },
+  {
+    title: 'Reachable after launch.',
+    body: 'Ownership includes docs and credentials. Support stays available when real use raises real questions.',
   },
 ] as const;
 
@@ -39,13 +55,13 @@ export default function TeamPage() {
           badge="Meet the Team"
           title="Named people. Hand-made work."
           highlightedWord="Hand-made"
-          description="The worker members on our board — project direction, engineering, and data protection. A Québec solidarity cooperative: you talk to the people who ship, not an account manager in between."
+          description="Three co-founders on the board: project direction, engineering, and data protection. You meet the people who ship. Book a consultation and talk to them directly."
           stats={[
-            { value: 'Board', label: 'Worker members' },
-            { value: '1 = 1', label: 'Member votes' },
+            { value: '3', label: 'Co-founders on the board' },
+            { value: 'Direct', label: 'Access to who ships' },
           ]}
           primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
-          secondaryCTA={{ label: 'See our work', href: '/work' }}
+          secondaryCTA={{ label: 'Email us', href: 'mailto:contact@vineralstechnologies.com' }}
         />
 
         <Section background="gray" paddingY="lg">
@@ -57,32 +73,31 @@ export default function TeamPage() {
             className="mx-auto max-w-3xl"
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <span className="eyebrow">Le métier · Capacity</span>
+              <span className="eyebrow">Why this page matters</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="section-headline mb-8">
-              Custom software and AI
+              Credibility is
               <br />
-              <em>for SMEs.</em>
+              <em>named people.</em>
             </motion.h2>
             <motion.div
               variants={staggerContainer}
               className="space-y-5 leading-relaxed text-[var(--ink-muted)]"
             >
               <motion.p variants={fadeInUp}>
-                Vinerals Technologies is a Québec-registered solidarity cooperative. We build
-                custom software and AI integrations for growing businesses, with{' '}
-                <strong className="text-[var(--ink)]">food-systems traceability</strong> as a
-                specialism — and the same craft across healthcare, sustainability, and social
-                enterprise.
+                Vinerals Technologies is a Québec solidarity cooperative. We build custom software
+                and practical AI for growing businesses, with deep experience in food systems and
+                the same craft across healthcare, sustainability, and social enterprise.
               </motion.p>
               <motion.blockquote variants={fadeInUp} className="pullquote my-6">
                 The team that starts your project is the team that finishes it.
               </motion.blockquote>
               <motion.p variants={fadeInUp}>
-                Below are the <strong className="text-[var(--ink)]">worker members on the board</strong> —
-                the people leading delivery. The cooperative itself is broader: user and supporting
-                members sit in the same democratic structure. Software made by hand means you meet
-                the people writing the code and shaping the compliance — not a sales floor.
+                Below are the{' '}
+                <strong className="text-[var(--ink)]">co-founders and worker members on the board</strong>
+                : the people who lead delivery. The cooperative also includes user and supporting
+                members in the same democratic structure. When you hire us, you are hiring these
+                people, not a rotating bench.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -98,13 +113,13 @@ export default function TeamPage() {
             <motion.div variants={fadeInUp} className="mb-10 md:mb-14">
               <span className="eyebrow mb-6 block">Board · Worker members</span>
               <h2 className="section-headline max-w-[18ch]">
-                Who you&apos;ll
+                Who you will
                 <br />
                 <em>actually meet.</em>
               </h2>
-              <p className="lead-text mt-6 max-w-[42ch]">
-                Project direction, AI &amp; software engineering, and data protection — the
-                worker seats on the board.
+              <p className="lead-text mt-6 max-w-[44ch]">
+                Project direction, engineering, and data protection. Open a LinkedIn profile, read
+                the brief, then book a call.
               </p>
             </motion.div>
 
@@ -153,7 +168,7 @@ export default function TeamPage() {
 
                     <aside className="mt-6 border-l-2 border-secondary-500 pl-5">
                       <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-secondary-600">
-                        On the work
+                        On your project
                       </p>
                       <p className="mt-2 max-w-[54ch] leading-relaxed text-[var(--ink)]">
                         {member.note}
@@ -221,11 +236,52 @@ export default function TeamPage() {
             className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
           >
             <motion.div variants={fadeInUp} className="md:col-span-4">
-              <span className="eyebrow mb-6 block">Atelier</span>
-              <h2 className="section-headline max-w-[12ch]">
-                How the
+              <span className="eyebrow mb-6 block">How we work with you</span>
+              <h2 className="section-headline max-w-[14ch]">
+                Continuity
                 <br />
-                <em>shop runs.</em>
+                <em>you can feel.</em>
+              </h2>
+            </motion.div>
+            <motion.div
+              variants={staggerContainer}
+              className="space-y-8 md:col-span-7 md:col-start-6"
+            >
+              {WORKING_WITH_US.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeInUp}
+                  className="grid grid-cols-[3rem_1fr] gap-x-6 border-b border-[var(--ink-hairline)]/35 pb-8 last:border-0 last:pb-0"
+                >
+                  <span className="numeral text-xl">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="mb-2 font-display text-xl text-[var(--ink)]">{item.title}</h3>
+                    <p className="max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </Section>
+
+        <Section background="white" paddingY="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid items-start gap-x-10 gap-y-10 md:grid-cols-12"
+          >
+            <motion.div variants={fadeInUp} className="md:col-span-4">
+              <span className="eyebrow mb-6 block">What we bring</span>
+              <h2 className="section-headline max-w-[12ch]">
+                Depth
+                <br />
+                <em>in the room.</em>
               </h2>
             </motion.div>
             <motion.div
@@ -253,6 +309,48 @@ export default function TeamPage() {
           </motion.div>
         </Section>
 
+        <Section background="gray" paddingY="lg" id="talk">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow justify-center">Next step</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="section-headline mb-6">
+              Ready to talk
+              <br />
+              <em>to the people above?</em>
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="mx-auto mb-10 max-w-[44ch] leading-relaxed text-[var(--ink-muted)]"
+            >
+              No fee for the first conversation. Bring the job you are trying to solve. We will tell
+              you honestly whether custom software is the right move, and who on this page would lead
+              it.
+            </motion.p>
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+              <Button href="/contact" size="lg" variant="primary" icon={<ArrowUpRight className="h-5 w-5" />}>
+                Book a consultation
+              </Button>
+              <a
+                href="mailto:contact@vineralstechnologies.com?subject=Consultation%20-%20Vinerals%20Technologies"
+                className="inline-flex items-center gap-2 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-primary-700 transition-colors hover:text-secondary-600"
+              >
+                <Mail className="h-4 w-4" />
+                contact@vineralstechnologies.com
+              </a>
+            </motion.div>
+          </motion.div>
+        </Section>
+
         <Section background="white" paddingY="lg" id="join">
           <motion.div
             initial="hidden"
@@ -271,8 +369,8 @@ export default function TeamPage() {
               variants={fadeInUp}
               className="mb-10 max-w-[48ch] leading-relaxed text-[var(--ink-muted)]"
             >
-              We grow on purpose. If you&apos;re a senior practitioner who wants meaningful
-              projects, fair wages, and cooperative governance — write us.
+              We grow on purpose. If you are a senior practitioner who wants meaningful projects,
+              fair wages, and cooperative governance, write us.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -282,14 +380,14 @@ export default function TeamPage() {
               <ul className="mb-8 space-y-3 text-[var(--ink-muted)]">
                 {[
                   'Deep production experience in software, data, or food-systems delivery',
-                  'Track record of shipping real systems — not slide decks',
+                  'A track record of shipping real systems, not slide decks',
                   'Interest in mission-driven work and cooperative governance',
                   'Based in or willing to work with Montréal',
                   'Clear communication (English / French a plus)',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-3">
                     <span className="mt-1 text-secondary-600" aria-hidden>
-                      —
+                      ·
                     </span>
                     <span>{line}</span>
                   </li>

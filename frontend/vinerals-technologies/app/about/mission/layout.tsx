@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mission & Values | Software Made by Hand',
-    description:
-      'Craft without compromise. Senior engineering for SMEs — owned code, honest counsel, terms you can plan around. A Montréal solidarity cooperative.',
+  description:
+    'Craft without compromise. Senior engineering for SMEs: owned code, honest counsel, terms you can plan around. A Montréal solidarity cooperative.',
   keywords: [
     'software made by hand',
     'mission driven software montreal',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mission & Values | Vinerals Technologies',
     description:
-      'Craft without compromise. Senior engineering for growing businesses — from a Montréal solidarity cooperative.',
+      'Craft without compromise. Senior engineering for growing businesses, from a Montréal solidarity cooperative.',
     url: 'https://vineralstechnologies.com/about/mission',
     type: 'website',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-mission.jpg',
         width: 1200,
         height: 630,
-        alt: 'Vinerals Technologies — Mission: craft without compromise',
+        alt: 'Vinerals Technologies. Mission: craft without compromise',
       },
     ],
   },

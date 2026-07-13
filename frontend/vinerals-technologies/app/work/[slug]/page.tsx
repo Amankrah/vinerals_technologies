@@ -69,7 +69,7 @@ export default async function ProjectPage({ params }: PageProps) {
               )}
               <span>{project.partner || project.client}</span>
               <span aria-hidden>·</span>
-              <span>Édition {project.year}</span>
+              <span>{project.year}</span>
             </div>
 
             <h1 className="mb-6 font-display text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[0.96] tracking-[-0.022em] text-[var(--ink)]">
@@ -212,7 +212,7 @@ export default async function ProjectPage({ params }: PageProps) {
         {related.length > 0 && (
           <Section background="gray" paddingY="lg">
             <div className="mx-auto max-w-5xl">
-              <h2 className="section-headline mb-8">More dossiers</h2>
+              <h2 className="section-headline mb-8">More platforms</h2>
               <ul className="divide-y divide-[var(--ink-hairline)]/35 border-y border-[var(--ink-hairline)]/35">
                 {related.map((item) => (
                   <li key={item.slug}>

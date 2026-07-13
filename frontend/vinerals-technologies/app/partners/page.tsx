@@ -21,7 +21,7 @@ const DOORS = [
     eyebrow: 'Funders',
     title: 'Patient capital & foundations.',
     description:
-      'Back software made by hand for SMEs — social return with financial discipline, not a pitch deck fantasy.',
+      'Back hand-made software for growing businesses. Social return, financial discipline, and transparent use of funds.',
     href: '/partners/funders',
   },
   {
@@ -29,7 +29,7 @@ const DOORS = [
     eyebrow: 'Government',
     title: 'Digital economy & SME mandates.',
     description:
-      'Implementation capacity that lines up with Québec and Canadian priorities — craft delivery, clear reporting.',
+      'Implementation capacity for Québec and Canadian priorities: senior delivery, owned code, and reporting that fits your framework.',
     href: '/partners/government',
   },
   {
@@ -37,15 +37,15 @@ const DOORS = [
     eyebrow: 'Consortiums',
     title: 'Shared platforms for networks.',
     description:
-      'Technical partner for associations and sector networks — systems no single member could fund alone.',
+      'Technical partner for associations and sector networks. Systems no single member could fund or staff alone.',
     href: '/partners/consortiums',
   },
 ] as const;
 
 const WHY = [
   {
-    title: 'Craft as the quality thesis.',
-    body: 'Senior engineering, owned code, honest counsel. Partners fund quality that lasts — not discount theatre.',
+    title: 'Quality that lasts.',
+    body: 'Senior engineering, code the client owns, and honest scope. Partners fund work that stays useful after the project closes.',
   },
   {
     title: 'Cooperative governance.',
@@ -53,11 +53,11 @@ const WHY = [
   },
   {
     title: 'Measurable delivery.',
-    body: 'Milestones, owned IP for clients, and reporting that matches your programme — not vanity metrics.',
+    body: 'Milestones, owned IP for clients, and reporting that matches your programme, including the KPIs you already use.',
   },
   {
     title: 'Sector fluency.',
-    body: 'Healthcare, food systems, sustainability, and social enterprise — where regulation and workflows matter.',
+    body: 'Healthcare, food systems, sustainability, and social enterprise, where regulation and real workflows matter.',
   },
 ] as const;
 
@@ -65,22 +65,22 @@ const PARTNERS_FAQS = [
   {
     question: 'Who are these pages for?',
     answer:
-      'Funders and foundations, government agencies, and industry consortiums or networks. If you are an SME looking for software, start with Services or Contact — this cluster is for institutional partners.',
+      'Funders and foundations, government agencies, and industry consortiums or networks. If you are a business looking for software, start with Services or Contact. This section is for institutional partners.',
   },
   {
     question: 'How is partnering with a cooperative different from a regular vendor?',
     answer:
-      'Social impact sits in governance, not a CSR slide. Transparent books, democratic decision-making, and surpluses that stay in the mission. You get craft delivery with aligned incentives.',
+      'Social impact sits in governance, not a side slide. Transparent books, democratic decision-making, and surpluses that stay in the mission. You get senior delivery with incentives that match your programme goals.',
   },
   {
     question: 'What reporting do partners get?',
     answer:
-      'Project milestones, financial transparency, and impact metrics agreed up front — jobs, clients served, and programme-specific KPIs. We design reports to fit your evaluation frameworks.',
+      'Project milestones, financial transparency, and impact metrics agreed up front: jobs, clients served, and programme-specific KPIs. We design reports to fit your evaluation frameworks.',
   },
   {
     question: 'How do we start?',
     answer:
-      'Pick the door that matches your mandate, or email contact@vineralstechnologies.com with what you are trying to make happen.',
+      'Pick the path that matches your mandate, or email contact@vineralstechnologies.com with what you are trying to make happen.',
   },
 ];
 
@@ -99,16 +99,16 @@ export default function PartnersPage() {
       <main className="pt-16">
         <PartnersHero
           badge="For Partners"
-          title="Partners who keep the craft intact."
-          highlightedWord="craft intact"
-          description="A Québec solidarity cooperative. We build software made by hand for SMEs — and we partner with funders, government, and consortiums whose mandates line up with that work."
+          title="Partners who fund work that lasts."
+          highlightedWord="lasts"
+          description="We are a Québec solidarity cooperative. We build software made by hand for growing businesses, and we partner with funders, government, and consortiums whose mandates line up with that work."
           image="/partners-atelier.jpg"
           imageAlt="Hands reviewing work together at a wooden workshop table"
           stats={[
-            { value: '3', label: 'Partner doors' },
+            { value: '3', label: 'Partnership paths' },
             { value: 'Co-op', label: 'Governance' },
           ]}
-          primaryCTA={{ label: 'Choose a door', href: '#doors' }}
+          primaryCTA={{ label: 'Choose a path', href: '#doors' }}
           secondaryCTA={{ label: 'Contact us', href: '/contact' }}
         />
 
@@ -125,15 +125,15 @@ export default function PartnersPage() {
                 <h2 className="section-headline max-w-[16ch]">
                   Where a partnership
                   <br />
-                  <em>lands.</em>
+                  <em>starts.</em>
                 </h2>
               </motion.div>
               <motion.p
                 variants={fadeInUp}
                 className="lead-text max-w-[40ch] md:col-span-5 md:ml-auto"
               >
-                Three audiences. Three briefs. Same craft underneath — pick the door that
-                matches your mandate.
+                Three audiences. Three briefs. Same delivery standards. Pick the path that matches
+                your mandate.
               </motion.p>
             </div>
 

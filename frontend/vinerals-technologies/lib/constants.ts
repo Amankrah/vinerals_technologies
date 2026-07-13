@@ -97,7 +97,7 @@ export const SERVICES = [
     slug: 'custom-software',
     shortName: 'Custom Software',
     description:
-      'Software shaped around the way your business already runs, not bent around someone else’s product. No feature bloat, no vendor lock-in, and the code is yours.',
+      'Web apps, internal tools, and client portals shaped around how you already work. You own the code when we hand it over.',
     features: ['Web applications', 'Internal tools', 'Client portals'],
     icon: 'Code',
     image: '/service-software.jpg',
@@ -109,7 +109,7 @@ export const SERVICES = [
     slug: 'ai-integration',
     shortName: 'AI Integration',
     description:
-      'The kind of AI work that pays back. Automating the report you write every Friday, the inbox you triage every morning, the data trapped inside your PDFs. Nothing dressed up as a science project.',
+      'Narrow AI on real jobs: documents, inbox triage, forecasting, automation. We say no when a model is the wrong answer.',
     features: ['Automation', 'Analytics', 'LLM integration'],
     icon: 'Brain',
     image: '/service-ai.jpg',
@@ -121,7 +121,7 @@ export const SERVICES = [
     slug: 'mobile-apps',
     shortName: 'Mobile Apps',
     description:
-      'Apps your team actually opens in the field, and apps your customers keep on the home screen. One codebase across iOS, Android and the web, built to outlast its launch week.',
+      'Apps for field teams and customers on iOS, Android, and the web. Built to stay useful after launch week.',
     features: ['iOS', 'Android', 'Progressive Web Apps'],
     icon: 'Smartphone',
     image: '/service-mobile.jpg',
@@ -133,7 +133,7 @@ export const SERVICES = [
     slug: 'data-systems',
     shortName: 'Data Systems',
     description:
-      'Pipelines that move your data without breaking. Dashboards that point to the next decision. Reporting that takes minutes, not half a day.',
+      'Pipelines, databases, and dashboards that turn scattered records into numbers your team can trust.',
     features: ['Databases', 'Dashboards', 'ETL pipelines'],
     icon: 'Database',
     image: '/service-data.jpg',
@@ -176,7 +176,7 @@ export const INDUSTRIES = [
     id: 'non-profits',
     name: 'Non-Profits & Social Enterprise',
     slug: 'non-profits',
-    description: 'Non-profit tech, cooperative back-offices, and impact tools that don’t bleed your budget.',
+    description: 'Non-profit tech, cooperative back-offices, and impact tools built for mission-first teams.',
     features: ['Donor & member CRMs', 'Impact measurement', 'Cooperative platforms'],
     icon: 'Users',
     image: '/sector-nonprofits.jpg',
@@ -256,9 +256,9 @@ export const HOW_IT_WORKS = [
     icon: 'Lightbulb',
   },
   {
-    title: 'Enterprise-quality work at SME-accessible terms.',
+    title: 'Senior-shop calibre, terms you can plan around.',
     description:
-      "Through subsidised engagements and special programmes, you get the same calibre of work larger companies pay full freight for, at numbers a growing business can plan around.",
+      "Through mission-aligned programmes, you get work sized for how you operate, with scope, ownership, and honest counsel spelled out upfront.",
     icon: 'Sparkles',
   },
 ] as const;
@@ -307,7 +307,7 @@ export const PROCESS_STEPS = [
   {
     number: 1,
     title: 'Discovery',
-    subtitle: 'Free',
+    subtitle: 'No charge',
     description:
       "We learn your business, your bottlenecks, and what you’re actually trying to make happen. You leave with a realistic read on what tech can and can’t do for you. No charge, no obligation.",
   },
@@ -340,21 +340,21 @@ export const ENGAGEMENT_MODELS = [
     name: 'Subsidised Track',
     eligibility: 'Non-profits, social enterprises, underserved SMEs',
     description:
-      'Funded through grants and donor support. The cost reduction is substantial, often the difference between building the thing and not.',
+      'Funded through grants and donor support. For qualifying organisations, that funding can be what makes a serious build possible.',
     icon: 'Heart',
   },
   {
-    name: 'Accessible Engagement',
+    name: 'Growth-stage Track',
     eligibility: 'Growth-stage SMEs',
     description:
-      'Partial subsidy with the rest priced for real businesses, not enterprise procurement departments. Same calibre of work, numbers you can defend to a board.',
+      'Partial subsidy where it applies, with the rest scoped for a growing business. Same craft, terms you can defend to a board.',
     icon: 'TrendingUp',
   },
   {
     name: 'Partnership Projects',
     eligibility: 'Established organisations, government',
     description:
-      'Market-rate engagements that pay full freight. These projects keep the subsidised side of the house funded.',
+      'Market-rate engagements with clear scope and ownership. These projects help fund the subsidised side of the house.',
     icon: 'Building2',
   },
 ] as const;
@@ -383,32 +383,32 @@ export const CAPABILITIES = [
   {
     title: 'Custom software',
     description:
-      'Web apps, internal tools, client portals, and the back-office systems your team actually has to live inside every day.',
+      'Web apps, internal tools, client portals, and the back-office systems your team uses every day.',
   },
   {
     title: 'AI integration',
     description:
-      'Document processing, chatbots that don’t embarrass you, automation, and forecasting with a payback you can point to.',
+      'Document processing, support triage, automation, and forecasting when the job and the data are clear.',
   },
   {
     title: 'Mobile apps',
     description:
-      'iOS, Android, and Progressive Web Apps for field crews, customers, and anyone who needs the work to follow them around.',
+      'iOS, Android, and Progressive Web Apps for field crews, customers, and work that has to travel.',
   },
   {
     title: 'Data systems',
     description:
-      'Dashboards, analytics, ETL pipelines, and the warehouse underneath. The plumbing that turns spreadsheets into decisions.',
+      'Dashboards, analytics, ETL pipelines, and the warehouse underneath. Plumbing that turns scattered records into numbers you can trust.',
   },
   {
     title: 'Integrations',
     description:
-      'Stitching together your EMR, ERP, payment processor, and the half-dozen SaaS tools nobody quite knows how to connect.',
+      'Connecting your EMR, ERP, payment processor, and the SaaS tools that do not talk to each other yet.',
   },
   {
     title: 'Compliance',
     description:
-      'HIPAA, PHIPA, GDPR, food safety, environmental reporting. Built in from the start instead of bolted on the week before audit.',
+      'HIPAA, PHIPA, GDPR, food safety, environmental reporting. Built in from the start, not bolted on the week before an audit.',
   },
 ] as const;
 

@@ -23,7 +23,7 @@ const SUSTAINABILITY_FAQS = [
   },
   {
     question: 'Do you work with small businesses or only large corporations?',
-    answer: 'We work with organizations of all sizes committed to sustainability. Through programs funded by Sustainable Development Technology Canada (SDTC) and Environment Canada, we make cleantech accessible to SMEs, startups, and social enterprises pursuing environmental goals.',
+    answer: 'We work with organizations of all sizes committed to sustainability. Through programs funded by Sustainable Development Technology Canada (SDTC) and Environment Canada, SMEs, startups, and social enterprises get cleantech systems sized to real operations.',
   },
   {
     question: 'How do circular economy platforms reduce waste?',

@@ -11,11 +11,11 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 const WALLS = [
   {
     title: 'The knowledge gap.',
-    body: 'AI is everywhere. What actually fits your business is a much shorter list. Without someone technical in your corner — with no quota — sorting real from hype is nearly impossible.',
+    body: 'AI is everywhere. What actually fits your business is a much shorter list. Without someone technical in your corner, with no sales quota, sorting real from hype is nearly impossible.',
   },
   {
     title: 'The cost reality.',
-    body: 'Quality custom software runs real money. Agencies aren’t overcharging; that’s what good engineering takes. For most growing businesses, the cheque just isn’t there.',
+    body: 'Quality custom software costs real money. Agencies are not overcharging; that is what good engineering takes. For most growing businesses, the cheque just is not there.',
   },
   {
     title: 'The expertise gap.',
@@ -26,7 +26,7 @@ const WALLS = [
 const VALUES = [
   {
     title: 'Craft first.',
-    body: 'Software made by hand. Senior engineering shaped around how you work — not a rented platform, not a template with your logo.',
+    body: 'Software made by hand. Senior engineering shaped around how you work. Not a rented platform. Not a template with your logo.',
   },
   {
     title: 'Radical transparency.',
@@ -38,11 +38,11 @@ const VALUES = [
   },
   {
     title: 'Always learning.',
-    body: 'We refine the process between projects and bring better tools to the next engagement — without consultant theatre.',
+    body: 'We refine the process between projects and bring better tools to the next engagement, without consultant theatre.',
   },
   {
     title: 'Impact over invoice.',
-    body: 'Success is time saved, costs cut, and communities better served. If a project won’t move that needle, we say so before you sign.',
+    body: 'Success is time saved, costs cut, and communities better served. If a project will not move that needle, we say so before you sign.',
   },
   {
     title: 'Social economy, for real.',
@@ -59,7 +59,7 @@ const GOALS = [
   {
     value: 'Craft',
     title: 'Without dilution',
-    body: 'Same calibre larger firms pay full freight for — structured so growing businesses can say yes.',
+    body: 'Senior-shop standards, structured so growing businesses can say yes without cutting the work.',
   },
   {
     value: '10+',
@@ -80,7 +80,7 @@ const MEASURES = [
   },
   {
     title: 'Reach with quality.',
-    body: 'How many SMEs and mission-driven organisations got real, owned software — not a compromise stack.',
+    body: 'How many SMEs and mission-driven organisations got real, owned software, not a compromise stack.',
   },
   {
     title: 'Terms that hold.',
@@ -105,9 +105,9 @@ export default function MissionPage() {
           badge="Our Mission & Values"
           title="Craft without compromise."
           highlightedWord="without compromise"
-          description="Senior engineering for growing businesses. Owned code, honest counsel, terms you can plan around — quality intact."
+          description="Senior engineering for growing businesses. Owned code, honest counsel, terms you can plan around. Quality intact."
           image="/mission-atelier.jpg"
-          imageAlt="Hands typing on a laptop at a wooden workshop desk — software made by hand"
+          imageAlt="Hands typing on a laptop at a wooden workshop desk"
           primaryCTA={{ label: 'Our values', href: '#core-values' }}
           secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
@@ -121,7 +121,7 @@ export default function MissionPage() {
             className="mx-auto max-w-3xl"
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <span className="eyebrow">Le manifeste</span>
+              <span className="eyebrow">The point</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="section-headline mb-8">
               Closing the gap
@@ -133,28 +133,28 @@ export default function MissionPage() {
               className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10"
             >
               <p className="mb-6 font-display text-xl leading-relaxed text-[var(--ink)] md:text-[1.35rem]">
-                We exist to put senior engineering — software made by hand — in reach of small and
+                We exist to put senior engineering, software made by hand, in reach of small and
                 mid-sized businesses across Canada, with particular weight in Québec&apos;s social
                 economy.
               </p>
               <p className="mb-6 leading-relaxed text-[var(--ink-muted)]">
                 <strong className="text-[var(--ink)]">The honest part.</strong> Good software
-                engineering costs what it costs. That isn&apos;t a markup story; it&apos;s skilled
-                people, proper architecture, security, and testing. What isn&apos;t honest is
+                engineering costs what it costs. That is not a markup story; it is skilled
+                people, proper architecture, security, and testing. What is not honest is
                 pretending juniors or templates deliver the same thing.
               </p>
               <blockquote className="pullquote my-8">
-                We&apos;re not undercutting professionals. We&apos;re keeping the craft intact.
+                We are not undercutting professionals. We are keeping the craft intact.
               </blockquote>
               <p className="mb-6 leading-relaxed text-[var(--ink-muted)]">
-                As a solidarity cooperative, we structure engagements — and mission-aligned funding
-                when you qualify — so growing businesses can say yes without diluting quality or
+                As a solidarity cooperative, we structure engagements, and mission-aligned funding
+                when you qualify, so growing businesses can say yes without diluting quality or
                 undercutting the people doing the work.
               </p>
               <p className="leading-relaxed text-[var(--ink-muted)]">
                 The piece that often matters more than the budget?{' '}
                 <strong className="text-[var(--ink)]">
-                  We start by helping you understand what&apos;s actually possible
+                  We start by helping you understand what is actually possible
                 </strong>{' '}
                 with AI and modern software, before any code is written.
               </p>
@@ -184,7 +184,7 @@ export default function MissionPage() {
             >
               A community clinic runs a patient portal worthy of the hospital network. A family farm
               gets the traceability agribusiness takes for granted. A non-profit ships the impact
-              tool its mandate has been asking for — made by hand, owned outright.
+              tool its mandate has been asking for: made by hand, owned outright.
             </motion.p>
           </motion.div>
         </Section>
@@ -205,7 +205,7 @@ export default function MissionPage() {
                 <em>exist.</em>
               </h2>
               <p className="lead-text mt-6 max-w-[32ch]">
-                Three walls SMEs keep hitting — and why off-the-shelf and offshore rarely clear them.
+                Three walls SMEs keep hitting, and why off-the-shelf and offshore rarely clear them.
               </p>
             </motion.div>
             <motion.ol
@@ -252,8 +252,8 @@ export default function MissionPage() {
               Established Montréal shops do excellent work at mid-market rates. Offshore trades
               quality and context for a lower invoice. SaaS forces compromises that rarely fit the
               actual work. We sit in a different place: a solidarity cooperative that keeps craft
-              intact and structures terms — including mission-aligned funding when you qualify —
-              so growing businesses can still say yes.
+              intact and structures terms, including mission-aligned funding when you qualify, so
+              growing businesses can still say yes.
             </motion.p>
             <motion.blockquote variants={fadeInUp} className="pullquote">
               The organisations that need custom software the most can afford it the least.

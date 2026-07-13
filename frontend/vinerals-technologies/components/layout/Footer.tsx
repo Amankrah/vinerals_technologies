@@ -58,7 +58,7 @@ const Footer = () => {
             <p className="lead-text mb-12 max-w-xl text-white/90 [text-shadow:0_1px_14px_rgba(10,20,16,0.5)]">
               Then it would fit the work you actually do, instead of bending
               you around someone else&apos;s product. Book a consultation.
-              The first conversation is free, honest, and without obligation.
+              No fee for the first conversation. Honest counsel, no obligation.
             </p>
 
             <div className="flex flex-col items-start gap-5 sm:flex-row">

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cooperative Model | Built Differently, On Purpose',
+  title: 'Cooperative Model | How Ownership Shapes the Work',
   description:
-    'Vinerals is a Québec solidarity cooperative. Craft over extraction, worker ownership, one member one vote — software made by hand for SMEs.',
+    'Vinerals is a Québec solidarity cooperative. Worker ownership, one member one vote, and surpluses that stay in the mission. Software made by hand for growing businesses.',
   keywords: [
     'solidarity cooperative montreal',
     'worker cooperative technology',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cooperative Model | Vinerals Technologies',
     description:
-      'Built differently, on purpose. A solidarity cooperative — craft, ownership, and honest counsel without investor extraction.',
+      'A Québec solidarity cooperative: worker and community ownership, democratic governance, and craft that stays with the people doing the work.',
     url: 'https://vineralstechnologies.com/about/cooperative',
     type: 'website',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: 'https://vineralstechnologies.com/og-cooperative.jpg',
         width: 1200,
         height: 630,
-        alt: 'Vinerals Technologies — solidarity cooperative model',
+        alt: 'Vinerals Technologies solidarity cooperative model',
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cooperative Model | Vinerals Technologies',
     description:
-      'Craft over extraction. Worker ownership. One member, one vote.',
+      'Worker ownership. One member, one vote. Surpluses stay in the mission.',
     images: ['https://vineralstechnologies.com/og-cooperative.jpg'],
   },
   alternates: {

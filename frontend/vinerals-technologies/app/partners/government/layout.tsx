@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'For Government | Craft Delivery for Digital & SME Mandates | Vinerals',
+  title: 'For Government | Delivery for Digital & SME Mandates | Vinerals',
   description:
-    'Government technology partner: Vinerals Technologies delivers craft software for Québec and Canadian digital-economy and SME programmes — social procurement fit, clear milestones, reporting you can stand behind.',
+    'Government technology partner: Vinerals Technologies delivers software for Québec and Canadian digital-economy and SME programmes. Social procurement fit, clear milestones, reporting you can stand behind.',
   keywords: [
     'government technology partner quebec',
     'solidarity cooperative procurement',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For Government | Vinerals Technologies',
     description:
-      'Craft delivery for public mandates — implementation capacity for digital-economy and SME programmes across Québec and Canada.',
+      'Implementation capacity for digital-economy and SME programmes across Québec and Canada. Senior engineering, owned code, clear reporting.',
     url: 'https://vineralstechnologies.com/partners/government',
     type: 'website',
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'For Government | Vinerals Technologies',
     description:
-      'Craft delivery for digital-economy and SME mandates — solidarity cooperative partner.',
+      'Delivery partner for digital-economy and SME mandates. Québec solidarity cooperative.',
     images: ['https://vineralstechnologies.com/og-partners-government.jpg'],
   },
   alternates: {

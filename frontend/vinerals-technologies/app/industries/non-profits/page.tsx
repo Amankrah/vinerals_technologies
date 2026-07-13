@@ -27,7 +27,7 @@ const NON_PROFITS_FAQS = [
   },
   {
     question: 'Do you offer discounted rates for non-profits?',
-    answer: 'Yes. Through subsidized programs funded by foundations, Community Futures, and social innovation grants, we make professional technology development accessible to non-profits, cooperatives, and social enterprises. We offer different program tracks based on your stage and mission alignment.',
+    answer: 'Yes. Through subsidized programs funded by foundations, Community Futures, and social innovation grants, we bring professional technology development to non-profits, cooperatives, and social enterprises. We offer different program tracks based on your stage and mission alignment.',
   },
   {
     question: 'Can you integrate with existing donor management and CRM systems?',
@@ -132,7 +132,7 @@ export default function NonProfitsPage() {
             <div className="space-y-4 text-gray-700">
               <motion.p variants={fadeInUp} className="leading-relaxed">
                 Non-profits and social enterprises are expected to run with the efficiency of a for-profit
-                company, on a fraction of the budget. Off-the-shelf software doesn’t fit cooperative
+                company, with a fraction of the resources. Off-the-shelf software doesn’t fit cooperative
                 governance. SaaS subscriptions quietly eat into the programme line.
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
@@ -142,7 +142,7 @@ export default function NonProfitsPage() {
               </motion.p>
               <motion.p variants={fadeInUp} className="leading-relaxed">
                 <strong>We build tools that amplify your impact.</strong> Not software that ticks a box.
-                And at rates that make sense for social sector budgets.
+                And on terms that respect social sector realities.
               </motion.p>
             </div>
           </motion.div>

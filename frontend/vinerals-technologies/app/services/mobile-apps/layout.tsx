@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mobile App Development Montreal | iOS, Android & PWA Development',
-  description: 'Cross-platform mobile application development for iOS, Android, and Progressive Web Apps. React Native and modern frameworks. Affordable mobile development for SMEs across Canada.',
+  description: 'Cross-platform mobile application development for iOS, Android, and Progressive Web Apps. React Native and modern frameworks. Craft mobile development for SMEs across Canada.',
   keywords: [
     'mobile app development montreal',
     'ios app development',

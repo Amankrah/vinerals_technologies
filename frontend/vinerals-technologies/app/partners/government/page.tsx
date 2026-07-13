@@ -18,7 +18,7 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 const ALIGNMENT = [
   {
     title: 'SME competitiveness.',
-    body: 'Custom software and AI that growing businesses can actually ship with — not another awareness workshop.',
+    body: 'Custom software and practical AI that growing businesses can ship and run, with systems shaped around how they already work.',
   },
   {
     title: 'Quality employment.',
@@ -26,18 +26,18 @@ const ALIGNMENT = [
   },
   {
     title: 'Digital adoption that sticks.',
-    body: 'Owned code, documentation, and handover. Adoption measured by systems in use — not slide decks.',
+    body: 'Owned code, documentation, and handover. Adoption measured by systems in use, not by workshops alone.',
   },
   {
     title: 'Sector priorities.',
-    body: 'Healthcare, food systems, sustainability, and social enterprise — where regulation and workflows matter.',
+    body: 'Healthcare, food systems, sustainability, and social enterprise, where regulation and real workflows matter.',
   },
 ] as const;
 
 const ASK = [
   {
     title: 'Approved implementation partner.',
-    body: 'List us for grant recipients who need credible technical delivery — not another vendor brochure.',
+    body: 'List us for grant recipients who need credible technical delivery with clear milestones and owned IP.',
   },
   {
     title: 'Social procurement pathways.',
@@ -45,13 +45,13 @@ const ASK = [
   },
   {
     title: 'Referral & programme fit.',
-    body: 'Point qualifying SMEs our way when your mandate needs craft delivery with clear milestones and reporting.',
+    body: 'Point qualifying SMEs our way when your mandate needs senior delivery with reporting that fits your evaluation framework.',
   },
 ] as const;
 
 const FIT = [
   'Federal, provincial, and municipal agencies with digital-economy or SME mandates',
-  'Programme officers who need a delivery partner, not a policy deck',
+  'Programme officers who need a delivery partner for software that ships',
   'Social procurement and cooperative vendor pathways',
   'Sector initiatives in health, food systems, cleantech, or social enterprise',
 ] as const;
@@ -60,27 +60,27 @@ const GOVERNMENT_FAQS = [
   {
     question: 'How do you support digital-economy and SME mandates?',
     answer:
-      'We deliver the software and integrations SMEs get priced out of elsewhere — senior engineering, owned code, honest scope. That advances competitiveness and adoption with systems that stay in use.',
+      'We deliver senior engineering, owned code, and honest scope on software SMEs rarely get from template shops. That advances competitiveness and adoption with systems that stay in use.',
   },
   {
     question: 'Why partner with a solidarity cooperative?',
     answer:
-      'Impact sits in governance: transparent books, democratic decision-making, surpluses to mission and workers. You get craft delivery with incentives that match social-economy and social-procurement goals.',
+      'Impact sits in governance: transparent books, democratic decision-making, surpluses to mission and workers. You get senior delivery with incentives that match social-economy and social-procurement goals.',
   },
   {
     question: 'Can agencies procure from you?',
     answer:
-      'Yes. As a Québec-registered solidarity cooperative we pursue social procurement, cooperative vendor status, and standard technology contracts where eligible — federal, provincial, and municipal.',
+      'Yes. As a Québec-registered solidarity cooperative we pursue social procurement, cooperative vendor status, and standard technology contracts where eligible at the federal, provincial, and municipal levels.',
   },
   {
     question: 'What reporting do you provide?',
     answer:
-      'Milestones, financial transparency, and KPIs agreed up front — clients served, jobs supported, and programme-specific outcomes. Reports are designed to fit your evaluation framework.',
+      'Milestones, financial transparency, and KPIs agreed up front: clients served, jobs supported, and programme-specific outcomes. Reports are designed to fit your evaluation framework.',
   },
   {
     question: 'How should programmes refer SMEs?',
     answer:
-      'List us as an approved implementation partner for grant recipients, refer businesses that need craft delivery, or include us in social-procurement directories. Start with contact@vineralstechnologies.com.',
+      'List us as an approved implementation partner for grant recipients, refer businesses that need senior delivery, or include us in social-procurement directories. Start with contact@vineralstechnologies.com.',
   },
 ];
 
@@ -100,13 +100,13 @@ export default function GovernmentPage() {
       <main className="pt-16">
         <PartnersHero
           badge="For Government"
-          title="Craft delivery for public mandates."
-          highlightedWord="Craft"
-          description="Implementation capacity for Québec and Canadian digital-economy and SME programmes — senior engineering, owned code, reporting you can stand behind."
+          title="Delivery capacity for public mandates."
+          highlightedWord="Delivery"
+          description="Implementation partner for Québec and Canadian digital-economy and SME programmes. Senior engineering, owned code, and reporting you can stand behind."
           image="/government-atelier.jpg"
-          imageAlt="Desk with dossiers and a laptop in soft natural light"
+          imageAlt="Desk with documents and a laptop in soft natural light"
           stats={[
-            { value: 'Delivery', label: 'Not policy theatre' },
+            { value: 'Delivery', label: 'Systems that ship' },
             { value: 'Co-op', label: 'Social procurement fit' },
           ]}
           primaryCTA={{ label: 'See the ask', href: '#ask' }}
@@ -168,11 +168,11 @@ export default function GovernmentPage() {
             <motion.h2 variants={fadeInUp} className="section-headline mb-4">
               One partnership,
               <br />
-              <em>three doors in.</em>
+              <em>three ways in.</em>
             </motion.h2>
             <motion.p variants={fadeInUp} className="lead-text mb-10 max-w-[48ch]">
-              We are not asking for a blank cheque. We are asking to be the craft
-              delivery partner when your programme needs software that ships.
+              We are not asking for an open-ended budget. We are asking to be the delivery partner
+              when your programme needs software that ships.
             </motion.p>
             <motion.div
               variants={staggerContainer}
@@ -221,7 +221,7 @@ export default function GovernmentPage() {
                   className="flex items-start gap-3 leading-relaxed text-[var(--ink-muted)]"
                 >
                   <span className="mt-1 text-secondary-600" aria-hidden>
-                    —
+                    ·
                   </span>
                   <span>{line}</span>
                 </motion.li>

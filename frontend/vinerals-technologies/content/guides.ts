@@ -389,7 +389,7 @@ export const guides: Guide[] = [
             'Internal staff: Direct control, deep business knowledge, always available',
             'Hybrid approach: External for specialized work, internal for routine tasks',
             'Consider in-house when maintenance exceeds 20 hours/month consistently',
-            'Most SMEs under 50 employees find external partners more cost-effective',
+            'Most SMEs under 50 employees find external partners more practical for specialized work',
             'Choose based on your software complexity and internal technical capacity'
           ]
         },

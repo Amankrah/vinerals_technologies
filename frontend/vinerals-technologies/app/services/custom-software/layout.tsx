@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Custom Software Development Montreal | Web Apps & Business Software',
-  description: 'Bespoke web applications and business software built for your exact needs. Full-stack development with React, Next.js, Node.js. Subsidized programs available for SMEs in Montreal and across Canada.',
+  description: 'Custom web applications and business software built for how you work. Full-stack development with React, Next.js, Node.js. You own the code. Montréal-based, serving Canada.',
   keywords: [
     'custom software development montreal',
     'bespoke software development',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Custom Software Development | Vinerals Technologies',
-    description: 'Build exactly what your business needs with our custom software development services. No compromises, no vendor lock-in. Montreal-based, serving all of Canada.',
+    description: 'Software shaped around how your business runs. Senior engineering, clear ownership, made by hand in Montréal.',
     url: 'https://vineralstechnologies.com/services/custom-software',
     type: 'website',
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Custom Software Development | Vinerals Technologies',
-    description: 'Bespoke web applications and business software built for your exact needs. Full-stack development for SMEs.',
+    description: 'Custom web applications and business software for SMEs. Full-stack development, code you own.',
     images: ['https://vineralstechnologies.com/og-custom-software.jpg'],
   },
   alternates: {

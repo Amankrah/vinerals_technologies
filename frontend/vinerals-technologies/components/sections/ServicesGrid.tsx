@@ -9,8 +9,8 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { SERVICES } from '@/lib/constants';
 
 /**
- * ServicesGrid — photographic dossier plate for /services.
- * Matches the landing-page catalogue so visitors aren’t bounced
+ * ServicesGrid: photographic catalogue for /services.
+ * Matches the landing-page layout so visitors are not bounced
  * between two different visual languages.
  */
 const ServicesGrid = () => {
@@ -26,17 +26,17 @@ const ServicesGrid = () => {
           <motion.div variants={fadeInUp} className="md:col-span-7">
             <span className="eyebrow mb-6 block">Le catalogue</span>
             <h2 className="section-headline max-w-[16ch]">
-              Four trades,
+              Four practices,
               <br />
-              <em>pick a door.</em>
+              <em>one shop.</em>
             </h2>
           </motion.div>
           <motion.p
             variants={fadeInUp}
             className="lead-text max-w-[40ch] md:col-span-5 md:ml-auto"
           >
-            Open any dossier. Each practice is made by hand under the same roof —
-            not a vendor handoff waiting to happen.
+            Pick the practice that matches the job. The same senior team builds
+            each one, and you keep ownership of what we ship.
           </motion.p>
         </div>
 
@@ -89,7 +89,7 @@ const ServicesGrid = () => {
                     </p>
 
                     <div className="mt-auto inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700">
-                      <span className="squiggle">Read the dossier</span>
+                      <span className="squiggle">See this practice</span>
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
                   </div>

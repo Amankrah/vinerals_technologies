@@ -17,31 +17,31 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 const WHY = [
   {
-    title: 'Shared cost, shared craft.',
-    body: 'Members get serious platforms without each funding a full build alone — architecture and ownership designed for the network.',
+    title: 'Shared cost, shared system.',
+    body: 'Members get serious platforms without each funding a full build alone. Architecture and ownership are designed for the network.',
   },
   {
     title: 'One technical partner.',
-    body: 'Senior engineering across discovery, build, and handover — so the consortium owns the system, not a pile of vendor lock-in.',
+    body: 'Senior engineering across discovery, build, and handover, so the consortium owns the system with clear docs and credentials.',
   },
   {
     title: 'Cooperative alignment.',
-    body: 'Collaboration over extraction. Transparent books and mission-first incentives match how associations and federations already work.',
+    body: 'Transparent books and mission-first incentives match how associations and federations already work.',
   },
 ] as const;
 
 const MODELS = [
   {
     title: 'Shared platform.',
-    body: 'One system for the network — membership tools, data layers, member portals — scoped so every participant benefits.',
+    body: 'One system for the network: membership tools, data layers, member portals, scoped so every participant benefits.',
   },
   {
     title: 'Member programme.',
-    body: 'Craft delivery for members under a consortium agreement: preferred terms, shared playbooks, collective learning.',
+    body: 'Delivery for members under a consortium agreement: preferred terms, shared playbooks, collective learning.',
   },
   {
     title: 'Sector initiative.',
-    body: 'Joint builds for healthcare, food systems, cleantech, or social-economy priorities — funded and governed by the consortium.',
+    body: 'Joint builds for healthcare, food systems, cleantech, or social-economy priorities, funded and governed by the consortium.',
   },
 ] as const;
 
@@ -56,27 +56,27 @@ const CONSORTIUMS_FAQS = [
   {
     question: 'What kinds of networks do you partner with?',
     answer:
-      'Industry associations, innovation clusters, cooperative federations, research networks, and sector alliances — especially where members need shared platforms or craft delivery no single SME could fund alone.',
+      'Industry associations, innovation clusters, cooperative federations, research networks, and sector alliances, especially where members need shared platforms or delivery no single SME could fund alone.',
   },
   {
     question: 'How do members benefit?',
     answer:
-      'Shared infrastructure, clearer ownership, and access to senior engineering under consortium terms — plus playbooks and learning that stay with the network.',
+      'Shared infrastructure, clearer ownership, and access to senior engineering under consortium terms, plus playbooks and learning that stay with the network.',
   },
   {
     question: 'Can you join research or innovation projects?',
     answer:
-      'Yes. We contribute implementation capacity and sector experience — food systems, healthcare, sustainability, social enterprise — alongside academic or industry partners.',
+      'Yes. We contribute implementation capacity and sector experience in food systems, healthcare, sustainability, and social enterprise, alongside academic or industry partners.',
   },
   {
     question: 'How do you handle knowledge sharing?',
     answer:
-      'Open by default within the partnership: working groups, documentation, and reusable patterns. We strengthen the ecosystem, not hoard process as IP theatre.',
+      'Open by default within the partnership: working groups, documentation, and reusable patterns. We strengthen the ecosystem rather than holding process hostage.',
   },
   {
     question: 'How do we start?',
     answer:
-      'Bring a mandate, a member need, or a shared-platform brief. Email contact@vineralstechnologies.com — we will map fit to a shared platform, member programme, or sector initiative.',
+      'Bring a mandate, a member need, or a shared-platform brief. Email contact@vineralstechnologies.com and we will map fit to a shared platform, member programme, or sector initiative.',
   },
 ];
 
@@ -96,9 +96,9 @@ export default function ConsortiumsPage() {
       <main className="pt-16">
         <PartnersHero
           badge="For Consortiums & Networks"
-          title="Shared platforms. Shared craft."
-          highlightedWord="craft."
-          description="Technical partner for associations and sector networks — systems no single member could fund or staff alone, built to last."
+          title="Shared platforms. Shared delivery."
+          highlightedWord="delivery."
+          description="Technical partner for associations and sector networks. Systems no single member could fund or staff alone, built so the network owns them."
           image="/consortiums-atelier.jpg"
           imageAlt="Hands collaborating over laptops and notebooks at a shared table"
           stats={[
@@ -213,7 +213,7 @@ export default function ConsortiumsPage() {
                   className="flex items-start gap-3 leading-relaxed text-[var(--ink-muted)]"
                 >
                   <span className="mt-1 text-secondary-600" aria-hidden>
-                    —
+                    ·
                   </span>
                   <span>{line}</span>
                 </motion.li>

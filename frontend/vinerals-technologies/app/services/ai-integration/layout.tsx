@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'AI & Machine Learning Integration | Vinerals Technologies',
-    description: 'Put AI to work in your business with practical, ROI-focused implementations. From automation to analytics, we make AI accessible for SMEs.',
+    description: 'Put AI to work in your business with practical, ROI-focused implementations. From automation to analytics, built for SMEs with measurable outcomes.',
     url: 'https://vineralstechnologies.com/services/ai-integration',
     type: 'website',
     images: [

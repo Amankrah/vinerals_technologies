@@ -7,7 +7,7 @@ import { Mail } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact | Book a Consultation',
   description:
-    'Book a consultation for custom software made by hand. Montréal cooperative — honest counsel, no deck, no pressure. The first conversation is free.',
+    'Book a consultation for custom software made by hand. Montréal cooperative — honest counsel, no deck, no pressure. No fee for the first conversation.',
 };
 
 export default function ContactPage() {
@@ -28,7 +28,7 @@ export default function ContactPage() {
               hand starts with an honest read of the problem.
             </p>
             <p className="mx-auto max-w-[42ch] font-mono text-[0.7rem] uppercase tracking-[0.2em] text-[var(--ink-muted)]">
-              First conversation free · No deck · No obligation
+              No fee for the first conversation · No deck · No obligation
             </p>
           </div>
         </Section>
@@ -73,9 +73,9 @@ Best regards`)}`}
                   </h4>
                   <p className="leading-relaxed text-[var(--ink-muted)]">
                     We reply within 24 hours, ask a few clarifying questions, and
-                    book a consultation. The first conversation is free — we sit
-                    with the problem and tell you honestly whether software is
-                    the right move.
+                    book a consultation. No fee for the first conversation. We
+                    sit with the problem and tell you honestly whether software
+                    is the right move.
                   </p>
                 </div>
                 <div>

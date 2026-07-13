@@ -23,7 +23,7 @@ const FOOD_SYSTEMS_FAQS = [
   },
   {
     question: 'Do you work with small farms or only large food processors?',
-    answer: 'We work with food system organizations of all sizes - from individual farms and farmer cooperatives to food processors and distributors. Through subsidized programs funded by ISED and MAPAQ, we make professional agtech accessible to smaller producers.',
+    answer: 'We work with food system organizations of all sizes - from individual farms and farmer cooperatives to food processors and distributors. Through subsidized programs funded by ISED and MAPAQ, smaller producers get professional agtech sized to how they actually operate.',
   },
   {
     question: 'Can you integrate with IoT sensors for temperature and humidity monitoring?',

@@ -1,3 +1,7 @@
+/**
+ * Legacy blog drafts — superseded by content/articles.ts.
+ * Not published. Kept for reference only.
+ */
 import { BlogPost } from '@/types/content';
 
 export const blogPosts: BlogPost[] = [
@@ -14,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     category: 'Business Strategy',
     tags: ['pricing', 'custom software', 'SME', 'budgeting'],
-    excerpt: 'Custom software pricing is confusing. We break down the real costs, what affects pricing, and how SMEs can budget effectively without breaking the bank.',
+    excerpt: 'Custom software pricing is confusing. We break down the real costs, what affects pricing, and how SMEs can budget with honest ranges.',
     content: {
       intro: 'One of the first questions SMEs ask us is: "How much will custom software cost?" The answer is never simple, but it should be transparent. In this guide, we will break down the real factors that affect custom software pricing and give you concrete numbers to work with.',
       sections: [
@@ -39,7 +43,7 @@ export const blogPosts: BlogPost[] = [
           content: 'If a quote is 50% below market rates, ask why. It might mean offshore teams with communication challenges, junior developers, or hidden costs. Conversely, quotes 3x above market might indicate agency overhead rather than better quality. Ask for detailed breakdowns, reference projects, and clarification on what is included vs. additional costs.'
         }
       ],
-      conclusion: 'Custom software does not have to be prohibitively expensive for SMEs. By understanding what drives costs, starting with focused scope, and working with mission-aligned partners like cooperatives, you can get quality custom software at accessible prices. At Vinerals, we offer subsidized programs backed by mission-aligned funding specifically to make custom software feasible for small businesses and non-profits.'
+      conclusion: 'Custom software is a serious investment for SMEs. By understanding what drives costs, starting with focused scope, and working with mission-aligned partners like cooperatives, you can get quality custom software with terms you can plan around. At Vinerals, subsidized programs backed by mission-aligned funding can change the math for small businesses and non-profits when the project is right.'
     },
     featured: true
   },
@@ -100,11 +104,11 @@ export const blogPosts: BlogPost[] = [
     tags: ['AI', 'machine learning', 'SME', 'implementation'],
     excerpt: 'AI is not just for big tech companies. We show SMEs how to implement practical AI solutions that actually solve business problems without massive investment.',
     content: {
-      intro: 'AI feels overwhelming for SMEs. You see headlines about ChatGPT and self-driving cars and wonder how this applies to your small business. The good news: practical AI implementation for SMEs is more accessible and affordable than ever. Here is where to start.',
+      intro: 'AI feels overwhelming for SMEs. You see headlines about ChatGPT and self-driving cars and wonder how this applies to your small business. The good news: narrow, practical AI for specific jobs is more within reach than the headlines suggest. Here is where to start.',
       sections: [
         {
           heading: 'The AI Hype vs Reality for SMEs',
-          content: 'Ignore the hype about artificial general intelligence and focus on narrow AI solving specific business problems. The AI most SMEs need is not building ChatGPT. It is automating document processing, personalizing customer communications, forecasting inventory, or analyzing customer feedback. These applications are proven, affordable, and deliver measurable ROI within months.'
+          content: 'Ignore the hype about artificial general intelligence and focus on narrow AI solving specific business problems. The AI most SMEs need is not building ChatGPT. It is automating document processing, personalizing customer communications, forecasting inventory, or analyzing customer feedback. These applications are proven, scoped to the job, and can deliver measurable ROI within months.'
         },
         {
           heading: 'Best First AI Projects for SMEs',
@@ -112,7 +116,7 @@ export const blogPosts: BlogPost[] = [
         },
         {
           heading: 'What AI Implementation Actually Costs',
-          content: 'Small-scale AI projects: $10K-30K for single-use case implementation. Medium projects: $30K-75K for multiple integrated AI features. Large projects: $75K-150K for comprehensive AI transformation. Ongoing costs: $200-1000/month for API usage, hosting, and monitoring. These ranges are 50-70% below what traditional agencies charge. You do not need a million dollar budget to benefit from AI.'
+          content: 'Small-scale AI projects: $10K-30K for single-use case implementation. Medium projects: $30K-75K for multiple integrated AI features. Large projects: $75K-150K for comprehensive AI transformation. Ongoing costs: $200-1000/month for API usage, hosting, and monitoring. Ranges vary by scope and data readiness. You do not need a million dollar budget to benefit from narrow AI done well.'
         },
         {
           heading: 'Do You Need AI or Just Better Software?',
@@ -123,7 +127,7 @@ export const blogPosts: BlogPost[] = [
           content: 'Step 1: Identify your most time-consuming repetitive task. Step 2: Assess if you have sufficient data (usually 1000+ examples). Step 3: Start with a small pilot project focused on that one task. Step 4: Measure results for 3 months. Step 5: Expand to additional use cases only after proving value. Do not try to implement AI everywhere at once. Start small, prove value, then scale.'
         }
       ],
-      conclusion: 'AI implementation does not have to be intimidating or expensive for SMEs. Focus on solving specific business problems, start with a small pilot project, and scale based on results. The key is working with developers who understand both the technology and the practical constraints of small business. We specialize in making AI accessible and practical for SMEs and non-profits.'
+      conclusion: 'AI implementation does not have to be intimidating for SMEs. Focus on solving specific business problems, start with a small pilot project, and scale based on results. The key is working with developers who understand both the technology and the practical constraints of small business. We specialize in practical AI for SMEs and non-profits.'
     },
     featured: false
   },
@@ -200,7 +204,7 @@ export const blogPosts: BlogPost[] = [
         },
         {
           heading: 'Alignment with SME and Non-Profit Values',
-          content: 'Most of our clients are SMEs, non-profits, and social enterprises. They share cooperative values: democratic governance, social impact, accessible pricing, long-term sustainability over quick profit. Working with a cooperative is values alignment, not just a vendor transaction. Many clients tell us this alignment matters as much as technical quality.'
+          content: 'Most of our clients are SMEs, non-profits, and social enterprises. They share cooperative values: democratic governance, social impact, honest counsel, long-term sustainability over quick profit. Working with a cooperative is values alignment, not just a vendor transaction. Many clients tell us this alignment matters as much as technical quality.'
         },
         {
           heading: 'Access to Social Economy Ecosystem',

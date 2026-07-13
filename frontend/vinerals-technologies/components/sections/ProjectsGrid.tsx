@@ -18,13 +18,13 @@ interface ProjectsGridProps {
 }
 
 /**
- * ProjectsGrid — dossiers from platforms built at McGill’s SASEL Lab
+ * ProjectsGrid: platforms built at McGill’s SASEL Lab
  * by Vinerals’ founder. Cards open an internal brief; each links out.
  */
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({
-  title = 'Featured dossiers',
-  description = 'Platforms built at McGill’s SASEL Lab by our founder — food systems, sustainability, and research software that ships, with partners across Canada, Europe, and Africa.',
-  eyebrow = 'Dossiers',
+  title = 'Featured work',
+  description = 'Platforms built at McGill’s SASEL Lab by our founder. Food systems, sustainability, and research software that ships, with partners across Canada, Europe, and Africa.',
+  eyebrow = 'Platforms',
   projects,
 }) => {
   return (
@@ -106,7 +106,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({
                       </p>
                     )}
                     <div className="mt-auto inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700">
-                      <span className="squiggle">Open the dossier</span>
+                      <span className="squiggle">Read the brief</span>
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
                   </div>

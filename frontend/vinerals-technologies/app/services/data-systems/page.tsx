@@ -11,7 +11,7 @@ import { Database } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Data Systems & Analytics | Business Intelligence | Vinerals Technologies',
-  description: 'Turn your data into decisions. Database design, ETL pipelines, analytics dashboards, and business intelligence solutions for SMEs.',
+  description: 'Databases, ETL pipelines, and dashboards that turn scattered records into numbers your team can trust. Built for SMEs.',
   alternates: {
     canonical: 'https://vineralstechnologies.com/services/data-systems',
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const serviceSchema = createServiceSchema({
   name: 'Data Systems & Analytics',
-  description: 'Database design, ETL pipelines, analytics dashboards, and business intelligence solutions. Turn your data into actionable insights.',
+  description: 'Database design, ETL pipelines, analytics dashboards, and reporting. Built so your team can answer questions without a half-day spreadsheet hunt.',
 });
 
 export default function DataSystemsPage() {
@@ -64,25 +64,25 @@ export default function DataSystemsPage() {
       number: 1,
       title: 'Data audit',
       subtitle: 'Assessment',
-      description: 'We map your current data sources, find the quality issues nobody wanted to look at, and name the questions you actually need answered.',
+      description: 'We map your sources, name the quality problems, and write down the questions you need answered.',
     },
     {
       number: 2,
       title: 'Architecture design',
       subtitle: 'Planning',
-      description: 'Schema, ETL flows, and dashboard mockups lined up against the business questions you need to answer, not the ones a vendor wants to sell you.',
+      description: 'Schema, pipelines, and dashboard sketches lined up against those questions, not a vendor feature list.',
     },
     {
       number: 3,
       title: 'Implementation',
       subtitle: 'Build',
-      description: 'Pipelines plumbed in, databases stood up, dashboards built on real data instead of synthetic test rows.',
+      description: 'Pipelines connected, databases in place, dashboards on real data instead of fake demo rows.',
     },
     {
       number: 4,
-      title: 'Optimisation',
-      subtitle: 'Continuous',
-      description: 'We watch what gets used, add metrics that earn their place, and prune the ones that don’t.',
+      title: 'Tuning',
+      subtitle: 'Ongoing',
+      description: 'We watch what gets used, add metrics that earn their place, and drop the ones that do not.',
     },
   ];
 
@@ -94,7 +94,7 @@ export default function DataSystemsPage() {
         <ServiceHero
           badge="Data Systems & Analytics"
           title="Turn your data into decisions you can defend."
-          description="Stop drowning in spreadsheets. Real infrastructure underneath, dashboards on top, and reporting that takes minutes instead of half a day."
+          description="Pipelines underneath, dashboards on top, and reporting that takes minutes instead of half a day."
           icon={<Database className="w-16 h-16" />}
         />
 
@@ -107,10 +107,10 @@ export default function DataSystemsPage() {
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="font-bold text-gray-900 mb-2">Data scattered across tools</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Shopify, QuickBooks, a Google Sheet, and three spreadsheets on someone&apos;s desktop. Nobody can agree on the number.
+                  Shopify, QuickBooks, a Google Sheet, and three files on someone&apos;s desktop. Nobody can agree on the number.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  → We pull it into one source of truth.
+                  What we do: pull it into one source of truth.
                 </p>
               </div>
 
@@ -120,27 +120,27 @@ export default function DataSystemsPage() {
                   Someone burns half a day every week copy-pasting numbers into a report nobody reads twice.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  → We automate it with live dashboards.
+                  What we do: automate it with live dashboards.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Questions you can&apos;t answer fast</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Questions that take too long</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  &quot;What&apos;s our customer acquisition cost?&quot; should take ten seconds. Right now it takes two days and three apologies.
+                  &quot;What is our customer acquisition cost?&quot; should take minutes. Right now it takes two days and three apologies.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  → We build the dashboard that answers it on the spot.
+                  What we do: build the view that answers it on the spot.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Data quality nobody trusts</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Data nobody trusts</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Duplicate records, missing fields, three different date formats. The numbers ship caveated.
+                  Duplicate records, missing fields, three date formats. The numbers always ship with a caveat.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  → We clean it up at the source so it doesn&apos;t come back.
+                  What we do: clean it at the source so the mess does not return.
                 </p>
               </div>
             </div>
@@ -196,20 +196,20 @@ export default function DataSystemsPage() {
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
                 <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
-                <div className="text-gray-600">Mission-aligned funding brings data infrastructure inside reach.</div>
+                <div className="text-gray-600">Mission-aligned funding can apply for qualifying data work.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying data and analytics builds.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding can cover part of qualifying builds.
                 </p>
                 <p>
-                  <strong>Start small, scale up.</strong> One focused dashboard that proves the value, then ETL pipelines and the warehouse underneath when you&apos;re ready.
+                  <strong>Start with one clear win.</strong> A focused dashboard that proves value, then pipelines and warehouse work when you are ready.
                 </p>
                 <p>
-                  <strong>Right-sized to the work.</strong> A single dashboard or a full BI stack. We match the build to the problem, not the other way round.
+                  <strong>Sized to the problem.</strong> One report or a full BI stack. We match the build to the questions you need answered.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a consultation. We&apos;ll tell you within a week if a programme fits.
+                  Book a consultation. We will tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

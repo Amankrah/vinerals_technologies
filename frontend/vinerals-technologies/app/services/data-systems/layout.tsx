@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Data Systems & Analytics Montreal | Dashboards, ETL & Data Infrastructure',
-  description: 'Transform data into decisions with modern data infrastructure, analytics dashboards, ETL pipelines, and business intelligence. PostgreSQL, cloud data warehouses, and visualization tools for SMEs.',
+  description: 'Databases, dashboards, ETL pipelines, and reporting that turn scattered records into numbers your team can trust. Built for SMEs in Montréal and across Canada.',
   keywords: [
     'data systems montreal',
     'business analytics',

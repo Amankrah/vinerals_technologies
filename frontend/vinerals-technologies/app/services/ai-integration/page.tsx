@@ -11,7 +11,7 @@ import { Brain, AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Integration for Small Business | Practical AI Solutions | Vinerals Technologies',
-  description: 'Implement AI in your business without the hype. Automation, analytics, LLM integration, and machine learning solutions designed for SME budgets and real ROI.',
+  description: 'Implement AI in your business without the hype. Automation, analytics, LLM integration, and machine learning pointed at real jobs, with measurable ROI.',
   alternates: {
     canonical: 'https://vineralstechnologies.com/services/ai-integration',
   },
@@ -58,32 +58,32 @@ export default function AIIntegrationPage() {
     {
       number: 1,
       title: 'Use case discovery',
-      subtitle: 'ROI-focused',
-      description: 'We find the corners of your work where AI actually saves money or time, and we’re honest about the corners where it doesn’t.',
+      subtitle: 'Honest first',
+      description: 'We find where AI can save time or money in your work, and we name the places where it will not.',
     },
     {
       number: 2,
       title: 'Proof of concept',
       subtitle: 'Validate first',
-      description: 'A small, fast prototype that proves the idea works in your data before anyone signs a six-figure cheque.',
+      description: 'A small prototype on your real data before anyone commits to a full build.',
     },
     {
       number: 3,
       title: 'Implementation',
       subtitle: 'Production-ready',
-      description: 'Built for the real world. Proper error handling, sensible fallbacks for when the model fails, and a clear budget for every API call.',
+      description: 'Error handling, fallbacks when the model fails, and a clear line of sight on API usage costs.',
     },
     {
       number: 4,
-      title: 'Optimisation',
-      subtitle: 'Continuous',
-      description: 'We watch usage, cut costs where we can, and iterate based on what your team actually does with it.',
+      title: 'Tuning',
+      subtitle: 'Ongoing',
+      description: 'We watch how the team uses it, trim waste, and improve based on what actually happens in production.',
     },
   ];
 
   const serviceSchema = createServiceSchema({
     name: 'AI & Machine Learning Integration',
-    description: 'Practical AI solutions for business automation, analytics, and intelligent workflows. ROI-focused implementations designed for SME budgets.',
+    description: 'Practical AI solutions for business automation, analytics, and intelligent workflows. ROI-focused implementations sized to the job, not the hype.',
   });
 
   return (
@@ -94,7 +94,7 @@ export default function AIIntegrationPage() {
         <ServiceHero
           badge="AI & Machine Learning Integration"
           title="AI that earns its keep in your business."
-          description="No hype, no science projects. We pick the few use cases where AI actually saves you money or time, and we build those properly."
+          description="We pick the few jobs where a model saves time or money, build those properly, and say so when AI is the wrong tool."
           icon={<Brain className="w-16 h-16" />}
         />
 
@@ -106,54 +106,53 @@ export default function AIIntegrationPage() {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">Our take on AI</h3>
                   <p className="text-gray-700">
-                    We don&apos;t do AI for its own sake. Every project has to pass the same question:
-                    will this measurably save time, cut costs, or improve outcomes? If the answer is no, we&apos;ll say so and save you the budget.
+                    We do not build AI for its own sake. Every project has to answer a plain question: will this save time, cut costs, or improve outcomes you can measure? If the answer is no, we say so upfront.
                   </p>
                 </div>
               </div>
             </div>
 
             <h2 className="section-headline mb-6 text-center">
-              Use cases where AI actually pays back
+              Jobs where AI usually pays back
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="font-bold text-gray-900 mb-2">Document processing</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Pulling data out of invoices, contracts, and forms automatically, so a person isn&apos;t doing it row by row.
+                  Pull fields from invoices, contracts, and forms so nobody re-types them row by row. A person still checks the uncertain ones.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  Payback: roughly 80% less manual data entry
+                  Typical win: hours back each week on intake work
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Customer support automation</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Support triage</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Chatbots that understand context, hand off when they should, and stop sending people in circles.
+                  Sort and draft replies for common questions, then hand off to a human when the answer is unclear or high-stakes.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  Payback: about 60% of tier-1 tickets resolved without a human
+                  Typical win: fewer repetitive tickets on the team&apos;s plate
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Content generation</h3>
+                <h3 className="font-bold text-gray-900 mb-2">First drafts</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Product descriptions, email drafts, report summaries. Drafted by AI, polished by a human in a fraction of the time.
+                  Product descriptions, email drafts, report summaries. The model starts; a person edits before anything ships.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  Payback: 5× faster from blank page to publish
+                  Typical win: faster path from blank page to a usable draft
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-gray-900 mb-2">Predictive analytics</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Forecasting and flags</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  Forecasting demand, flagging anomalies, surfacing the pattern hiding in the data you already collect.
+                  Demand signals, anomaly alerts, and patterns in data you already collect, when the history is clean enough to trust.
                 </p>
                 <p className="text-sm text-secondary-700 font-medium">
-                  Payback: better inventory planning, less waste, fewer fire drills
+                  Typical win: fewer surprises in inventory and planning
                 </p>
               </div>
             </div>
@@ -169,20 +168,20 @@ export default function AIIntegrationPage() {
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
                 <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
-                <div className="text-gray-600">Mission-aligned funding brings AI work inside reach for more businesses.</div>
+                <div className="text-gray-600">Mission-aligned funding can apply for qualifying AI work.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying AI engagements.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding can cover part of qualifying engagements.
                 </p>
                 <p>
-                  <strong>Phase the work.</strong> Start with a proof of concept that pressure-tests ROI, then scale to the full build. Structured around your budget and your timeline, not ours.
+                  <strong>Phase the work.</strong> Start with a small proof of concept on your data, then expand only if the results hold. Scope follows the job, not a platform pitch.
                 </p>
                 <p className="text-sm text-gray-600">
-                  <strong>One footnote.</strong> AI API costs (OpenAI, Anthropic, and the rest) are billed at usage and stay separate from project fees.
+                  <strong>One note on costs.</strong> Model API usage (OpenAI, Anthropic, and the rest) is billed at usage and stays separate from project fees.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a consultation. We&apos;ll tell you within a week if a programme fits.
+                  Book a consultation. We will tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

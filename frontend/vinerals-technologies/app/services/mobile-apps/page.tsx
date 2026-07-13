@@ -63,26 +63,26 @@ export default function MobileAppsPage() {
     {
       number: 1,
       title: 'Platform strategy',
-      subtitle: 'Strategic',
-      description: 'Cross-platform, native, or a PWA. We pick the one that matches your users, your timeline, and what your budget can carry.',
+      subtitle: 'Clear choice',
+      description: 'Cross-platform, native, or a PWA. We pick based on your users, timeline, and what the build can carry.',
     },
     {
       number: 2,
       title: 'Design & prototype',
-      subtitle: 'User-focused',
-      description: 'Mobile-first UX, interactive prototypes you can tap through on a real phone before any production code is written.',
+      subtitle: 'On a real phone',
+      description: 'Mobile-first screens and interactive prototypes you can tap through before production code starts.',
     },
     {
       number: 3,
       title: 'Development',
-      subtitle: 'Agile',
-      description: 'Two-week sprints with TestFlight and beta builds out the door early, so feedback loops start before launch.',
+      subtitle: 'Visible progress',
+      description: 'Two-week sprints with TestFlight and beta builds early, so feedback starts before launch.',
     },
     {
       number: 4,
       title: 'Launch',
       subtitle: 'Supported',
-      description: 'App Store submission, approval support when Apple has notes, and monitoring once you’re live.',
+      description: 'Store submission, help with review notes when they come, and monitoring once you are live.',
     },
   ];
 
@@ -94,7 +94,7 @@ export default function MobileAppsPage() {
         <ServiceHero
           badge="Mobile Application Development"
           title="Apps your customers will actually keep on the home screen."
-          description="Reach your customers and your team wherever they are. Fast to load, easy to use, written to last beyond launch week."
+          description="Field tools and customer apps for iOS, Android, and the web. Fast to load, clear to use, built to last past launch week."
           icon={<Smartphone className="w-16 h-16" />}
         />
 
@@ -107,7 +107,7 @@ export default function MobileAppsPage() {
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <h3 className="font-bold text-gray-900 mb-3">Cross-platform</h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  One codebase, two apps. The fastest, most cost-effective way to land on iOS and Android at once.
+                  One codebase, two apps. The practical way to ship on iOS and Android from a single build.
                 </p>
                 <div className="text-sm">
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
@@ -122,14 +122,14 @@ export default function MobileAppsPage() {
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <h3 className="font-bold text-gray-900 mb-3">Progressive Web App</h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  A web app that behaves like a native one. No App Store gauntlet, no install friction.
+                  A web app that behaves like a native one. No App Store review cycle, no install step for many users.
                 </p>
                 <div className="text-sm">
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
                   <ul className="text-gray-600 space-y-1 text-xs">
                     <li>• Content-heavy apps</li>
                     <li>• Frequent updates</li>
-                    <li>• When SEO actually matters</li>
+                    <li>• When search visibility matters</li>
                   </ul>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function MobileAppsPage() {
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <h3 className="font-bold text-gray-900 mb-3">Native apps</h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  Separate iOS and Android codebases when performance and hardware access have to be uncompromised.
+                  Separate iOS and Android codebases when you need the deepest hardware access or the tightest performance.
                 </p>
                 <div className="text-sm">
                   <div className="text-secondary-700 font-medium mb-1">Best for:</div>
@@ -161,17 +161,17 @@ export default function MobileAppsPage() {
             <div className="bg-white rounded-xl p-8 shadow-md border border-gray-200">
               <div className="mb-6">
                 <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
-                <div className="text-gray-600">Mission-aligned funding brings mobile work inside reach.</div>
+                <div className="text-gray-600">Mission-aligned funding can apply for qualifying mobile builds.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding cover part of qualifying mobile builds.
+                  We run several tracks depending on your stage and eligibility. Government programmes and impact funding can cover part of qualifying work.
                 </p>
                 <p>
-                  <strong>Platform flexibility.</strong> Cross-platform, PWA, or native. We help you pick the one that matches your users and your budget instead of pushing whatever&apos;s easiest for us.
+                  <strong>Platform choice comes first.</strong> Cross-platform, PWA, or native. We help you pick for your users and your constraints, instead of pushing whatever is easiest for us.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a consultation. We&apos;ll tell you within a week if a programme fits.
+                  Book a consultation. We will tell you within a week if a programme fits.
                 </p>
               </div>
             </div>

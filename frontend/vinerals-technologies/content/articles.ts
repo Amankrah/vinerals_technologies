@@ -225,7 +225,7 @@ export const articles: Article[] = [
                 },
                 {
                   title: 'Own the code.',
-                  body: 'This will not cut cost on day one. It keeps every future change affordable. Owned code means you are never held hostage on the second project by whoever did the first.',
+                  body: 'This will not cut cost on day one. It keeps future changes on terms you control. Owned code means you are never held hostage on the second project by whoever did the first.',
                 },
               ],
             },
@@ -2835,7 +2835,7 @@ export const articles: Article[] = [
                 },
                 {
                   title: 'No plan for run costs.',
-                  body: 'If you cannot fund hosting, maintenance, and a human owner after launch, custom is not affordable yet even if the build is financed.',
+                  body: 'If you cannot fund hosting, maintenance, and a human owner after launch, custom is not sustainable yet even if the build is financed.',
                 },
                 {
                   title: 'Ownership expectations that do not match the contract.',
@@ -2966,7 +2966,7 @@ export const articles: Article[] = [
       ],
       closing: [
         'Craft includes knowing what not to make. Custom software should earn its place in your business: where the workflow is yours, where rented tools bend you the wrong way, where ownership and five-year cost favour a build. Everywhere else, the honest answer is simpler and cheaper.',
-        'We are a Montréal solidarity cooperative that builds software by hand for SMEs. If you want counsel that includes a no when a no is right, we are glad to start with the job you have in mind and tell you what we would actually do. Book a consultation. The first conversation is free, honest, and without obligation.',
+        'We are a Montréal solidarity cooperative that builds software by hand for SMEs. If you want counsel that includes a no when a no is right, we are glad to start with the job you have in mind and tell you what we would actually do. Book a consultation. No fee for the first conversation. Honest counsel, no obligation.',
       ],
     },
   },

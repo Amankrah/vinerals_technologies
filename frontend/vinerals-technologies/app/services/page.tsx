@@ -15,7 +15,7 @@ import { PROCESS_STEPS, ENGAGEMENT_MODELS } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Software Development Services | Made by Hand',
   description:
-    'Custom software, AI, mobile, and data systems — made by hand in Montréal. Senior engineering for SMEs, code you own, at terms you can plan around.',
+    'Custom software, AI, mobile, and data systems made by hand in Montréal. Senior engineering for SMEs. You own the code. Terms you can plan around.',
   keywords: [
     'software made by hand',
     'custom software development montreal',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Software Development Services | Vinerals Technologies',
     description:
-      'Custom apps, AI, mobile, and data systems — made by hand. Senior engineering for SMEs who want craft, ownership, and clarity.',
+      'Custom software, AI, mobile, and data systems made by hand. Senior engineering, clear ownership, and honest counsel for SMEs.',
     url: 'https://vineralstechnologies.com/services',
     type: 'website',
   },
@@ -41,27 +41,33 @@ export const metadata: Metadata = {
 const SERVICE_FAQS = [
   {
     question: 'How long does a typical project take?',
-    answer: 'It depends on scope. A focused web application usually lands in 4 to 8 weeks. A heavier system runs 3 to 6 months. You leave the discovery call with a real timeline, not a guess.',
+    answer:
+      'It depends on scope. A focused web application usually lands in 4 to 8 weeks. A heavier system runs 3 to 6 months. You leave discovery with a real timeline, not a guess.',
   },
   {
     question: 'Do you work with clients outside Montréal?',
-    answer: 'Yes. We’re based in Montréal but work with clients across Canada and beyond. Remote collaboration is normal for us, and we’ve built the communication rhythms that make it work.',
+    answer:
+      'Yes. We are based in Montréal and work with clients across Canada and beyond. Remote collaboration is normal for us, and we have the rhythms that make it work.',
   },
   {
     question: 'What technologies do you use?',
-    answer: 'A modern, boring-on-purpose stack. React, Next.js, Node.js, Python, PostgreSQL, and the major clouds (AWS, GCP, Vercel). The right tool gets chosen for the job, not for our resume.',
+    answer:
+      'A modern stack we know well: React, Next.js, Node.js, Python, PostgreSQL, and the major clouds (AWS, GCP, Vercel). We pick the tool for the job, not for our résumé.',
   },
   {
     question: 'Will I own the code you write?',
-    answer: 'Yes. You own 100% of the code, the designs, and any IP we produce for the project. No vendor lock-in, no proprietary systems. Full source, full documentation, full handover.',
+    answer:
+      'Yes. You own the code, the designs, and the IP we produce for the project. Full source, documentation, and handover. No proprietary platform sitting between you and your system.',
   },
   {
-    question: 'What’s your minimum project size?',
-    answer: 'Projects usually start around $5,000. We’re also happy to phase larger work into smaller commitments. Talk to us about scope and we’ll be straight about whether it fits.',
+    question: 'What is your minimum project size?',
+    answer:
+      'Projects usually start around CAD $5,000. We can also phase larger work into smaller commitments. Tell us the scope and we will say plainly whether it fits.',
   },
   {
     question: 'Do you provide ongoing support?',
-    answer: 'Yes. We offer maintenance and support after launch: bug fixes, updates, new features. We can also train your team to take it on themselves once they’re ready.',
+    answer:
+      'Yes. After launch we can handle bug fixes, updates, and new features. We can also train your team to take ownership once they are ready.',
   },
 ];
 
@@ -85,7 +91,7 @@ export default function ServicesPage() {
           badge="Our Services"
           title="Software you can plan around."
           highlightedWord="plan around."
-          description="Custom software, AI, mobile, and data systems — made by hand. Same calibre larger firms pay full freight for, at terms a growing business can plan around."
+          description="Custom software, AI, mobile, and data systems, made by hand. Senior people, clear scope, and code you own when the work is done."
           image="/service-software.jpg"
           imageAlt="Hands typing on a laptop at a wooden workshop desk"
           primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
@@ -94,17 +100,17 @@ export default function ServicesPage() {
         <ServicesGrid />
         <ProcessSection
           title="How we work"
-          description="A transparent process that keeps you in the loop without burying you in status updates."
+          description="Four steps from first conversation to handover. You stay in the loop without drowning in status updates."
           steps={PROCESS_STEPS}
         />
         <PricingSection
           title="Engagement models"
-          description="A few tracks to choose from, so the shape of the engagement matches your stage."
+          description="A few tracks, so the shape of the work matches your stage and how you buy."
           tiers={ENGAGEMENT_MODELS}
         />
         <FaqAccordion
-          title="Questions you’re probably already asking."
-          description="The ones that come up on the first call, answered here so you don’t have to."
+          title="Questions that come up first."
+          description="The ones people ask on the first call, answered here."
           faqs={SERVICE_FAQS}
         />
         <CTA />

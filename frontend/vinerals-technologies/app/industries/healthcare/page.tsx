@@ -23,7 +23,7 @@ const HEALTHCARE_FAQS = [
   },
   {
     question: 'Do you work with small clinics or only large healthcare organizations?',
-    answer: 'We work with healthcare organizations of all sizes, from independent clinics to multi-site healthcare networks. Through subsidized programs and mission-aligned funding, we make enterprise-quality healthcare technology accessible to smaller providers.',
+    answer: 'We work with healthcare organizations of all sizes, from independent clinics to multi-site healthcare networks. Through subsidized programs and mission-aligned funding, smaller providers get senior-shop healthcare technology without enterprise procurement theatre.',
   },
   {
     question: 'What is your experience with telehealth platforms?',

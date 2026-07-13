@@ -58,7 +58,7 @@ export default function CustomSoftwarePage() {
     {
       number: 1,
       title: 'Discovery',
-      subtitle: 'Free',
+      subtitle: 'No charge',
       description: 'We sit with your team, walk the process end to end, and map the system that solves it. You leave with clarity, regardless of whether you hire us.',
     },
     {
@@ -101,7 +101,7 @@ export default function CustomSoftwarePage() {
         <ServiceHero
           badge="Custom Software Development"
           title="Software shaped around how you actually work."
-          description="No compromises. No feature bloat. No vendor lock-in. We build the thing your business needs and hand you the keys when it’s done."
+          description="We build the system your process needs, then hand you the keys: source, docs, and credentials."
           icon={<Code2 className="w-16 h-16" />}
         />
 
@@ -112,13 +112,13 @@ export default function CustomSoftwarePage() {
             </h2>
             <div className="space-y-4 text-left">
               <p className="text-gray-700 leading-relaxed">
-                Off-the-shelf software makes your business bend around someone else’s product. Custom software bends around you.
+                Off-the-shelf tools work when your process is standard. When it is not, you end up paying for workarounds, extra seats, and features you never use.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                A specialised CRM, an inventory system that finally matches reality, a client portal with the workflow your team has been hacking around in spreadsheets. We build it the way you actually need it.
+                Custom software fits the job: a CRM for how you sell, inventory that matches your warehouse, a client portal that replaces the spreadsheet your team still lives in.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <strong>And the part nobody else offers:</strong> you own everything. No monthly SaaS fees that creep up every renewal. No vendor sitting on top of your data. No forced upgrade you didn’t ask for.
+                <strong>You own what we ship.</strong> Source code, documentation, and credentials in your accounts. No platform sitting between you and your system.
               </p>
             </div>
           </div>
@@ -133,17 +133,17 @@ export default function CustomSoftwarePage() {
             <div className="bg-white rounded-xl p-8 shadow-md">
               <div className="mb-6">
                 <div className="text-2xl font-bold text-primary-900 mb-2">Subsidised tracks available</div>
-                <div className="text-gray-600">Mission-aligned funding brings quality development inside reach.</div>
+                <div className="text-gray-600">Mission-aligned funding can apply for qualifying organisations.</div>
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  We run several tracks depending on your stage and eligibility. Government programmes, foundations, and donor support fund subsidised engagements for qualifying businesses.
+                  We run several tracks depending on your stage and eligibility. Government programmes, foundations, and donor support fund subsidised engagements when the project fits.
                 </p>
                 <p>
-                  <strong>Pick the shape that fits.</strong> Fixed-price commissions with milestone payments, or time and materials with fully transparent tracking. Whatever lines up with how your team buys software.
+                  <strong>Pick the shape that fits.</strong> Fixed-price work with milestones, or time and materials with clear tracking. We match how your team buys software.
                 </p>
                 <p className="text-sm text-gray-600 pt-4 border-t border-gray-200">
-                  Book a consultation. We&apos;ll tell you within a week which track applies, or that none does.
+                  Book a consultation. We will tell you within a week which track applies, or that none does.
                 </p>
               </div>
             </div>

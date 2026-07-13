@@ -23,11 +23,11 @@ export default function WorkPage() {
           badge="Portfolio & Collaborations"
           title="Work that already ships."
           highlightedWord="ships."
-          description="Vinerals is young. Our founder isn’t. These platforms were made by hand at McGill’s SASEL Lab by Emmanuel Amankrah Kwofie — with academic and industry partners across Canada, Europe, and Africa."
+          description="Vinerals is young. Our founder is not. These platforms were built by hand at McGill’s SASEL Lab by Emmanuel Amankrah Kwofie, with academic and industry partners across Canada, Europe, and Africa."
           image="/sector-food.jpg"
           imageAlt="Hands holding freshly harvested greens at a farm packing table"
           primaryCTA={{ label: 'Book a consultation', href: '/contact' }}
-          secondaryCTA={{ label: 'Browse the dossiers', href: '#projects' }}
+          secondaryCTA={{ label: 'See the platforms', href: '#projects' }}
         />
 
         <Section background="gray" paddingY="lg">
@@ -39,7 +39,7 @@ export default function WorkPage() {
             className="grid items-start gap-x-10 gap-y-8 md:grid-cols-12"
           >
             <motion.div variants={fadeInUp} className="md:col-span-5">
-              <span className="eyebrow mb-6 block">Provenance</span>
+              <span className="eyebrow mb-6 block">Where this work started</span>
               <h2 className="section-headline max-w-[16ch]">
                 Built at <em>McGill.</em>
               </h2>
@@ -63,14 +63,14 @@ export default function WorkPage() {
                 >
                   SASEL Lab, McGill University
                 </a>
-                , he designed and engineered the platforms below — research-to-software systems for
-                sustainable food systems, public finance, logistics, and environmental assessment.
+                , he designed and engineered the platforms below: research software for sustainable
+                food systems, public finance, logistics, and environmental assessment.
               </p>
               <p className="mb-8 max-w-[48ch] leading-relaxed text-[var(--ink-muted)]">
                 The work sits inside partnerships with universities, research institutes, government
-                ministries, and industry across Canada, Europe, and Africa. That same depth — and the
-                habit of shipping under real constraints — is what Vinerals brings to SME and
-                mission-driven commissions.
+                ministries, and industry across Canada, Europe, and Africa. That depth, and the habit
+                of shipping under real constraints, is what Vinerals brings to SME and mission-driven
+                projects.
               </p>
               <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-[var(--ink-soft)]">
                 <a
@@ -105,14 +105,14 @@ export default function WorkPage() {
               <em>Real deployments.</em>
             </>
           }
-          description="Each dossier opens a short brief here, with a link through to the full technology page at SASEL Lab."
+          description="Each card opens a short brief here, with a link to the full technology page at SASEL Lab."
           projects={projects}
         />
 
         <CapabilitiesSection capabilities={CAPABILITIES} />
         <ProcessSection
           title="How we work"
-          description="A transparent process that keeps you in the loop without burying you in status updates."
+          description="Four steps from first conversation to handover. You stay in the loop without drowning in status updates."
           steps={PROCESS_STEPS}
         />
         <CTA />

@@ -13,12 +13,13 @@ export interface TeamMember {
 }
 
 /**
- * Worker members of the Vinerals Technologies solidarity cooperative.
+ * Co-founders and worker members of the Vinerals Technologies solidarity cooperative.
+ * Bios should build client confidence: specific proof, clear roles, easy contact.
  */
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Etornam Celestine Tsyawo',
-    role: 'Project Director',
+    role: 'Co-Founder · Project Director',
     initials: 'ET',
     expertise: [
       'Food systems',
@@ -27,12 +28,13 @@ export const TEAM_MEMBERS: TeamMember[] = [
       'Digital decision support',
     ],
     languages: ['English', 'French'],
-    bio: 'Food systems research engineer with over a decade across the African food value chain — from rural sustainable production and processor-level product development to household and micro-enterprise research across nine regions of Ghana. BSc (Hons) Chemical Engineering and MSc Food Science & Technology (KNUST); PhD candidate in Bioresource Engineering at McGill, focused on consumer food systems and digital decision-support tools. Founded and operated L&J Foods, a food-processing SME in Ghana. Published on non-destructive food adulteration detection (Journal of Meat Science, 2023). Built FoodPulse, a food research and education platform. Resolution Fellow, Leading African Women in Food Fellow, and Resolution Council member — with an active network across Ghana, Nigeria, Kenya, Tanzania, and Cameroon.',
-    note: 'Leads stakeholder co-design, regulator engagement, and in-country partner coordination — founder-level fluency in the compliance, quality-assurance, and market-access pressures food SMEs actually live with.',
+    bio: 'Co-founder of Vinerals Technologies and Project Director. Food systems research engineer with more than a decade across the African food value chain: rural production, processor product development, and household and micro-enterprise research across nine regions of Ghana. She founded and ran L&J Foods, a food-processing SME in Ghana, so she knows compliance, quality assurance, and market access from the operator side. BSc (Hons) Chemical Engineering and MSc Food Science & Technology (KNUST); PhD candidate in Bioresource Engineering at McGill. She also built FoodPulse, a food research and education platform, and works with partners across Ghana, Nigeria, Kenya, Tanzania, and Cameroon.',
+    note: 'On your project, she leads stakeholder co-design, regulator conversations, and partner coordination. You get someone who has lived food-SME pressure, not only studied it.',
+    linkedin: 'https://www.linkedin.com/in/etornam-c-tsyawo/',
   },
   {
     name: 'Emmanuel Amankrah Kwofie',
-    role: 'AI & Software Engineering Lead',
+    role: 'Co-Founder & CTO · AI & Software Engineering',
     initials: 'EK',
     expertise: [
       'Full-stack engineering',
@@ -41,8 +43,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
       'Cloud & DevOps',
     ],
     languages: ['English'],
-    bio: 'Translates scientific concepts into high-performance production systems, with a focus on sustainable food systems. IBM AI Engineering Professional; MPhil Human Nutrition & Dietetics; PhD candidate in Bioresource Engineering. Built AI-driven platforms for food security research and government decision-making — including the Food System Financial Intelligence Platform (Rwanda); EcoDish365, a unified environmental nutrition platform with AI subsystems for analysis and policy evaluation; and ProteinProcessIO, a multistage digital twin for plant-based protein extraction with Canada’s National Research Council. Stack spans Next.js, React, Django, FastAPI, Python, AWS, Rust, ML and AI.',
-    note: 'Leads engineering delivery and technical validation — the same craft behind the SASEL platforms that already ship with partners across Canada, Europe, and Africa.',
+    bio: 'Co-founder and CTO of Vinerals Technologies. He turns research into production software, with a focus on sustainable food systems. IBM AI Engineering Professional; MPhil Human Nutrition & Dietetics; PhD candidate in Bioresource Engineering at McGill. Platforms he designed and engineered at SASEL Lab include EcoDish365, ProteinProcessIO (with NRC Canada), and the Food System Financing Intelligence platform for Rwanda, with partners across Canada, Europe, and Africa. Day-to-day stack: Next.js, React, Python, FastAPI, Django, Rust, AWS, and ML.',
+    note: 'On your project, he leads engineering delivery and technical validation. The same person who ships the system is the person you can reach when something needs to change.',
     linkedin: 'https://www.linkedin.com/in/eakwofie/',
     github: 'https://github.com/Amankrah',
     email: 'contact@vineralstechnologies.com',
@@ -50,16 +52,17 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: 'Joël Mongeon',
-    role: 'Data Protection & Compliance Lead',
+    role: 'Co-Founder · Data Protection & Compliance Lead',
     initials: 'JM',
     expertise: [
       'Data protection / DPIA',
-      'Explainable optimisation',
-      'MCDA under uncertainty',
-      'Food quality & sustainability standards',
+      'Decision modelling',
+      'Food quality & sustainability',
+      'Federated architectures',
     ],
     languages: ['French', 'English'],
-    bio: 'Researcher specialising in explainable optimisation and decision logic under deep uncertainty. Bachelor’s in Chemical Engineering; Master’s in Integrated Food and Bioprocess Engineering. Expertise in data-light modelling and robust multi-criteria decision analysis under competing objectives — including cognitive networks, complex systems theory, and federated learning architectures for decision contexts under disruption. Hands-on proprietary data work with Québec companies on food logistics, predictive inventory, and sustainability modelling. Strong domain knowledge across the African food value chain.',
-    note: 'Leads Data Protection Impact Assessments, federated-storage architecture, and alignment with NDPA, DPA, and GDPR — plus food quality (e.g. aflatoxin) and sustainability (e.g. deforestation) standards.',
+    bio: 'Co-founder of Vinerals Technologies and Data Protection & Compliance Lead. Researcher focused on explainable optimisation and decision-making under uncertainty. Bachelor’s in Chemical Engineering (Laurentian, Cum Laude); Master’s in Integrated Food and Bioprocess Engineering at McGill (3.9/4.0); PhD candidate in Bioresource Engineering at McGill’s SASEL Lab. He has done hands-on proprietary data work with Québec companies on food logistics, predictive inventory, and sustainability modelling, and brings strong domain knowledge across African food value chains.',
+    note: 'On your project, he leads Data Protection Impact Assessments, storage architecture, and alignment with NDPA, DPA, and GDPR, plus food quality and sustainability standards. Privacy and compliance are designed in, not bolted on before launch.',
+    linkedin: 'https://www.linkedin.com/in/jo%C3%ABl-mongeon-393294195/',
   },
 ];

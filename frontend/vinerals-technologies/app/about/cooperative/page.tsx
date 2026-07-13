@@ -29,7 +29,7 @@ const PRINCIPLES = [
   {
     n: '04',
     title: 'Autonomy & independence',
-    body: 'Self-governed by members. No external investors control our direction or extract profits.',
+    body: 'Self-governed by members. No external investors control our direction or take profits out of the mission.',
   },
   {
     n: '05',
@@ -44,22 +44,22 @@ const PRINCIPLES = [
   {
     n: '07',
     title: 'Concern for community',
-    body: 'Sustainable community development through member-approved policies — including tracks that keep craft in reach for non-profits and social enterprises.',
+    body: 'Sustainable community development through member-approved policies, including engagement tracks for non-profits and social enterprises when they fit.',
   },
 ] as const;
 
 const WHY_STRUCTURE = [
   {
-    title: 'Craft over extraction.',
-    body: 'Traditional corporations maximise shareholder value. A cooperative is bound to its members and its mission. We put software made by hand ahead of profit extraction — reinvesting in quality and reach, not paying outside shareholders.',
+    title: 'Bound to the mission.',
+    body: 'A corporation answers to shareholders. A cooperative answers to its members and its purpose. We reinvest in quality and capacity instead of paying outside owners.',
   },
   {
     title: 'Terms without corner-cutting.',
-    body: 'Good engineering costs what it costs. Mission-aligned funding can cover part of qualifying budgets so growing businesses can say yes — without wages or quality taking the hit.',
+    body: 'Good engineering costs what it costs. When mission-aligned funding applies, it can cover part of a qualifying budget so a growing business can say yes without cutting wages or craft.',
   },
   {
     title: 'Worker ownership.',
-    body: 'The people writing the code have a say in how the company is run. Better decisions, higher-quality work, and workloads that don’t burn out the team shipping your project.',
+    body: 'The people writing the code help decide how the company is run. That means clearer decisions, stronger work, and workloads that do not burn out the team shipping your project.',
   },
   {
     title: 'A longer time horizon.',
@@ -70,23 +70,23 @@ const WHY_STRUCTURE = [
 const CLIENT_BENEFITS = [
   {
     title: 'Software made by hand.',
-    body: 'Same senior standards you’d expect from a serious Montréal shop — craft first, with terms a growing business can plan around.',
+    body: 'The same senior standards you would expect from a serious Montréal shop, with terms a growing business can plan around.',
   },
   {
     title: 'Translation before code.',
-    body: 'We walk you through what AI and software can and can’t do before anyone writes a line. Mistakes you don’t make are worth real money.',
+    body: 'We walk you through what AI and software can and cannot do before anyone writes a line. Mistakes you avoid are worth real money.',
   },
   {
     title: 'Aligned incentives.',
-    body: 'We win when you win — not when we run up billable hours or stretch the scope.',
+    body: 'We succeed when your system works. We do not profit from running up hours or stretching scope.',
   },
   {
     title: 'The team that starts finishes.',
-    body: 'Worker ownership means low turnover. No juniors learning mid-project on your dime.',
+    body: 'Worker ownership means low turnover. You are not funding juniors learning mid-project.',
   },
   {
     title: 'You own everything.',
-    body: 'No vendor lock-in, no proprietary trap. 100% of the code, ready to leave with you.',
+    body: 'No vendor lock-in. The code, credentials, and docs leave with you when you want them.',
   },
 ] as const;
 
@@ -101,7 +101,7 @@ const GOVERNANCE = [
   },
   {
     title: 'Day-to-day operations',
-    body: 'Worker-members decide by consensus when we can, by vote when we must. Technical calls live with the people closest to the work.',
+    body: 'Worker members decide by consensus when we can, by vote when we must. Technical calls live with the people closest to the work.',
   },
   {
     title: 'Surplus distribution',
@@ -112,7 +112,7 @@ const GOVERNANCE = [
 const ECOSYSTEM = [
   {
     name: 'Conseil québécois de la coopération et de la mutualité (CQCM)',
-    body: 'Québec’s cooperative network — support, advocacy, and connections.',
+    body: 'Québec’s cooperative network: support, advocacy, and connections.',
     href: 'https://www.coopquebec.coop/',
   },
   {
@@ -139,20 +139,19 @@ export default function CooperativePage() {
       <main className="pt-16">
         <CooperativeHero
           badge="Our Cooperative Model"
-          title="Built differently, on purpose."
-          highlightedWord="on purpose"
-          description="A solidarity cooperative. Craft, ownership, and honest counsel — owned by workers and community, not by investors hunting an exit."
+          title="How ownership changes the work."
+          highlightedWord="ownership"
+          description="We are a Québec solidarity cooperative. Workers and community own the shop. You get named people, code you own, and counsel that is not chasing an exit."
           image="/cooperative-atelier.jpg"
-          imageAlt="Hands gathered around a wooden workshop table — cooperative craft"
+          imageAlt="Hands gathered around a wooden workshop table"
           stats={[
-            { value: '1 = 1', label: 'Member votes' },
-            { value: 'Craft', label: 'Before extraction' },
+            { value: '1 = 1', label: 'One member, one vote' },
+            { value: '3', label: 'Member types in one room' },
           ]}
           primaryCTA={{ label: 'How it shows up', href: '#in-the-work' }}
           secondaryCTA={{ label: 'Book a consultation', href: '/contact' }}
         />
 
-        {/* Lead with work impact */}
         <Section background="gray" paddingY="lg" id="in-the-work">
           <motion.div
             initial="hidden"
@@ -164,13 +163,13 @@ export default function CooperativePage() {
             <motion.div variants={fadeInUp} className="md:col-span-4">
               <span className="eyebrow mb-6 block">In the work</span>
               <h2 className="section-headline max-w-[14ch]">
-                The model
+                What clients
                 <br />
-                <em>you can feel.</em>
+                <em>actually notice.</em>
               </h2>
               <p className="lead-text mt-6 max-w-[32ch]">
-                Structure isn&apos;t a feel-good story. It changes who you talk to, what you own,
-                and whether quality gets sacrificed for an exit.
+                Structure is not a slogan. It changes who you talk to, what you own, and whether
+                quality gets traded away for someone else’s timeline.
               </p>
             </motion.div>
             <motion.ol
@@ -225,23 +224,23 @@ export default function CooperativePage() {
               <ul className="mb-6 space-y-3 text-[var(--ink-muted)]">
                 <li className="flex items-start gap-3">
                   <span className="mt-1 text-secondary-600" aria-hidden>
-                    —
+                    ·
                   </span>
                   <span>
                     <strong className="text-[var(--ink)]">Worker members.</strong> The people
-                    doing the work — including the{' '}
+                    doing the work, including the{' '}
                     <Link
                       href="/about/team"
                       className="text-primary-700 underline decoration-[var(--ink-hairline)] underline-offset-4 transition-colors hover:text-secondary-600"
                     >
-                      worker seats on our board
+                      co-founders on our board
                     </Link>
                     .
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 text-secondary-600" aria-hidden>
-                    —
+                    ·
                   </span>
                   <span>
                     <strong className="text-[var(--ink)]">User members.</strong> Clients who choose
@@ -250,7 +249,7 @@ export default function CooperativePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 text-secondary-600" aria-hidden>
-                    —
+                    ·
                   </span>
                   <span>
                     <strong className="text-[var(--ink)]">Supporting members.</strong> Community
@@ -260,11 +259,11 @@ export default function CooperativePage() {
               </ul>
               <p className="leading-relaxed text-[var(--ink-muted)]">
                 Each member gets one vote, no matter what they put in. Surpluses go back into the
-                mission, to worker-members, or to a community fund. Nothing flows out to external
-                shareholders — because there are none.
+                mission, to worker members, or to a community fund. Nothing flows out to external
+                shareholders, because there are none.
               </p>
               <blockquote className="pullquote mt-8">
-                Craft over extraction. Built differently, on purpose.
+                Owned by the people doing the work. Built to last past any one engagement.
               </blockquote>
             </motion.div>
           </motion.div>
@@ -286,7 +285,7 @@ export default function CooperativePage() {
               </h2>
               <p className="lead-text max-w-[48ch]">
                 Cooperatives worldwide share seven principles from the International Cooperative
-                Alliance. Here&apos;s what each looks like in our work.
+                Alliance. Here is what each looks like in our work.
               </p>
             </motion.div>
 
@@ -368,14 +367,14 @@ export default function CooperativePage() {
               <span className="eyebrow">Gouvernance</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="section-headline mb-8">
-              How we&apos;re governed
+              How we are governed
             </motion.h2>
             <motion.div
               variants={fadeInUp}
               className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10"
             >
               <p className="mb-8 leading-relaxed text-[var(--ink-muted)]">
-                Democratic, but built to move quickly:
+                Democratic, and built to move when the work needs a decision:
               </p>
               <dl className="space-y-8">
                 {GOVERNANCE.map((item) => (

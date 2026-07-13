@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Partners | Patient Capital, Government & Consortiums | Vinerals Technologies',
+  title: 'Partners | Funders, Government & Consortiums | Vinerals Technologies',
   description:
-    'Partner with Vinerals Technologies — a Montréal solidarity cooperative building software made by hand. Doors for funders, government agencies, and industry consortiums across Québec and Canada.',
+    'Partner with Vinerals Technologies, a Montréal solidarity cooperative. Pages for funders, government agencies, and industry consortiums across Québec and Canada.',
   keywords: [
     'technology cooperative partnerships',
     'solidarity cooperative montreal',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Partners | Vinerals Technologies',
     description:
-      'Three doors: patient capital, government mandates, and consortium shared platforms — craft delivery from a Montréal solidarity cooperative.',
+      'Three partnership paths: patient capital, government programmes, and consortium shared platforms. Delivery from a Montréal solidarity cooperative.',
     url: 'https://vineralstechnologies.com/partners',
     type: 'website',
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Partners | Vinerals Technologies',
     description:
-      'Funders, government, and consortiums — craft software partnerships with a Montréal solidarity cooperative.',
+      'Funders, government, and consortiums: craft software partnerships with a Montréal solidarity cooperative.',
     images: ['https://vineralstechnologies.com/og-partners.jpg'],
   },
   alternates: {

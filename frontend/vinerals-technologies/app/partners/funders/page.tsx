@@ -18,22 +18,22 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 const THESIS = [
   {
     title: 'The gap.',
-    body: 'Serious custom software costs real money. Growing businesses get priced out — or settle for juniors and templates that leave scar tissue.',
+    body: 'Serious custom software costs real money. Growing businesses often face quotes they cannot justify, or settle for thin builds that become expensive to maintain.',
   },
   {
     title: 'The craft.',
-    body: 'We build software made by hand: senior engineering, owned code, honest counsel. Quality that agencies charge full freight for — structured so SMEs can say yes.',
+    body: 'We build software made by hand: senior engineering, code the client owns, and honest counsel. Quality structured so a growing business can say yes.',
   },
   {
     title: 'Your capital.',
-    body: 'Patient capital, grants, and programme funding extend reach without diluting craft. Surpluses stay in the cooperative mission — not investor extraction.',
+    body: 'Patient capital, grants, and programme funding extend reach without diluting craft. Surpluses stay in the cooperative mission.',
   },
 ] as const;
 
 const MODEL = [
   {
     title: 'Earned revenue first.',
-    body: 'Client work anchors the shop. Partner capital expands capacity and qualifying engagements — it does not replace a real delivery business.',
+    body: 'Client work anchors the shop. Partner capital expands capacity and qualifying engagements. It does not replace a real delivery business.',
   },
   {
     title: 'Hybrid by design.',
@@ -41,7 +41,7 @@ const MODEL = [
   },
   {
     title: 'Transparent use of funds.',
-    body: 'Engineering capacity, delivery, and cooperative infrastructure — with milestones and reporting agreed before money moves.',
+    body: 'Engineering capacity, delivery, and cooperative infrastructure, with milestones and reporting agreed before money moves.',
   },
 ] as const;
 
@@ -49,12 +49,12 @@ const TARGETS = [
   {
     value: '50+',
     title: 'SMEs unlocked',
-    body: 'Target by 2027 — growing businesses with serious, owned software. Labelled as a goal, not a claim of past results.',
+    body: 'Target by 2027: growing businesses with serious, owned software. This is a goal, not a claim of past results.',
   },
   {
     value: 'Craft',
     title: 'Without dilution',
-    body: 'Same calibre larger shops ship — terms structured so quality survives the budget conversation.',
+    body: 'The same calibre larger shops ship, with terms structured so quality survives the budget conversation.',
   },
   {
     value: '10+',
@@ -79,12 +79,12 @@ const FUNDERS_FAQS = [
   {
     question: 'Are you raising venture capital?',
     answer:
-      'No. We seek patient capital, grants, and programme partnerships aligned with a solidarity cooperative — not extractive equity with an exit clock.',
+      'No. We seek patient capital, grants, and programme partnerships that fit a solidarity cooperative. We are not looking for extractive equity with an exit clock.',
   },
   {
     question: 'Which programmes do you work with?',
     answer:
-      'We pursue and deliver under programmes that fit craft work for SMEs — including health, innovation, cleantech, agtech, and social-enterprise streams (e.g. CIHR, ISED, SDTC, MAPAQ, Community Futures, foundations). Fit depends on the project, not a blanket claim of active awards.',
+      'We pursue and deliver under programmes that fit craft work for SMEs, including health, innovation, cleantech, agtech, and social-enterprise streams (for example CIHR, ISED, SDTC, MAPAQ, Community Futures, foundations). Fit depends on the project. We do not claim a blanket list of active awards.',
   },
   {
     question: 'How do you measure impact?',
@@ -116,12 +116,12 @@ export default function FundersPage() {
           badge="For Funders & Foundations"
           title="Patient capital for hand-made software."
           highlightedWord="hand-made"
-          description="Social return with financial discipline. Back a solidarity cooperative that keeps craft intact for Québec SMEs — not a discount agency, not a VC pitch."
+          description="Social return with financial discipline. Back a Montréal solidarity cooperative that builds serious software for Québec SMEs, with transparent books and clear reporting."
           image="/partners-atelier.jpg"
           imageAlt="Hands collaborating over a laptop at a workshop table"
           stats={[
             { value: 'Patient', label: 'Capital preferred' },
-            { value: 'Co-op', label: 'Not extractive equity' },
+            { value: 'Co-op', label: 'Governance' },
           ]}
           primaryCTA={{ label: 'Read the thesis', href: '#thesis' }}
           secondaryCTA={{ label: 'Contact us', href: '/contact' }}
@@ -213,7 +213,7 @@ export default function FundersPage() {
                 <em>aiming for.</em>
               </h2>
               <p className="lead-text mt-6 max-w-[42ch]">
-                These are targets — not audited past results. We will not dress ambition as
+                These are targets, not audited past results. We will not dress ambition as
                 achievement.
               </p>
             </motion.div>
@@ -260,7 +260,7 @@ export default function FundersPage() {
                   className="flex items-start gap-3 leading-relaxed text-[var(--ink-muted)]"
                 >
                   <span className="mt-1 text-secondary-600" aria-hidden>
-                    —
+                    ·
                   </span>
                   <span>{line}</span>
                 </motion.li>
