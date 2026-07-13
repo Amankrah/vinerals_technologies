@@ -104,7 +104,7 @@ const Footer = () => {
               <ul className="mt-5 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white/60 space-y-2 leading-relaxed">
                 <li className="text-white/80">Coopérative de solidarité</li>
                 <li>Worker- &amp; community-owned</li>
-                <li>Founded {SITE_CONFIG.foundingYear} · Bilingue EN / FR</li>
+                <li>Founded {SITE_CONFIG.foundingYear} · Montréal</li>
                 <li>Working across Canada</li>
               </ul>
             </div>

@@ -25,10 +25,10 @@ export const NAVIGATION = {
       name: 'Services',
       href: '/services',
       dropdown: [
-        { name: 'Custom Software Development', href: '/services/custom-software' },
-        { name: 'AI & Machine Learning Integration', href: '/services/ai-integration' },
-        { name: 'Mobile Applications', href: '/services/mobile-apps' },
-        { name: 'Data Systems & Analytics', href: '/services/data-systems' },
+        { name: 'Custom Software', href: '/services/custom-software' },
+        { name: 'AI Integration', href: '/services/ai-integration' },
+        { name: 'Mobile Apps', href: '/services/mobile-apps' },
+        { name: 'Data Systems', href: '/services/data-systems' },
       ],
     },
     {
@@ -36,9 +36,9 @@ export const NAVIGATION = {
       href: '/industries',
       dropdown: [
         { name: 'Healthcare', href: '/industries/healthcare' },
-        { name: 'Food & Agriculture', href: '/industries/food-systems' },
-        { name: 'Sustainability & Cleantech', href: '/industries/sustainability' },
-        { name: 'Non-Profits & Social Enterprise', href: '/industries/non-profits' },
+        { name: 'Food Systems', href: '/industries/food-systems' },
+        { name: 'Sustainability', href: '/industries/sustainability' },
+        { name: 'Non-Profits', href: '/industries/non-profits' },
       ],
     },
     {
@@ -49,15 +49,18 @@ export const NAVIGATION = {
       name: 'About',
       href: '/about',
       dropdown: [
-        { name: 'Our Mission', href: '/about/mission' },
+        { name: 'Mission', href: '/about/mission' },
         { name: 'Team', href: '/about/team' },
-        { name: 'Cooperative Model', href: '/about/cooperative' },
-        { name: 'Partners', href: '/partners' },
+        { name: 'Cooperative', href: '/about/cooperative' },
       ],
     },
     {
       name: 'Resources',
       href: '/resources',
+    },
+    {
+      name: 'Partners',
+      href: '/partners',
     },
   ],
   footer: {

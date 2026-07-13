@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
@@ -8,6 +8,11 @@ import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
 import Logo from '@/components/shared/Logo';
 import { NAVIGATION } from '@/lib/constants';
+
+function isNavActive(pathname: string, href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 /**
  * Header — magazine masthead. A double rule sits beneath; the logo
@@ -27,6 +32,27 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavKeyDown = useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Escape') return;
+    const target = event.currentTarget;
+    const active = document.activeElement;
+    if (active instanceof HTMLElement && target.contains(active)) {
+      active.blur();
+    }
+  }, []);
+
+  const linkTone = (active: boolean) =>
+    cn(
+      'font-mono text-[0.7rem] uppercase tracking-[0.22em] transition-colors',
+      overHero
+        ? active
+          ? 'text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
+          : 'text-white hover:text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
+        : active
+          ? 'text-primary-700'
+          : 'text-[var(--ink-soft)] hover:text-primary-700'
+    );
 
   return (
     <header
@@ -52,28 +78,33 @@ const Header = () => {
             overHero ? 'text-white/90' : 'text-[var(--ink-soft)]'
           )}
         >
-          <span>Vol. I · Montréal · Bilingue EN / FR</span>
+          <span>Montréal · Québec</span>
           <span>Une coopérative de solidarité</span>
         </div>
       </div>
 
-      <nav className="container mx-auto py-5 md:py-6 relative">
+      <nav className="container mx-auto py-5 md:py-6 relative" aria-label="Primary">
         <div className="flex items-center justify-between">
           <Logo size="md" variant={overHero ? 'light' : 'default'} />
 
-          {/* Desktop nav — small-caps mono labels with squiggle on hover */}
+          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-10">
-            {NAVIGATION.main.map((item) => (
-              <div key={item.name} className="relative">
-                {'dropdown' in item ? (
-                  <div className="group">
+            {NAVIGATION.main.map((item) => {
+              const active = isNavActive(pathname, item.href);
+
+              if ('dropdown' in item) {
+                return (
+                  <div
+                    key={item.name}
+                    className="relative group"
+                    onKeyDown={handleNavKeyDown}
+                  >
                     <Link
                       href={item.href}
+                      aria-haspopup="true"
                       className={cn(
-                        'font-mono text-[0.7rem] uppercase tracking-[0.22em] transition-colors py-2 inline-flex items-baseline gap-1.5',
-                        overHero
-                          ? 'text-white hover:text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
-                          : 'text-[var(--ink-soft)] hover:text-primary-700'
+                        linkTone(active),
+                        'py-2 inline-flex items-baseline gap-1.5'
                       )}
                     >
                       <span className="squiggle">{item.name}</span>
@@ -82,49 +113,58 @@ const Header = () => {
                         className={cn(
                           'text-[0.6em]',
                           overHero
-                            ? 'text-white/70 group-hover:text-secondary-200'
-                            : 'text-[var(--ink-faint)] group-hover:text-secondary-500'
+                            ? 'text-white/70 group-hover:text-secondary-200 group-focus-within:text-secondary-200'
+                            : 'text-[var(--ink-faint)] group-hover:text-secondary-500 group-focus-within:text-secondary-500'
                         )}
                       >
                         +
                       </span>
                     </Link>
-                    {/* Dropdown plate */}
-                    <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                      <div className="w-72 bg-[var(--paper)] border border-[var(--ink-hairline)]/40 shadow-card py-2 grain">
-                        {item.dropdown.map((subItem, idx) => (
-                          <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            className="above-grain block px-5 py-3 text-[var(--ink-soft)] hover:text-primary-700 hover:bg-[var(--cream)] transition-colors font-display text-base border-b last:border-b-0 border-[var(--ink-hairline)]/25"
-                          >
-                            <span className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-secondary-500 mr-3">
-                              {String(idx + 1).padStart(2, '0')}
-                            </span>
-                            {subItem.name}
-                          </Link>
-                        ))}
+                    <div className="absolute top-full left-0 pt-3 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto transition-all duration-300 z-50">
+                      <div
+                        className="w-72 bg-[var(--paper)] border border-[var(--ink-hairline)]/40 shadow-card py-2 grain"
+                        role="menu"
+                      >
+                        {item.dropdown.map((subItem, idx) => {
+                          const subActive = isNavActive(pathname, subItem.href);
+                          return (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              role="menuitem"
+                              className={cn(
+                                'above-grain block px-5 py-3 hover:bg-[var(--cream)] transition-colors font-display text-base border-b last:border-b-0 border-[var(--ink-hairline)]/25',
+                                subActive
+                                  ? 'text-primary-700'
+                                  : 'text-[var(--ink-soft)] hover:text-primary-700'
+                              )}
+                            >
+                              <span className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-secondary-500 mr-3">
+                                {String(idx + 1).padStart(2, '0')}
+                              </span>
+                              {subItem.name}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      'font-mono text-[0.7rem] uppercase tracking-[0.22em] transition-colors',
-                      overHero
-                        ? 'text-white hover:text-secondary-200 [text-shadow:0_1px_10px_rgba(10,20,16,0.55)]'
-                        : 'text-[var(--ink-soft)] hover:text-primary-700'
-                    )}
-                  >
-                    <span className="squiggle">{item.name}</span>
-                  </Link>
-                )}
-              </div>
-            ))}
+                );
+              }
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={linkTone(active)}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  <span className="squiggle">{item.name}</span>
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Demoted to a text link — the hero & footer own the button-weight CTA */}
           <Link
             href="/contact"
             className={cn(
@@ -134,11 +174,12 @@ const Header = () => {
                 : 'text-primary-700 hover:text-secondary-500'
             )}
           >
-            <span className={overHero ? undefined : 'squiggle-forest'}>Begin a project</span>
+            <span className={overHero ? undefined : 'squiggle-forest'}>
+              Book a consultation
+            </span>
             <span aria-hidden>→</span>
           </Link>
 
-          {/* Mobile menu trigger — literal aria-expanded values for static a11y checks */}
           {mobileMenuOpen ? (
             <button
               type="button"
@@ -167,7 +208,6 @@ const Header = () => {
           )}
         </div>
 
-        {/* Bottom hairline of the masthead */}
         <div
           aria-hidden
           className={cn(
@@ -176,46 +216,69 @@ const Header = () => {
           )}
         />
 
-        {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden mt-6 pb-6 space-y-1 animate-fade-in-down">
-            {NAVIGATION.main.map((item, idx) => (
-              <div key={item.name} className="py-1">
-                {'dropdown' in item ? (
-                  <div className="space-y-1">
+            {NAVIGATION.main.map((item, idx) => {
+              const active = isNavActive(pathname, item.href);
+
+              if ('dropdown' in item) {
+                return (
+                  <div key={item.name} className="py-1 space-y-1">
                     <Link
                       href={item.href}
-                      className="flex items-baseline gap-3 py-3 font-display text-xl text-[var(--ink)]"
+                      className={cn(
+                        'flex items-baseline gap-3 py-3 font-display text-xl',
+                        active ? 'text-primary-700' : 'text-[var(--ink)]'
+                      )}
                       onClick={() => setMobileMenuOpen(false)}
+                      aria-current={active ? 'page' : undefined}
                     >
-                      <span className="numeral text-base">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="numeral text-base">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
                       <span>{item.name}</span>
                     </Link>
                     <div className="pl-9 space-y-1 pb-2">
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.href}
-                          href={subItem.href}
-                          className="block py-2 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--ink-muted)] hover:text-primary-700"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
+                      {item.dropdown.map((subItem) => {
+                        const subActive = isNavActive(pathname, subItem.href);
+                        return (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            className={cn(
+                              'block py-2 font-mono text-[0.72rem] uppercase tracking-[0.18em] hover:text-primary-700',
+                              subActive ? 'text-primary-700' : 'text-[var(--ink-muted)]'
+                            )}
+                            onClick={() => setMobileMenuOpen(false)}
+                            aria-current={subActive ? 'page' : undefined}
+                          >
+                            {subItem.name}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="flex items-baseline gap-3 py-3 font-display text-xl text-[var(--ink)] hover:text-primary-700"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="numeral text-base">{String(idx + 1).padStart(2, '0')}</span>
-                    <span>{item.name}</span>
-                  </Link>
-                )}
-              </div>
-            ))}
+                );
+              }
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    'flex items-baseline gap-3 py-3 font-display text-xl hover:text-primary-700',
+                    active ? 'text-primary-700' : 'text-[var(--ink)]'
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  <span className="numeral text-base">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
             <div className="pt-6">
               <Button
                 href="/contact"
@@ -224,7 +287,7 @@ const Header = () => {
                 className="w-full"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Begin a project
+                Book a consultation
               </Button>
             </div>
           </div>

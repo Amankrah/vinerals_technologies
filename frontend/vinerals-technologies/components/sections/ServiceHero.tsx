@@ -31,8 +31,8 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   icon,
   image,
   imageAlt,
-  primaryCTA = { label: 'Begin a project', href: '/contact' },
-  secondaryCTA = { label: 'Read past dossiers', href: '/work' },
+  primaryCTA = { label: 'Book a consultation', href: '/contact' },
+  secondaryCTA = { label: 'See our work', href: '/work' },
 }) => {
   const renderTitle = () => {
     if (!highlightedWord) return <span>{title}</span>;
