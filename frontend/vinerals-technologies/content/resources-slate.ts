@@ -10,7 +10,6 @@ export type ArticleCluster =
   | 'Decisions'
   | 'Craft & ownership'
   | 'AI honesty'
-  | 'Québec & Canada'
   | 'Sector'
   | 'Working together';
 
@@ -79,7 +78,7 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
     id: 'ai-or-better-software',
     number: '03',
     cluster: 'AI honesty',
-    title: 'Do you need AI — or better software?',
+    title: 'Do you need AI, or better software?',
     workingSlug: 'do-you-need-ai-or-better-software',
     job: 'Kill AI theatre; redirect energy to the real bottleneck.',
     angle:
@@ -92,7 +91,7 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'A one-quarter starting plan',
     ],
     audience: 'Operators under pressure to “do AI”',
-    status: 'planned',
+    status: 'published',
     priority: 3,
   },
   {
@@ -112,7 +111,7 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'How we structure handover at Vinerals',
     ],
     audience: 'Anyone who has been burned by vendor lock-in',
-    status: 'planned',
+    status: 'published',
     priority: 4,
   },
   {
@@ -132,7 +131,7 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'Template outline readers can copy',
     ],
     audience: 'First-time buyers of custom work',
-    status: 'planned',
+    status: 'published',
     priority: 5,
   },
   {
@@ -152,52 +151,12 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'When “phase 2” is a lie',
     ],
     audience: 'Product / ops leads with limited budget',
-    status: 'planned',
+    status: 'published',
     priority: 6,
   },
   {
-    id: 'quebec-digital-funding',
-    number: '07',
-    cluster: 'Québec & Canada',
-    title: 'Québec and Canadian programmes that can fund digital work',
-    workingSlug: 'quebec-canada-programmes-fund-digital-work',
-    job: 'Map real programme families with caveats — not a guarantee of awards.',
-    angle:
-      'Funding can change the math; it never replaces a clear project and a credible delivery partner.',
-    outline: [
-      'How to think about programmes (eligibility, match, timeline)',
-      'Provincial / federal families worth knowing (research at write time)',
-      'What applications need that tech shops often forget',
-      'How we help without pretending we control approvals',
-      'Honesty about timelines and rejection',
-    ],
-    audience: 'Québec SMEs and social enterprises exploring funding',
-    status: 'planned',
-    priority: 7,
-  },
-  {
-    id: 'cooperative-vs-agency',
-    number: '08',
-    cluster: 'Working together',
-    title: 'Why a solidarity cooperative is a different kind of tech partner',
-    workingSlug: 'solidarity-cooperative-vs-agency',
-    job: 'Explain governance and incentives without co-op romanticism.',
-    angle:
-      'Structure shapes behaviour: who gets the surplus, who decides, and what “success” means.',
-    outline: [
-      'Agency incentives vs cooperative incentives',
-      'Transparency and surplus (mission, workers, community)',
-      'What changes for the client day to day',
-      'What does not change (you still need craft and delivery)',
-      'Who this model is a poor fit for',
-    ],
-    audience: 'Values-aligned buyers and partners',
-    status: 'planned',
-    priority: 8,
-  },
-  {
     id: 'food-traceability',
-    number: '09',
+    number: '07',
     cluster: 'Sector',
     title: 'Food systems software: traceability without the enterprise theatre',
     workingSlug: 'food-systems-traceability-software-sme',
@@ -212,12 +171,12 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'How we approach food-systems work (without overclaiming)',
     ],
     audience: 'Food processors, co-ops, agrifood SMEs',
-    status: 'planned',
-    priority: 9,
+    status: 'published',
+    priority: 7,
   },
   {
     id: 'data-ready-for-ai',
-    number: '10',
+    number: '08',
     cluster: 'AI honesty',
     title: 'Is your data ready for AI? A pre-flight checklist',
     workingSlug: 'is-your-data-ready-for-ai-checklist',
@@ -232,12 +191,12 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'A go / no-go checklist',
     ],
     audience: 'Ops and data-curious founders',
-    status: 'planned',
-    priority: 10,
+    status: 'published',
+    priority: 8,
   },
   {
     id: 'saas-vs-custom-tco',
-    number: '11',
+    number: '09',
     cluster: 'Decisions',
     title: 'Five-year cost: SaaS vs custom (without the spreadsheet fantasy)',
     workingSlug: 'five-year-cost-saas-vs-custom',
@@ -252,12 +211,12 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'When the “expensive” option is cheaper',
     ],
     audience: 'Finance-aware operators',
-    status: 'planned',
-    priority: 11,
+    status: 'published',
+    priority: 9,
   },
   {
     id: 'when-not-to-build',
-    number: '12',
+    number: '10',
     cluster: 'Craft & ownership',
     title: 'When we will tell you not to build custom',
     workingSlug: 'when-not-to-build-custom-software',
@@ -272,8 +231,8 @@ export const RESOURCES_SLATE: PlannedArticle[] = [
       'What good clients do after a no',
     ],
     audience: 'Buyers who want an honest partner',
-    status: 'planned',
-    priority: 12,
+    status: 'published',
+    priority: 10,
   },
 ];
 

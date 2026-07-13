@@ -13,11 +13,19 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
+const slateById = Object.fromEntries(RESOURCES_SLATE.map((s) => [s.id, s]));
+
+const publishedStagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+  },
+};
+
 const CLUSTER_ORDER: ArticleCluster[] = [
   'Decisions',
   'Craft & ownership',
   'AI honesty',
-  'Québec & Canada',
   'Sector',
   'Working together',
 ];
@@ -43,12 +51,15 @@ export default function ResourcesPage() {
           badge="Resources & Learning"
           title="Notes from the shop floor."
           highlightedWord="shop floor."
-          description="Practical writing for SMEs and social enterprises. Costs, ownership, AI without the theatre, and how craft software actually gets decided. We publish one note at a time."
+          description="Practical writing for SMEs and social enterprises. Costs, ownership, AI without the theatre, and how craft software actually gets decided."
           image="/resources-atelier.jpg"
           imageAlt="Notebook, pen, and laptop on a wooden workshop desk"
           stats={[
             { value: String(published.length), label: 'Published' },
-            { value: String(planned.length), label: 'Still in the queue' },
+            {
+              value: planned.length ? String(planned.length) : 'Complete',
+              label: planned.length ? 'Still in the queue' : 'Slate',
+            },
           ]}
           primaryCTA={{
             label: published.length ? 'Read the latest' : 'See the slate',
@@ -62,8 +73,8 @@ export default function ResourcesPage() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={staggerContainer}
+              viewport={{ once: true, margin: '-80px' }}
+              variants={publishedStagger}
             >
               <div className="mb-10 grid items-end gap-x-10 gap-y-6 md:mb-14 md:grid-cols-12">
                 <motion.div variants={fadeInUp} className="md:col-span-7">
@@ -84,11 +95,12 @@ export default function ResourcesPage() {
               </div>
 
               <motion.div
-                variants={staggerContainer}
+                variants={publishedStagger}
                 className="grid gap-0 border border-[var(--ink-hairline)]/45 md:grid-cols-2"
               >
                 {published.map((article, index) => {
                   const isRight = index % 2 === 1;
+                  const slate = article.slateId ? slateById[article.slateId] : undefined;
 
                   return (
                   <motion.div key={article.slug} variants={fadeInUp}>
@@ -102,14 +114,20 @@ export default function ResourcesPage() {
                           : ''
                       }`}
                     >
-                      <div className="relative aspect-[16/10] overflow-hidden bg-primary-950">
+                      <div className="relative aspect-[16/10] overflow-hidden bg-[var(--cream-deep)]">
                         <Image
                           src={article.image}
                           alt={article.imageAlt}
                           fill
+                          priority={index < 10}
                           sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                         />
+                        {slate && (
+                          <span className="absolute left-5 top-5 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white [text-shadow:0_1px_12px_rgba(10,20,16,0.55)]">
+                            {slate.number}
+                          </span>
+                        )}
                       </div>
                       <div className="flex flex-1 flex-col p-6 md:p-8">
                         <span className="font-mono text-[0.65rem] uppercase tracking-[0.24em] text-secondary-600">
@@ -181,6 +199,7 @@ export default function ResourcesPage() {
           </motion.div>
         </Section>
 
+        {planned.length > 0 ? (
         <Section background="gray" paddingY="lg" id="slate">
           <motion.div
             initial="hidden"
@@ -201,8 +220,8 @@ export default function ResourcesPage() {
                 variants={fadeInUp}
                 className="lead-text max-w-[40ch] md:col-span-5 md:ml-auto"
               >
-                Working titles and jobs-to-be-done. Next up: AI honesty
-                (do you need AI, or better software?).
+                Working titles and jobs-to-be-done for notes still being
+                researched and written.
               </motion.p>
             </div>
 
@@ -240,6 +259,7 @@ export default function ResourcesPage() {
             </motion.ol>
           </motion.div>
         </Section>
+        ) : null}
 
         <Section background="white" paddingY="lg">
           <motion.div
@@ -253,7 +273,7 @@ export default function ResourcesPage() {
               <h2 className="section-headline max-w-[18ch]">
                 Same shop,
                 <br />
-                <em>six lanes.</em>
+                <em>five lanes.</em>
               </h2>
             </motion.div>
 

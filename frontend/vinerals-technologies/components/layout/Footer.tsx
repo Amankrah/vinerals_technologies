@@ -7,7 +7,6 @@ import { Github, Linkedin, Mail, ArrowUpRight, MapPin } from 'lucide-react';
 import Logo from '@/components/shared/Logo';
 import Button from '@/components/ui/Button';
 import { NAVIGATION, SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
-import { getPublishedArticles } from '@/content/articles';
 
 /**
  * Footer — closing colophon. Photographic invitation block, then an
@@ -148,13 +147,7 @@ const Footer = () => {
             <FooterColumn
               eyebrow="03 · Notes"
               title="Resources"
-              links={[
-                { name: 'All notes', href: '/resources' },
-                ...getPublishedArticles().map((article) => ({
-                  name: article.navTitle || article.title,
-                  href: `/resources/${article.slug}`,
-                })),
-              ]}
+              links={NAVIGATION.footer.resources}
             />
             <FooterColumn
               eyebrow="04 · Correspondance"

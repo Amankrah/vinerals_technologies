@@ -134,7 +134,7 @@ export default async function ResourceArticlePage({ params }: PageProps) {
               {article.author.role}
             </p>
 
-            <div className="relative mb-12 aspect-[16/9] overflow-hidden border border-[var(--ink-hairline)]/40 bg-primary-950">
+            <div className="relative mb-12 aspect-[16/9] overflow-hidden border border-[var(--ink-hairline)]/40 bg-[var(--cream-deep)]">
               <Image
                 src={article.image}
                 alt={article.imageAlt}
@@ -227,7 +227,7 @@ export default async function ResourceArticlePage({ params }: PageProps) {
                       href={`/resources/${other.slug}`}
                       className="group grid gap-5 p-5 transition-colors hover:bg-[var(--cream-deep)]/50 sm:grid-cols-[9rem_1fr] sm:items-center md:p-6"
                     >
-                      <div className="relative aspect-[16/10] overflow-hidden bg-primary-950 sm:aspect-square">
+                      <div className="relative aspect-[16/10] overflow-hidden bg-[var(--cream-deep)] sm:aspect-square">
                         <Image
                           src={other.image}
                           alt={other.imageAlt}

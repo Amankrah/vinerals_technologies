@@ -6,11 +6,21 @@ import Section from '@/components/ui/Section';
 import ResourcesHero from '@/components/sections/ResourcesHero';
 import CTA from '@/components/sections/CTA';
 import { getPublishedArticles } from '@/content/articles';
+import { RESOURCES_SLATE } from '@/content/resources-slate';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { fadeInUp } from '@/hooks/useScrollAnimation';
+
+const slateById = Object.fromEntries(RESOURCES_SLATE.map((s) => [s.id, s]));
+
+const publishedStagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+  },
+};
 
 export default function BlogPage() {
   const published = getPublishedArticles();
@@ -38,8 +48,8 @@ export default function BlogPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
+            viewport={{ once: true, margin: '-80px' }}
+            variants={publishedStagger}
           >
             {published.length === 0 ? (
               <motion.p variants={fadeInUp} className="lead-text max-w-[42ch]">
@@ -48,11 +58,13 @@ export default function BlogPage() {
               </motion.p>
             ) : (
               <motion.div
-                variants={staggerContainer}
+                variants={publishedStagger}
                 className="grid gap-0 border border-[var(--ink-hairline)]/45 md:grid-cols-2"
               >
                 {published.map((article, index) => {
                   const isRight = index % 2 === 1;
+                  const slate = article.slateId ? slateById[article.slateId] : undefined;
+
                   return (
                     <motion.div key={article.slug} variants={fadeInUp}>
                       <Link
@@ -67,14 +79,20 @@ export default function BlogPage() {
                             : ''
                         }`}
                       >
-                        <div className="relative aspect-[16/10] overflow-hidden bg-primary-950">
+                        <div className="relative aspect-[16/10] overflow-hidden bg-[var(--cream-deep)]">
                           <Image
                             src={article.image}
                             alt={article.imageAlt}
                             fill
+                            priority={index < 10}
                             sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                           />
+                          {slate && (
+                            <span className="absolute left-5 top-5 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white [text-shadow:0_1px_12px_rgba(10,20,16,0.55)]">
+                              {slate.number}
+                            </span>
+                          )}
                         </div>
                         <div className="flex flex-1 flex-col p-6 md:p-8">
                           <span className="font-mono text-[0.65rem] uppercase tracking-[0.24em] text-secondary-600">
