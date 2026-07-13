@@ -91,7 +91,7 @@ export default function ServicesPage() {
           badge="Our Services"
           title="Software you can plan around."
           highlightedWord="plan around."
-          description="Custom software, AI, mobile, and data systems, made by hand. Senior people, clear scope, and code you own when the work is done."
+          description="Custom software, AI, mobile, and data systems. Senior people, clear scope, and code you own when the work is done."
           image="/service-software.jpg"
           imageAlt="Hands typing on a laptop at a wooden workshop desk"
           primaryCTA={{ label: 'Book a consultation', href: '/contact' }}

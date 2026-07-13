@@ -11,7 +11,7 @@ const partnerTypes = [
     title: 'Funders',
     kicker: 'Patient capital · foundations',
     description:
-      'Back software made by hand for SMEs — social return with financial discipline, not a pitch-deck fantasy.',
+      'Back senior craft for SMEs. Social return with financial discipline, not a pitch-deck fantasy.',
     href: '/partners/funders',
   },
   {

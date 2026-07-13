@@ -69,7 +69,7 @@ const WHY_STRUCTURE = [
 
 const CLIENT_BENEFITS = [
   {
-    title: 'Software made by hand.',
+    title: 'Craft, kept intact.',
     body: 'The same senior standards you would expect from a serious Montréal shop, with terms a growing business can plan around.',
   },
   {

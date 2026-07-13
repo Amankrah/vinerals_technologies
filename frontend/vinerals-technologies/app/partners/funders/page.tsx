@@ -22,7 +22,7 @@ const THESIS = [
   },
   {
     title: 'The craft.',
-    body: 'We build software made by hand: senior engineering, code the client owns, and honest counsel. Quality structured so a growing business can say yes.',
+    body: 'Senior engineering, code the client owns, and honest counsel. Quality structured so a growing business can say yes.',
   },
   {
     title: 'Your capital.',

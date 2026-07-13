@@ -101,7 +101,7 @@ export default function PartnersPage() {
           badge="For Partners"
           title="Partners who fund work that lasts."
           highlightedWord="lasts"
-          description="We are a Québec solidarity cooperative. We build software made by hand for growing businesses, and we partner with funders, government, and consortiums whose mandates line up with that work."
+          description="We are a Québec solidarity cooperative. We build custom software for growing businesses, and we partner with funders, government, and consortiums whose mandates line up with that work."
           image="/partners-atelier.jpg"
           imageAlt="Hands reviewing work together at a wooden workshop table"
           stats={[

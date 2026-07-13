@@ -136,7 +136,7 @@ const barriers = [
 
 const responses = [
   {
-    title: 'Made by hand.',
+    title: 'Shaped to fit.',
     body: 'Senior engineers shape software around how your business runs. Craft in the details. Ownership in the contract. The system fits you, rather than asking you to fit a product.',
   },
   {

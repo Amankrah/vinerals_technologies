@@ -26,7 +26,7 @@ const WALLS = [
 const VALUES = [
   {
     title: 'Craft first.',
-    body: 'Software made by hand. Senior engineering shaped around how you work. Not a rented platform. Not a template with your logo.',
+    body: 'Senior engineering shaped around how you work. Not a rented platform. Not a template with your logo.',
   },
   {
     title: 'Radical transparency.',
@@ -133,7 +133,7 @@ export default function MissionPage() {
               className="border border-[var(--ink-hairline)]/45 bg-[var(--paper)] p-8 md:p-10"
             >
               <p className="mb-6 font-display text-xl leading-relaxed text-[var(--ink)] md:text-[1.35rem]">
-                We exist to put senior engineering, software made by hand, in reach of small and
+                We exist to put senior engineering in reach of small and
                 mid-sized businesses across Canada, with particular weight in Québec&apos;s social
                 economy.
               </p>
@@ -184,7 +184,7 @@ export default function MissionPage() {
             >
               A community clinic runs a patient portal worthy of the hospital network. A family farm
               gets the traceability agribusiness takes for granted. A non-profit ships the impact
-              tool its mandate has been asking for: made by hand, owned outright.
+              tool its mandate has been asking for: cut to fit, owned outright.
             </motion.p>
           </motion.div>
         </Section>

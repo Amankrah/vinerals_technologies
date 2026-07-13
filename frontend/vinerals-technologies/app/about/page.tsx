@@ -44,7 +44,7 @@ const FACTS = [
   },
   {
     label: 'Craft',
-    body: 'Software made by hand. Senior engineering, systems shaped around how you already work, code you own.',
+    body: 'Senior engineering, systems shaped around how you already work, code you own.',
   },
   {
     label: 'Location',
@@ -58,7 +58,7 @@ const FACTS = [
 
 const PRINCIPLES = [
   {
-    title: 'Made by hand.',
+    title: 'Craft, not templates.',
     body: 'Senior engineers shape every system around how you operate. Not a rented platform. Not a template with your logo.',
   },
   {
@@ -124,8 +124,8 @@ export default function AboutPage() {
                 <strong className="text-[var(--ink)]">solidarity cooperative</strong>,
                 owned by the people doing the work and the community we serve. What we
                 sell is quality:{' '}
-                <strong className="text-[var(--ink)]">software made by hand</strong>,
-                senior engineering, and systems that fit how your business already runs.
+                <strong className="text-[var(--ink)]">senior engineering</strong>{' '}
+                and systems that fit how your business already runs.
               </motion.p>
               <motion.p variants={fadeInUp}>
                 Founded in Montréal in 2026, we exist because growing businesses deserve
@@ -139,7 +139,7 @@ export default function AboutPage() {
               </motion.blockquote>
               <motion.p variants={fadeInUp}>
                 We start by explaining what AI and modern software can (and cannot)
-                realistically do. Then we build carefully, by hand, and structure
+                realistically do. Then we build carefully, at the bench, and structure
                 engagements so a growing business can say yes, including mission-aligned
                 funding when you qualify.
               </motion.p>
