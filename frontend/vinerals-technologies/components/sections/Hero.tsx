@@ -16,22 +16,31 @@ import { heroVariants, heroItemVariants } from '@/hooks/useScrollAnimation';
 const Hero = () => {
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-primary-950">
-      {/* Full-bleed craft photograph */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-      >
+      {/* Full-bleed craft photograph — no transform on the Image tree so it can win LCP */}
+      <div className="absolute inset-0">
         <Image
           src="/hero-workshop.jpg"
           alt="Hands and a laptop on a wooden workbench, software built by hand"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover object-[58%_42%] md:object-center"
         />
-      </motion.div>
+      </div>
+
+      {/* Soft ken-burns sits on a separate layer so it does not disqualify the LCP image */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        initial={{ opacity: 0.35 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          background:
+            'radial-gradient(ellipse at 60% 40%, transparent 20%, rgba(10,20,16,0.45) 100%)',
+        }}
+      />
 
       {/* Readability veils — top for nav, left/bottom for copy; photo stays open on the right */}
       <div

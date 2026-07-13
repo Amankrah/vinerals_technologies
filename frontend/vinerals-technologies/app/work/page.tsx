@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WorkHero from '@/components/sections/WorkHero';
@@ -13,6 +14,9 @@ import { projects } from '@/content/projects';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { ArrowUpRight } from 'lucide-react';
+
+const shippedProjects = projects.filter((p) => p.status !== 'in-development');
+const inDevelopmentProjects = projects.filter((p) => p.status === 'in-development');
 
 export default function WorkPage() {
   return (
@@ -106,8 +110,86 @@ export default function WorkPage() {
             </>
           }
           description="Each card opens a short brief here, with a link to the full technology page at SASEL Lab."
-          projects={projects}
+          projects={shippedProjects}
         />
+
+        {inDevelopmentProjects.length > 0 && (
+          <Section background="gray" paddingY="lg" id="in-development">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeInUp} className="mb-12 max-w-3xl">
+                <span className="eyebrow mb-6 block">In development · Ateliers en cours</span>
+                <h2 className="section-headline mb-6">
+                  On the bench
+                  <br />
+                  <em>right now.</em>
+                </h2>
+                <p className="lead-text">
+                  What Vinerals is building now. Not finished yet, but far enough along that we
+                  are already using it with our first early-access clients.
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={staggerContainer}
+                className="grid grid-cols-1 border border-[var(--ink-hairline)]/45 bg-[var(--paper)]"
+              >
+                {inDevelopmentProjects.map((project) => {
+                  const href = project.externalUrl || `/work/${project.slug}`;
+                  const isInternal = href.startsWith('/');
+                  const CardWrapper = ({ children }: { children: React.ReactNode }) =>
+                    isInternal ? (
+                      <Link href={href} className="group flex h-full flex-col p-8 md:p-10">
+                        {children}
+                      </Link>
+                    ) : (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex h-full flex-col p-8 md:p-10"
+                      >
+                        {children}
+                      </a>
+                    );
+
+                  return (
+                    <motion.div key={project.slug} variants={fadeInUp}>
+                      <CardWrapper>
+                        <div className="mb-4 flex flex-wrap items-center gap-3 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-soft)]">
+                          <span className="border border-[var(--ink-hairline)]/60 px-2.5 py-1 text-secondary-600">
+                            In development
+                          </span>
+                          <span>{project.year}</span>
+                          {project.services?.[0] && <span>{project.services[0]}</span>}
+                        </div>
+                        <h3 className="mb-4 font-display text-3xl leading-tight text-[var(--ink)] transition-colors group-hover:text-primary-700 md:text-[2.1rem]">
+                          {project.title}
+                        </h3>
+                        <p className="mb-6 max-w-[62ch] leading-relaxed text-[var(--ink-muted)]">
+                          {project.description}
+                        </p>
+                        {project.tags && project.tags.length > 0 && (
+                          <p className="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
+                            {project.tags.join(' · ')}
+                          </p>
+                        )}
+                        <div className="mt-auto inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700">
+                          <span className="squiggle">Read the blueprint</span>
+                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </div>
+                      </CardWrapper>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </motion.div>
+          </Section>
+        )}
 
         <CapabilitiesSection capabilities={CAPABILITIES} />
         <ProcessSection

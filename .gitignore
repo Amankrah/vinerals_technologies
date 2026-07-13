@@ -1,6 +1,8 @@
 # documentation (private/internal)
 /frontend/docs
 frontend/docs/
+/docs
+docs/
 
 # proposals (private/internal)
 proposals/

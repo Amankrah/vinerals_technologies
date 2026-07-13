@@ -5,7 +5,7 @@ export interface Project {
   industry: 'healthcare' | 'food-systems' | 'sustainability' | 'non-profit' | 'other';
   services: string[];
   year: string;
-  status?: 'live' | 'beta';
+  status?: 'live' | 'beta' | 'in-development';
   partner?: string;
   partnerUrl?: string;
   externalUrl?: string;

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import IndustryHero from '@/components/sections/IndustryHero';
@@ -8,7 +9,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import CTA from '@/components/sections/CTA';
 import Section from '@/components/ui/Section';
 import StructuredData, { createFAQSchema, createBreadcrumbSchema } from '@/components/shared/StructuredData';
-import { Wheat } from 'lucide-react';
+import { Wheat, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
@@ -254,6 +255,50 @@ export default function FoodSystemsPage() {
         </Section>
 
         <ProcessSection steps={processSteps} />
+
+        {/* Supply Chain Blueprint callout */}
+        <Section background="white" paddingY="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="mx-auto max-w-4xl"
+          >
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="eyebrow">In development</span>
+            </motion.div>
+            <motion.div
+              variants={fadeInUp}
+              className="border border-[var(--ink-hairline)]/45 bg-[var(--cream)] p-8 md:p-12"
+            >
+              <div className="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-secondary-500">
+                Cahier · Vinerals ateliers
+              </div>
+              <h3 className="mb-6 font-display text-3xl leading-tight text-[var(--ink)] md:text-[2.25rem]">
+                Cahier, the supply chain records app for Canadian SMEs.
+              </h3>
+              <p className="mb-4 leading-relaxed text-[var(--ink-muted)]">
+                For growing food-system SMEs, especially the ones whose buyers, inspectors, or
+                export customers are starting to ask sharper questions. One place to write down
+                what you buy, make, and ship, and send out the reports FSMA 204, Bill S-211,
+                EUDR, CBAM, and CFIA SFCR each ask for. Rollout mapped to MAPAQ Transformation
+                Alimentaire, Investissement Québec ESSOR, SCAP, and CanExport.
+              </p>
+              <p className="mb-8 leading-relaxed text-[var(--ink-muted)]">
+                In development through mid-2026. Early access is open now for processors, co-ops,
+                and agri-food producers with a buyer or inspector deadline on the calendar.
+              </p>
+              <Link
+                href="/blueprints/cahier"
+                className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-700 transition-colors hover:text-secondary-600"
+              >
+                <span className="squiggle">Meet Cahier</span>
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </Section>
 
         <Section background="gray" paddingY="lg">
           <motion.div

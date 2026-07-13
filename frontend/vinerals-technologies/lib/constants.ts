@@ -465,6 +465,12 @@ export const SECONDARY_KEYWORDS = [
   'healthcare software development montreal',
   'food supply chain software canada',
   'non-profit technology solutions quebec',
+  'cahier vinerals',
+  'cahier supply chain app',
+  'supply chain records canada',
+  'sme supply chain quebec',
+  'sme traceability app',
+  'cooperative supply chain infrastructure',
 ] as const;
 
 // Ecosystem partners for credibility

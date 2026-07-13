@@ -211,6 +211,33 @@ export const projects: Project[] = [
     ],
     featured: false,
   },
+  {
+    slug: 'cahier',
+    title: 'Cahier',
+    client: 'Vinerals Technologies',
+    industry: 'food-systems',
+    services: ['Data Systems', 'Custom Software', 'AI Integration'],
+    year: '2026',
+    status: 'in-development',
+    externalUrl: '/blueprints/cahier',
+    image: '/work-supply-chain.jpg',
+    imageAlt:
+      'Wooden packing table with a paper shipping notebook, clipboard, and laptop in a food warehouse loading bay',
+    description:
+      'The supply chain records app from Vinerals Technologies. One place for Canadian SMEs to write down what you buy, make, and ship, so you can answer a buyer, an inspector, or an export customer without hunting through spreadsheets.',
+    challenge:
+      'Serious supply chain software is priced for large procurement teams. Cheaper inventory tools stop at inventory and skip the regulator-facing records EU, US, and Canadian buyers now expect. Growing businesses end up with a few spreadsheets and a chat thread when someone asks where a batch came from.',
+    solution:
+      'Cahier is shaped around how product actually moves through an SME. Batch-level records at the moment work happens, reports ready for FSMA 204, Bill S-211, EUDR, CBAM, and CFIA SFCR, and a shared version so groups can split the cost of the same setup.',
+    tags: ['Supply Chain', 'Traceability', 'Regulatory', 'SME', 'Québec'],
+    features: [
+      'One set of records that covers six sets of regulator paperwork',
+      'A shared version for groups of SMEs to split the cost',
+      'Rollout mapped to MAPAQ, ESSOR, SCAP, CanExport',
+      'ISO 14040/14044 life-cycle and CBAM emissions on the same records',
+    ],
+    featured: false,
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

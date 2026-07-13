@@ -4,6 +4,7 @@ import Hero from '@/components/sections/Hero';
 import ProblemSolution from '@/components/sections/ProblemSolution';
 import Services from '@/components/sections/Services';
 import IndustriesGrid from '@/components/sections/IndustriesGrid';
+import BlueprintPromo from '@/components/sections/BlueprintPromo';
 import WhyUs from '@/components/sections/WhyUs';
 import StructuredData, { organizationSchema, localBusinessSchema } from '@/components/shared/StructuredData';
 
@@ -18,6 +19,7 @@ export default function Home() {
         <ProblemSolution />
         <Services />
         <IndustriesGrid />
+        <BlueprintPromo />
         <WhyUs />
       </main>
       <Footer />

@@ -16,9 +16,11 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+  return projects
+    .filter((project) => project.status !== 'in-development')
+    .map((project) => ({
+      slug: project.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -41,11 +43,13 @@ export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
 
-  if (!project) {
+  if (!project || project.status === 'in-development') {
     notFound();
   }
 
-  const related = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
+  const related = projects
+    .filter((p) => p.slug !== project.slug && p.status !== 'in-development')
+    .slice(0, 3);
 
   return (
     <>
